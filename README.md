@@ -26,6 +26,16 @@ QA 日志
 - `size_params`：可选，对 notable variants 与激活参数等进行摘要。
 - `inference`：可选，包含推理/部署相关估算字段：`latency_ms`、`latency_level`、`throughput_rps`、`concurrency`、`memory_gb`、`quantization_friendly`、`supported_hardware`、`distributed_support`、`notes`。
 
+Product Line (产品线)
+- 为了对齐企业 PRD 与量产测试指标，本仓库新增 `product_lines/` 模块与 `templates/product_line_schema.json` 模板。Product Line 用于把 PRD 的 feature 映射到原子能力（`templates/abilities.json`）以及对应的生产指标（benchmark baselines, measurement contexts）。
+
+- 新增文件说明：
+  - `templates/product_line_schema.json`：Product Line 的 JSON Schema。
+  - `templates/product_line.json`：示例模板，展示如何填写 feature -> metric 的映射。
+  - `product_lines/`：实际的 product line 条目存放目录（例如 `product_lines/sample_product_line.json`）。
+
+示例：`product_lines/sample_product_line.json` 包含 `product_id`, `features[]`（每个 feature 指向 `required_capabilities` 与 `production_metrics`），`production_metrics` 会引用 `benchmarks/` 或 `models/` 中的 baseline 结果以便追踪和回归验证。
+
 核心合同（contract）
 - 输入：模型/场景/平台 的元信息（JSON）
 - 输出：可搜索的标签集合（按指标与场景）、评测执行说明、示例产出

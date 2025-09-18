@@ -1,0 +1,53 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Product Line",
+  "description": "Schema for product line entries that map PRD features to production test metrics and baseline traces.",
+  "type": "object",
+  "required": ["product_id","name","owner","features"],
+  "properties": {
+    "product_id": {"type":"string","description":"Canonical product id (e.g. product_line code)"},
+    "name": {"type":"string","description":"Human readable product line name"},
+    "owner": {"type":"string","description":"Owner or team responsible"},
+    "description": {"type":"string"},
+    "prds": {
+      "type":"array",
+      "description":"List of PRD documents or feature specs linked to this product line",
+      "items": {"type":"object","properties": {"id": {"type":"string"},"title": {"type":"string"},"link": {"type":"string","format":"uri"}},"required":["id","title"]}
+    },
+    "features": {
+      "type":"array",
+      "description":"List of customer-facing features with mapping to atomic capabilities and test metrics",
+      "items": {
+        "type":"object",
+        "required": ["feature_id","name","required_capabilities"],
+        "properties": {
+          "feature_id": {"type":"string"},
+          "name": {"type":"string"},
+          "description": {"type":"string"},
+          "required_capabilities": {"type":"array","items":{"type":"string"},"description":"IDs from templates/abilities.json"},
+          "acceptance_criteria": {"type":"array","items":{"type":"string"},"description":"High-level PRD acceptance criteria"},
+          "production_metrics": {
+            "type":"array",
+            "items": {
+              "type":"object",
+              "required": ["metric_id","target_value","measurement_context"],
+              "properties": {
+                "metric_id": {"type":"string"},
+                "metric_name": {"type":"string"},
+                "target_value": {"type":["number","string"]},
+                "tolerance": {"type":"string"},
+                "measurement_context": {"type":"object","description":"Environment used for measurement (hardware, batch, framework)","properties": {"hardware": {"type":"string"},"framework": {"type":"string"},"batch_size": {"type":"integer"}},"additionalProperties": true},
+                "baseline_reference": {"type":"string","description":"Link or id to baseline result in benchmarks/ or results storage"}
+              },
+              "additionalProperties": false
+            }
+          },
+          "notes": {"type":"string"}
+        }
+      }
+    },
+    "release_plan": {"type":"object","properties": {"milestone_id": {"type":"string"},"target_date": {"type":"string","format":"date"}},"additionalProperties": false},
+    "tags": {"type":"array","items":{"type":"string"}}
+  },
+  "additionalProperties": false
+}

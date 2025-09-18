@@ -1,0 +1,22 @@
+{
+  "product_id": "pl_autonomous_navigation_v1",
+  "name": "Autonomous Navigation Product Line",
+  "owner": "Autonomy Team",
+  "description": "Example product line mapping PRD items to production metrics for in-vehicle navigation.",
+  "prds": [
+    {"id": "PRD-2025-001","title": "Navigation Assist v1","link": "https://internal.example.com/prd/navigation_v1"}
+  ],
+  "features": [
+    {
+      "feature_id": "feat_lane_keep",
+      "name": "Lane Keeping Assistance",
+      "required_capabilities": ["abilities.vision_detection","abilities.anomaly_detection"],
+      "acceptance_criteria": ["False positive rate < 0.5%","Miss detection < 1%"],
+      "production_metrics": [
+        {"metric_id":"latency_p99","metric_name":"P99 Latency (ms)","target_value":100,"measurement_context":{"hardware":"in-vehicle edge CPU","framework":"onnxruntime","batch_size":1},"baseline_reference":"benchmarks/latency_p99.json"}
+      ]
+    }
+  ],
+  "release_plan": {"milestone_id":"M1","target_date":"2026-03-01"},
+  "tags": ["autonomy","safety"]
+}
