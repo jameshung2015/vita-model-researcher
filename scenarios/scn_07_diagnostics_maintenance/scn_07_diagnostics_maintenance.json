@@ -1,0 +1,14 @@
+{
+  "scenario_id": "scn_07_diagnostics_maintenance",
+  "name": "Diagnostics & Maintenance Guidance",
+  "description": "Interpret vehicle diagnostic codes, recommend troubleshooting steps, and estimate maintenance urgency/cost.",
+  "required_atomic_capabilities": ["retrieval", "entity_extraction", "summarization", "anomaly_detection"],
+  "recommended_agents": [],
+  "priority_indicators": [
+    {"indicator": "accuracy_f1", "priority": "high"},
+    {"indicator": "robustness_adv", "priority": "medium"}
+  ],
+  "minimal_test_cases": [
+    {"id": "tc1", "input": "读取故障码P0420并说明原因", "expected_output": "故障解释与建议（维修/继续行驶）", "acceptance_criteria": "technical_accuracy:true"}
+  ]
+}

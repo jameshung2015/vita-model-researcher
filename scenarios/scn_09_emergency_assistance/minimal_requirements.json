@@ -1,0 +1,11 @@
+{
+  "scenario_id": "scn_09_emergency_assistance",
+  "required_abilities": ["speech_recognition","dialog_management","retrieval","anomaly_detection"],
+  "min_hardware": {"cpu_cores":8,"ram_gb":16,"min_gpu_memory_gb":8},
+  "data_requirements": {"emergency_scenarios":1000,"contact_endpoints":10},
+  "latency_sla_ms": 300,
+  "concurrency_per_instance": 2,
+  "privacy_constraints": ["prioritize_user_safety_over_privacy_when_life_threatening"],
+  "sample_data_path": "scenarios/scn_09_emergency_assistance/test_data/",
+  "notes": "Must minimize time-to-action; integrate with telematics for automatic reporting."
+}

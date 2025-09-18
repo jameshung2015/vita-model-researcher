@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Registration Entry Schema",
+  "type": "object",
+  "required": [
+    "name",
+    "version",
+    "provider",
+    "contact",
+    "service_region",
+    "model_type",
+    "risk_level"
+  ],
+  "properties": {
+    "name": { "type": "string" },
+    "version": { "type": "string" },
+    "provider": { "type": "string" },
+    "contact": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "phone": { "type": "string" }
+      },
+      "required": ["name", "email"]
+    },
+    "release_date": { "type": "string", "format": "date" },
+    "service_region": { "type": "string" },
+    "model_type": { "type": "string" },
+    "use_case": { "type": "string" },
+    "risk_level": { "type": "string", "enum": ["Low", "Medium", "High"] },
+    "data_summary": { "type": "string" },
+    "cross_border": { "type": "string", "enum": ["Yes", "No"] },
+    "compliance_materials": { "type": "array", "items": { "type": "string" } },
+    "monitoring": { "type": "string" },
+    "emergency_plan": { "type": "string" }
+  }
+}

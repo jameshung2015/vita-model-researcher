@@ -1,0 +1,158 @@
+[
+  {
+    "id": "text_classification",
+    "name": "Text Classification",
+    "category": "nlp",
+    "description": "Assign one or more categories/labels to a text input.",
+    "input_types": ["text"],
+    "output_types": ["label", "score"],
+    "minimal_requirements": {
+      "dataset_size_examples": 1000,
+      "label_types": "categorical",
+      "recommended_gpu": "optional"
+    },
+    "tags": ["classification", "nlp", "supervised"],
+    "example": {
+      "input": "I love this product!",
+      "output": {"label": "positive", "score": 0.98}
+    }
+  },
+  {
+    "id": "entity_extraction",
+    "name": "Named Entity Extraction",
+    "category": "nlp",
+    "description": "Extract named entities (people, orgs, locations, etc.) from text.",
+    "input_types": ["text"],
+    "output_types": ["entities"],
+    "minimal_requirements": {
+      "dataset_size_examples": 2000,
+      "label_schema": "BIO/IOB",
+      "recommended_gpu": "optional"
+    },
+    "tags": ["ner", "nlp", "information_extraction"],
+    "example": {
+      "input": "Apple acquired Beats in 2014.",
+      "output": [{"text": "Apple", "type": "ORG", "start": 0, "end": 5}]
+    }
+  },
+  {
+    "id": "ocr",
+    "name": "Optical Character Recognition",
+    "category": "vision",
+    "description": "Extract text from images (scanned documents, photos).",
+    "input_types": ["image"],
+    "output_types": ["text"],
+    "minimal_requirements": {
+      "image_resolution_min": "640x480",
+      "recommended_training_samples": 5000,
+      "recommended_gpu": "useful for large models"
+    },
+    "tags": ["vision", "ocr", "preprocessing"],
+    "example": {
+      "input": "<image: invoice.jpg>",
+      "output": "Invoice No: 12345\nTotal: $99.99"
+    }
+  },
+  {
+    "id": "speech_recognition",
+    "name": "Automatic Speech Recognition",
+    "category": "speech",
+    "description": "Convert spoken audio into text.",
+    "input_types": ["audio"],
+    "output_types": ["text"],
+    "minimal_requirements": {
+      "sample_rate": 16000,
+      "recommended_training_hours": 1000
+    },
+    "tags": ["asr", "speech"],
+    "example": {"input": "<audio: ask_direction.wav>", "output": "导航到最近的加油站"}
+  },
+  {
+    "id": "speech_synthesis",
+    "name": "Text-to-Speech",
+    "category": "speech",
+    "description": "Synthesize natural-sounding speech from text.",
+    "input_types": ["text"],
+    "output_types": ["audio"],
+    "minimal_requirements": {"latency_ms": 200},
+    "tags": ["tts", "speech"],
+    "example": {"input": "到达目的地", "output": "<audio: tts_output.wav>"}
+  },
+  {
+    "id": "retrieval",
+    "name": "Knowledge Retrieval",
+    "category": "nlp",
+    "description": "Retrieve relevant documents/snippets from a knowledge base given a query.",
+    "input_types": ["text"],
+    "output_types": ["documents", "snippets"],
+    "minimal_requirements": {"indexable_docs": 1000},
+    "tags": ["retrieval", "kb"],
+    "example": {"input": "如何更换轮胎", "output": ["手册章节: 更换轮胎步骤..."]}
+  },
+  {
+    "id": "dialog_management",
+    "name": "Dialog Management",
+    "category": "nlp",
+    "description": "Manage multi-turn stateful conversations and dialog policy.",
+    "input_types": ["text", "context"],
+    "output_types": ["text", "actions"],
+    "minimal_requirements": {"session_state_storage": true},
+    "tags": ["dialog", "stateful"],
+    "example": {"input": "上文对话上下文...", "output": "下一步回复文本"}
+  },
+  {
+    "id": "multimodal_qa",
+    "name": "Multimodal Question Answering",
+    "category": "multimodal",
+    "description": "Answer questions that require combining image, audio, and text inputs.",
+    "input_types": ["text", "image", "audio"],
+    "output_types": ["text", "structured_answer"],
+    "minimal_requirements": {"align_modalities": true},
+    "tags": ["multimodal", "qa"],
+    "example": {"input": {"image":"<img>","text":"这张仪表盘灯是什么?"}, "output": "燃油不足警告灯"}
+  },
+  {
+    "id": "summarization",
+    "name": "Summarization",
+    "category": "nlp",
+    "description": "Condense longer text into concise summaries.",
+    "input_types": ["text"],
+    "output_types": ["text"],
+    "minimal_requirements": {"max_input_length": 4096},
+    "tags": ["summarization"],
+    "example": {"input": "长说明文...", "output": "要点摘要..."}
+  },
+  {
+    "id": "intent_detection",
+    "name": "Intent Detection",
+    "category": "nlp",
+    "description": "Detect user intent from utterances (e.g., navigate, play_music).",
+    "input_types": ["text"],
+    "output_types": ["intent", "confidence"],
+    "minimal_requirements": {"label_set_size": 50},
+    "tags": ["intent", "nlp"],
+    "example": {"input": "播放周杰伦的歌", "output": {"intent":"play_music","confidence":0.95}}
+  },
+  {
+    "id": "image_captioning",
+    "name": "Image Captioning",
+    "category": "vision",
+    "description": "Generate textual descriptions for images (useful for visual QA).",
+    "input_types": ["image"],
+    "output_types": ["text"],
+    "minimal_requirements": {"image_resolution_min": "224x224"},
+    "tags": ["vision","captioning"],
+    "example": {"input": "<img: dash.jpg>", "output": "仪表盘显示速度为80公里/小时"}
+  },
+  {
+    "id": "anomaly_detection",
+    "name": "Anomaly Detection",
+    "category": "analytics",
+    "description": "Detect abnormal sensor readings or patterns (e.g., sudden drop in oil pressure).",
+    "input_types": ["timeseries","numeric"],
+    "output_types": ["alert","score"],
+    "minimal_requirements": {"history_window_minutes": 60},
+    "tags": ["safety","monitoring"],
+    "example": {"input": "车辆传感器数据...", "output": {"alert":"oil_pressure_low","score":0.92}}
+  }
+]

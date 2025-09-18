@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Ability",
+  "type": "object",
+  "required": ["id", "name", "category", "input_types", "output_types"],
+  "properties": {
+    "id": {"type": "string", "description": "唯一标识符，例如 abilities.text_classification"},
+    "name": {"type": "string"},
+    "category": {"type": "string", "description": "例如: NLP / Vision / Speech / Multimodal"},
+    "description": {"type": "string"},
+    "input_types": {"type": "array", "items": {"type": "string"}},
+    "output_types": {"type": "array", "items": {"type": "string"}},
+    "minimal_requirements": {
+      "type": "object",
+      "properties": {
+        "min_data_samples": {"type": "integer"},
+        "min_latency_ms": {"type": "integer"},
+        "hardware": {"type": "string"}
+      }
+    },
+    "notes": {"type": "string"}
+  }
+}

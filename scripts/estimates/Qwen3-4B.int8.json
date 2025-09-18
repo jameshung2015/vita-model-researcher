@@ -1,0 +1,23 @@
+{
+  "variant": "Qwen3-4B",
+  "params_estimate_billion": 4.0,
+  "seq_len": 32768,
+  "batch": 1,
+  "precision": "int8",
+  "num_gpus": 1,
+  "is_moe": false,
+  "estimated_vram_gb_per_gpu": 5.65,
+  "estimated_vram_gb_total": 8.07,
+  "breakdown": {
+    "weight_gb": 4.0,
+    "activations_gb": 0.04,
+    "kv_cache_gb": 0.03,
+    "moe_overhead_gb": 0.0,
+    "overhead_gb": 4.0
+  },
+  "note": "Estimates are heuristic. For production, benchmark on target infra and consult modelcard for exact requirements.",
+  "_defaults_used": {
+    "seq_len_source": "from model (32768)",
+    "num_gpus_source": "from model.default_num_gpus (1)"
+  }
+}

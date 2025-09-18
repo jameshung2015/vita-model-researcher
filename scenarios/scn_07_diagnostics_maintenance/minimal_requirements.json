@@ -1,0 +1,11 @@
+{
+  "scenario_id": "scn_07_diagnostics_maintenance",
+  "required_abilities": ["retrieval","entity_extraction","summarization","anomaly_detection"],
+  "min_hardware": {"cpu_cores":4,"ram_gb":8,"min_gpu_memory_gb":0},
+  "data_requirements": {"diagnostic_code_db":1,"labeled_examples":500},
+  "latency_sla_ms": 2000,
+  "concurrency_per_instance": 5,
+  "privacy_constraints": ["do_not_expose_owner_personal_data"],
+  "sample_data_path": "scenarios/scn_07_diagnostics_maintenance/test_data/",
+  "notes": "Provide confidence and links to official maintenance docs."
+}

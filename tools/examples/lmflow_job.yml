@@ -1,0 +1,18 @@
+# LMFlow 伪配置示例（说明字段）
+# 注意：不同 LMFlow 版本的配置格式可能不同，请以官方文档为准。
+job:
+  name: eval-accuracy-f1
+  image: myregistry/my-eval:latest
+  command: python scripts/eval/f1.py --model /mnt/models/model.pt --data /mnt/data/val.json --out /mnt/out/accuracy_f1.json
+  resources:
+    gpus: 1
+    cpus: 4
+    memory_gb: 16
+  mounts:
+    - source: "s3://my-bucket/models/model.pt"
+      target: "/mnt/models/model.pt"
+    - source: "s3://my-bucket/data/val.json"
+      target: "/mnt/data/val.json"
+  outputs:
+    - path: "/mnt/out/accuracy_f1.json"
+      upload_to: "s3://my-bucket/results/accuracy_f1.json"

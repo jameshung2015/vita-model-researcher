@@ -1,0 +1,15 @@
+{
+  "scenario_id": "scn_06_invehicle_commerce",
+  "name": "In-vehicle Commerce & Orders",
+  "description": "Assist user with in-vehicle purchases (fuel, food, services) while ensuring privacy and consent flows.",
+  "required_atomic_capabilities": ["dialog_management", "intent_detection", "retrieval", "text_classification"],
+  "recommended_agents": ["customer_support_agent"],
+  "priority_indicators": [
+    {"indicator": "accuracy_f1", "priority": "high"},
+    {"indicator": "toxicity", "priority": "high"},
+    {"indicator": "latency_p99", "priority": "medium"}
+  ],
+  "minimal_test_cases": [
+    {"id": "tc1", "input": "帮我订一份午餐并付账", "expected_output": "确认订单详情与支付流程", "acceptance_criteria": "consent_obtained:true"}
+  ]
+}

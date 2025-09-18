@@ -1,0 +1,15 @@
+{
+  "scenario_id": "scn_03_multimodal_query",
+  "name": "Multimodal Query (Image + Voice)",
+  "description": "User takes a photo of dashboard or road and asks a question (e.g., '这个按钮是做什么的？'); system combines OCR/image captioning + retrieval to answer.",
+  "required_atomic_capabilities": ["ocr", "image_captioning", "multimodal_qa", "speech_recognition", "speech_synthesis"],
+  "recommended_agents": ["multimodal_inspector"],
+  "priority_indicators": [
+    {"indicator": "accuracy_f1", "priority": "high"},
+    {"indicator": "throughput_rps", "priority": "low"},
+    {"indicator": "latency_p99", "priority": "medium"}
+  ],
+  "minimal_test_cases": [
+    {"id": "tc1", "input": "(图片) 仪表盘上有一个红色图标，是什么意思？", "expected_output": "图标识别与建议操作", "acceptance_criteria": "correct_icon_identification:true"}
+  ]
+}

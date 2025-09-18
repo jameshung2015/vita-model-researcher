@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Agent",
+  "type": "object",
+  "required": ["id", "name", "capability_ids"],
+  "properties": {
+    "id": {"type": "string"},
+    "name": {"type": "string"},
+    "capability_ids": {"type": "array", "items": {"type": "string"}},
+    "orchestration_requirements": {"type": "string"},
+    "runtime_requirements": {"type": "string"},
+    "example_use_cases": {"type": "array", "items": {"type": "string"}},
+    "notes": {"type": "string"}
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "scenario_id": "scn_02_alert_explanation",
+  "name": "Alert Explanation & Action",
+  "description": "When a dashboard warning light or alert fires, the user can ask what it means and what to do; the system must explain severity and recommended immediate actions.",
+  "required_atomic_capabilities": ["retrieval", "multimodal_qa", "summarization", "text_classification"],
+  "recommended_agents": ["multimodal_inspector"],
+  "priority_indicators": [
+    {"indicator": "accuracy_f1", "priority": "high"},
+    {"indicator": "robustness_adv", "priority": "high"},
+    {"indicator": "latency_p99", "priority": "high"}
+  ],
+  "minimal_test_cases": [
+    {"id": "tc1", "input": "这个黄色发动机灯代表什么？ (附仪表盘图片)", "expected_output": "解释与紧急程度, 建议停车或继续观察", "acceptance_criteria": "safety_priority:must"}
+  ]
+}

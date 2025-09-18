@@ -1,0 +1,22 @@
+{
+  "id": "benchmark.mmlu",
+  "name": "MMLU",
+  "description": "Massive Multitask Language Understanding: 多任务知识问答覆盖学科式问题（K-12 + 大学科目）。常用于评估语言模型的广泛知识和推理能力。",
+  "source": "Hendrycks et al., 2020",
+  "datasets": [
+    {
+      "name": "MMLU (original)",
+      "link": "https://github.com/hendrycks/test/blob/master/mmlu/README.md",
+      "license": "CC BY-NC-SA? (请参考原仓库)"
+    }
+  ],
+  "metrics": [
+    {"name": "accuracy", "definition": "多项选择题准确率", "calculation": "correct / total"}
+  ],
+  "test_method": "标准做法：将题目按原始格式（多选）作为单次提示，记录模型选择的选项并与gold答案比对；常见实现包括 Evals、OpenAI evals 社区实现及自建脚本。需要注意 prompt engineering（few-shot/zero-shot）对结果影响较大，应记录prompt设置与上下文长度。",
+  "example_scores": {
+    "GPT-4": "~86.4 (论文/leaderboard, depends on prompt)",
+    "GPT-3.5-turbo": "~57-60 (varies by prompt)"
+  },
+  "notes": "建议记录是否使用 chain-of-thought、是否使用 majority-vote over n samples，以及prompt示例和随机种子用于复现。"
+}

@@ -1,0 +1,17 @@
+{
+  "id": "benchmark.bleu",
+  "name": "BLEU",
+  "description": "Bilingual Evaluation Understudy: 机器翻译常用的 n-gram 重叠指标，衡量生成文本与参考译文的相似度。",
+  "source": "Papineni et al., 2002",
+  "datasets": [
+    {"name": "WMT test sets", "link": "http://www.statmt.org/wmt20/translation-task.html", "license": "varies by corpus"}
+  ],
+  "metrics": [
+    {"name": "BLEU-4", "definition": "基于 1-4 gram 的加权 n-gram 精确率并结合 brevity penalty", "calculation": "标准 BLEU 计算"}
+  ],
+  "test_method": "计算生成译文与一个或多个参考译文的 BLEU 分数。建议使用 sacreBLEU 或官方脚本以获得可比结果（记录 tokenization / detokenization 设置）。",
+  "example_scores": {
+    "Model-X on WMT20": "BLEU 30.2 (示例，仅作格式参考)"
+  },
+  "notes": "BLEU 对词序与字面翻译敏感，近年来推荐与其他质量指标（COMET、BLEURT）联合使用；务必记录 sacreBLEU 的参数如 tokenizer、signature、版本。"
+}

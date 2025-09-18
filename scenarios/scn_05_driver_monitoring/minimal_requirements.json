@@ -1,0 +1,11 @@
+{
+  "scenario_id": "scn_05_driver_monitoring",
+  "required_abilities": ["anomaly_detection","image_captioning","dialog_management","text_classification"],
+  "min_hardware": {"cpu_cores":8,"ram_gb":16,"min_gpu_memory_gb":8},
+  "data_requirements": {"video_hours":500,"labeled_fatigue_events":2000},
+  "latency_sla_ms": 300,
+  "concurrency_per_instance": 1,
+  "privacy_constraints": ["process_video_locally_if_possible","do_not_store_video_without_consent"],
+  "sample_data_path": "scenarios/scn_05_driver_monitoring/test_data/",
+  "notes": "Safety-critical; favor on-device inference and strict false-positive controls."
+}

@@ -1,0 +1,20 @@
+{
+  "id": "latency_p99",
+  "name": "P99 Latency",
+  "category": "performance",
+  "definition": "第99百分位延迟（请求到响应完成的时间），用于衡量尾延迟和用户体验。",
+  "source": "industry-practice",
+  "owner": "平台工程",
+  "cost": "free",
+  "tooling": "bench/latency_profiler.py",
+  "runbook": {
+    "summary": "在目标部署环境下使用代表性请求集测量P99延迟。",
+    "steps": [
+      "准备代表性的请求集（大小 N，如 1000 条）",
+      "在目标服务上以真实或模拟负载逐条或并发发送请求并记录延迟",
+      "计算并记录P50/P90/P99等分位数",
+      "输出格式：{\"p50_ms\":..., \"p90_ms\":..., \"p99_ms\":...}"
+    ]
+  },
+  "example_output": {"p50_ms": 34, "p90_ms": 85, "p99_ms": 210}
+}

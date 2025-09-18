@@ -1,0 +1,15 @@
+{
+  "scenario_id": "scn_09_emergency_assistance",
+  "name": "Emergency Assistance & Accident Guidance",
+  "description": "In case of accidents, guide driver through emergency steps, call services, and provide situational instructions.",
+  "required_atomic_capabilities": ["speech_recognition", "dialog_management", "retrieval", "anomaly_detection"],
+  "recommended_agents": [],
+  "priority_indicators": [
+    {"indicator": "robustness_adv", "priority": "high"},
+    {"indicator": "latency_p99", "priority": "high"},
+    {"indicator": "accuracy_f1", "priority": "high"}
+  ],
+  "minimal_test_cases": [
+    {"id": "tc1", "input": "发生碰撞，请求帮助", "expected_output": "触发紧急呼叫并指导乘客安全措施", "acceptance_criteria": "time_to_action<30s"}
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "scenario_id": "scn_10_ota_update",
+  "name": "OTA Update Explanation & Consent",
+  "description": "Explain over-the-air updates, impacts, and obtain user consent while summarizing release notes and rollback options.",
+  "required_atomic_capabilities": ["summarization", "dialog_management", "text_classification"],
+  "recommended_agents": [],
+  "priority_indicators": [
+    {"indicator": "accuracy_f1", "priority": "medium"},
+    {"indicator": "toxicity", "priority": "low"}
+  ],
+  "minimal_test_cases": [
+    {"id": "tc1", "input": "这个更新会影响我的驾驶辅助功能吗？", "expected_output": "列出风险与回滚选项并请求确认", "acceptance_criteria": "consent_logged:true"}
+  ]
+}

@@ -1,0 +1,44 @@
+[
+  {
+    "id": "customer_support_agent",
+    "name": "Customer Support Agent",
+    "capability_ids": ["text_classification", "entity_extraction"],
+    "orchestration_requirements": {
+      "stateful": true,
+      "session_timeout_seconds": 3600,
+      "concurrency": "per-instance: 50"
+    },
+    "runtime_requirements": {
+      "min_gpu_memory_gb": 4,
+      "recommended_frameworks": ["transformers", "onnxruntime"],
+      "supports_streaming": false
+    },
+    "example_use_cases": [
+      "Classify incoming support tickets and extract key entities to route to correct team",
+      "Auto-suggest reply drafts and summarise conversation"
+    ],
+    "owner": "客服AI组",
+    "version": "0.1"
+  },
+  {
+    "id": "multimodal_inspector",
+    "name": "Multimodal Visual Inspector",
+    "capability_ids": ["ocr", "text_classification"],
+    "orchestration_requirements": {
+      "stateful": false,
+      "batching": "image batches supported",
+      "retry_policy": "3 attempts with exponential backoff"
+    },
+    "runtime_requirements": {
+      "min_gpu_memory_gb": 8,
+      "recommended_frameworks": ["pytorch", "opencv"],
+      "supports_streaming": true
+    },
+    "example_use_cases": [
+      "Extract text from product photos and validate labels",
+      "Run lightweight quality checks on incoming visual assets"
+    ],
+    "owner": "视觉平台组",
+    "version": "0.1"
+  }
+]

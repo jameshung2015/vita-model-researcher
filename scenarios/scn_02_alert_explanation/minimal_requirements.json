@@ -1,0 +1,11 @@
+{
+  "scenario_id": "scn_02_alert_explanation",
+  "required_abilities": ["retrieval","multimodal_qa","summarization","text_classification"],
+  "min_hardware": {"cpu_cores":4,"ram_gb":8,"min_gpu_memory_gb":4},
+  "data_requirements": {"labeled_alert_images":500,"alert_doc_entries":200},
+  "latency_sla_ms": 800,
+  "concurrency_per_instance": 5,
+  "privacy_constraints": ["mask_personal_identifiers_in_images"],
+  "sample_data_path": "scenarios/scn_02_alert_explanation/test_data/",
+  "notes": "High safety priority: ensure conservative recommendations for critical alerts."
+}

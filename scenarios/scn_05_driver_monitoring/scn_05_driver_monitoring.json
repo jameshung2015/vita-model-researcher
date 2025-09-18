@@ -1,0 +1,15 @@
+{
+  "scenario_id": "scn_05_driver_monitoring",
+  "name": "Driver Monitoring & Fatigue Alerts",
+  "description": "Monitor driver state via camera and sensors; when fatigue or distraction is detected, explain reason and recommend next steps.",
+  "required_atomic_capabilities": ["anomaly_detection", "image_captioning", "dialog_management", "text_classification"],
+  "recommended_agents": [],
+  "priority_indicators": [
+    {"indicator": "robustness_adv", "priority": "high"},
+    {"indicator": "accuracy_f1", "priority": "high"},
+    {"indicator": "toxicity", "priority": "low"}
+  ],
+  "minimal_test_cases": [
+    {"id": "tc1", "input": "检测到持续打哈欠与目光离开道路", "expected_output": "生成警告并建议休息", "acceptance_criteria": "false_positive_rate<0.05"}
+  ]
+}

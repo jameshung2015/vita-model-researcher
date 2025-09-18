@@ -1,0 +1,15 @@
+# OpenEval / 通用评测工具 配置示例（伪 YAML）
+eval:
+  id: accuracy_f1_run
+  description: "Run F1 accuracy evaluation using repo script"
+  runner:
+    type: shell
+    cmd: "python scripts/eval/f1.py --model /mnt/models/model.pt --data /mnt/data/val.json --out /mnt/out/accuracy_f1.json"
+  resources:
+    gpus: 1
+    cpus: 4
+  inputs:
+    model: s3://my-bucket/models/model.pt
+    data: s3://my-bucket/data/val.json
+  outputs:
+    metrics: s3://my-bucket/results/accuracy_f1.json

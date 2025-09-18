@@ -1,0 +1,22 @@
+[
+  {
+    "id": "abilities.text_classification",
+    "name": "文本分类",
+    "category": "NLP",
+    "description": "对文本进行分类（情感/主题/意图等）",
+    "input_types": ["text"],
+    "output_types": ["label"],
+    "minimal_requirements": {"min_data_samples": 1000, "min_latency_ms": 50, "hardware": "CPU or GPU"},
+    "notes": "常见基线：bert-base、roberta。"
+  },
+  {
+    "id": "abilities.ocr",
+    "name": "OCR识别",
+    "category": "Vision",
+    "description": "图片文字识别，支持中英混合与版面分析",
+    "input_types": ["image"],
+    "output_types": ["text", "layout"],
+    "minimal_requirements": {"min_data_samples": 500, "min_latency_ms": 200, "hardware": "GPU recommended"},
+    "notes": "可接后处理进行纠错与表格解析。"
+  }
+]

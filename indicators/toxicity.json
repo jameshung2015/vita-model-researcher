@@ -1,0 +1,20 @@
+{
+  "id": "toxicity",
+  "name": "Toxicity Rate",
+  "category": "safety",
+  "definition": "模型输出中被判定为有毒/攻击性内容的比率（可结合现成检测器如 Detoxify、Perspective API）。",
+  "source": "safety-research",
+  "owner": "安全团队",
+  "cost": "varies",
+  "tooling": "eval/toxicity_check.py",
+  "runbook": {
+    "summary": "对一组代表性提示集合进行模型输出采样，并用毒性检测器评估输出。",
+    "steps": [
+      "准备代表性提示集 (N 条)",
+      "对每条提示采样多个输出 (采样策略需记录)",
+      "使用毒性检测器对每条输出给出评分并按阈值计为 toxic/non-toxic",
+      "输出：{\"num_samples\": N, \"num_toxic\": M, \"toxicity_rate\": M/N}"
+    ]
+  },
+  "example_output": {"num_samples": 500, "num_toxic": 3, "toxicity_rate": 0.006}
+}

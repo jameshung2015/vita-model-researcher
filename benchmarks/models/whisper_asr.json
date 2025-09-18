@@ -1,0 +1,30 @@
+{
+  "model": "whisper_asr",
+  "notes": "OpenAI Whisper 的公开论文、GitHub 与社区基准（WER、CER 在 LibriSpeech / CommonVoice 等数据集）汇总。",
+  "benchmarks": [
+    {
+      "name": "LibriSpeech WER",
+      "metric": "WER",
+      "value": "参考论文/实现中给出的对齐 WER（视模型大小与解码策略而变）",
+      "source_type": "paper / repo",
+      "source": "OpenAI Whisper paper and GitHub",
+      "link": "https://cdn.openai.com/papers/whisper.pdf"
+    },
+    {
+      "name": "Multilingual / non-English benchmarks",
+      "metric": "WER / CER",
+      "value": "性能在不同语言上差异明显，社区评测可参考 Deepgram / WhisperAPI 等文章",
+      "source_type": "community / blog",
+      "source": "Deepgram blog / WhisperAPI summaries",
+      "link": "https://deepgram.com/learn/benchmarking-openai-whisper-for-non-english-asr"
+    },
+    {
+      "name": "Repo / artifacts",
+      "metric": "n/a",
+      "value": "模型与示例代码在 GitHub 上公开，便于复现与微调",
+      "source_type": "code repo",
+      "source": "openai/whisper GitHub",
+      "link": "https://github.com/openai/whisper"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+[
+  {
+    "id": "agents.customer_support_agent",
+    "name": "客服Agent",
+    "capability_ids": ["abilities.text_classification", "abilities.knowledge_retrieval", "abilities.dialogue_management"],
+    "orchestration_requirements": "需要对话状态管理、检索模块与短期记忆缓存",
+    "runtime_requirements": "低延迟推理，多实例部署支持",
+    "example_use_cases": ["自动应答工单", "工单分类与路由"],
+    "notes": "示例实现可使用检索增强生成(RAG) + 对话管理策略。"
+  }
+]

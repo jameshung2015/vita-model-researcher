@@ -1,0 +1,14 @@
+{
+  "scenario_id": "scn_08_personalization",
+  "name": "Personalization & Preferences",
+  "description": "Manage user preferences (seat, music, climate) and provide personalized suggestions based on history and context.",
+  "required_atomic_capabilities": ["retrieval", "dialog_management", "intent_detection", "summarization"],
+  "recommended_agents": [],
+  "priority_indicators": [
+    {"indicator": "accuracy_f1", "priority": "medium"},
+    {"indicator": "throughput_rps", "priority": "low"}
+  ],
+  "minimal_test_cases": [
+    {"id": "tc1", "input": "记住我的座椅设置并在我回到车内自动恢复", "expected_output": "确认已保存并能恢复设置", "acceptance_criteria": "persistence:true"}
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "variant": "Qwen3-30B-A3B",
+  "params_estimate_billion": 30.0,
+  "seq_len": 131072,
+  "batch": 1,
+  "precision": "fp16",
+  "num_gpus": 4,
+  "is_moe": true,
+  "estimated_vram_gb_per_gpu": 17.09,
+  "estimated_vram_gb_total": 68.38,
+  "breakdown": {
+    "weight_gb": 60.0,
+    "activations_gb": 1.97,
+    "kv_cache_gb": 0.79,
+    "moe_overhead_gb": 0.83,
+    "overhead_gb": 4.8
+  },
+  "note": "Estimates are heuristic. For production, benchmark on target infra and consult modelcard for exact requirements.",
+  "_defaults_used": {
+    "seq_len_source": "from model (131072)",
+    "num_gpus_source": "from model.default_num_gpus (4)"
+  }
+}

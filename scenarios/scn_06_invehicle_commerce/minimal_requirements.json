@@ -1,0 +1,11 @@
+{
+  "scenario_id": "scn_06_invehicle_commerce",
+  "required_abilities": ["dialog_management","intent_detection","retrieval","text_classification"],
+  "min_hardware": {"cpu_cores":4,"ram_gb":8,"min_gpu_memory_gb":0},
+  "data_requirements": {"catalog_entries":1000,"payment_integration_tests":50},
+  "latency_sla_ms": 1000,
+  "concurrency_per_instance": 10,
+  "privacy_constraints": ["handle_payment_data_compliantly","explicit_consent_for_payments"],
+  "sample_data_path": "scenarios/scn_06_invehicle_commerce/test_data/",
+  "notes": "Ensure strong consent flow and audit logs for transactions."
+}

@@ -1,0 +1,11 @@
+{
+  "scenario_id": "scn_08_personalization",
+  "required_abilities": ["retrieval","dialog_management","intent_detection","summarization"],
+  "min_hardware": {"cpu_cores":4,"ram_gb":8,"min_gpu_memory_gb":0},
+  "data_requirements": {"user_profiles":1000,"preference_events":5000},
+  "latency_sla_ms": 800,
+  "concurrency_per_instance": 20,
+  "privacy_constraints": ["store_preferences_securely","allow_user_export_delete"],
+  "sample_data_path": "scenarios/scn_08_personalization/test_data/",
+  "notes": "Support opt-in personalization and clear privacy settings."
+}

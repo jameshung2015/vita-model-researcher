@@ -1,0 +1,20 @@
+{
+  "id": "accuracy_f1",
+  "name": "F1-score",
+  "category": "accuracy",
+  "definition": "调和平均的精确率(precision)与召回率(recall)，常用于分类/标签任务的整体准确性衡量。",
+  "source": "standard/学术",
+  "owner": "评估组",
+  "cost": "free",
+  "tooling": "eval/f1.py",
+  "runbook": {
+    "summary": "对标注数据与模型预测做F1计算。",
+    "steps": [
+      "准备金标准标签集 (gold labels) 和模型预测 (predictions)",
+      "若有多标签，先按标签或micro/macro设置聚合方式",
+      "运行 eval/f1.py --gold gold.json --pred preds.json --output f1.json",
+      "检查输出中 precision, recall, f1 字段"
+    ]
+  },
+  "example_output": {"precision": 0.82, "recall": 0.78, "f1": 0.80}
+}

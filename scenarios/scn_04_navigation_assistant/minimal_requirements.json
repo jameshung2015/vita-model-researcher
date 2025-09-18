@@ -1,0 +1,11 @@
+{
+  "scenario_id": "scn_04_navigation_assistant",
+  "required_abilities": ["intent_detection","retrieval","dialog_management","speech_synthesis"],
+  "min_hardware": {"cpu_cores":4,"ram_gb":8,"min_gpu_memory_gb":0},
+  "data_requirements": {"poi_database_entries":10000,"routing_maps":1},
+  "latency_sla_ms": 500,
+  "concurrency_per_instance": 50,
+  "privacy_constraints": ["store_location_history_only_with_consent"],
+  "sample_data_path": "scenarios/scn_04_navigation_assistant/test_data/",
+  "notes": "Low-latency requirement; cache common POIs and prefetch routes."
+}

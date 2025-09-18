@@ -1,0 +1,20 @@
+{
+  "id": "throughput_rps",
+  "name": "Throughput (RPS)",
+  "category": "performance",
+  "definition": "系统每秒处理的请求数 (requests per second)，用于衡量并发处理能力。",
+  "source": "industry-practice",
+  "owner": "平台工程",
+  "cost": "free",
+  "tooling": "bench/load_test.py",
+  "runbook": {
+    "summary": "对目标部署在不同并发级别下测量系统吞吐。",
+    "steps": [
+      "准备并发场景（用户数/并发数）",
+      "使用负载测试工具（如 locust 或自研脚本）对服务施加负载",
+      "记录稳定期间的平均RPS与错误率",
+      "输出格式：{\"concurrency\": N, \"rps\": ..., \"error_rate\": ...}"
+    ]
+  },
+  "example_output": {"concurrency": 50, "rps": 420, "error_rate": 0.002}
+}

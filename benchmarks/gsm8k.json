@@ -1,0 +1,22 @@
+{
+  "id": "benchmark.gsm8k",
+  "name": "GSM8K",
+  "description": "Grade School Math 8K: 小学到初中难度的数学问题集合，主要用于评估模型的数学推理与逐步解题能力。",
+  "source": "Cobbe et al., 2021",
+  "datasets": [
+    {
+      "name": "GSM8K",
+      "link": "https://github.com/openai/grade-school-math",
+      "license": "MIT? (请参考数据仓库)"
+    }
+  ],
+  "metrics": [
+    {"name": "pass@1 / accuracy", "definition": "模型首选答案与gold答案完全匹配的比例", "calculation": "correct / total"}
+  ],
+  "test_method": "常用方法是逐题提示模型并要求输出最终数值答案，或使用 chain-of-thought + 自检/过滤步骤。评测时需确定是否采用 few-shot 示例，以及如何抽取最终答案（末行数值、正则匹配等）。常用评测工具：Evals、HumanEval-style scripts、自建解析器。",
+  "example_scores": {
+    "GPT-4": "~85-90 pass@1 (使用 CoT 与 verification)",
+    "GPT-3.5-turbo": "~30-60 (取决于 prompt 与解析策略)"
+  },
+  "notes": "数学题对输出解析敏感，建议保存原始模型输出并提供答案抽取正则/解析脚本以保证评测一致性。"
+}

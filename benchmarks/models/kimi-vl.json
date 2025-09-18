@@ -1,0 +1,22 @@
+{
+  "model": "kimi-vl",
+  "notes": "来自 arXiv 技术报告、官方 GitHub 与媒体报道的基准摘要，包含 MMBench/LongVideoBench/InfoVQA 等常见 VLM 指标。",
+  "benchmarks": [
+    {
+      "name": "MMBench-EN / MMLongBench-Doc / LongVideoBench",
+      "metric": "task-specific scores (e.g., accuracy / task metric)",
+      "value": "示例: LongVideoBench 64.5; MMLongBench-Doc 35.1 (技术报告中列出)",
+      "source_type": "paper / technical report",
+      "source": "Kimi-VL Technical Report (arXiv)",
+      "link": "https://arxiv.org/abs/2504.07491"
+    },
+    {
+      "name": "InfoVQA / ScreenSpot-Pro",
+      "metric": "task-specific (e.g., VQA accuracy / retrieval metrics)",
+      "value": "示例: InfoVQA 83.2; ScreenSpot-Pro 34.5 (报告值)",
+      "source_type": "paper / repo",
+      "source": "Kimi-VL Technical Report; GitHub",
+      "link": "https://github.com/MoonshotAI/Kimi-VL"
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Model entry schema",
+  "description": "Schema for a model metadata entry used by the research KB (one JSON per model).",
+  "type": "object",
+  "required": ["model_name", "variants", "input_types", "output_types"],
+  "properties": {
+    "model_name": {
+      "type": "string",
+      "description": "Canonical model name, e.g. 'Qwen3' or 'gpt-4o'."
+    },
+    "short_description": {
+      "type": "string",
+      "description": "One-line summary of the model."
+    },
+    "homepage": {
+      "type": "string",
+      "format": "uri",
+      "description": "Official model page or announcement."
+    },
+    "model_card_link": {
+      "type": "string",
+      "format": "uri",
+      "description": "Link to model card or repository."
+    },
+    "license": { "type": "string", "description": "License identifier or text." },
+    "provenance": {
+      "type": "object",
+      "description": "Source and notes about origin (train org, dataset notes, release notes)",
+      "properties": {
+        "provider": {"type": "string"},
+        "release_date": {"type": "string", "format": "date"},
+        "notes": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "input_types": {
+      "type": "array",
+      "description": "Supported input modalities (e.g. ['text','image']).",
+      "items": {"type": "string"}
+    },
+    "output_types": {
+      "type": "array",
+      "description": "Output modalities (e.g. ['text','image']).",
+      "items": {"type": "string"}
+    },
+    "architecture_family": {"type": "string", "description": "High-level architecture, e.g. 'decoder-only', 'encoder-decoder', 'multimodal'"},
+    "capabilities": {
+      "type": "object",
+      "description": "Capability tags and short scores or boolean flags (free-form).",
+      "additionalProperties": true
+    },
+    "tags": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Arbitrary tags for search/filtering (e.g. 'instruction-following','quantizable')."
+    },
+    "variants": {
+      "type": "array",
+      "description": "List of released variants with per-variant metadata.",
+      "items": {
+        "type": "object",
+        "required": ["name","params"],
+        "properties": {
+          "name": {"type": "string", "description": "Variant name, e.g. 'Qwen3-8B'."},
+          "params": {"type": "number", "description": "Parameter count in billions (use decimal)."},
+          "context_windows": {"type": "array", "items": {"type": "integer"}, "description": "Supported context window sizes (tokens)."},
+          "default_seq_len": {"type": "integer", "description": "Default sequence length to use for sizing if unspecified."},
+          "default_num_gpus": {"type": "integer", "description": "Suggested default number of GPUs for baseline estimates."},
+          "model_card_link": {"type": "string", "format": "uri"},
+          "release_date": {"type": "string", "format": "date"},
+          "hardware_recommendations": {
+            "type": "object",
+            "properties": {
+              "fp16_gb_per_gpu": {"type": "number"},
+              "int8_gb_per_gpu": {"type": "number"},
+              "recommended_num_gpus": {"type": "integer"},
+              "notes": {"type": "string"}
+            },
+            "additionalProperties": false
+          },
+          "deploy_requirements": {"type": "string"},
+          "tags": {"type": "array", "items": {"type": "string"}}
+        },
+        "additionalProperties": false
+      }
+    },
+    "evaluation": {
+      "type": "object",
+      "description": "Links to evaluation artifacts, papers, and benchmark results",
+      "properties": {
+        "papers": {"type": "array", "items": {"type": "string", "format": "uri"}},
+        "benchmarks": {"type": "array", "items": {"type": "string"}},
+        "model_cards": {"type": "array", "items": {"type": "string", "format": "uri"}}
+      },
+      "additionalProperties": false
+    },
+    "notes": {"type": "string"}
+  },
+  "additionalProperties": false,
+  "examples": [
+    {
+      "model_name": "Qwen3",
+      "short_description": "Multimodal, long-context family",
+      "input_types": ["text","image"],
+      "output_types": ["text"],
+      "architecture_family": "decoder-only",
+      "variants": [
+        {"name":"Qwen3-8B","params":8,"context_windows":[2048,32768],"default_seq_len":32768,"default_num_gpus":2}
+      ]
+    }
+  ]
+}

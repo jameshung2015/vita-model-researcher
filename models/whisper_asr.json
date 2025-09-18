@@ -1,0 +1,35 @@
+{
+  "model_name": "Whisper ASR",
+  "short_description": "OpenAI Whisper: general-purpose speech recognition and translation models trained with large-scale weak supervision.",
+  "homepage": "https://github.com/openai/whisper",
+  "model_card_link": "https://github.com/openai/whisper/blob/main/model-card.md",
+  "license": "MIT",
+  "provenance": {
+    "provider": "OpenAI",
+    "release_date": "2022-09-21",
+    "notes": "Original Whisper models and code released on GitHub; model weights available via the repository and community mirrors."
+  },
+  "input_types": ["audio"],
+  "output_types": ["text"],
+  "architecture_family": "Transformer encoder-decoder (audio-to-text)",
+  "capabilities": {
+    "multilingual_asr": true,
+    "speech_translation": true,
+    "language_identification": true
+  },
+  "tags": ["asr","speech-to-text","multilingual","open-source"],
+  "variants": [
+    {"name": "tiny", "params": 0.039, "context_windows": [30000], "default_seq_len": 30000, "default_num_gpus": 1, "model_card_link": "https://github.com/openai/whisper"},
+    {"name": "base", "params": 0.074, "context_windows": [30000], "default_seq_len": 30000, "default_num_gpus": 1, "model_card_link": "https://github.com/openai/whisper"},
+    {"name": "small", "params": 0.244, "context_windows": [30000], "default_seq_len": 30000, "default_num_gpus": 1, "model_card_link": "https://github.com/openai/whisper"},
+    {"name": "medium", "params": 0.769, "context_windows": [30000], "default_seq_len": 30000, "default_num_gpus": 1, "model_card_link": "https://github.com/openai/whisper"},
+    {"name": "large", "params": 1.55, "context_windows": [30000], "default_seq_len": 30000, "default_num_gpus": 1, "model_card_link": "https://github.com/openai/whisper"},
+    {"name": "turbo (large-v3)", "params": 0.809, "context_windows": [30000], "default_seq_len": 30000, "default_num_gpus": 1, "model_card_link": "https://github.com/openai/whisper"}
+  ],
+  "evaluation": {
+    "papers": ["https://arxiv.org/abs/2212.04356"],
+    "benchmarks": ["Common Voice","Fleurs","WMT (for translation)"],
+    "model_cards": ["https://github.com/openai/whisper/blob/main/model-card.md"]
+  },
+  "notes": "Sources: OpenAI Whisper GitHub repository (README, model-card.md) and Whisper paper. VRAM and context window are implementation-dependent; Whisper processes audio in sliding windows (~30s) by default."
+}

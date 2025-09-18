@@ -1,0 +1,23 @@
+{
+  "variant": "Qwen3-235B-A22B",
+  "params_estimate_billion": 235.0,
+  "seq_len": 131072,
+  "batch": 1,
+  "precision": "int8",
+  "num_gpus": 8,
+  "is_moe": true,
+  "estimated_vram_gb_per_gpu": 23.96,
+  "estimated_vram_gb_total": 273.82,
+  "breakdown": {
+    "weight_gb": 235.0,
+    "activations_gb": 9.24,
+    "kv_cache_gb": 6.16,
+    "moe_overhead_gb": 4.62,
+    "overhead_gb": 18.8
+  },
+  "note": "Estimates are heuristic. For production, benchmark on target infra and consult modelcard for exact requirements.",
+  "_defaults_used": {
+    "seq_len_source": "from model (131072)",
+    "num_gpus_source": "from model.default_num_gpus (8)"
+  }
+}

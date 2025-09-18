@@ -1,0 +1,12 @@
+{
+  "id": "indicator.sample_metric",
+  "name": "示例指标（F1）",
+  "definition": "F1 = 2 * (precision * recall) / (precision + recall)",
+  "metric_type": "accuracy",
+  "source": "open_source_standard",
+  "owner": "ML评估组",
+  "cost": "free",
+  "tooling": "eval/f1.py",
+  "runbook": "使用标准预测与gold文件，运行eval/f1.py --pred preds.json --gold gold.json",
+  "example_output": {"precision": 0.82, "recall": 0.78, "f1": 0.80}
+}

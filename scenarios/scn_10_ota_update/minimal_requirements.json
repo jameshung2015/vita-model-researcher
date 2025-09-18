@@ -1,0 +1,11 @@
+{
+  "scenario_id": "scn_10_ota_update",
+  "required_abilities": ["summarization","dialog_management","text_classification"],
+  "min_hardware": {"cpu_cores":4,"ram_gb":8,"min_gpu_memory_gb":0},
+  "data_requirements": {"release_notes":50,"rollback_tests":10},
+  "latency_sla_ms": 2000,
+  "concurrency_per_instance": 10,
+  "privacy_constraints": ["log_consent_for_updates"],
+  "sample_data_path": "scenarios/scn_10_ota_update/test_data/",
+  "notes": "Clear explanation and rollback options required; record consent."
+}

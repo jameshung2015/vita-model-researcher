@@ -1,0 +1,11 @@
+{
+  "scenario_id": "scn_01_voice_knowledge_qa",
+  "required_abilities": ["speech_recognition","retrieval","summarization","speech_synthesis"],
+  "min_hardware": {"cpu_cores":4,"ram_gb":8,"min_gpu_memory_gb":0},
+  "data_requirements": {"kb_documents":1000,"example_queries":200},
+  "latency_sla_ms": 1500,
+  "concurrency_per_instance": 10,
+  "privacy_constraints": ["do_not_store_raw_audio_without_consent"],
+  "sample_data_path": "scenarios/scn_01_voice_knowledge_qa/test_data/",
+  "notes": "Prefer on-device ASR when possible; provide confidence scores for answers."
+}

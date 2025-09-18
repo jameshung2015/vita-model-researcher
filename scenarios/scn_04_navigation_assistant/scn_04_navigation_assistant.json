@@ -1,0 +1,15 @@
+{
+  "scenario_id": "scn_04_navigation_assistant",
+  "name": "Navigation Assistant",
+  "description": "Conversational navigation: route planning, POI search, ETA explanation, rerouting when traffic occurs.",
+  "required_atomic_capabilities": ["intent_detection", "retrieval", "dialog_management", "speech_synthesis"],
+  "recommended_agents": ["customer_support_agent"],
+  "priority_indicators": [
+    {"indicator": "latency_p99", "priority": "high"},
+    {"indicator": "throughput_rps", "priority": "medium"},
+    {"indicator": "accuracy_f1", "priority": "medium"}
+  ],
+  "minimal_test_cases": [
+    {"id": "tc1", "input": "帮我导航到最近的加油站", "expected_output": "建议路线与ETA", "acceptance_criteria": "route_valid:true, eta_reasonable:true"}
+  ]
+}

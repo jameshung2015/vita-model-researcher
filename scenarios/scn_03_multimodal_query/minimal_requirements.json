@@ -1,0 +1,11 @@
+{
+  "scenario_id": "scn_03_multimodal_query",
+  "required_abilities": ["ocr","image_captioning","multimodal_qa","speech_recognition","speech_synthesis"],
+  "min_hardware": {"cpu_cores":8,"ram_gb":16,"min_gpu_memory_gb":8},
+  "data_requirements": {"paired_image_text_examples":2000,"ocr_samples":1000},
+  "latency_sla_ms": 1200,
+  "concurrency_per_instance": 3,
+  "privacy_constraints": ["explicit_consent_for_image_upload","blur_faces_on_storage"],
+  "sample_data_path": "scenarios/scn_03_multimodal_query/test_data/",
+  "notes": "Support image capture at different lighting; provide fallback text-only QA when image fails."
+}

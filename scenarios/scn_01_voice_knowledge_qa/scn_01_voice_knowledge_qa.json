@@ -1,0 +1,15 @@
+{
+  "scenario_id": "scn_01_voice_knowledge_qa",
+  "name": "Voice Knowledge Q&A",
+  "description": "Driver asks vehicle-related knowledge or how-to questions using voice (e.g., ‘如何更换备胎？’). System should retrieve accurate instructions and present concise guidance.",
+  "required_atomic_capabilities": ["speech_recognition", "retrieval", "summarization", "speech_synthesis"],
+  "recommended_agents": ["customer_support_agent"],
+  "priority_indicators": [
+    {"indicator": "accuracy_f1", "priority": "high"},
+    {"indicator": "latency_p99", "priority": "medium"},
+    {"indicator": "toxicity", "priority": "high"}
+  ],
+  "minimal_test_cases": [
+    {"id": "tc1", "input": "如何更换轮胎？", "expected_output": "步骤摘要并给出安全提示", "acceptance_criteria": "factuality:true, confidence>=0.8"}
+  ]
+}

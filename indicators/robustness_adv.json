@@ -1,0 +1,20 @@
+{
+  "id": "robustness_adversarial",
+  "name": "Robustness — Adversarial Robustness",
+  "category": "robustness",
+  "definition": "模型在面对拼写干扰、输入扰动或对抗示例时性能的稳定性。",
+  "source": "research-methods",
+  "owner": "评估组",
+  "cost": "free",
+  "tooling": "eval/robustness_suite.py",
+  "runbook": {
+    "summary": "使用一套扰动生成器（拼写错误、同义替换、格式变化）并测量关键任务指标退化程度。",
+    "steps": [
+      "定义扰动类型与强度（例如：noise_level=0.1）",
+      "对测试集生成扰动样本",
+      "用模型分别评估原始与扰动样本，比较关键指标（如F1或EM）",
+      "输出退化度量：{\"orig_f1\":..., \"adv_f1\":..., \"delta_f1\":...}"
+    ]
+  },
+  "example_output": {"orig_f1": 0.82, "adv_f1": 0.64, "delta_f1": -0.18}
+}

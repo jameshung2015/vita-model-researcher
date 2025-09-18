@@ -1,0 +1,62 @@
+{
+  "model_name": "Kimi-VL",
+  "short_description": "Open-source Mixture-of-Experts (MoE) vision-language model with long-context and multimodal reasoning (Moonshot AI).",
+  "homepage": "https://github.com/MoonshotAI/Kimi-VL",
+  "model_card_link": "https://huggingface.co/moonshotai/Kimi-VL-A3B-Instruct",
+  "license": "MIT",
+  "provenance": {
+    "provider": "Moonshot AI / Kimi Team",
+    "release_date": "2025-04-10",
+    "notes": "Technical report on arXiv (arXiv:2504.07491). Public code and model artifacts available on GitHub and Hugging Face."
+  },
+  "input_types": ["text", "image", "video", "document"],
+  "output_types": ["text"],
+  "architecture_family": "MoE multimodal (encoder vision + MoE decoder)",
+  "capabilities": {
+    "multimodal_reasoning": true,
+    "long_context": "up to 128k",
+    "native_resolution_vision_encoder": "MoonViT",
+    "agent_capabilities": true
+  },
+  "tags": ["vision-language","MoE","long-context","open-source","moonvit","native-resolution"],
+  "variants": [
+    {
+      "name": "Kimi-VL-A3B-Instruct",
+      "params": 16,
+      "context_windows": [131072],
+      "default_seq_len": 32768,
+      "default_num_gpus": 2,
+      "model_card_link": "https://huggingface.co/moonshotai/Kimi-VL-A3B-Instruct",
+      "release_date": "2025-04-10",
+      "hardware_recommendations": {
+        "fp16_gb_per_gpu": 24,
+        "int8_gb_per_gpu": 16,
+        "recommended_num_gpus": 2,
+        "notes": "Efficient inference recommended with flash-attn and bfloat16; long-context or video may need more memory or tensor-parallel deployment."
+      },
+      "tags": ["instruct","efficient"]
+    },
+    {
+      "name": "Kimi-VL-A3B-Thinking-2506",
+      "params": 16,
+      "context_windows": [131072],
+      "default_seq_len": 65536,
+      "default_num_gpus": 4,
+      "model_card_link": "https://huggingface.co/moonshotai/Kimi-VL-A3B-Thinking-2506",
+      "release_date": "2025-06-21",
+      "hardware_recommendations": {
+        "fp16_gb_per_gpu": 48,
+        "int8_gb_per_gpu": 24,
+        "recommended_num_gpus": 4,
+        "notes": "Thinking variant better for long-chain-of-thought tasks; may require more memory for extended contexts."
+      },
+      "tags": ["thinking","long-horizon"]
+    }
+  ],
+  "evaluation": {
+    "papers": ["https://arxiv.org/abs/2504.07491"],
+    "benchmarks": ["LongVideoBench","MMLongBench-Doc","MathVision","MMMU","InfoVQA","ScreenSpot-Pro"],
+    "model_cards": ["https://huggingface.co/moonshotai/Kimi-VL-A3B-Instruct","https://huggingface.co/moonshotai/Kimi-VL-A3B-Thinking-2506"]
+  },
+  "notes": "Sources: Kimi-VL Technical Report (arXiv:2504.07491), MoonshotAI GitHub, and Hugging Face model pages."
+}

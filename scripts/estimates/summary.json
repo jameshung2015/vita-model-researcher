@@ -1,0 +1,50 @@
+[
+  {
+    "variant": "Qwen3-4B",
+    "precision": "fp16",
+    "file": "D:\\project\\research\\大模型评价指标与工具\\scripts\\estimates\\Qwen3-4B.fp16.json",
+    "estimated_per_gpu": 12.09
+  },
+  {
+    "variant": "Qwen3-4B",
+    "precision": "int8",
+    "file": "D:\\project\\research\\大模型评价指标与工具\\scripts\\estimates\\Qwen3-4B.int8.json",
+    "estimated_per_gpu": 5.65
+  },
+  {
+    "variant": "Qwen3-8B",
+    "precision": "fp16",
+    "file": "D:\\project\\research\\大模型评价指标与工具\\scripts\\estimates\\Qwen3-8B.fp16.json",
+    "estimated_per_gpu": 10.29
+  },
+  {
+    "variant": "Qwen3-8B",
+    "precision": "int8",
+    "file": "D:\\project\\research\\大模型评价指标与工具\\scripts\\estimates\\Qwen3-8B.int8.json",
+    "estimated_per_gpu": 4.32
+  },
+  {
+    "variant": "Qwen3-30B-A3B",
+    "precision": "fp16",
+    "file": "D:\\project\\research\\大模型评价指标与工具\\scripts\\estimates\\Qwen3-30B-A3B.fp16.json",
+    "estimated_per_gpu": 17.09
+  },
+  {
+    "variant": "Qwen3-30B-A3B",
+    "precision": "int8",
+    "file": "D:\\project\\research\\大模型评价指标与工具\\scripts\\estimates\\Qwen3-30B-A3B.int8.json",
+    "estimated_per_gpu": 6.4
+  },
+  {
+    "variant": "Qwen3-235B-A22B",
+    "precision": "fp16",
+    "file": "D:\\project\\research\\大模型评价指标与工具\\scripts\\estimates\\Qwen3-235B-A22B.fp16.json",
+    "estimated_per_gpu": 66.95
+  },
+  {
+    "variant": "Qwen3-235B-A22B",
+    "precision": "int8",
+    "file": "D:\\project\\research\\大模型评价指标与工具\\scripts\\estimates\\Qwen3-235B-A22B.int8.json",
+    "estimated_per_gpu": 23.96
+  }
+]
