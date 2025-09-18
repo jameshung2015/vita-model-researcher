@@ -1,0 +1,227 @@
+{
+  "meta": {
+    "version": 12,
+    "updated_at": "2025-09-18T12:41:56.119853+00:00"
+  },
+  "tags": {
+    "model": {
+      "tag": "model",
+      "display_name": "Model",
+      "definition": "Top-level tag for model intelligence entries.",
+      "parent": null,
+      "children": [
+        "model.language"
+      ],
+      "linked_instances": [],
+      "history": [
+        {
+          "timestamp": "2025-09-18T12:32:30.147451+00:00",
+          "action": "created",
+          "author": "bot",
+          "details": {
+            "definition": "Top-level tag for model intelligence entries.",
+            "parent": null
+          }
+        }
+      ]
+    },
+    "model.language": {
+      "tag": "model.language",
+      "display_name": "Model.Language",
+      "definition": "Language model family references.",
+      "parent": "model",
+      "children": [
+        "model.language.qwen3"
+      ],
+      "linked_instances": [],
+      "history": [
+        {
+          "timestamp": "2025-09-18T12:33:54.343627+00:00",
+          "action": "created",
+          "author": "bot",
+          "details": {
+            "definition": "Language model family references.",
+            "parent": "model"
+          }
+        }
+      ]
+    },
+    "model.language.qwen3": {
+      "tag": "model.language.qwen3",
+      "display_name": "Model.Language.Qwen3",
+      "definition": "Qwen3 series model entries across sizes.",
+      "parent": "model.language",
+      "children": [],
+      "linked_instances": [
+        {
+          "entity_type": "model",
+          "entity_name": "Qwen3-8B",
+          "notes": "Open-weight HF record",
+          "source_entry_id": "c08d8f16ac",
+          "source_url": "https://huggingface.co/Qwen/Qwen3-8B",
+          "linked_at": "2025-09-18T12:41:20.629340+00:00",
+          "author": "lj"
+        },
+        {
+          "entity_type": "model",
+          "entity_name": "Qwen3-8B",
+          "notes": "Vendor blog extended context",
+          "source_entry_id": "4c3fd63bb3",
+          "source_url": "https://qwen.antgroup.com/blog/qwen3",
+          "linked_at": "2025-09-18T12:41:25.970975+00:00",
+          "author": "lj"
+        },
+        {
+          "entity_type": "model",
+          "entity_name": "Qwen3-30B-A3B",
+          "notes": "MoE deployment reference",
+          "source_entry_id": "1951418790",
+          "source_url": "https://huggingface.co/Qwen/Qwen3-30B-A3B",
+          "linked_at": "2025-09-18T12:41:32.753435+00:00",
+          "author": "lj"
+        }
+      ],
+      "history": [
+        {
+          "timestamp": "2025-09-18T12:34:57.371705+00:00",
+          "action": "created",
+          "author": "bot",
+          "details": {
+            "definition": "Qwen3 series model entries across sizes.",
+            "parent": "model.language"
+          }
+        },
+        {
+          "timestamp": "2025-09-18T12:41:20.629340+00:00",
+          "action": "instance_linked",
+          "author": "lj",
+          "details": {
+            "entity_type": "model",
+            "entity_name": "Qwen3-8B",
+            "source_entry_id": "c08d8f16ac"
+          }
+        },
+        {
+          "timestamp": "2025-09-18T12:41:25.970975+00:00",
+          "action": "instance_linked",
+          "author": "lj",
+          "details": {
+            "entity_type": "model",
+            "entity_name": "Qwen3-8B",
+            "source_entry_id": "4c3fd63bb3"
+          }
+        },
+        {
+          "timestamp": "2025-09-18T12:41:32.753435+00:00",
+          "action": "instance_linked",
+          "author": "lj",
+          "details": {
+            "entity_type": "model",
+            "entity_name": "Qwen3-30B-A3B",
+            "source_entry_id": "1951418790"
+          }
+        }
+      ]
+    },
+    "scene": {
+      "tag": "scene",
+      "display_name": "Scene",
+      "definition": "Top-level tag for scenario research.",
+      "parent": null,
+      "children": [
+        "scene.autonomous_driving"
+      ],
+      "linked_instances": [],
+      "history": [
+        {
+          "timestamp": "2025-09-18T12:37:25.102166+00:00",
+          "action": "created",
+          "author": "bot",
+          "details": {
+            "definition": "Top-level tag for scenario research.",
+            "parent": null
+          }
+        }
+      ]
+    },
+    "scene.autonomous_driving": {
+      "tag": "scene.autonomous_driving",
+      "display_name": "Scene.Autonomous Driving",
+      "definition": "Scenarios for highway and urban autonomous driving.",
+      "parent": "scene",
+      "children": [
+        "scene.autonomous_driving.highway"
+      ],
+      "linked_instances": [],
+      "history": [
+        {
+          "timestamp": "2025-09-18T12:38:36.499840+00:00",
+          "action": "created",
+          "author": "bot",
+          "details": {
+            "definition": "Scenarios for highway and urban autonomous driving.",
+            "parent": "scene"
+          }
+        }
+      ]
+    },
+    "scene.autonomous_driving.highway": {
+      "tag": "scene.autonomous_driving.highway",
+      "display_name": "Scene.Autonomous Driving.Highway",
+      "definition": "Highway pilot lane-keeping and safety assist scenarios.",
+      "parent": "scene.autonomous_driving",
+      "children": [],
+      "linked_instances": [
+        {
+          "entity_type": "scene",
+          "entity_name": "Highway Pilot L3",
+          "notes": "SAE standard reference",
+          "source_entry_id": "1efb77160f",
+          "source_url": "https://www.sae.org/standards/content/j3016_202104/",
+          "linked_at": "2025-09-18T12:41:38.468810+00:00",
+          "author": "lj"
+        },
+        {
+          "entity_type": "scene",
+          "entity_name": "Highway Pilot L3",
+          "notes": "Waymo safety program",
+          "source_entry_id": "e6917301e2",
+          "source_url": "https://waymo.com/research/safety",
+          "linked_at": "2025-09-18T12:41:56.119853+00:00",
+          "author": "lj"
+        }
+      ],
+      "history": [
+        {
+          "timestamp": "2025-09-18T12:39:59.818074+00:00",
+          "action": "created",
+          "author": "bot",
+          "details": {
+            "definition": "Highway pilot lane-keeping and safety assist scenarios.",
+            "parent": "scene.autonomous_driving"
+          }
+        },
+        {
+          "timestamp": "2025-09-18T12:41:38.468810+00:00",
+          "action": "instance_linked",
+          "author": "lj",
+          "details": {
+            "entity_type": "scene",
+            "entity_name": "Highway Pilot L3",
+            "source_entry_id": "1efb77160f"
+          }
+        },
+        {
+          "timestamp": "2025-09-18T12:41:56.119853+00:00",
+          "action": "instance_linked",
+          "author": "lj",
+          "details": {
+            "entity_type": "scene",
+            "entity_name": "Highway Pilot L3",
+            "source_entry_id": "e6917301e2"
+          }
+        }
+      ]
+    }
+  }
+}
