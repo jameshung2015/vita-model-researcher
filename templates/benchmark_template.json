@@ -9,6 +9,16 @@
   "metrics": [
     {"name": "accuracy", "definition": "正确率", "calculation": "correct / total"}
   ],
+  "inference_environment": {
+    "description": "描述用于测量该 benchmark 的硬件/软件/参数（用于可复现性）",
+    "fields": {
+      "hardware": "e.g. 'A100:80GB x1' or 'multi-node cluster'",
+      "framework": "e.g. 'vLLM, TensorRT-LLM, SGLang, ONNXRuntime'",
+      "batch_size": "测量时使用的 batch 大小",
+      "concurrency": "并发数（如果适用）",
+      "measurement_script": "相对或绝对路径到运行测量的脚本或步骤"
+    }
+  },
   "test_method": "如何运行 benchmark 的简要说明与常见实现（脚本/工具）",
   "example_scores": {"model_name": "score (source)"},
   "notes": "其它注意事项（是否需要特殊tokenizer/处理、多轮对话适配等）"
