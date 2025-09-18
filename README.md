@@ -18,6 +18,14 @@
 - `templates/` — JSON/YAML/MD模板，用于后续批量填充与自动化处理
 - `README.md`, `TODO.md` — 项目说明与任务清单（当前文件）
 
+QA 日志
+- 本仓库提供简单的 QA 记录工具，位于 `tools/log_qa.py`，将提问与回答追加到 `qa/qa_history.jsonl`（JSONL 格式，UTC 时间戳），便于累积历史问答并进行后续索引或导出。
+
+模型条目字段说明（补充）
+- `architecture_details`：可选，文本描述模型架构细节（例如 MoE、adapter、backbone 变体等）。
+- `size_params`：可选，对 notable variants 与激活参数等进行摘要。
+- `inference`：可选，包含推理/部署相关估算字段：`latency_ms`、`latency_level`、`throughput_rps`、`concurrency`、`memory_gb`、`quantization_friendly`、`supported_hardware`、`distributed_support`、`notes`。
+
 核心合同（contract）
 - 输入：模型/场景/平台 的元信息（JSON）
 - 输出：可搜索的标签集合（按指标与场景）、评测执行说明、示例产出

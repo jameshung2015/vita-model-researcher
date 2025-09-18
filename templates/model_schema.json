@@ -45,6 +45,16 @@
       "items": {"type": "string"}
     },
     "architecture_family": {"type": "string", "description": "High-level architecture, e.g. 'decoder-only', 'encoder-decoder', 'multimodal'"},
+    "architecture_details": {"type": "string", "description": "Optional free-text architecture details (backbone, adapters, MoE notes, etc)."},
+    "size_params": {
+      "type": "object",
+      "description": "Optional size and parameter information summary.",
+      "properties": {
+        "notable_variants": {"type": "array", "items": {"type": "string"}},
+        "activated_params_note": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
     "capabilities": {
       "type": "object",
       "description": "Capability tags and short scores or boolean flags (free-form).",
@@ -92,6 +102,22 @@
         "papers": {"type": "array", "items": {"type": "string", "format": "uri"}},
         "benchmarks": {"type": "array", "items": {"type": "string"}},
         "model_cards": {"type": "array", "items": {"type": "string", "format": "uri"}}
+      },
+      "additionalProperties": false
+    },
+    "inference": {
+      "type": "object",
+      "description": "Inference and deployment related metadata and baseline estimates.",
+      "properties": {
+        "latency_ms": {"type": ["number","null"], "description": "Representative single-request latency in milliseconds (best-effort or null if unknown)."},
+        "latency_level": {"type": "string", "description": "human-readable latency bucket: 'low'|'medium'|'high' or custom"},
+        "throughput_rps": {"type": ["number","null"], "description": "Estimated requests-per-second under described baseline (null if unknown)."},
+        "concurrency": {"type": ["integer","null"], "description": "Recommended concurrency for baseline measurement."},
+        "memory_gb": {"type": ["number","null"], "description": "Representative memory footprint in GB for a given variant/context (estimate)."},
+        "quantization_friendly": {"type": "boolean", "description": "Whether the model is reported to be quantization-friendly (true/false)."},
+        "supported_hardware": {"type": "array", "items": {"type": "string"}, "description": "Typical hardware targets (e.g. 'A100', 'H100', 'CPU')"},
+        "distributed_support": {"type": "boolean", "description": "Whether multi-GPU / distributed runtimes are required/supported."},
+        "notes": {"type": "string", "description": "Free-text notes about inference caveats, tools, and measurement guidance."}
       },
       "additionalProperties": false
     },
