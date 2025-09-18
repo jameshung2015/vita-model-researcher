@@ -27,4 +27,14 @@
       "link": "https://github.com/QwenLM/Qwen3"
     }
   ]
+  ,
+  "inference": {
+    "notes": "Representative inference/deployment guidance synthesized from model card and community sources.",
+    "variants": {
+      "Qwen3-4B": {"latency_ms": null, "latency_level": "low", "throughput_rps": null, "memory_gb": 8, "quantization_friendly": true, "supported_hardware": ["CPU","small GPU"], "notes": "Estimate: FP16 ~8-12GB, INT8 ~4-6GB"},
+      "Qwen3-8B": {"latency_ms": null, "latency_level": "medium", "throughput_rps": null, "memory_gb": 20, "quantization_friendly": true, "supported_hardware": ["A100","H100","large GPU"], "notes": "Estimate: FP16 ~16-24GB, INT8 ~8-12GB"},
+      "Qwen3-30B-A3B": {"latency_ms": null, "latency_level": "high", "throughput_rps": null, "memory_gb": 64, "quantization_friendly": true, "supported_hardware": ["multi-GPU","cloud"], "notes": "MoE: activated params reduce memory but require MoE runtime; FP16 estimate ~48-80GB"},
+      "Qwen3-235B-A22B": {"latency_ms": null, "latency_level": "very-high", "throughput_rps": null, "memory_gb": 400, "quantization_friendly": true, "supported_hardware": ["multi-node GPU clusters","cloud"], "notes": "Large MoE: total memory highly variable; use cloud hosted inference or multi-node clusters"}
+    }
+  }
 }

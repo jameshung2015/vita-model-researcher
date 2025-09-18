@@ -7,8 +7,28 @@
     "id": {"type": "string"},
     "name": {"type": "string"},
     "capability_ids": {"type": "array", "items": {"type": "string"}},
-    "orchestration_requirements": {"type": "string"},
-    "runtime_requirements": {"type": "string"},
+    "orchestration_requirements": {
+      "type": ["string","object"],
+      "description": "Either a free-text orchestration note or an object describing required behaviors (stateful, batching, retry_policy, session_timeout_seconds, concurrency).",
+      "properties": {
+        "stateful": {"type": "boolean"},
+        "batching": {"type": "string"},
+        "retry_policy": {"type": "string"},
+        "session_timeout_seconds": {"type": "integer"},
+        "concurrency": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "runtime_requirements": {
+      "type": ["string","object"],
+      "description": "Either a short string or object with runtime requirements (min_gpu_memory_gb, recommended_frameworks, supports_streaming).",
+      "properties": {
+        "min_gpu_memory_gb": {"type": "number"},
+        "recommended_frameworks": {"type": "array","items":{"type":"string"}},
+        "supports_streaming": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    },
     "example_use_cases": {"type": "array", "items": {"type": "string"}},
     "notes": {"type": "string"}
   }
