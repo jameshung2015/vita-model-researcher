@@ -15,6 +15,7 @@
 - `registration/` — 大模型备案、合规与监管实践文档（国家/地区/流程）
 - `scenarios/` — 场景目录、场景所需原子能力与Agent映射、场景测试规范与数据样例
 - `tools/` — agent编排、场景数据管理、实车/台架测试工具列表与使用指南
+- `product_lines/` — 并在条目中引用 `models/` 中的 baseline 用于j记录量产模型、场景、能力、验收与回归追踪。
 - `templates/` — JSON/YAML/MD模板，用于后续批量填充与自动化处理
 - `README.md`, `TODO.md` — 项目说明与任务清单（当前文件）
 
@@ -27,14 +28,44 @@ QA 日志
 - `inference`：可选，包含推理/部署相关估算字段：`latency_ms`、`latency_level`、`throughput_rps`、`concurrency`、`memory_gb`、`quantization_friendly`、`supported_hardware`、`distributed_support`、`notes`。
 
 Product Line (产品线)
-- 为了对齐企业 PRD 与量产测试指标，本仓库新增 `product_lines/` 模块与 `templates/product_line_schema.json` 模板。Product Line 用于把 PRD 的 feature 映射到原子能力（`templates/abilities.json`）以及对应的生产指标（benchmark baselines, measurement contexts）。
 
-- 新增文件说明：
-  - `templates/product_line_schema.json`：Product Line 的 JSON Schema。
-  - `templates/product_line.json`：示例模板，展示如何填写 feature -> metric 的映射。
-  - `product_lines/`：实际的 product line 条目存放目录（例如 `product_lines/sample_product_line.json`）。
+为了解决从 PRD 到量产测试验证的追踪问题，本仓库引入 `product_lines/` 模块，目标是把产品需求（PRD）中的 feature 与知识库中的原子能力、评测基线和生产指标建立可追溯的链路。
 
-示例：`product_lines/sample_product_line.json` 包含 `product_id`, `features[]`（每个 feature 指向 `required_capabilities` 与 `production_metrics`），`production_metrics` 会引用 `benchmarks/` 或 `models/` 中的 baseline 结果以便追踪和回归验证。
+主要用途：
+- 对齐：把 PRD 里的 acceptance criteria 自动映射到可测量的 production metrics（从 `indicators/` 选择或自定义）。
+- 回归：每次基线/benchmark 更新后能快速定位受影响的产品线与 feature，从而触发回归测试或告警。 
+- 验收：作为 PM/QA 与研发共同的验收单（包含硬件/框架/批次等 measurement_context），便于量产验证与合规记录。
+
+新增文件说明：
+- `templates/product_line_schema.json`：Product Line 的 JSON Schema（必填字段：`product_id`,`name`,`owner`,`features[]`）。
+- `templates/product_line.json`：示例模板，展示如何填写 feature -> metric 的映射。
+- `product_lines/`：实际的 product line 条目存放目录（示例：`product_lines/sample_product_line.json`）。
+
+数据契约（Data Contract）要点：
+- `product_id`：字符串，企业内部唯一 id（例如：`pl_autonomous_navigation_v1`）。
+- `features[]`：每个 feature 包含 `feature_id`,`required_capabilities`（引用 `templates/abilities.json` 的 id 列表）、`acceptance_criteria`（PRD 级别的验收条目）与 `production_metrics`。
+- `production_metrics`：每条包含 `metric_id`（参照 `indicators/`），`target_value`，`tolerance`，以及 `measurement_context`（硬件、framework、batch_size、测试脚本 引用），并可包含 `baseline_reference` 指向 `benchmarks/` 或 `benchmarks/models/...` 的基线 JSON 条目。
+
+示例用法：
+1. 新建 product line：复制 `templates/product_line.json` 到 `product_lines/<product_id>.json`，填写字段并在 PR 中提交。
+2. CI 验证：在 PR 提交时运行 `tools/validate_product_line.py`（待添加），校验 JSON schema、校验 `required_capabilities` 是否已在 `templates/abilities.json` 中声明、并确保 `baseline_reference` 指向存在的基线文件。
+3. 运营回归：当 `benchmarks/*` 中的基线更新后，可用脚本扫描 `product_lines/` 寻找受影响条目，生成回归任务清单并发送给 owner。
+
+CI 与校验建议：
+- 在仓库 CI（例如 GitHub Actions）中加入一个 job：
+  1) `schema-check`：使用 `jsonschema`（或内置校验脚本）验证 `product_lines/*.json` 与 `templates/product_line_schema.json` 的一致性。
+  2) `reference-check`：验证 `production_metrics.baseline_reference` 指向的文件存在且格式正确。
+  3) `capability-check`：验证 feature 的 `required_capabilities` 引用在 `templates/abilities.json` 中存在。
+
+示例（快速流程）：
+1) PM 在 PR 中添加 `product_lines/pl_xxx.json`，描述 PRD 要求与目标指标；
+2) CI 运行校验脚本并报告错误或遗漏；
+3) 维护团队或 owner 审阅并合并；
+4) 研发/QA 按 `measurement_context` 运行基线测试并把结果上传到 `benchmarks/`，随后触发回归/监控流程。
+
+若需要，我可以：
+- 添加 `tools/validate_product_line.py` 校验脚本（利用 `jsonschema` 并做引用检查）；
+- 添加示例 GitHub Actions workflow 来展示如何在 CI 中运行校验与引用检查。
 
 核心合同（contract）
 - 输入：模型/场景/平台 的元信息（JSON）
