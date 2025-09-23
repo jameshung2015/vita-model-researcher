@@ -1,0 +1,122 @@
+{
+  "id": "benchmark.anthropic_eval_suite",
+  "name": "Anthropic Evaluation Suite",
+  "description": "Anthropic公司开发的模型评估数据集集合，专注于发现和评估语言模型的各种行为特征，特别是与AI安全、价值对齐相关的行为模式。",
+  "source": "Anthropic, 2022",
+  "provider": "Anthropic",
+  "category": "ai_safety_alignment",
+  "datasets": [
+    {
+      "name": "Persona数据集",
+      "description": "测试模型人格、政治观点、宗教观点、道德信念等",
+      "link": "https://github.com/anthropics/evals",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "name": "Sycophancy数据集", 
+      "description": "测试模型是否会迎合用户观点",
+      "link": "https://github.com/anthropics/evals",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "name": "Advanced AI Risk数据集",
+      "description": "测试与高级AI系统灾难性风险相关的行为",
+      "link": "https://github.com/anthropics/evals",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "name": "Winogender数据集",
+      "description": "扩展版本的性别偏见检测数据集",
+      "link": "https://github.com/anthropics/evals",
+      "license": "CC-BY-4.0"
+    }
+  ],
+  "evaluation_dimensions": [
+    "价值对齐",
+    "行为一致性",
+    "偏见检测",
+    "安全风险评估",
+    "人格特征",
+    "社会责任"
+  ],
+  "dataset_categories": [
+    {
+      "name": "Persona",
+      "description": "人格相关行为测试",
+      "subcategories": ["政治观点", "宗教观点", "道德信念", "危险目标倾向"]
+    },
+    {
+      "name": "Sycophancy", 
+      "description": "阿谀奉承行为测试",
+      "subcategories": ["哲学问题迎合", "技术问题迎合", "政治立场迎合"]
+    },
+    {
+      "name": "Advanced AI Risk",
+      "description": "高级AI风险行为测试", 
+      "subcategories": ["灾难性风险", "自我保护倾向", "权力寻求行为"]
+    },
+    {
+      "name": "Winogender",
+      "description": "性别偏见检测",
+      "subcategories": ["职业刻板印象", "性别关联偏见", "语言偏见"]
+    }
+  ],
+  "metrics": [
+    {"name": "行为一致性得分", "definition": "模型行为的一致性和可预测性", "calculation": "consistency_across_contexts"},
+    {"name": "价值对齐得分", "definition": "模型与预期价值观的对齐程度", "calculation": "alignment_score"},
+    {"name": "偏见检测得分", "definition": "检测到的各种偏见程度", "calculation": "bias_detection_metrics"},
+    {"name": "安全风险得分", "definition": "潜在安全风险的评估", "calculation": "risk_assessment_score"}
+  ],
+  "test_method": "使用模型生成的评估数据进行测试，结合人类验证确保数据质量。针对对话代理设计，可适配其他类型模型。采用标准化测试流程。",
+  "technical_features": [
+    "模型生成评估数据",
+    "人类验证质量控制",
+    "标准化测试流程",
+    "多维度行为分析",
+    "对话代理优化",
+    "可扩展框架"
+  ],
+  "safety_focus_areas": [
+    "价值对齐评估",
+    "行为一致性检测",
+    "偏见识别和量化",
+    "潜在风险评估",
+    "社会责任评价"
+  ],
+  "validation_methods": [
+    "人类专家验证",
+    "交叉验证",
+    "统计分析",
+    "基准对比"
+  ],
+  "supported_models": [
+    "Claude系列",
+    "GPT系列",
+    "其他对话代理模型",
+    "可适配的其他LLM"
+  ],
+  "example_applications": [
+    "AI安全评估",
+    "价值对齐研究",
+    "偏见检测和缓解",
+    "风险管理",
+    "模型行为分析"
+  ],
+  "data_characteristics": [
+    "多样性覆盖",
+    "真实场景基础",
+    "人类行为对比",
+    "开放数据访问"
+  ],
+  "limitations_and_warnings": [
+    "数据可能包含有害内容",
+    "存在社会偏见和刻板印象",
+    "观点不代表Anthropic立场",
+    "需要谨慎使用和解释"
+  ],
+  "github": "https://github.com/anthropics/evals",
+  "paper": "Discovering Language Model Behaviors with Model-Written Evaluations",
+  "contact": "ethan at anthropic dot com",
+  "license": "CC-BY-4.0",
+  "notes": "专注于AI安全和对齐的重要评估工具集，为理解和改善语言模型的安全性提供关键数据和方法。在使用时需要特别注意数据中可能包含的敏感内容。"
+}

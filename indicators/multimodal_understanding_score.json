@@ -1,0 +1,157 @@
+{
+  "id": "multimodal_understanding_score",
+  "name": "多模态理解得分",
+  "category": "multimodal",
+  "definition": "评估模型对视觉、文本等多种模态信息的综合理解能力，包括视觉问答、图像描述、跨模态推理等任务的综合表现。",
+  "source": "OpenCompass VLMEvalKit, MMBench",
+  "owner": "多模态评估组",
+  "cost": "high",
+  "tooling": "vlmevalkit, mmbench, opencompass_multimodal",
+  "calculation_method": "跨多个多模态任务的加权平均得分",
+  "task_categories": [
+    {
+      "name": "视觉问答 (VQA)",
+      "description": "基于图像内容回答问题",
+      "weight": 0.25,
+      "subtasks": ["开放式VQA", "选择题VQA", "计数VQA"]
+    },
+    {
+      "name": "图像描述",
+      "description": "生成图像的自然语言描述",
+      "weight": 0.20,
+      "subtasks": ["详细描述", "简短描述", "结构化描述"]
+    },
+    {
+      "name": "视觉推理",
+      "description": "基于视觉信息进行逻辑推理",
+      "weight": 0.20,
+      "subtasks": ["空间推理", "时间推理", "因果推理"]
+    },
+    {
+      "name": "视觉定位",
+      "description": "识别和定位图像中的对象或区域",
+      "weight": 0.15,
+      "subtasks": ["目标检测", "关系定位", "细粒度定位"]
+    },
+    {
+      "name": "文字识别与理解",
+      "description": "从图像中识别和理解文字信息",
+      "weight": 0.10,
+      "subtasks": ["OCR", "场景文字理解", "文档理解"]
+    },
+    {
+      "name": "跨模态检索",
+      "description": "基于文本查询检索相关图像或反之",
+      "weight": 0.10,
+      "subtasks": ["图文检索", "文图检索", "相似性匹配"]
+    }
+  ],
+  "evaluation_datasets": [
+    "MMBench",
+    "VQAv2",
+    "COCO Captions",
+    "TextVQA",
+    "OK-VQA",
+    "GQA",
+    "Visual7W"
+  ],
+  "metrics_breakdown": [
+    {
+      "name": "准确率指标",
+      "applicable_tasks": ["VQA", "视觉推理", "目标识别"],
+      "formula": "correct_answers / total_questions"
+    },
+    {
+      "name": "生成质量指标",
+      "applicable_tasks": ["图像描述", "开放式回答"],
+      "metrics": ["BLEU", "ROUGE", "CIDEr", "SPICE"]
+    },
+    {
+      "name": "检索性能指标",
+      "applicable_tasks": ["跨模态检索"],
+      "metrics": ["Recall@K", "Mean Reciprocal Rank"]
+    }
+  ],
+  "runbook": {
+    "summary": "通过多个多模态数据集全面评估模型的跨模态理解能力。",
+    "steps": [
+      "准备标准多模态评测数据集",
+      "配置多模态模型的推理环境",
+      "按任务类型分别进行评测",
+      "收集模型在各任务上的输出结果",
+      "使用相应指标计算各任务得分",
+      "计算加权综合得分",
+      "分析不同模态任务的性能差异",
+      "生成详细的多模态能力报告"
+    ],
+    "tools": [
+      "VLMEvalKit评测工具包",
+      "OpenCompass多模态评测模块",
+      "MMBench基准测试",
+      "自定义多模态评测脚本"
+    ]
+  },
+  "scoring_system": {
+    "scale": "0-100分",
+    "aggregation": "weighted_average(task_scores, task_weights)",
+    "normalization": "基于人类表现或最优模型表现进行归一化"
+  },
+  "performance_levels": {
+    "expert": "90-100分，接近或超越人类专家水平",
+    "proficient": "75-89分，具备良好的多模态理解能力",
+    "developing": "60-74分，基本的多模态理解能力",
+    "basic": "40-59分，有限的多模态理解能力",
+    "inadequate": "0-39分，多模态理解能力不足"
+  },
+  "example_output": {
+    "overall_score": 82.4,
+    "task_breakdown": {
+      "visual_qa": 85.2,
+      "image_captioning": 78.9,
+      "visual_reasoning": 79.1,
+      "visual_grounding": 88.5,
+      "text_recognition": 84.7,
+      "cross_modal_retrieval": 81.3
+    },
+    "dataset_performance": {
+      "MMBench": 83.1,
+      "VQAv2": 84.5,
+      "TextVQA": 76.8,
+      "COCO_Captions": 79.2
+    },
+    "capability_analysis": {
+      "strength": ["物体识别", "空间理解", "文字识别"],
+      "weakness": ["复杂推理", "抽象概念理解", "细粒度区分"]
+    }
+  },
+  "technical_considerations": [
+    "图像预处理一致性",
+    "分辨率和格式标准化",
+    "多模态融合架构",
+    "计算资源需求"
+  ],
+  "challenges": [
+    "评估标准的主观性",
+    "数据集偏差问题",
+    "跨模态对齐困难",
+    "长视频理解能力评估"
+  ],
+  "related_metrics": [
+    "视觉问答准确率",
+    "图像描述质量得分",
+    "跨模态检索精度",
+    "视觉推理能力"
+  ],
+  "applications": [
+    "多模态AI系统评估",
+    "视觉智能应用开发",
+    "人机交互系统评估",
+    "自动驾驶感知能力评估"
+  ],
+  "future_directions": [
+    "视频理解能力评估",
+    "3D视觉理解",
+    "音频-视觉多模态",
+    "实时交互能力"
+  ]
+}

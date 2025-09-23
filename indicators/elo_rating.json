@@ -1,0 +1,97 @@
+{
+  "id": "elo_rating",
+  "name": "ELO评分",
+  "category": "ranking",
+  "definition": "基于成对比较结果计算的模型实力评分系统，源自国际象棋评分系统，用于动态评估和排名大语言模型的相对性能。",
+  "source": "Chatbot Arena, LMSYS",
+  "owner": "评估组",
+  "cost": "medium",
+  "tooling": "chatbot_arena, elo_calculator",
+  "calculation_method": "动态更新的评分系统，基于胜负结果和对手实力",
+  "formula": {
+    "expected_score": "1 / (1 + 10^((rating_opponent - rating_player) / 400))",
+    "rating_update": "rating_new = rating_old + K * (actual_score - expected_score)",
+    "where": "K是更新系数，actual_score为实际比赛结果(1=胜, 0=负, 0.5=平)"
+  },
+  "parameters": [
+    {
+      "name": "K因子",
+      "description": "评分更新的敏感度系数",
+      "typical_value": "32 (新模型) 到 16 (稳定模型)"
+    },
+    {
+      "name": "初始评分",
+      "description": "新模型的起始评分",
+      "typical_value": "1200-1500"
+    }
+  ],
+  "runbook": {
+    "summary": "通过持续的成对比较更新模型ELO评分。",
+    "steps": [
+      "初始化所有模型的ELO评分（通常1200-1500）",
+      "进行模型间的成对比较（人类投票或自动评估）",
+      "记录比较结果（胜/负/平）",
+      "根据ELO公式更新双方评分",
+      "重复比较过程，持续更新评分",
+      "基于最终ELO评分进行排名"
+    ],
+    "tools": [
+      "Chatbot Arena在线平台",
+      "自定义ELO计算器",
+      "多轮比较调度系统"
+    ]
+  },
+  "interpretation": {
+    "rating_ranges": {
+      "1400+": "顶级模型性能",
+      "1200-1400": "高级模型性能", 
+      "1000-1200": "中等模型性能",
+      "800-1000": "基础模型性能",
+      "<800": "较弱模型性能"
+    },
+    "rating_difference": {
+      "0-50": "性能接近，胜率约50-60%",
+      "50-100": "明显差距，胜率约60-70%",
+      "100-200": "显著差距，胜率约70-85%",
+      "200+": "巨大差距，胜率约85%+"
+    }
+  },
+  "advantages": [
+    "动态更新反映最新性能",
+    "相对排名更加稳定",
+    "可处理不平衡比较数据",
+    "提供概率性胜率预测"
+  ],
+  "limitations": [
+    "需要大量比较数据才能稳定",
+    "新模型评分不确定性较高",
+    "可能受到比较样本偏差影响",
+    "评分绝对值意义有限"
+  ],
+  "example_output": {
+    "model_elo_ratings": {
+      "gpt-4": 1324,
+      "claude-3": 1298,
+      "gpt-3.5": 1245,
+      "llama-2-70b": 1187
+    },
+    "confidence_intervals": {
+      "gpt-4": [1310, 1338],
+      "claude-3": [1284, 1312]
+    },
+    "total_battles": 15632
+  },
+  "related_metrics": ["胜率", "排名位置", "置信区间"],
+  "applications": [
+    "模型排行榜排名",
+    "模型性能动态跟踪",
+    "比赛匹配和调度",
+    "性能预测和分析"
+  ],
+  "implementation_considerations": [
+    "K因子选择影响收敛速度",
+    "冷启动问题处理",
+    "异常结果的处理",
+    "评分通胀的防范"
+  ]
+}

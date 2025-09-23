@@ -1,0 +1,71 @@
+{
+  "id": "benchmark.opencompass",
+  "name": "OpenCompass 司南评测",
+  "description": "由上海人工智能实验室研发的面向通用人工智能时代的创新开放评测体系，涵盖通用大模型、安全可信、具身智能、AI计算系统、行业应用等领域的全谱系AI评测平台。",
+  "source": "Shanghai AI Laboratory, 2023",
+  "provider": "上海人工智能实验室",
+  "category": "comprehensive",
+  "datasets": [
+    {
+      "name": "OpenCompass评测集",
+      "description": "包含100+个数据集的综合评测集合",
+      "link": "https://github.com/open-compass/opencompass",
+      "license": "Apache-2.0"
+    },
+    {
+      "name": "MMBench",
+      "description": "多模态模型评测集",
+      "link": "https://github.com/open-compass/opencompass",
+      "license": "Apache-2.0"
+    },
+    {
+      "name": "Flames",
+      "description": "价值对齐评测集",
+      "link": "https://github.com/open-compass/opencompass",
+      "license": "Apache-2.0"
+    }
+  ],
+  "evaluation_dimensions": [
+    "大语言模型评测",
+    "多模态模型评测", 
+    "安全可信评测",
+    "具身智能评测",
+    "AI计算系统评测",
+    "垂类领域评测"
+  ],
+  "metrics": [
+    {"name": "综合得分", "definition": "多维度能力的加权综合评分", "calculation": "weighted_average(dimension_scores)"},
+    {"name": "知识能力得分", "definition": "知识掌握和应用能力评分", "calculation": "knowledge_task_accuracy"},
+    {"name": "推理能力得分", "definition": "逻辑推理和数学推理能力评分", "calculation": "reasoning_task_accuracy"},
+    {"name": "安全得分", "definition": "价值对齐和安全性评分", "calculation": "safety_alignment_score"},
+    {"name": "多模态得分", "definition": "视觉-语言理解和生成能力评分", "calculation": "multimodal_task_score"}
+  ],
+  "test_method": "支持零样本、少样本和思维链评测，结合标准或对话型提示模板，采用分布式评测架构。支持HuggingFace、vLLM、LMDeploy等多种后端。使用标准化配置文件管理评测流程。",
+  "technical_features": [
+    "分布式评测支持",
+    "模块化设计",
+    "多后端支持",
+    "缓存机制",
+    "实时结果报告"
+  ],
+  "supported_models": [
+    "GPT系列",
+    "Claude系列", 
+    "InternLM系列",
+    "Qwen系列",
+    "ChatGLM系列",
+    "Baichuan系列",
+    "开源模型"
+  ],
+  "example_scores": {
+    "GPT-5": "65.8 (综合得分)",
+    "o3-high": "65.2 (综合得分)",
+    "Doubao-Seed-1.6-thinking": "64.0 (综合得分)",
+    "Grok-4": "63.9 (综合得分)"
+  },
+  "installation": "pip install opencompass 或 git clone + pip install -e .",
+  "usage": "opencompass --models <model_config> --datasets <dataset_config>",
+  "website": "https://opencompass.org.cn/",
+  "documentation": "https://opencompass.readthedocs.io/",
+  "notes": "提供完整的评测工具链和标准化流程，支持从模型到数据集的全面扩展。建议记录具体的配置文件和评测环境信息以确保结果可复现。"
+}

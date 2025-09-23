@@ -1,0 +1,60 @@
+{
+  "id": "benchmark.superclue",
+  "name": "SuperCLUE",
+  "description": "中文大模型综合测评基准，为中文大模型能力对比提供权威平台，精准量化AGI进展，定义人类迈向AGI的路线图。专门针对中文语言特点和文化背景设计。",
+  "source": "SuperCLUE AI, 2022+",
+  "provider": "SuperCLUE AI",
+  "category": "chinese_comprehensive", 
+  "datasets": [
+    {
+      "name": "SuperCLUE综合评测集",
+      "description": "涵盖中文语言理解、生成、推理等多个维度的综合测试集",
+      "link": "https://www.superclueai.com/",
+      "license": "需申请授权"
+    }
+  ],
+  "evaluation_dimensions": [
+    "中文语言理解能力",
+    "中文文本生成能力", 
+    "中文推理能力",
+    "中文知识问答",
+    "中文阅读理解",
+    "中文特有任务"
+  ],
+  "metrics": [
+    {"name": "综合评分", "definition": "中文各维度能力的综合评分", "calculation": "weighted_chinese_capability_score"},
+    {"name": "语言理解得分", "definition": "中文文本理解准确率", "calculation": "chinese_understanding_accuracy"},
+    {"name": "文本生成得分", "definition": "中文文本生成质量评分", "calculation": "chinese_generation_quality"},
+    {"name": "推理能力得分", "definition": "中文逻辑推理能力评分", "calculation": "chinese_reasoning_accuracy"},
+    {"name": "知识问答得分", "definition": "中文知识问答准确率", "calculation": "chinese_qa_accuracy"}
+  ],
+  "test_method": "针对中文语言特点设计的标准化评测流程，考虑中文文化背景和语言习惯，包含中文特有的语言现象测试。采用权威的中文评测协议。",
+  "technical_features": [
+    "中文专业评测",
+    "文化背景考虑",
+    "语言习惯适配",
+    "标准化协议",
+    "权威排行榜"
+  ],
+  "supported_models": [
+    "GPT系列",
+    "Claude系列",
+    "文心一言",
+    "通义千问",
+    "ChatGLM系列",
+    "百川系列",
+    "其他中文优化模型"
+  ],
+  "example_scores": {
+    "注": "具体评分需要通过官网申请评测服务获取"
+  },
+  "application_scenarios": [
+    "中文大模型能力评估",
+    "模型选型参考", 
+    "技术发展跟踪",
+    "行业标准制定"
+  ],
+  "access_method": "通过官网申请评测服务",
+  "website": "https://www.superclueai.com/",
+  "notes": "专门针对中文环境设计，是评估中文大模型能力的权威基准。需要通过官方渠道申请评测，结果具有较高权威性。"
+}

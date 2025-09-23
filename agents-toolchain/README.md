@@ -2,6 +2,16 @@
 
 First-phase tooling that supports foundational research workflows described in `agentToolrequirement.md`.
 
+## Data Organization
+- `data/eval-system/` - Evaluation framework research and analysis
+  - Research documents for 8 major LLM evaluation frameworks
+  - Version history and comprehensive summaries
+  - Original deepResearch directory for ongoing studies
+  - survey history ： `\agents-toolchain\data\eval-system\research_version_history.md`
+  - evaluation framework survey: `\agents-toolchain\data\eval-system\evaluation_frameworks_summary.md`
+- `storage/` - Intelligence entries and verification data
+- `taxonomy/` - Collaborative taxonomy with versioning
+
 ## Multi-Source Intelligence Aggregator
 `python agents-toolchain/intel_aggregator.py ingest model "Qwen3-8B" HuggingFace https://huggingface.co/Qwen/Qwen3-8B --field license=Apache-2.0 --field architecture=Decoder --summary "Open 8B chat model with 32k context" --author lj`
 - Appends structured rows to `agents-toolchain/storage/intel_entries.jsonl` with timestamps and URLs.

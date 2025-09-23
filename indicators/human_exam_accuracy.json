@@ -1,0 +1,152 @@
+{
+  "id": "human_exam_accuracy",
+  "name": "人类考试准确率",
+  "category": "agi_capability",
+  "definition": "模型在人类标准化考试（如SAT、LSAT、高考等）中的答题准确率，用于评估模型接近人类认知水平的程度和AGI发展进展。",
+  "source": "AGI-Eval",
+  "owner": "AGI评估组",
+  "cost": "medium",
+  "tooling": "agieval, human_exam_benchmark",
+  "calculation_method": "correct_answers / total_questions per exam type",
+  "exam_categories": [
+    {
+      "name": "大学入学考试",
+      "exams": ["SAT", "ACT", "中国高考", "A-Level"],
+      "description": "测试综合学术能力",
+      "difficulty": "high"
+    },
+    {
+      "name": "专业入学考试", 
+      "exams": ["LSAT", "MCAT", "GRE", "GMAT"],
+      "description": "测试特定领域推理能力",
+      "difficulty": "very_high"
+    },
+    {
+      "name": "专业资格考试",
+      "exams": ["律师资格", "会计师", "医师执照"],
+      "description": "测试专业知识应用能力",
+      "difficulty": "very_high"
+    },
+    {
+      "name": "数学竞赛",
+      "exams": ["AMC", "AIME", "IMO"],
+      "description": "测试数学推理和解题能力",
+      "difficulty": "extreme"
+    }
+  ],
+  "ability_dimensions": [
+    "理解能力 (Comprehension)",
+    "知识掌握 (Knowledge)",
+    "推理能力 (Reasoning)", 
+    "计算能力 (Calculation)",
+    "应用能力 (Application)"
+  ],
+  "runbook": {
+    "summary": "使用真实的人类标准化考试题目评估模型性能。",
+    "steps": [
+      "收集标准化考试真题和模拟题",
+      "确保题目的权威性和时效性",
+      "采用标准考试条件（时间限制、题目格式）",
+      "配置模型进行考试作答",
+      "按照官方评分标准计算准确率",
+      "与人类考生平均表现对比",
+      "分析不同能力维度的表现差异"
+    ],
+    "considerations": [
+      "确保题目来源的合法性",
+      "避免训练数据泄露",
+      "保持评分标准的一致性",
+      "考虑不同语言和文化背景"
+    ]
+  },
+  "scoring_methodology": [
+    {
+      "name": "绝对准确率",
+      "formula": "correct / total",
+      "description": "直接的答题正确率"
+    },
+    {
+      "name": "相对人类表现",
+      "formula": "model_score / human_average_score", 
+      "description": "相对于人类平均水平的表现"
+    },
+    {
+      "name": "能力维度得分",
+      "formula": "dimension_correct / dimension_total",
+      "description": "特定能力维度的准确率"
+    }
+  ],
+  "interpretation": {
+    "superhuman": "> 95% 或明显超越人类专家",
+    "expert_level": "85-95% 或接近专业考生水平",
+    "proficient": "70-85% 或达到合格考生水平",
+    "developing": "50-70% 或略低于平均水平",
+    "inadequate": "< 50% 或远低于人类表现"
+  },
+  "benchmark_examples": {
+    "GPT-4": {
+      "SAT_Math": "95%",
+      "SAT_Verbal": "93%",
+      "LSAT": "88%",
+      "Chinese_Gaokao_English": "92.5%",
+      "Bar_Exam": "90%"
+    },
+    "human_averages": {
+      "SAT_Math": "528/800 (~66%)",
+      "SAT_Verbal": "533/800 (~67%)",
+      "LSAT": "151/180 (~50%)",
+      "Bar_Exam": "~70%"
+    }
+  },
+  "example_output": {
+    "overall_accuracy": 0.847,
+    "exam_breakdown": {
+      "SAT_Math": 0.95,
+      "SAT_Verbal": 0.89,
+      "LSAT": 0.78,
+      "GRE_Quantitative": 0.92,
+      "Chinese_Gaokao": 0.83
+    },
+    "ability_analysis": {
+      "comprehension": 0.88,
+      "knowledge": 0.85,
+      "reasoning": 0.79,
+      "calculation": 0.94,
+      "application": 0.82
+    },
+    "human_comparison": {
+      "relative_performance": 1.34,
+      "percentile_rank": 95
+    }
+  },
+  "advantages": [
+    "客观可比的评估标准",
+    "权威的题目来源",
+    "直接与人类能力对比",
+    "覆盖多种认知能力"
+  ],
+  "limitations": [
+    "考试内容可能不全面",
+    "存在文化和语言偏见",
+    "可能存在数据泄露风险",
+    "无法测试创造性等软技能"
+  ],
+  "related_metrics": [
+    "MMLU准确率",
+    "推理能力得分",
+    "知识问答准确率",
+    "综合认知能力指数"
+  ],
+  "applications": [
+    "AGI发展水平评估",
+    "模型认知能力基准测试",
+    "教育AI应用评估",
+    "跨模型性能对比"
+  ],
+  "ethical_considerations": [
+    "避免考试题目泄露",
+    "确保评估公平性",
+    "考虑不同群体的代表性",
+    "防止过度拟合考试内容"
+  ]
+}

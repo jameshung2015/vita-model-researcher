@@ -1,0 +1,143 @@
+{
+  "id": "agent_task_completion",
+  "name": "Agent任务完成率",
+  "category": "agent_capability",
+  "definition": "LLM作为自主代理在特定环境中成功完成任务的比例，评估模型的代理能力、规划能力和环境交互能力。",
+  "source": "AgentBench, Agent评估框架",
+  "owner": "评估组",
+  "cost": "high",
+  "tooling": "agentbench, agent_eval_framework",
+  "calculation_method": "completed_tasks / total_tasks",
+  "task_categories": [
+    {
+      "name": "操作系统任务",
+      "description": "文件操作、系统命令执行等",
+      "complexity": "medium"
+    },
+    {
+      "name": "数据库任务",
+      "description": "SQL查询、数据操作等",
+      "complexity": "medium"
+    },
+    {
+      "name": "网络浏览任务",
+      "description": "网页操作、信息搜索等",
+      "complexity": "high"
+    },
+    {
+      "name": "购物任务",
+      "description": "电商平台操作、商品选择等", 
+      "complexity": "high"
+    },
+    {
+      "name": "游戏策略任务",
+      "description": "卡牌游戏、策略决策等",
+      "complexity": "high"
+    }
+  ],
+  "evaluation_dimensions": [
+    "任务理解能力",
+    "规划和推理能力",
+    "工具使用能力",
+    "环境适应能力",
+    "错误恢复能力"
+  ],
+  "runbook": {
+    "summary": "在多个Agent环境中测试模型完成复杂任务的能力。",
+    "steps": [
+      "准备Docker化的评测环境（OS、DB、Web等）",
+      "配置被测LLM的Agent接口",
+      "启动分布式任务服务器",
+      "运行标准化的Agent任务集",
+      "记录任务完成情况和执行步骤",
+      "计算各环境的任务完成率",
+      "分析失败原因和改进方向"
+    ],
+    "environments": [
+      "AgentBench标准环境",
+      "自定义Agent测试环境",
+      "多轮交互任务环境"
+    ]
+  },
+  "metrics_breakdown": [
+    {
+      "name": "整体完成率",
+      "formula": "sum(completed_tasks) / sum(total_tasks)",
+      "description": "跨所有环境的总体任务完成率"
+    },
+    {
+      "name": "环境特定完成率", 
+      "formula": "completed_tasks_env / total_tasks_env",
+      "description": "特定环境下的任务完成率"
+    },
+    {
+      "name": "复杂度加权完成率",
+      "formula": "sum(completed_tasks * complexity_weight) / sum(total_tasks * complexity_weight)",
+      "description": "考虑任务复杂度的加权完成率"
+    }
+  ],
+  "performance_indicators": [
+    {
+      "name": "平均步骤数",
+      "description": "完成任务的平均操作步骤数",
+      "interpretation": "更少步骤通常表示更高效率"
+    },
+    {
+      "name": "错误率",
+      "description": "执行过程中的错误操作比例",
+      "interpretation": "更低错误率表示更稳定的执行"
+    },
+    {
+      "name": "超时率",
+      "description": "因超时而失败的任务比例",
+      "interpretation": "反映模型的决策速度和效率"
+    }
+  ],
+  "interpretation": {
+    "excellent": "> 80% 任务完成率",
+    "good": "60-80% 任务完成率",
+    "moderate": "40-60% 任务完成率", 
+    "poor": "< 40% 任务完成率"
+  },
+  "example_output": {
+    "overall_completion_rate": 0.68,
+    "environment_breakdown": {
+      "os_tasks": 0.85,
+      "db_tasks": 0.72,
+      "web_browsing": 0.45,
+      "shopping": 0.38,
+      "card_game": 0.90
+    },
+    "performance_metrics": {
+      "avg_steps": 12.3,
+      "error_rate": 0.15,
+      "timeout_rate": 0.08
+    },
+    "total_tasks": 150,
+    "completed_tasks": 102
+  },
+  "challenges": [
+    "环境复杂性差异大",
+    "任务定义的主观性",
+    "评估标准的一致性",
+    "长序列规划的难度"
+  ],
+  "related_metrics": [
+    "指令跟随能力",
+    "推理准确率",
+    "工具使用准确率",
+    "多步骤规划能力"
+  ],
+  "applications": [
+    "Agent模型能力评估",
+    "自动化系统可靠性评估",
+    "人机协作能力评估",
+    "实际应用场景适配评估"
+  ],
+  "implementation_requirements": [
+    "Docker环境支持",
+    "多环境并行执行",
+    "长时间任务监控",
+    "详细日志记录"
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "id": "win_rate",
+  "name": "胜率 (Win Rate)",
+  "category": "human_preference",
+  "definition": "在对比评估中，目标模型相对于参考模型或其他模型的获胜比例，常用于人类偏好评估和模型排名。",
+  "source": "AlpacaEval, Chatbot Arena",
+  "owner": "评估组",
+  "cost": "medium",
+  "tooling": "alpaca_eval, chatbot_arena",
+  "calculation_method": "wins / (wins + losses)",
+  "variants": [
+    {
+      "name": "标准胜率",
+      "description": "直接的胜负比较结果",
+      "formula": "wins / total_comparisons"
+    },
+    {
+      "name": "长度控制胜率",
+      "description": "控制输出长度偏差后的胜率",
+      "formula": "length_controlled_wins / total_comparisons"
+    },
+    {
+      "name": "ELO胜率",
+      "description": "基于ELO评分系统的预期胜率",
+      "formula": "expected_win_rate_from_elo"
+    }
+  ],
+  "runbook": {
+    "summary": "通过人类评判或自动评估器比较模型输出质量计算胜率。",
+    "steps": [
+      "准备两个或多个模型的输出结果",
+      "设置评估器（人类评判者或自动评估器如GPT-4）",
+      "进行成对比较，记录胜负结果",
+      "计算胜率：wins / (wins + losses)",
+      "可选：计算置信区间和统计显著性"
+    ],
+    "tools": [
+      "AlpacaEval: alpaca_eval --model_outputs outputs.json",
+      "Chatbot Arena: 在线人类投票平台",
+      "自定义评估脚本"
+    ]
+  },
+  "interpretation": {
+    "high_values": "胜率 > 70% 表示模型性能明显优于参考基准",
+    "medium_values": "胜率 50-70% 表示模型性能中等",
+    "low_values": "胜率 < 50% 表示模型性能低于参考基准",
+    "baseline": "50% (随机选择基准)"
+  },
+  "considerations": [
+    "评估器偏差：自动评估器可能偏向特定类型的输出",
+    "长度偏差：较长的输出往往获得更高评分",
+    "样本数量：需要足够的样本确保统计显著性",
+    "评估一致性：不同评估器可能产生不同结果"
+  ],
+  "example_output": {
+    "win_rate": 0.743,
+    "total_comparisons": 805,
+    "wins": 598,
+    "losses": 207,
+    "standard_error": 0.024,
+    "confidence_interval": [0.696, 0.790]
+  },
+  "related_metrics": ["ELO评分", "人类偏好得分", "指令跟随能力"],
+  "applications": [
+    "模型排名和比较",
+    "指令跟随能力评估", 
+    "人类偏好对齐评估",
+    "模型选择决策支持"
+  ]
+}

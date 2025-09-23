@@ -1,0 +1,94 @@
+{
+  "id": "benchmark.chatbot_arena",
+  "name": "Chatbot Arena",
+  "description": "由LMSYS组织开发的大模型竞技场平台，通过人类用户投票的方式评估和排名各种大语言模型，为模型性能提供最直观的人类偏好评估。",
+  "source": "LMSYS Org, 2023",
+  "provider": "Large Model Systems Organization",
+  "category": "human_preference",
+  "datasets": [
+    {
+      "name": "Chatbot Arena对话数据",
+      "description": "大量真实用户与模型对话和投票数据",
+      "link": "https://chat.lmsys.org/",
+      "license": "使用条款规定"
+    }
+  ],
+  "evaluation_mechanism": [
+    "匿名对话测试",
+    "AB测试对比",
+    "用户投票评判",
+    "ELO评分系统"
+  ],
+  "evaluation_dimensions": [
+    "回答质量",
+    "语言表达能力",
+    "逻辑性和连贯性",
+    "创造性和原创性",
+    "安全性和适当性",
+    "有用性和实用性"
+  ],
+  "metrics": [
+    {"name": "ELO评分", "definition": "基于胜负关系计算的模型实力评分", "calculation": "elo_rating_system"},
+    {"name": "胜率", "definition": "模型在对战中的获胜比例", "calculation": "wins / total_battles"},
+    {"name": "投票数", "definition": "模型参与的总投票数量", "calculation": "total_votes"},
+    {"name": "排名", "definition": "基于ELO评分的排名位置", "calculation": "rank_by_elo_score"}
+  ],
+  "test_method": "用户提交问题，系统随机选择两个模型匿名生成回答，用户评估后投票选择更好的回答。使用ELO评分系统计算和更新模型排名。",
+  "technical_features": [
+    "Web界面交互",
+    "匿名对比评测",
+    "实时投票收集",
+    "ELO评分算法",
+    "多模型集成",
+    "持续更新排名"
+  ],
+  "participating_models": [
+    "GPT-4 系列",
+    "Claude 系列",
+    "Gemini 系列",
+    "LLaMA 系列",
+    "Qwen 系列",
+    "ChatGLM 系列",
+    "其他开源和API模型"
+  ],
+  "data_collection": [
+    "人类偏好投票数据",
+    "真实人机对话数据",
+    "模型性能统计数据",
+    "用户行为和趋势数据"
+  ],
+  "example_scores": {
+    "注": "具体ELO评分和排名请访问实时排行榜",
+    "排行榜更新": "基于持续的用户投票实时更新"
+  },
+  "evaluation_process": [
+    "用户提交问题或对话请求",
+    "系统随机选择两个模型",
+    "模型匿名生成回答",
+    "用户评估并投票选择",
+    "系统更新ELO评分和排名"
+  ],
+  "application_value": [
+    "反映真实用户偏好",
+    "提供直观的模型对比",
+    "指导模型选择决策",
+    "推动模型技术改进"
+  ],
+  "impact_and_significance": [
+    "成为业界认可的评估标准",
+    "体现真实用户需求",
+    "推动模型技术发展",
+    "提供透明公开的评估"
+  ],
+  "limitations": [
+    "用户偏见可能影响结果",
+    "样本分布可能不均衡",
+    "主观评价存在不确定性",
+    "新模型需要时间积累数据"
+  ],
+  "website": "https://chat.lmsys.org/",
+  "leaderboard": "https://lmarena.ai/leaderboard",
+  "huggingface": "https://huggingface.co/spaces/lmsys/chatbot-arena-leaderboard",
+  "community": "活跃的用户社区和研究者",
+  "notes": "最接近真实用户体验的评估平台，通过大规模人类偏好投票提供客观的模型性能排名。是当前最具影响力的LLM评估基准之一。"
+}

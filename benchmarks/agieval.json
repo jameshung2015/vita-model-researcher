@@ -1,0 +1,81 @@
+{
+  "id": "benchmark.agieval",
+  "name": "AGI-Eval",
+  "description": "以人为中心的基准测试，专门设计用于评估基础模型在人类标准化考试中的表现，如大学入学考试、法学院入学考试、数学竞赛和律师资格考试等，旨在评估模型向AGI发展的能力。",
+  "source": "Microsoft Research, 2023",
+  "provider": "Microsoft Research & Partners",
+  "category": "human_centric_agi",
+  "datasets": [
+    {
+      "name": "AGI-Eval数据集",
+      "description": "基于真实人类标准化考试的评估数据集",
+      "link": "https://github.com/ruixiangcui/AGIEval",
+      "license": "MIT"
+    }
+  ],
+  "evaluation_dimensions": [
+    "理解能力",
+    "知识掌握", 
+    "推理能力",
+    "计算能力",
+    "综合应用能力"
+  ],
+  "exam_types": [
+    "SAT (美国大学入学考试)",
+    "LSAT (法学院入学考试)", 
+    "数学竞赛",
+    "律师资格考试",
+    "中国高考",
+    "其他标准化考试"
+  ],
+  "metrics": [
+    {"name": "准确率", "definition": "在各类考试中的答题准确率", "calculation": "correct_answers / total_questions"},
+    {"name": "综合得分", "definition": "跨多个考试类型的综合表现", "calculation": "weighted_average_across_exams"},
+    {"name": "能力维度得分", "definition": "在不同能力维度上的表现", "calculation": "dimension_specific_accuracy"},
+    {"name": "人类对比得分", "definition": "相对于人类平均表现的得分", "calculation": "model_score / human_average_score"}
+  ],
+  "test_method": "使用真实的标准化考试题目，采用与人类考试相同的评分标准。模型需要在限定时间内完成考试，答案按照官方评分标准进行评判。",
+  "technical_features": [
+    "真实考试环境",
+    "标准化评分",
+    "多学科覆盖",
+    "时间限制",
+    "人类对比基准"
+  ],
+  "gpt4_performance": {
+    "SAT Math": "95% 准确率",
+    "中国高考英语": "92.5% 准确率",
+    "overall": "在多项考试中超越人类平均表现"
+  },
+  "model_limitations": [
+    "复杂推理任务表现不足",
+    "特定领域知识有限",
+    "需要进一步提升的能力领域"
+  ],
+  "supported_models": [
+    "GPT-4",
+    "ChatGPT", 
+    "Text-Davinci-003",
+    "其他主流LLM"
+  ],
+  "example_scores": {
+    "GPT-4": "SAT Math: 95%, 中国高考英语: 92.5%",
+    "ChatGPT": "性能因考试类型而异",
+    "Text-Davinci-003": "基准性能参考"
+  },
+  "data_composition": [
+    "多个国家和地区的标准化考试",
+    "不同学科和难度级别",
+    "历年真题和模拟题",
+    "详细的评分标准"
+  ],
+  "application_value": [
+    "客观评估模型综合能力",
+    "指明模型改进方向", 
+    "提供统一对比标准",
+    "追踪AGI发展进程"
+  ],
+  "github": "https://github.com/ruixiangcui/AGIEval",
+  "paper": "https://arxiv.org/abs/2304.06364",
+  "notes": "基于真实人类考试的权威评估基准，能够客观反映模型在各种认知任务上的表现。评估结果可直接与人类表现对比，为AGI发展提供重要指标。"
+}

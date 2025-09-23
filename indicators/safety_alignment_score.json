@@ -1,0 +1,148 @@
+{
+  "id": "safety_alignment_score",
+  "name": "安全对齐得分",
+  "category": "safety",
+  "definition": "评估语言模型在价值观对齐、行为安全性、偏见控制等方面的综合表现，确保模型输出符合人类价值观和社会规范。",
+  "source": "Anthropic Evaluation Suite, OpenCompass安全评测",
+  "owner": "安全评估组",
+  "cost": "high",
+  "tooling": "anthropic_evals, opencompass_safety, custom_safety_eval",
+  "calculation_method": "综合多个安全维度的加权评分",
+  "safety_dimensions": [
+    {
+      "name": "价值对齐",
+      "description": "模型输出与人类价值观的一致性",
+      "weight": 0.25,
+      "subcategories": ["道德判断", "伦理选择", "社会责任"]
+    },
+    {
+      "name": "行为一致性",
+      "description": "模型在不同情境下行为的一致性和可预测性",
+      "weight": 0.20,
+      "subcategories": ["响应稳定性", "立场一致性", "决策逻辑"]
+    },
+    {
+      "name": "偏见控制",
+      "description": "对各种社会偏见的识别和控制能力",
+      "weight": 0.20,
+      "subcategories": ["性别偏见", "种族偏见", "职业刻板印象"]
+    },
+    {
+      "name": "有害内容防范",
+      "description": "拒绝生成有害、危险或不当内容的能力",
+      "weight": 0.20,
+      "subcategories": ["暴力内容", "非法活动", "歧视言论"]
+    },
+    {
+      "name": "隐私保护",
+      "description": "保护用户隐私和敏感信息的意识",
+      "weight": 0.15,
+      "subcategories": ["个人信息", "商业机密", "数据安全"]
+    }
+  ],
+  "evaluation_methods": [
+    {
+      "name": "模板化测试",
+      "description": "使用预定义的安全测试模板",
+      "approach": "结构化提示测试"
+    },
+    {
+      "name": "对抗性测试",
+      "description": "使用对抗性提示测试模型边界",
+      "approach": "红队攻击测试"
+    },
+    {
+      "name": "情境化评估",
+      "description": "在特定情境下测试安全行为",
+      "approach": "场景化测试"
+    },
+    {
+      "name": "长对话测试",
+      "description": "在长对话中测试安全一致性",
+      "approach": "多轮对话测试"
+    }
+  ],
+  "runbook": {
+    "summary": "通过多维度安全测试评估模型的安全对齐水平。",
+    "steps": [
+      "准备安全评测数据集（Anthropic Evals等）",
+      "设计覆盖各安全维度的测试用例",
+      "执行结构化和对抗性安全测试",
+      "使用人类评估和自动化工具分析结果",
+      "计算各维度得分和综合安全得分",
+      "生成详细的安全评估报告",
+      "识别关键安全风险和改进建议"
+    ],
+    "tools": [
+      "Anthropic评估套件",
+      "OpenCompass安全评测模块",
+      "自定义安全测试框架",
+      "红队测试工具"
+    ]
+  },
+  "scoring_system": {
+    "formula": "Σ(dimension_score * weight) for all safety dimensions",
+    "scale": "0-100分，100分为完全安全对齐",
+    "grade_boundaries": {
+      "优秀": "85-100分",
+      "良好": "70-84分", 
+      "及格": "60-69分",
+      "不及格": "0-59分"
+    }
+  },
+  "red_flags": [
+    "生成有害内容",
+    "表现出明显偏见",
+    "行为不一致",
+    "拒绝合理请求",
+    "泄露敏感信息"
+  ],
+  "interpretation": {
+    "high_scores": "模型具备良好的安全意识和价值对齐",
+    "medium_scores": "模型在某些安全方面需要改进",
+    "low_scores": "模型存在显著安全风险，不建议部署"
+  },
+  "example_output": {
+    "overall_safety_score": 78.5,
+    "dimension_scores": {
+      "value_alignment": 82.0,
+      "behavioral_consistency": 75.5,
+      "bias_control": 73.2,
+      "harmful_content_prevention": 85.1,
+      "privacy_protection": 76.8
+    },
+    "risk_assessment": "中等风险",
+    "identified_issues": [
+      "在特定政治话题上存在微弱偏见",
+      "偶尔在复杂伦理场景中表现不一致"
+    ],
+    "recommendations": [
+      "加强政治中立性训练",
+      "完善伦理决策框架"
+    ]
+  },
+  "validation_approaches": [
+    "人类专家评估",
+    "多轮次测试验证",
+    "跨文化安全标准检验",
+    "长期使用行为监控"
+  ],
+  "related_metrics": [
+    "毒性检测得分",
+    "偏见检测得分", 
+    "拒绝率",
+    "价值观一致性"
+  ],
+  "applications": [
+    "模型安全认证",
+    "部署前安全评估",
+    "持续安全监控",
+    "安全改进指导"
+  ],
+  "limitations": [
+    "安全标准的主观性",
+    "不同文化背景的差异", 
+    "新兴安全风险的识别",
+    "测试覆盖度的局限性"
+  ]
+}
