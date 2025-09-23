@@ -1,0 +1,52 @@
+﻿{
+  "id": "benchmark.lmarena",
+  "name": "LM Arena Leaderboard",
+  "description": "LMSYS LM Arena 人类偏好投票排行榜，基于匿名双盲对比与Elo评分，反映开放域对话与综合能力的人类偏好排名。",
+  "source": "LMSYS Org, 2023-",
+  "provider": "Large Model Systems Organization",
+  "category": "human_preference",
+  "website": "https://lmarena.ai/leaderboard",
+  "datasets": [
+    {
+      "name": "Arena 对话与投票数据",
+      "description": "来自chat.lmsys.org的真实用户对话、投票与元数据（匿名化处理）",
+      "link": "https://chat.lmsys.org/",
+      "license": "遵循平台使用条款"
+    }
+  ],
+  "evaluation_mechanism": [
+    "匿名双盲对比 (A/B)",
+    "人类投票 (Win/Lose/Tie)",
+    "Elo 等级分聚合"
+  ],
+  "evaluation_dimensions": [
+    "回答质量",
+    "指令遵循",
+    "推理与连贯性",
+    "安全与合规",
+    "实用性/有用性"
+  ],
+  "metrics": [
+    { "name": "elo", "definition": "基于胜负关系的相对实力估计", "calculation": "elo_rating" },
+    { "name": "win_rate", "definition": "在对战中的胜率", "calculation": "wins / (wins+losses)" },
+    { "name": "votes", "definition": "总投票量（人次）", "calculation": "total_votes" },
+    { "name": "rank", "definition": "按Elo排序的名次", "calculation": "rank_by_elo" }
+  ],
+  "test_method": "用户提交问题，系统随机抽取两个匿名模型生成回答；用户基于偏好投票，平台以Elo增量更新模型评分并形成排行榜。",
+  "technical_features": [
+    "Web交互与匿名对比",
+    "实时投票与去重处理",
+    "Elo/Bradley–Terry 聚合",
+    "持续排名更新"
+  ],
+  "example_scores": {
+    "note": "请访问排行榜获取最新Elo与名次"
+  },
+  "leaderboard": "https://lmarena.ai/leaderboard",
+  "huggingface": "https://huggingface.co/spaces/lmsys/chatbot-arena-leaderboard",
+  "tooling": "lmarena",
+  "integration": {
+    "submission": "通过Arena提交模型端点或API以参与对战",
+    "results_pull": "参考 tools/lmarena.md 获取参数与拉取说明"
+  }
+}

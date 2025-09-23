@@ -20,3 +20,11 @@ Match the concise imperative style in history (`Type: summary with context`). St
 
 ## Security & Configuration Tips
 Do not commit secrets or proprietary datasets. Reference external model cards instead of embedding weights. Document required environment variables in directory-level README files and scrub personal identifiers before uploading traces.
+
+## LM Arena（lmarena）
+- 新增基准：`benchmarks/lmarena.json`（Elo、win_rate、votes、rank 等字段；两空格缩进、snake_case）
+- 工具说明：`tools/lmarena.md`（参数、字段、操作步骤、示例命令）
+- 拉取脚本：`scripts/bench/lmarena_pull.py`（网络受限下读取本地快照；输出统一 JSON，含 `snapshot_ts`）
+- 典型用法：
+  - `python scripts/bench/lmarena_pull.py --models "Llama-3-70B-Instruct,GPT-4o" --out benchmarks/models/lmarena_snapshot.json`
+  - `python tools/log_qa.py --question "拉取LM Arena Elo" --answer "已保存到 benchmarks/models/lmarena_snapshot.json"`

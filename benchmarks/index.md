@@ -1,37 +1,38 @@
-```markdown
-# 基准（Benchmarks）知识库
+﻿```markdown
+# 鍩哄噯锛圔enchmarks锛夌煡璇嗗簱
 
-本目录用于记录常见公开 benchmark（例如 MMLU、GSM8K、BLEU 等）的元信息：指标定义、测试方法/Runbook、数据集来源链接、示例分数与注意事项。目标是为模型评估提供统一引用与快速查阅。
+鏈洰褰曠敤浜庤褰曞父瑙佸叕寮€ benchmark锛堜緥濡?MMLU銆丟SM8K銆丅LEU 绛夛級鐨勫厓淇℃伅锛氭寚鏍囧畾涔夈€佹祴璇曟柟娉?Runbook銆佹暟鎹泦鏉ユ簮閾炬帴銆佺ず渚嬪垎鏁颁笌娉ㄦ剰浜嬮」銆傜洰鏍囨槸涓烘ā鍨嬭瘎浼版彁渚涚粺涓€寮曠敤涓庡揩閫熸煡闃呫€?
 
-## 现有条目：
+## 鐜版湁鏉＄洰锛?
 
-### 传统基准
-- `mmlu.json` — MMLU（Massive Multitask Language Understanding）
-- `gsm8k.json` — GSM8K（Grade School Math 8K）
-- `bleu.json` — BLEU（机器翻译质量评估指标）
+### 浼犵粺鍩哄噯
+- `mmlu.json` 鈥?MMLU锛圡assive Multitask Language Understanding锛?
+- `gsm8k.json` 鈥?GSM8K锛圙rade School Math 8K锛?
+- `bleu.json` 鈥?BLEU锛堟満鍣ㄧ炕璇戣川閲忚瘎浼版寚鏍囷級
 
-### 综合评测框架
-- `opencompass.json` — OpenCompass 司南评测（上海人工智能实验室）
-- `superclue.json` — SuperCLUE 中文大模型综合测评基准
-- `modelscope_leaderboard.json` — ModelScope LLM 排行榜
+### 缁煎悎璇勬祴妗嗘灦
+- `opencompass.json` 鈥?OpenCompass 鍙稿崡璇勬祴锛堜笂娴蜂汉宸ユ櫤鑳藉疄楠屽锛?
+- `superclue.json` 鈥?SuperCLUE 涓枃澶фā鍨嬬患鍚堟祴璇勫熀鍑?
+- `modelscope_leaderboard.json` 鈥?ModelScope LLM 鎺掕姒?
 
-### 指令跟随与人类偏好
-- `alpacaeval.json` — AlpacaEval 自动化指令跟随评估
-- `chatbot_arena.json` — Chatbot Arena 人类偏好投票平台
+### 鎸囦护璺熼殢涓庝汉绫诲亸濂?
+- `alpacaeval.json` 鈥?AlpacaEval 鑷姩鍖栨寚浠よ窡闅忚瘎浼?
+- `chatbot_arena.json` 鈥?Chatbot Arena 浜虹被鍋忓ソ鎶曠エ骞冲彴
 
-### AGI与专业能力
-- `agieval.json` — AGI-Eval 人类标准化考试基准
+### AGI涓庝笓涓氳兘鍔?
+- `agieval.json` 鈥?AGI-Eval 浜虹被鏍囧噯鍖栬€冭瘯鍩哄噯
 
-### Agent能力评测
-- `agentbench.json` — AgentBench LLM代理能力评测
+### Agent鑳藉姏璇勬祴
+- `agentbench.json` 鈥?AgentBench LLM浠ｇ悊鑳藉姏璇勬祴
 
-### AI安全与对齐
-- `anthropic_eval_suite.json` — Anthropic 评估套件（安全对齐）
+### AI瀹夊叏涓庡榻?
+- `anthropic_eval_suite.json` 鈥?Anthropic 璇勪及濂椾欢锛堝畨鍏ㄥ榻愶級
 
-添加条目请遵循 `templates/benchmark_template.json` 的字段规范。
+娣诲姞鏉＄洰璇烽伒寰?`templates/benchmark_template.json` 鐨勫瓧娈佃鑼冦€?
 
-维护提示：
-- 所有条目必须包含 `id`, `name`, `source`, `datasets`, `test_method` 和 `example_scores` 字段。
-- 对于示例分数，请注明是否为公开论文中报告的值或仓库/跑分复现值。
+缁存姢鎻愮ず锛?
+- 鎵€鏈夋潯鐩繀椤诲寘鍚?`id`, `name`, `source`, `datasets`, `test_method` 鍜?`example_scores` 瀛楁銆?
+- 瀵逛簬绀轰緥鍒嗘暟锛岃娉ㄦ槑鏄惁涓哄叕寮€璁烘枃涓姤鍛婄殑鍊兼垨浠撳簱/璺戝垎澶嶇幇鍊笺€?
 
 ```
+\n- lmarena.json — LM Arena 人类偏好投票排行榜\n

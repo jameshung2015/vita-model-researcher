@@ -138,3 +138,18 @@ CI 与校验建议：
 
 ---
 (文档结束)
+
+## LM Arena 集成
+- 新增 `benchmarks/lmarena.json`（LM Arena 榜单定义，Elo/胜率等）
+- 工具与流程见 `tools/lmarena.md`
+- 拉取脚本：`scripts/bench/lmarena_pull.py`
+
+### 快速开始
+- 拉取榜单（示例，网络受限用本地快照占位）：
+  - `python scripts/bench/lmarena_pull.py --models "Llama-3-70B-Instruct,GPT-4o" --out benchmarks/models/lmarena_snapshot.json`
+- 记录操作：
+  - `python tools/log_qa.py --question "拉取LM Arena Elo" --answer "已保存到 benchmarks/models/lmarena_snapshot.json"`
+
+### 约定
+- JSON 两空格缩进、snake_case 字段命名。
+- 字段：`model, elo, rank, votes, win_rate, snapshot_ts`。
