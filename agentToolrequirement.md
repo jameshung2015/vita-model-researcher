@@ -1,87 +1,183 @@
-好的，根据您提供的 `background.md` 文件，我将为您设计一个分阶段的研究工具需求方案。该方案旨在支持您的汽车 AI 评测体系建设项目，并满足您提出的四个核心要求：分阶段、关键数据关联、多源采集验证、以及研究参照（URL）。
+> 本文件基于 `README.md` 与 `background.md` 重新评估与扩展原有 Agent 研究工具需求，强化：四大核心矛盾对齐、数据契约可追溯、渐进式交付与智能体（Agents）分工。目标是在 `agents-toolchain/` 下形成可演进、可验证、可自动化扩展的“评测知识 + 执行编排”底座，为后续评测与产品线追踪提供结构化支撑。
 
-### 研究工具总体目标
-该工具的核心定位是项目的“研究与知识管理中枢”，它将系统化地支持评测体系在建立过程中的信息采集、整理、验证和关联工作，为最终的 `eval_system`（评估系统）提供高质量的、可追溯的数据与决策依据。
+## 1. 总体定位（Reframed Vision）
+该工具链 = 结构化知识库 (Models / Scenarios / Indicators / Capabilities / Benchmarks / Product Lines) + 采集与验证 Agents + 评测执行编排 + 审计与演化治理。
+
+核心价值：缩短“发现 → 结构化 → 评估 → 报告 → 回溯”路径，使新增模型/场景/供应商评测在 <= 1 小时内形成标准化报告，并与产品线指标自动对齐。
+
+对应四大核心矛盾的解法映射：
+| 核心矛盾 | 工具支撑机制 | 关键产物 |
+|----------|--------------|----------|
+| 模型分类可覆盖与扩展 | Taxonomy Registry + Schema 校验 + 自动相似检索建议 | `models/*.json` + 分类版本标签 |
+| 场景分类复用 | 场景标签矩阵 (模态/功能/风险/环境) + 组合生成器 | `scenarios/*/meta.json` |
+| 内部能力基线 | Benchmark Pullers + Baseline Store + 差异报告生成 | `benchmarks/*.json` / `benchmarks/models/*` |
+| 可量化评测 | 指标计算脚本 + 运行上下文记录 + 报告生成器 | `reports/<model>_<scenario>_<ts>.json` |
+
+## 2. 实体与数据契约（Canonical Entities）
+所有实体统一遵循：`id`（全局唯一 snake_case）、`version`（semver 或 snapshot_ts）、`source_refs[]`（包含 url, collected_at, verified_by, verification_state），并保持 JSON Schema（位于 `templates/`）。
+
+| 实体 | 主键 | 关键字段（增量补充） | 关系 | 典型来源 |
+|------|------|---------------------|------|----------|
+| Model | model_id | model_name, provider, input_types, output_types, architecture_family, size_params, inference{latency_ms, throughput_rps, memory_gb}, licenses[], tags[] | -> capabilities[], -> benchmarks | 官方文档 / LLM 评测榜 |
+| Scenario | scenario_id | name, description, modality_set, risk_level, environment_factors[], required_capabilities[], recommended_agents[] | -> indicators[], -> datasets | 业务域知识 / 车规要求 |
+| Indicator | metric_id | name, definition, formula, category, data_requirements, runbook, example_output, limitations | -> scripts/eval/* | 学术论文 / benchmark | 
+| Capability | capability_id | name, category(tree), description, input_types, output_types, minimal_requirements | <- models / -> agents | 内部拆解 |
+| Agent | agent_id | name, capability_ids[], orchestration_requirements, runtime_stack, example_use_cases[] | -> evaluation_plans | 组合能力设计 |
+| Dataset/Baseline | dataset_id | modality, size, license, splits, schema_digest, provenance | -> indicators | 公共数据集 / 内部脱敏 |
+| Benchmark Snapshot | benchmark_id + snapshot_ts | leaderboard_type, metrics[], model_entries[] | -> baseline_reference | 官方榜单 / 拉取脚本 |
+| Product Line | product_id | owner, features[], production_metrics[] | -> indicators, -> baseline_reference | PRD / 业务链路 |
+
+最小交付（MVP）需支持：Model / Scenario / Indicator / Benchmark Snapshot 四类实体的读取 & 关联引用校验。
+
+## 3. 阶段化路线（Phased Roadmap）
+
+### Phase 0 规范引导 & 引导脚手架
+目标：建立最小 JSON Schema 与验证脚本扩展点；接入 QA 日志工具。 
+产出：`templates/*` 差异补全说明、`scripts/validate_*.py` 扩展列表、增量校验报告格式。
+验收：新增一个模型与一个场景条目 → 校验通过（<30s）。
+
+### Phase 1 分类与采集基座 (Taxonomy & Harvest)
+能力：
+1. 多源情报聚合（arXiv / HuggingFace / 官方页面快照）本地化缓存（避免网络不稳定）。
+2. 分类法（模型/场景/能力）版本化（`taxonomy_versions/<date>.json`）。
+3. 变更审计：标签新增 / 重命名 / 合并生成 diff 报告。
+验收：覆盖 >= 95% 现有模型目录；新增模型分类 ≤ 2 人工小时。
+
+### Phase 2 指标矩阵与基线对接 (Metrics & Baselines)
+能力：
+1. 指标条目→脚本映射（指标 JSON 中 `run_script_ref` 指向 `scripts/eval/<metric>.py`）。
+2. Benchmark 拉取器（含 `lmarena_pull`、未来扩展 `chatbot_arena_pull`、`opencompass_pull`）。
+3. 基线快照对比（同一模型/指标新旧差异 + 阈值报警）。
+验收：指定 1 模型 × 1 场景自动生成差异摘要（含 top N 指标变动 > 阈值）。
+
+### Phase 3 评测编排 MVP (Evaluation Orchestrator MVP)
+能力：
+1. 输入：`--model_id` + `--scenario_id` → 解析所需 `indicators` + `datasets`。
+2. 运行：调用指标脚本（串/并行策略 + seed 固定），记录运行上下文（硬件、依赖、git commit）。
+3. 输出：结构化报告 JSON + 摘要 Markdown（差距建议 = 与最近基线对比）。
+验收：端到端时长 ≤ 1 小时（含数据准备假设已缓存）。
+
+### Phase 4 智能体增强 (Agentic Augmentation)
+新增 Agents：
+- Retrieval Synthesizer：基于现有实体 + QA 历史生成回答并附引用（top-k source_refs）。
+- Evaluation Planner：根据场景风险等级选择增强指标（例如安全性场景自动加入 `toxicity` / `robustness_adv`）。
+- Gap Analyzer：对比产品线 `target_value` 与最新报告生成整改建议（降维优先级列表）。
+验收：输入自然语言问题（如："某模型在驾驶辅助场景延迟表现如何？"）→ 输出含引用编号回答。
+
+### Phase 5 运维治理 (Governance & Evolution)
+能力：基线刷新策略（季度 / 事件触发） + 指标弃用流程（deprecation_state） + 风险审计（缺失来源、可疑数值）。
+验收：治理报告自动生成（含：待验证条目、近期 schema 变更、指标弃用列表）。
+
+## 4. 功能需求分层（Functional Breakdown）
+1. 数据采集层：拉取/解析/缓存 → 统一 Source Reference 结构。 
+2. 语义对齐层：分类法应用 + 重复检测（基于名称/参数/模态特征指纹）。
+3. 校验与合规：Schema 校验、引用完整性、数值范围（延迟/吞吐异常检测）。
+4. 指标执行层：指标 → 运行脚本映射 + 运行缓存（避免重复计算）。
+5. 报告与对比：基线差异、回归风险、产品线影响。
+6. QA / 智能回答：检索 + 策略 + 引用链路。
+7. 版本 & 审计：所有实体变更写入 `logs/entity_change.jsonl`。
+
+## 5. 非功能要求（Non-Functional Requirements）
+| 维度 | 目标 | 说明 |
+|------|------|------|
+| 可追溯性 | 100% 实体带来源与时间戳 | 无来源条目拒绝进入主目录 |
+| 可复现性 | 评测报告含环境指纹 | hash(依赖版本+脚本+数据集清单) |
+| 扩展性 | 新增指标脚本无需改核心框架 | 通过 `run_script_ref` 自注册 |
+| 性能 | 单指标计算任务调度开销 < 2s | 轻量调度层，不包裹重推理 |
+| 审计 | 变更 diff T+0 输出 | 每次合并后生成报告 |
+| 安全/合规 | 内部数据集标记敏感级别 | 访问前检查标签 `sensitivity` |
+
+## 6. 智能体角色设计（Agent Roles）
+| Agent | 触发方式 | 输入 | 输出 | 核心算法/依赖 |
+|-------|----------|------|------|---------------|
+| IngestionAgent | 命令行 / 定时 | source_list | 原始快照 + 标准化条目草稿 | 正则 + HTML parser + 简单 NLP 去重 |
+| TaxonomyCuratorAgent | 人工交互 | 新增/冲突条目 | 标签建议 + 冲突报告 | 相似度 (embedding) |
+| MetricAdvisorAgent | model_id + scenario_id | 指标集合建议 | 指标优先级列表 | 场景风险矩阵规则 |
+| EvalPlannerAgent | model_id + scenario_id | 执行 DAG | 依赖解析 + 资源估算 | Heuristic + 简单拓扑排序 |
+| ReportSynthesizerAgent | run_results | Markdown 摘要 | 结构化 diff + 建议 | 指标差值阈值策略 |
+| QARetrievalAgent | question | 答案 + 引用 | Top-k 检索 + 模板化回答 | 向量检索（可后置） |
+| GapAnalyzerAgent | product_id | 影响报告 | 受影响 features 列表 | 指标→产品线反向索引 |
+
+最小实现（Phase 3 前）只需：IngestionAgent（脚本化）、EvalPlannerAgent（简化规则）、ReportSynthesizerAgent（diff 模板）。
+
+## 7. 指标编排契约（Evaluation Contract）
+输入参数：`model_id`, `scenario_id`, `metrics_override[]?`, `seed`, `output_dir`。
+流程：
+1. 解析场景 → 取得 `required_capabilities` → 映射默认指标集合。
+2. 加载模型条目 → 读取 baseline 引用（若存在）。
+3. 生成执行计划（顺序 / 并行组）。
+4. 执行并记录：每个指标生成 `result_item`（metric_id, value, ci, raw_artifact_ref, runtime_context_hash）。
+5. 生成对比：baseline_value, delta, delta_pct, status(OK|WARN|REGRESSION)。
+6. 输出：`report.json` + `summary.md`。
+
+错误模式与处理：
+| 场景 | 策略 |
+|------|------|
+| 指标脚本缺失 | 标记 `status=SKIPPED` 并在 summary 中汇总 |
+| 数据集引用不存在 | 中止并输出 `missing_dataset` 列表 |
+| 值超范围（如负延迟） | 标记异常，进入审计日志 |
+| Baseline 缺失 | 只输出当前值并提示建立基线 |
+
+## 8. 成功度量（Project Success Metrics）
+| 指标 | 定义 | 目标 (Phase 3) | 目标 (Phase 5) |
+|------|------|---------------|---------------|
+| 分类覆盖率 | (已分类模型 / 目标列表) | ≥95% | ≥98% |
+| 单次评测总耗时 | 启动→报告 | ≤60 min | ≤30 min |
+| 指标脚本复用率 | 复用指标 / 总调用 | ≥70% | ≥85% |
+| 回归发现平均时延 | 新基线→影响报告 | ≤1 天 | ≤4 小时 |
+| QA 回复引用完整率 | 含 >=1 source_ref | ≥90% | ≥98% |
+
+## 9. 目录与文件建议（增量）
+```
+agents-toolchain/
+    ingestion/
+        fetch_models.py
+        fetch_benchmarks.py
+    orchestration/
+        plan_eval.py
+        run_eval.py
+    reporting/
+        synthesize_report.py
+    governance/
+        diff_taxonomy.py
+logs/
+    entity_change.jsonl
+    eval_runs.jsonl
+taxonomy_versions/
+    taxonomy_v1.0.json
+reports/
+    <model>_<scenario>_<ts>/report.json
+```
+
+（当前可先用 README 中现有脚本结构，逐步补齐上述子目录，不强制一次成型。）
+
+## 10. 渐进 Backlog（首批 10 条）
+1. 扩展 `validate_models.py` → 支持 capability / benchmark 引用校验。
+2. 新增 `scripts/bench/lmarena_pull.py`（已在指南内列出）并生成快照示例。
+3. 生成 `taxonomy_versions/taxonomy_seed.json`（聚合现有模型输入/输出模态与能力关键词）。
+4. 指标模板补字段：`run_script_ref`, `limitations`, `example_output_ref`。
+5. 添加 `scripts/eval/latency_p99.py` & `scripts/eval/f1.py` 统一输出结构（value, ci, samples_used）。
+6. 设计 `reports/report_schema.json` 并给出示例。
+7. 实现最小 `plan_eval.py`（解析 scenario -> metrics 列表）。
+8. 实现 `synthesize_report.py`（合并运行结果 + baseline diff）。
+9. QA 工具扩展：支持 `--refs metric_id=...,model_id=...` 自动追加引用元数据。
+10. 生成首个端到端演示（手动 mock 一个模型与场景评测）。
+
+## 11. 风险与缓解策略（Updated）
+| 风险 | 影响 | 缓解 |
+|------|------|------|
+| 分类漂移（标签膨胀） | 查询噪声 | 设定标签注册流程 + 冻结主分类版本 |
+| Benchmark 页面结构变化 | 拉取失败 | 提供本地快照回退 + 解析层隔离 |
+| 指标脚本输出不一致 | 聚合失败 | 统一 `result_item` schema + 校验器 |
+| 数据敏感泄露 | 合规风险 | 所有内部数据集要求 `sensitivity` 标签 + 访问前检查 |
+| 评测耗时长 | 无法达成 1h 目标 | 预缓存数据 + 并行调度 + 轻量化指标优先级 |
+| 维护成本高 | 项目放缓 | 治理报告 + 弃用流程 + 脚本注释模板 |
+
+## 12. 下一步（Actionable Next Steps）
+立即可执行：
+1. 在 `templates/indicator_template.json` 中加入 `run_script_ref` 字段。
+2. 新增 `reports/README.md` 描述报告结构与示例。
+3. 起草 `taxonomy_versions/taxonomy_seed.json`（模型输入/输出+能力）。
 
 ---
-
-### 第一阶段：基础调研与分类法定义 (Foundation Research & Taxonomy Development)
-
-此阶段对应项目执行清单的步骤 1 和 2，目标是为模型和场景建立科学的分类标准。
-
-**研究工具需求:**
-
-1.  **多源情报聚合器 (Multi-Source Intelligence Aggregator)**
-    *   **功能描述**: 工具需要内置一个强大的搜索引擎，能够同时查询并聚合来自多个来源的信息，包括但不限于：学术论文数据库 (如 arXiv, Google Scholar)、技术博客、开源社区 (如 Hugging Face, GitHub)、以及供应商官网。
-    *   **关键关联数据**:
-        *   `模型 (Model)` -> `供应商/作者 (Supplier/Author)`, `模型架构 (Architecture)`, `开源/商用 (License)`, `流行度指标 (Popularity Score)`
-        *   `场景 (Scene)` -> `应用领域 (Domain)`, `车辆功能 (Vehicle Function)`, `相关法规 (Regulations)`
-    *   **研究与验证**:
-        *   提供并排比较(Side-by-Side)视图，用于对比不同来源对同一模型或场景的描述。
-        *   所有采集条目必须自动记录来源 URL 和采集时间戳。
-        *   提供“已验证” (Verified) 标签，需由研究人员手动确认信息准确性。
-
-2.  **协同分类法构建器 (Collaborative Taxonomy Builder)**
-    *   **功能描述**: 提供一个可视化的、支持多人协同编辑的界面，用于起草、迭代和最终确定模型与场景的分类标签体系。
-    *   **关键关联数据**:
-        *   `分类标签 (Tag)` -> `定义 (Definition)`, `父/子标签 (Parent/Child Tag)`, `关联模型/场景实例 (Linked Instances)`
-    *   **研究与验证**:
-        *   支持从聚合器中一键“添加为例”，将具体模型或场景作为标签定义的参考。
-        *   每个标签的修改历史都应被记录，并可追溯到修改人与时间。
-        *   提供版本控制，允许团队将某个版本的分类法保存为“基线规范 v1.0”。
-
-### 第二阶段：评测维度与基线数据研究 (Metrics & Baseline Data Scoping)
-
-此阶段对应项目执行清单的步骤 3，目标是定义评测指标矩阵和寻找合适的基线数据集。
-
-**研究工具需求:**
-
-1.  **公开基准搜索引擎 (Public Benchmark Search Engine)**
-    *   **功能描述**: 专项优化搜索，用于发现和评估全球范围内的权威评测数据集和排行榜 (Leaderboards)。例如，能针对“汽车目标检测”场景，检索出 Waymo Open Dataset, nuScenes, KITTI 等，并提供排行榜的官方链接。
-    *   **关键关联数据**:
-        *   `数据集 (Dataset)` -> `发布机构 (Organization)`, `应用场景标签 (Scene Tags)`, `数据模态 (Modality)`, `许可证 (License)`, `数据量 (Size)`
-        *   `排行榜 (Leaderboard)` -> `关联数据集 (Dataset)`, `Top模型 (Top Models)`, `关键指标 (Key Metrics)`
-    *   **研究与验证**:
-        *   工具应能解析排行榜页面，结构化地展示领先模型的性能指标。
-        *   提供一键导入功能，将发现的数据集和指标添加至内部的“潜在基线库”。
-        *   自动追踪关键数据集（如nuScenes）的更新动态，当有新版本或新挑战发布时提醒研究团队。
-
-2.  **评测指标知识库 (Evaluation Metrics Knowledge Base)**
-    *   **功能描述**: 建立一个内部维基（Wiki）系统，专门用于记录和解释各种AI评测指标。每个指标条目都应包含其定义、计算公式、适用场景、优缺点以及相关的学术论文或技术文档。
-    *   **关键关联数据**:
-        *   `指标 (Metric)` -> `定义 (Definition)`, `计算公式 (Formula)`, `适用模型/场景分类 (Applicable Categories)`, `参考来源 (Reference)`
-    *   **研究与验证**:
-        *   允许团队成员对指标的解释进行评论和修订，确保理解一致。
-        *   通过关联功能，将第一阶段定义的“模型分类”和“场景分类”与指标进行链接，为后续自动生成“度量矩阵”打下基础。
-
-### 第三阶段：评测工具链技术研究 (Toolchain & Implementation Research)
-
-此阶段对应项目执行清单的步骤 4，目标是为“最小可用评测脚本”的实现提供技术选型支持。
-
-**研究工具需求:**
-
-1.  **开源评测框架扫描器 (Open-Source Evaluation Framework Scanner)**
-    *   **功能描述**: 定向扫描 GitHub、技术社区等平台，发现并分析主流的 AI 模型评测框架和库（如 Hugging Face `evaluate`, `lm-evaluation-harness`, `MLPerf` 等）。工具应能自动提取框架的关键信息，如支持的模型类型、内置的评测指标、可扩展性、环境依赖等。
-    *   **关键关联数据**:
-        *   `框架/库 (Framework/Library)` -> `支持的模型格式 (Supported Formats)`, `内置指标 (Built-in Metrics)`, `社区活跃度 (Community Activity)`, `许可证 (License)`, `主要编程语言 (Language)`
-    *   **研究与验证**:
-        *   提供“一键部署”脚本或 Dockerfile 链接，方便团队快速试用。
-        *   对不同框架进行特征对比，生成选型建议报告，例如：“框架A对大模型支持更好，框架B在资源消耗评测方面更成熟”。
-        *   跟踪已选定框架的版本更新，当有重大功能发布或不兼容变更时发出通知。
-
-2.  **可复现环境知识库 (Reproducible Environment Knowledge Base)**
-    *   **功能描述**: 建立一个专门记录“如何确保评测结果可复现”的最佳实践库。内容包括但不限于：如何使用 Docker/Singularity 固化环境、如何管理 Python 依赖版本（如 poetry, pip-tools）、如何固定随机种子、以及如何记录硬件环境信息。
-    *   **关键关联数据**:
-        *   `技术实践 (Practice)` -> `适用场景 (Scenario)`, `优点 (Pros)`, `缺点 (Cons)`, `示例代码/配置 (Example Code)`
-    *   **研究与验证**:
-        *   提供标准化的环境记录模板（如 `environment.yaml`），团队在每次评测时可以基于此模板进行填写。
-        *   收集并链接到相关的官方文档和高质量的技术博客，作为深度阅读的参考。
-
-### 总结：研究工具的核心价值
-
-这个研究工具并非要取代最终的评测系统，而是作为评测系统建设过程中的“脚手架”和“知识沉淀平台”。它的核心价值在于：
-
-*   **结构化知识积累**：将研究过程中零散的信息（网页、论文、代码片段）转化为结构化的、相互关联的内部知识资产。
-*   **提升研究效率**：通过专项搜索、信息聚合和自动化追踪，减少研究人员在信息检索和验证上花费的重复性劳动。
-*   **保证决策质量**：为模型/场景分类的建立、评测维度的选取、技术框架的选型提供有数据支持、可追溯来源的决策依据。
-*   **促进团队协作**：通过协同编辑和统一的知识库，确保团队成员对概念、标准和实践的理解保持一致，降低沟通成本。
+本文件将作为后续 `agents-toolchain` 目录扩展与脚本开发的需求基线（Baseline v1）。新增阶段或角色请按“变更说明 + 影响分析 + 验收标准”格式提交。
