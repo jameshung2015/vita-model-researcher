@@ -1,0 +1,34 @@
+[
+  {
+    "model": "Qwen3-4B",
+    "elo": 1185.2,
+    "rank": 25,
+    "votes": 3500,
+    "win_rate": 0.49,
+    "snapshot_ts": 1758799426
+  },
+  {
+    "model": "Qwen3-8B",
+    "elo": 1238.7,
+    "rank": 15,
+    "votes": 6200,
+    "win_rate": 0.55,
+    "snapshot_ts": 1758799426
+  },
+  {
+    "model": "Qwen3-30B-A3B",
+    "elo": 1298.1,
+    "rank": 7,
+    "votes": 9800,
+    "win_rate": 0.6,
+    "snapshot_ts": 1758799426
+  },
+  {
+    "model": "Qwen3-235B-A22B",
+    "elo": 1332.4,
+    "rank": 3,
+    "votes": 14100,
+    "win_rate": 0.63,
+    "snapshot_ts": 1758799426
+  }
+]

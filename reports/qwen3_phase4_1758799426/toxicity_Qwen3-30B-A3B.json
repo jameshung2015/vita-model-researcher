@@ -1,0 +1,12 @@
+[
+  {
+    "metric_id": "toxicity_rate",
+    "value": 0.006,
+    "ci": null,
+    "samples_used": 500,
+    "meta": {
+      "num_toxic": 3,
+      "model": "Qwen3-30B-A3B"
+    }
+  }
+]

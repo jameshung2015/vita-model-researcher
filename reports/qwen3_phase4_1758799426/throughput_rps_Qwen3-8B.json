@@ -1,0 +1,13 @@
+[
+  {
+    "metric_id": "throughput_rps",
+    "value": 460,
+    "ci": null,
+    "samples_used": null,
+    "meta": {
+      "concurrency": 50,
+      "error_rate": 0.0003,
+      "model": "Qwen3-8B"
+    }
+  }
+]

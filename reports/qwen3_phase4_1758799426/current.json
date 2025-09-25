@@ -1,0 +1,274 @@
+[
+  {
+    "metric_id": "win_rate",
+    "value": 0.49,
+    "ci": null,
+    "samples_used": 3500,
+    "meta": {
+      "model": "Qwen3-4B",
+      "rank": 25,
+      "snapshot_ts": 1758799426,
+      "votes": 3500
+    }
+  },
+  {
+    "metric_id": "win_rate",
+    "value": 0.55,
+    "ci": null,
+    "samples_used": 6200,
+    "meta": {
+      "model": "Qwen3-8B",
+      "rank": 15,
+      "snapshot_ts": 1758799426,
+      "votes": 6200
+    }
+  },
+  {
+    "metric_id": "win_rate",
+    "value": 0.6,
+    "ci": null,
+    "samples_used": 9800,
+    "meta": {
+      "model": "Qwen3-30B-A3B",
+      "rank": 7,
+      "snapshot_ts": 1758799426,
+      "votes": 9800
+    }
+  },
+  {
+    "metric_id": "win_rate",
+    "value": 0.63,
+    "ci": null,
+    "samples_used": 14100,
+    "meta": {
+      "model": "Qwen3-235B-A22B",
+      "rank": 3,
+      "snapshot_ts": 1758799426,
+      "votes": 14100
+    }
+  },
+  {
+    "metric_id": "elo_rating",
+    "value": 1185.2,
+    "ci": null,
+    "samples_used": null,
+    "meta": {
+      "model": "Qwen3-4B",
+      "rank": 25,
+      "snapshot_ts": 1758799426,
+      "votes": 3500
+    }
+  },
+  {
+    "metric_id": "elo_rating",
+    "value": 1238.7,
+    "ci": null,
+    "samples_used": null,
+    "meta": {
+      "model": "Qwen3-8B",
+      "rank": 15,
+      "snapshot_ts": 1758799426,
+      "votes": 6200
+    }
+  },
+  {
+    "metric_id": "elo_rating",
+    "value": 1298.1,
+    "ci": null,
+    "samples_used": null,
+    "meta": {
+      "model": "Qwen3-30B-A3B",
+      "rank": 7,
+      "snapshot_ts": 1758799426,
+      "votes": 9800
+    }
+  },
+  {
+    "metric_id": "elo_rating",
+    "value": 1332.4,
+    "ci": null,
+    "samples_used": null,
+    "meta": {
+      "model": "Qwen3-235B-A22B",
+      "rank": 3,
+      "snapshot_ts": 1758799426,
+      "votes": 14100
+    }
+  },
+  {
+    "metric_id": "latency_p99",
+    "value": 119.49,
+    "ci": null,
+    "samples_used": null,
+    "meta": {
+      "p50_ms": 49.45,
+      "p90_ms": 89.13,
+      "seed": 42,
+      "model": "Qwen3-4B"
+    }
+  },
+  {
+    "metric_id": "latency_p99",
+    "value": 119.49,
+    "ci": null,
+    "samples_used": null,
+    "meta": {
+      "p50_ms": 49.45,
+      "p90_ms": 89.13,
+      "seed": 42,
+      "model": "Qwen3-8B"
+    }
+  },
+  {
+    "metric_id": "latency_p99",
+    "value": 119.49,
+    "ci": null,
+    "samples_used": null,
+    "meta": {
+      "p50_ms": 49.45,
+      "p90_ms": 89.13,
+      "seed": 42,
+      "model": "Qwen3-30B-A3B"
+    }
+  },
+  {
+    "metric_id": "latency_p99",
+    "value": 119.49,
+    "ci": null,
+    "samples_used": null,
+    "meta": {
+      "p50_ms": 49.45,
+      "p90_ms": 89.13,
+      "seed": 42,
+      "model": "Qwen3-235B-A22B"
+    }
+  },
+  {
+    "metric_id": "throughput_rps",
+    "value": 460,
+    "ci": null,
+    "samples_used": null,
+    "meta": {
+      "concurrency": 50,
+      "error_rate": 0.0003,
+      "model": "Qwen3-4B"
+    }
+  },
+  {
+    "metric_id": "throughput_rps",
+    "value": 460,
+    "ci": null,
+    "samples_used": null,
+    "meta": {
+      "concurrency": 50,
+      "error_rate": 0.0003,
+      "model": "Qwen3-8B"
+    }
+  },
+  {
+    "metric_id": "throughput_rps",
+    "value": 460,
+    "ci": null,
+    "samples_used": null,
+    "meta": {
+      "concurrency": 50,
+      "error_rate": 0.0003,
+      "model": "Qwen3-30B-A3B"
+    }
+  },
+  {
+    "metric_id": "throughput_rps",
+    "value": 460,
+    "ci": null,
+    "samples_used": null,
+    "meta": {
+      "concurrency": 50,
+      "error_rate": 0.0003,
+      "model": "Qwen3-235B-A22B"
+    }
+  },
+  {
+    "metric_id": "toxicity_rate",
+    "value": 0.006,
+    "ci": null,
+    "samples_used": 500,
+    "meta": {
+      "num_toxic": 3,
+      "model": "Qwen3-4B"
+    }
+  },
+  {
+    "metric_id": "toxicity_rate",
+    "value": 0.006,
+    "ci": null,
+    "samples_used": 500,
+    "meta": {
+      "num_toxic": 3,
+      "model": "Qwen3-8B"
+    }
+  },
+  {
+    "metric_id": "toxicity_rate",
+    "value": 0.006,
+    "ci": null,
+    "samples_used": 500,
+    "meta": {
+      "num_toxic": 3,
+      "model": "Qwen3-30B-A3B"
+    }
+  },
+  {
+    "metric_id": "toxicity_rate",
+    "value": 0.006,
+    "ci": null,
+    "samples_used": 500,
+    "meta": {
+      "num_toxic": 3,
+      "model": "Qwen3-235B-A22B"
+    }
+  },
+  {
+    "metric_id": "accuracy_f1",
+    "value": 0.6667,
+    "ci": null,
+    "samples_used": 3,
+    "meta": {
+      "precision": 0.6667,
+      "recall": 0.6667,
+      "model": "Qwen3-4B"
+    }
+  },
+  {
+    "metric_id": "accuracy_f1",
+    "value": 0.6667,
+    "ci": null,
+    "samples_used": 3,
+    "meta": {
+      "precision": 0.6667,
+      "recall": 0.6667,
+      "model": "Qwen3-8B"
+    }
+  },
+  {
+    "metric_id": "accuracy_f1",
+    "value": 0.6667,
+    "ci": null,
+    "samples_used": 3,
+    "meta": {
+      "precision": 0.6667,
+      "recall": 0.6667,
+      "model": "Qwen3-30B-A3B"
+    }
+  },
+  {
+    "metric_id": "accuracy_f1",
+    "value": 0.6667,
+    "ci": null,
+    "samples_used": 3,
+    "meta": {
+      "precision": 0.6667,
+      "recall": 0.6667,
+      "model": "Qwen3-235B-A22B"
+    }
+  }
+]

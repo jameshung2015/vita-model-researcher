@@ -1,0 +1,13 @@
+[
+  {
+    "metric_id": "accuracy_f1",
+    "value": 0.6667,
+    "ci": null,
+    "samples_used": 3,
+    "meta": {
+      "precision": 0.6667,
+      "recall": 0.6667,
+      "model": "Qwen3-8B"
+    }
+  }
+]
