@@ -1,0 +1,6 @@
+# Sample sources: arXiv / HuggingFace / official pages
+https://arxiv.org/
+https://huggingface.co/
+https://openai.com/research
+https://modelscope.cn/
+

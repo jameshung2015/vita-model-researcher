@@ -1,0 +1,88 @@
+{
+  "version": "20250924",
+  "categories": {
+    "inputs": [
+      "audio",
+      "document",
+      "image",
+      "text",
+      "video"
+    ],
+    "outputs": [
+      "text"
+    ],
+    "architecture": [
+      "moe multimodal (encoder vision + moe decoder)",
+      "transformer encoder-decoder (audio-to-text)",
+      "transformer-based; mix of dense and moe (mixture-of-experts) variants reported"
+    ],
+    "tags": [
+      "asr",
+      "long-context",
+      "moe",
+      "moonvit",
+      "multilingual",
+      "native-resolution",
+      "open-source",
+      "speech-to-text",
+      "vision-language"
+    ],
+    "size": [
+      "{'notable_variants': ['4b', '8b', '30b', '235b'], 'activated_params_note': 'some moe variants report a smaller base + activated experts (e.g., 30b-a3b, 235b-a22b)'}"
+    ]
+  },
+  "mappings": [
+    {
+      "model_ref": "Kimi-VL",
+      "inputs": [
+        "text",
+        "image",
+        "video",
+        "document"
+      ],
+      "outputs": [
+        "text"
+      ],
+      "arch": "moe multimodal (encoder vision + moe decoder)",
+      "size": null,
+      "tags": [
+        "vision-language",
+        "moe",
+        "long-context",
+        "open-source",
+        "moonvit",
+        "native-resolution"
+      ]
+    },
+    {
+      "model_ref": "Qwen3 (Qwen 3 series)",
+      "inputs": [
+        "text"
+      ],
+      "outputs": [
+        "text"
+      ],
+      "arch": "transformer-based; mix of dense and moe (mixture-of-experts) variants reported",
+      "size": "{'notable_variants': ['4b', '8b', '30b', '235b'], 'activated_params_note': 'some moe variants report a smaller base + activated experts (e.g., 30b-a3b, 235b-a22b)'}",
+      "tags": []
+    },
+    {
+      "model_ref": "Whisper ASR",
+      "inputs": [
+        "audio"
+      ],
+      "outputs": [
+        "text"
+      ],
+      "arch": "transformer encoder-decoder (audio-to-text)",
+      "size": null,
+      "tags": [
+        "asr",
+        "speech-to-text",
+        "multilingual",
+        "open-source"
+      ]
+    }
+  ],
+  "source": "models_index"
+}

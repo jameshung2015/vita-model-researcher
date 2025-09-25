@@ -1,0 +1,70 @@
+{
+  "name": "chat_ingest_fetch_sources",
+  "active": false,
+  "nodes": [
+    {
+      "parameters": {
+        "path": "chat_ingest",
+        "options": {
+          "response": "json"
+        }
+      },
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [260, 300]
+    },
+    {
+      "parameters": {
+        "functionCode": "const now = new Date().toISOString();\nlet urls = [];\nif (items[0].json.urls) urls = items[0].json.urls;\nif (items[0].json.url) urls.push(items[0].json.url);\nurls = Array.from(new Set(urls));\nreturn urls.map(u => ({json: {url: u, fetched_at: now}}));"
+      },
+      "name": "PrepareItems",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 2,
+      "position": [500, 300]
+    },
+    {
+      "parameters": {
+        "url": "={{$json.url}}",
+        "options": {
+          "responseFormat": "string"
+        }
+      },
+      "name": "Fetch",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [740, 300]
+    },
+    {
+      "parameters": {
+        "functionCode": "const crypto = require('crypto');\nconst MAX=5120;\nfunction fp(u, body){return crypto.createHash('sha256').update(String(u)+'\n'+String(body)).digest('hex')}\nreturn items.map(i=>{\n  const body = (i.json.body||i.json||'').toString();\n  return {json:{\n    url: i.json.url || i.binary?.data?.fileName,\n    status: i.json.statusCode || 200,\n    content_snippet: body.slice(0,MAX),\n    source_len: body.length || 0,\n    fetched_at: i.json.fetched_at || new Date().toISOString(),\n    fingerprint: fp(i.json.url, body)\n  }};\n});"
+      },
+      "name": "Summarize",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 2,
+      "position": [980, 300]
+    },
+    {
+      "parameters": {
+        "operation": "insert",
+        "collection": "sources_cache",
+        "fields": "={{$json}}"
+      },
+      "name": "Mongo Insert",
+      "type": "n8n-nodes-base.mongoDb",
+      "typeVersion": 3,
+      "position": [1220, 300],
+      "credentials": {
+        "mongoDb": {
+          "id": "Mongo Local"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Webhook": {"main": [[{"node": "PrepareItems", "type": "main", "index": 0}]]},
+    "PrepareItems": {"main": [[{"node": "Fetch", "type": "main", "index": 0}]]},
+    "Fetch": {"main": [[{"node": "Summarize", "type": "main", "index": 0}]]},
+    "Summarize": {"main": [[{"node": "Mongo Insert", "type": "main", "index": 0}]]}
+  }
+}

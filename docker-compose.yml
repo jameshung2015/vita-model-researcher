@@ -1,0 +1,66 @@
+name: agents-kb
+
+services:
+  mongodb:
+    image: mongo:6
+    container_name: agents_mongodb
+    restart: unless-stopped
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_ROOT_USER:-root}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_ROOT_PASSWORD:-example}
+    ports:
+      - "${MONGO_PORT:-27017}:27017"
+    volumes:
+      - mongo_data:/data/db
+      - ./docker/mongo-init:/docker-entrypoint-initdb.d:ro
+    networks:
+      - agents_net
+
+  n8n:
+    image: n8nio/n8n:latest
+    container_name: agents_n8n
+    restart: unless-stopped
+    ports:
+      - "${N8N_PORT:-5678}:5678"
+    environment:
+      - N8N_HOST=${N8N_HOST:-localhost}
+      - N8N_PROTOCOL=${N8N_PROTOCOL:-http}
+      - N8N_PORT=5678
+      - TZ=${TZ:-Asia/Shanghai}
+      # Optional: enable basic auth for n8n UI
+      # - N8N_BASIC_AUTH_ACTIVE=true
+      # - N8N_BASIC_AUTH_USER=${N8N_BASIC_AUTH_USER}
+      # - N8N_BASIC_AUTH_PASSWORD=${N8N_BASIC_AUTH_PASSWORD}
+    volumes:
+      - n8n_data:/home/node/.n8n
+      - ./agents-toolchain/ingestion/n8n:/data/n8n_workflows:ro
+    depends_on:
+      - mongodb
+    networks:
+      - agents_net
+
+  chatbot:
+    build:
+      context: .
+      dockerfile: agents-toolchain/orchestration/Dockerfile
+    container_name: agents_chatbot
+    restart: unless-stopped
+    environment:
+      - CHATBOT_PORT=${CHATBOT_PORT:-8080}
+      - N8N_WEBHOOK_URL=${N8N_WEBHOOK_URL:-http://n8n:5678/webhook/chat_ingest}
+      - MONGO_URI=${MONGO_URI:-mongodb://root:example@mongodb:27017/?authSource=admin}
+    depends_on:
+      - n8n
+      - mongodb
+    ports:
+      - "${CHATBOT_PORT:-8080}:8080"
+    networks:
+      - agents_net
+
+volumes:
+  mongo_data:
+  n8n_data:
+
+networks:
+  agents_net:
+    driver: bridge

@@ -1,97 +1,108 @@
-# 大模型评价指标与工具 — 研究框架
+﻿# 澶фā鍨嬭瘎浠锋寚鏍囦笌宸ュ叿 鈥?鐮旂┒妗嗘灦
 
-目标
-- 建立一个面向产品和场景设计的“全景”大模型能力与规格知识库，支持快速查询与标签化评估，便于在设计场景或功能时设定模型需求。
+鐩爣
+- 寤虹珛涓€涓潰鍚戜骇鍝佸拰鍦烘櫙璁捐鐨勨€滃叏鏅€濆ぇ妯″瀷鑳藉姏涓庤鏍肩煡璇嗗簱锛屾敮鎸佸揩閫熸煡璇笌鏍囩鍖栬瘎浼帮紝渚夸簬鍦ㄨ璁″満鏅垨鍔熻兘鏃惰瀹氭ā鍨嬮渶姹傘€?
 
-总体思路（高层）
-- 将研究分为两大主体：模型规格与标准（规格KB）与场景研究（场景KB）。
-- 每个主体由多个子知识库组成（指标池、平台操作手册、备案/合规、原子能力与Agent清单、测试工具清单等）。
-- 以表格/结构化文件（JSON）为主存储单元，配合Markdown文档用于说明与操作指南，确保可机器解析与人工维护。
+鎬讳綋鎬濊矾锛堥珮灞傦級
+- 灏嗙爺绌跺垎涓轰袱澶т富浣擄細妯″瀷瑙勬牸涓庢爣鍑嗭紙瑙勬牸KB锛変笌鍦烘櫙鐮旂┒锛堝満鏅疜B锛夈€?
+- 姣忎釜涓讳綋鐢卞涓瓙鐭ヨ瘑搴撶粍鎴愶紙鎸囨爣姹犮€佸钩鍙版搷浣滄墜鍐屻€佸妗?鍚堣銆佸師瀛愯兘鍔涗笌Agent娓呭崟銆佹祴璇曞伐鍏锋竻鍗曠瓑锛夈€?
+- 浠ヨ〃鏍?缁撴瀯鍖栨枃浠讹紙JSON锛変负涓诲瓨鍌ㄥ崟鍏冿紝閰嶅悎Markdown鏂囨。鐢ㄤ簬璇存槑涓庢搷浣滄寚鍗楋紝纭繚鍙満鍣ㄨВ鏋愪笌浜哄伐缁存姢銆?
 
-布局与目录建议（本文件夹）
-- `indicators/` — 指标池与指标模板（指标定义、来源、维护团队、如何执行、是否付费、工具与产出示例）
-- `models/` — 按输入/输出类型组织的模型规格与标签（例如：文本->文本、图像->文本、文本->图像、多模态交互等）
-  - 模型条目字段说明（补充）
-    - `architecture_details`：可选，文本描述模型架构细节（例如 MoE、adapter、backbone 变体等）。
-    - `size_params`：可选，对 notable variants 与激活参数等进行摘要。
-    - `inference`：可选，包含推理/部署相关估算字段：`latency_ms`、`latency_level`、`throughput_rps`、`concurrency`、`memory_gb`、`quantization_friendly`、`supported_hardware`、`distributed_support`、`notes`。
-- `platforms/` — 训练平台、评测平台、部署平台操作知识库（按厂商或平台独立维护）
-- `registration/` — 大模型备案、合规与监管实践文档（国家/地区/流程）
-- `scenarios/` — 场景目录、场景数据管理、场景所需原子能力与Agent映射、场景测试规范与数据样例
-- `tools/` — 评测工具操作手册与范例、实车/台架测试工具列表与使用指南
-- `product_lines/` — 并在条目中引用 `models/` 中的 解决从 PRD 到量产测试验证的追踪问题，本仓库引入 `product_lines/` 模块，目标是把产品需求（PRD）中的 feature 与知识库中的原子能力、评测基线和生产指标建立可追溯的链路。主要用途：
-  - 对齐：把 PRD 里的 acceptance criteria 自动映射到可测量的 production metrics（从 `indicators/` 选择或自定义）。
-  - 回归：每次基线/benchmark 更新后能快速定位受影响的产品线与 feature，从而触发回归测试或告警。 
-  - 验收：作为 PM/QA 与研发共同的验收单（包含硬件/框架/批次等 measurement_context），便于量产验证与合规记录。
-- `templates/` — JSON模板，用于后续批量填充与自动化处理
-- `README.md`, `TODO.md` — 项目说明与任务清单（当前文件）
+甯冨眬涓庣洰褰曞缓璁紙鏈枃浠跺す锛?
+- `indicators/` 鈥?鎸囨爣姹犱笌鎸囨爣妯℃澘锛堟寚鏍囧畾涔夈€佹潵婧愩€佺淮鎶ゅ洟闃熴€佸浣曟墽琛屻€佹槸鍚︿粯璐广€佸伐鍏蜂笌浜у嚭绀轰緥锛?
+- `models/` 鈥?鎸夎緭鍏?杈撳嚭绫诲瀷缁勭粐鐨勬ā鍨嬭鏍间笌鏍囩锛堜緥濡傦細鏂囨湰->鏂囨湰銆佸浘鍍?>鏂囨湰銆佹枃鏈?>鍥惧儚銆佸妯℃€佷氦浜掔瓑锛?
+  - 妯″瀷鏉＄洰瀛楁璇存槑锛堣ˉ鍏咃級
+    - `architecture_details`锛氬彲閫夛紝鏂囨湰鎻忚堪妯″瀷鏋舵瀯缁嗚妭锛堜緥濡?MoE銆乤dapter銆乥ackbone 鍙樹綋绛夛級銆?
+    - `size_params`锛氬彲閫夛紝瀵?notable variants 涓庢縺娲诲弬鏁扮瓑杩涜鎽樿銆?
+    - `inference`锛氬彲閫夛紝鍖呭惈鎺ㄧ悊/閮ㄧ讲鐩稿叧浼扮畻瀛楁锛歚latency_ms`銆乣latency_level`銆乣throughput_rps`銆乣concurrency`銆乣memory_gb`銆乣quantization_friendly`銆乣supported_hardware`銆乣distributed_support`銆乣notes`銆?
+- `platforms/` 鈥?璁粌骞冲彴銆佽瘎娴嬪钩鍙般€侀儴缃插钩鍙版搷浣滅煡璇嗗簱锛堟寜鍘傚晢鎴栧钩鍙扮嫭绔嬬淮鎶わ級
+- `registration/` 鈥?澶фā鍨嬪妗堛€佸悎瑙勪笌鐩戠瀹炶返鏂囨。锛堝浗瀹?鍦板尯/娴佺▼锛?
+- `scenarios/` 鈥?鍦烘櫙鐩綍銆佸満鏅暟鎹鐞嗐€佸満鏅墍闇€鍘熷瓙鑳藉姏涓嶢gent鏄犲皠銆佸満鏅祴璇曡鑼冧笌鏁版嵁鏍蜂緥
+- `tools/` 鈥?璇勬祴宸ュ叿鎿嶄綔鎵嬪唽涓庤寖渚嬨€佸疄杞?鍙版灦娴嬭瘯宸ュ叿鍒楄〃涓庝娇鐢ㄦ寚鍗?
+- `product_lines/` 鈥?骞跺湪鏉＄洰涓紩鐢?`models/` 涓殑 瑙ｅ喅浠?PRD 鍒伴噺浜ф祴璇曢獙璇佺殑杩借釜闂锛屾湰浠撳簱寮曞叆 `product_lines/` 妯″潡锛岀洰鏍囨槸鎶婁骇鍝侀渶姹傦紙PRD锛変腑鐨?feature 涓庣煡璇嗗簱涓殑鍘熷瓙鑳藉姏銆佽瘎娴嬪熀绾垮拰鐢熶骇鎸囨爣寤虹珛鍙拷婧殑閾捐矾銆備富瑕佺敤閫旓細
+  - 瀵归綈锛氭妸 PRD 閲岀殑 acceptance criteria 鑷姩鏄犲皠鍒板彲娴嬮噺鐨?production metrics锛堜粠 `indicators/` 閫夋嫨鎴栬嚜瀹氫箟锛夈€?
+  - 鍥炲綊锛氭瘡娆″熀绾?benchmark 鏇存柊鍚庤兘蹇€熷畾浣嶅彈褰卞搷鐨勪骇鍝佺嚎涓?feature锛屼粠鑰岃Е鍙戝洖褰掓祴璇曟垨鍛婅銆?
+  - 楠屾敹锛氫綔涓?PM/QA 涓庣爺鍙戝叡鍚岀殑楠屾敹鍗曪紙鍖呭惈纭欢/妗嗘灦/鎵规绛?measurement_context锛夛紝渚夸簬閲忎骇楠岃瘉涓庡悎瑙勮褰曘€?
+- `templates/` 鈥?JSON妯℃澘锛岀敤浜庡悗缁壒閲忓～鍏呬笌鑷姩鍖栧鐞?
+快速上手（Docker + Chatbot + n8n + Mongo）
+- 前置：安装 Docker Desktop（Windows）。
+- 启动：
+  - Copy-Item .env.example .env
+  - docker compose up -d --build
+- 访问：
+  - n8n UI http://localhost:5678/（首次在 Credentials 配置 Mongo：host mongodb，user oot，auth DB dmin）
+  - Chatbot UI http://localhost:8080/（首页可直接调用 /chat）
+- 采集与查看：
+  - Chatbot 页面 Route=n8n，User Query 填 URL 触发采集；
+  - Route=langchain，Payload { "task": "list_sources", "limit": 5 } 查看最近采集数据。
+- 详见：docs/OPERATIONS.md（包含批量采集与命令行用法）。- `README.md`, `TODO.md` 鈥?椤圭洰璇存槑涓庝换鍔℃竻鍗曪紙褰撳墠鏂囦欢锛?
 
-QA 日志
-- 本仓库提供简单的 QA 记录工具，将提问与回答追加到 `qa/qa_history.jsonl`（JSONL 格式，UTC 时间戳），便于累积历史问答并进行后续索引或导出。
-
-
-数据契约（Data Contract）要点：
-- `product_id`：字符串，企业内部唯一 id（例如：`pl_autonomous_navigation_v1`）。
-- `features[]`：每个 feature 包含 `feature_id`,`required_capabilities`（引用 `templates/abilities.json` 的 id 列表）、`acceptance_criteria`（PRD 级别的验收条目）与 `production_metrics`。
-- `production_metrics`：每条包含 `metric_id`（参照 `indicators/`），`target_value`，`tolerance`，以及 `measurement_context`（硬件、framework、batch_size、测试脚本 引用），并可包含 `baseline_reference` 指向 `benchmarks/` 或 `benchmarks/models/...` 的基线 JSON 条目。
-- `templates/product_line_schema.json`：Product Line 的 JSON Schema（必填字段：`product_id`,`name`,`owner`,`features[]`）。
-- `templates/product_line.json`：示例模板，展示如何填写 feature -> metric 的映射。复制 `templates/product_line.json` 到 `product_lines/<product_id>.json`，填写字段并在 PR 中提交。
-
-
-CI 与校验建议：
-- 在仓库 CI（例如 GitHub Actions）中加入一个 job：
-  1) `schema-check`：使用 `jsonschema`（或内置校验脚本）验证 `product_lines/*.json` 与 `templates/product_line_schema.json` 的一致性。
-  2) `reference-check`：验证 `production_metrics.baseline_reference` 指向的文件存在且格式正确。
-  3) `capability-check`：验证 feature 的 `required_capabilities` 引用在 `templates/abilities.json` 中存在。
-
-示例（快速流程）：
-1) PM 在 PR 中添加 `product_lines/pl_xxx.json`，描述 PRD 要求与目标指标；
-2) CI 运行校验脚本并报告错误或遗漏；
-3) 维护团队或 owner 审阅并合并；
-4) 研发/QA 按 `measurement_context` 运行基线测试并把结果上传到 `benchmarks/`，随后触发回归/监控流程。
+QA 鏃ュ織
+- 鏈粨搴撴彁渚涚畝鍗曠殑 QA 璁板綍宸ュ叿锛屽皢鎻愰棶涓庡洖绛旇拷鍔犲埌 `qa/qa_history.jsonl`锛圝SONL 鏍煎紡锛孶TC 鏃堕棿鎴筹級锛屼究浜庣疮绉巻鍙查棶绛斿苟杩涜鍚庣画绱㈠紩鎴栧鍑恒€?
 
 
-核心合同（contract）
-- 输入：模型/场景/平台 的元信息（JSON）
-- 输出：可搜索的标签集合（按指标与场景）、评测执行说明、示例产出
-- 数据形态：
-  - 指标条目（JSON）示例字段：id, name, definition, source, owner, cost, tooling, runbook, example_output
-  - 模型条目（JSON）示例字段：model_name, input_types, output_types, size_params, architecture_family, license
-  - 场景条目（JSON）示例字段：scenario_id, name, description, required_atomic_capabilities, recommended_agents, test_data_refs
-- 错误模式：不一致标签、缺失字段、重复条目；需用CI/验证脚本检测并报告。
+鏁版嵁濂戠害锛圖ata Contract锛夎鐐癸細
+- `product_id`锛氬瓧绗︿覆锛屼紒涓氬唴閮ㄥ敮涓€ id锛堜緥濡傦細`pl_autonomous_navigation_v1`锛夈€?
+- `features[]`锛氭瘡涓?feature 鍖呭惈 `feature_id`,`required_capabilities`锛堝紩鐢?`templates/abilities.json` 鐨?id 鍒楄〃锛夈€乣acceptance_criteria`锛圥RD 绾у埆鐨勯獙鏀舵潯鐩級涓?`production_metrics`銆?
+- `production_metrics`锛氭瘡鏉″寘鍚?`metric_id`锛堝弬鐓?`indicators/`锛夛紝`target_value`锛宍tolerance`锛屼互鍙?`measurement_context`锛堢‖浠躲€乫ramework銆乥atch_size銆佹祴璇曡剼鏈?寮曠敤锛夛紝骞跺彲鍖呭惈 `baseline_reference` 鎸囧悜 `benchmarks/` 鎴?`benchmarks/models/...` 鐨勫熀绾?JSON 鏉＄洰銆?
+- `templates/product_line_schema.json`锛歅roduct Line 鐨?JSON Schema锛堝繀濉瓧娈碉細`product_id`,`name`,`owner`,`features[]`锛夈€?
+- `templates/product_line.json`锛氱ず渚嬫ā鏉匡紝灞曠ず濡備綍濉啓 feature -> metric 鐨勬槧灏勩€傚鍒?`templates/product_line.json` 鍒?`product_lines/<product_id>.json`锛屽～鍐欏瓧娈靛苟鍦?PR 涓彁浜ゃ€?
 
-规格拆解
-1) 指标池（Indicator Pool）
-  - 指标分类：性能（latency/throughput）、准确性（F1/EM/ROUGE）、稳健性（对抗/泛化）、安全（toxicity、隐私泄露）、对齐（指令遵从）、多模态质量指标等
-  - 每个指标记录：定义、计算方式、数据要求、评测脚本/工具、是否收费、维护团队、记录示例
 
-2) 定性指标（标签化）
-  - 部署性能：最低硬件、推荐硬件、对GPU/CPU/TPU的支持
-  - 推理能力：延迟等级、并发能力、分布式推理支持
-  - 模型规模：参数量、量化友好度、训练时长与成本估计
-  - 模型能力：通用理解、对话、检索、代码生成、视觉理解、多模态推理等能力标签
-  - 模型架构：transformer变体、encoder-only、decoder-only、encoder-decoder、多模态模块描述
+CI 涓庢牎楠屽缓璁細
+- 鍦ㄤ粨搴?CI锛堜緥濡?GitHub Actions锛変腑鍔犲叆涓€涓?job锛?
+  1) `schema-check`锛氫娇鐢?`jsonschema`锛堟垨鍐呯疆鏍￠獙鑴氭湰锛夐獙璇?`product_lines/*.json` 涓?`templates/product_line_schema.json` 鐨勪竴鑷存€с€?
+  2) `reference-check`锛氶獙璇?`production_metrics.baseline_reference` 鎸囧悜鐨勬枃浠跺瓨鍦ㄤ笖鏍煎紡姝ｇ‘銆?
+  3) `capability-check`锛氶獙璇?feature 鐨?`required_capabilities` 寮曠敤鍦?`templates/abilities.json` 涓瓨鍦ㄣ€?
 
-操作性知识库（按类别独立维护）
-- 训练平台（按厂商）：能力说明、支持的模型类型、示例训练流程、计费/配额信息
-- 评测平台（按厂商/工具）：如何上传模型、如何运行评测、示例报告格式
-- 大模型备案合规：法务/合规要求清单、备案流程、常见问题与合规案例
-- 定性指标补充：部署平台最低硬件、训练数据最低要求（样本量、标注类型）
+绀轰緥锛堝揩閫熸祦绋嬶級锛?
+1) PM 鍦?PR 涓坊鍔?`product_lines/pl_xxx.json`锛屾弿杩?PRD 瑕佹眰涓庣洰鏍囨寚鏍囷紱
+2) CI 杩愯鏍￠獙鑴氭湰骞舵姤鍛婇敊璇垨閬楁紡锛?
+3) 缁存姢鍥㈤槦鎴?owner 瀹￠槄骞跺悎骞讹紱
+4) 鐮斿彂/QA 鎸?`measurement_context` 杩愯鍩虹嚎娴嬭瘯骞舵妸缁撴灉涓婁紶鍒?`benchmarks/`锛岄殢鍚庤Е鍙戝洖褰?鐩戞帶娴佺▼銆?
 
-场景研究（概要）
-- 场景由“原子能力（atomic capabilities）”与“Agent能力”组成：
-  - 原子能力：可组合的最小功能单元（如：文本分类、实体抽取、OCR、语音识别、图像分割、知识检索）
-  - Agent：封装多个原子能力与策略，直接可用于解决特定任务（例如：客服Agent、写作助理、视觉检测Agent）
-- 建议维护两张表：
-  - 表1：能力清单（`templates/abilities.json`） — id, name, category, description, input_types, output_types, minimal_requirements
-  - 表2：Agent清单（`templates/agents.json`） — id, name, capability_ids, orchestration_requirements, runtime_requirements, example_use_cases
-- 场景指标：为每个场景定义必要指标标签（从指标池选取），并记录优先级与可接受阈值
-- 场景测试工具：列出并描述agent编排工具、场景数据管理工具、实车/台架测试工具，给出测试流程示例
 
-贡献指南（简要）
-- 新增指标或条目：在对应目录下新增YAML，然后提交PR，CI将运行schema校验脚本
-- 格式与命名规范：使用UTF-8，无BOM；文件名使用英文或拼音并包含语义前缀，例如 `indicators/accuracy/f1.yaml`
+鏍稿績鍚堝悓锛坈ontract锛?
+- 杈撳叆锛氭ā鍨?鍦烘櫙/骞冲彴 鐨勫厓淇℃伅锛圝SON锛?
+- 杈撳嚭锛氬彲鎼滅储鐨勬爣绛鹃泦鍚堬紙鎸夋寚鏍囦笌鍦烘櫙锛夈€佽瘎娴嬫墽琛岃鏄庛€佺ず渚嬩骇鍑?
+- 鏁版嵁褰㈡€侊細
+  - 鎸囨爣鏉＄洰锛圝SON锛夌ず渚嬪瓧娈碉細id, name, definition, source, owner, cost, tooling, runbook, example_output
+  - 妯″瀷鏉＄洰锛圝SON锛夌ず渚嬪瓧娈碉細model_name, input_types, output_types, size_params, architecture_family, license
+  - 鍦烘櫙鏉＄洰锛圝SON锛夌ず渚嬪瓧娈碉細scenario_id, name, description, required_atomic_capabilities, recommended_agents, test_data_refs
+- 閿欒妯″紡锛氫笉涓€鑷存爣绛俱€佺己澶卞瓧娈点€侀噸澶嶆潯鐩紱闇€鐢–I/楠岃瘉鑴氭湰妫€娴嬪苟鎶ュ憡銆?
 
-质量门（Quality Gates / QA）
-- 基本校验：所有条目必须包含ID、name、source/owner；指标必须带有runbook或执行说明
-- 自动化：后续添加CI脚本检查JSON/YAML的schema与必要字段
+瑙勬牸鎷嗚В
+1) 鎸囨爣姹狅紙Indicator Pool锛?
+  - 鎸囨爣鍒嗙被锛氭€ц兘锛坙atency/throughput锛夈€佸噯纭€э紙F1/EM/ROUGE锛夈€佺ǔ鍋ユ€э紙瀵规姉/娉涘寲锛夈€佸畨鍏紙toxicity銆侀殣绉佹硠闇诧級銆佸榻愶紙鎸囦护閬典粠锛夈€佸妯℃€佽川閲忔寚鏍囩瓑
+  - 姣忎釜鎸囨爣璁板綍锛氬畾涔夈€佽绠楁柟寮忋€佹暟鎹姹傘€佽瘎娴嬭剼鏈?宸ュ叿銆佹槸鍚︽敹璐广€佺淮鎶ゅ洟闃熴€佽褰曠ず渚?
+
+2) 瀹氭€ф寚鏍囷紙鏍囩鍖栵級
+  - 閮ㄧ讲鎬ц兘锛氭渶浣庣‖浠躲€佹帹鑽愮‖浠躲€佸GPU/CPU/TPU鐨勬敮鎸?
+  - 鎺ㄧ悊鑳藉姏锛氬欢杩熺瓑绾с€佸苟鍙戣兘鍔涖€佸垎甯冨紡鎺ㄧ悊鏀寔
+  - 妯″瀷瑙勬ā锛氬弬鏁伴噺銆侀噺鍖栧弸濂藉害銆佽缁冩椂闀夸笌鎴愭湰浼拌
+  - 妯″瀷鑳藉姏锛氶€氱敤鐞嗚В銆佸璇濄€佹绱€佷唬鐮佺敓鎴愩€佽瑙夌悊瑙ｃ€佸妯℃€佹帹鐞嗙瓑鑳藉姏鏍囩
+  - 妯″瀷鏋舵瀯锛歵ransformer鍙樹綋銆乪ncoder-only銆乨ecoder-only銆乪ncoder-decoder銆佸妯℃€佹ā鍧楁弿杩?
+
+鎿嶄綔鎬х煡璇嗗簱锛堟寜绫诲埆鐙珛缁存姢锛?
+- 璁粌骞冲彴锛堟寜鍘傚晢锛夛細鑳藉姏璇存槑銆佹敮鎸佺殑妯″瀷绫诲瀷銆佺ず渚嬭缁冩祦绋嬨€佽璐?閰嶉淇℃伅
+- 璇勬祴骞冲彴锛堟寜鍘傚晢/宸ュ叿锛夛細濡備綍涓婁紶妯″瀷銆佸浣曡繍琛岃瘎娴嬨€佺ず渚嬫姤鍛婃牸寮?
+- 澶фā鍨嬪妗堝悎瑙勶細娉曞姟/鍚堣瑕佹眰娓呭崟銆佸妗堟祦绋嬨€佸父瑙侀棶棰樹笌鍚堣妗堜緥
+- 瀹氭€ф寚鏍囪ˉ鍏咃細閮ㄧ讲骞冲彴鏈€浣庣‖浠躲€佽缁冩暟鎹渶浣庤姹傦紙鏍锋湰閲忋€佹爣娉ㄧ被鍨嬶級
+
+鍦烘櫙鐮旂┒锛堟瑕侊級
+- 鍦烘櫙鐢扁€滃師瀛愯兘鍔涳紙atomic capabilities锛夆€濅笌鈥淎gent鑳藉姏鈥濈粍鎴愶細
+  - 鍘熷瓙鑳藉姏锛氬彲缁勫悎鐨勬渶灏忓姛鑳藉崟鍏冿紙濡傦細鏂囨湰鍒嗙被銆佸疄浣撴娊鍙栥€丱CR銆佽闊宠瘑鍒€佸浘鍍忓垎鍓层€佺煡璇嗘绱級
+  - Agent锛氬皝瑁呭涓師瀛愯兘鍔涗笌绛栫暐锛岀洿鎺ュ彲鐢ㄤ簬瑙ｅ喅鐗瑰畾浠诲姟锛堜緥濡傦細瀹㈡湇Agent銆佸啓浣滃姪鐞嗐€佽瑙夋娴婣gent锛?
+- 寤鸿缁存姢涓ゅ紶琛細
+  - 琛?锛氳兘鍔涙竻鍗曪紙`templates/abilities.json`锛?鈥?id, name, category, description, input_types, output_types, minimal_requirements
+  - 琛?锛欰gent娓呭崟锛坄templates/agents.json`锛?鈥?id, name, capability_ids, orchestration_requirements, runtime_requirements, example_use_cases
+- 鍦烘櫙鎸囨爣锛氫负姣忎釜鍦烘櫙瀹氫箟蹇呰鎸囨爣鏍囩锛堜粠鎸囨爣姹犻€夊彇锛夛紝骞惰褰曚紭鍏堢骇涓庡彲鎺ュ彈闃堝€?
+- 鍦烘櫙娴嬭瘯宸ュ叿锛氬垪鍑哄苟鎻忚堪agent缂栨帓宸ュ叿銆佸満鏅暟鎹鐞嗗伐鍏枫€佸疄杞?鍙版灦娴嬭瘯宸ュ叿锛岀粰鍑烘祴璇曟祦绋嬬ず渚?
+
+璐＄尞鎸囧崡锛堢畝瑕侊級
+- 鏂板鎸囨爣鎴栨潯鐩細鍦ㄥ搴旂洰褰曚笅鏂板YAML锛岀劧鍚庢彁浜R锛孋I灏嗚繍琛宻chema鏍￠獙鑴氭湰
+- 鏍煎紡涓庡懡鍚嶈鑼冿細浣跨敤UTF-8锛屾棤BOM锛涙枃浠跺悕浣跨敤鑻辨枃鎴栨嫾闊冲苟鍖呭惈璇箟鍓嶇紑锛屼緥濡?`indicators/accuracy/f1.yaml`
+
+璐ㄩ噺闂紙Quality Gates / QA锛?
+- 鍩烘湰鏍￠獙锛氭墍鏈夋潯鐩繀椤诲寘鍚獻D銆乶ame銆乻ource/owner锛涙寚鏍囧繀椤诲甫鏈塺unbook鎴栨墽琛岃鏄?
+- 鑷姩鍖栵細鍚庣画娣诲姞CI鑴氭湰妫€鏌SON/YAML鐨剆chema涓庡繀瑕佸瓧娈

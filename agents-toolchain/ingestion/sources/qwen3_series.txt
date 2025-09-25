@@ -1,0 +1,8 @@
+# Qwen3 series curated sources (public)
+https://github.com/QwenLM/Qwen3
+https://huggingface.co/Qwen/Qwen3-4B
+https://huggingface.co/Qwen/Qwen3-8B
+https://huggingface.co/Qwen/Qwen3-30B-A3B
+https://huggingface.co/Qwen/Qwen3-235B-A22B
+https://qwenlm.github.io/
+
