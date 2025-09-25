@@ -1,0 +1,16 @@
+[
+  {
+    "metric_id": "latency_p99",
+    "prev": 119.49,
+    "curr": 119.49,
+    "delta": 0.0,
+    "over_threshold": false
+  },
+  {
+    "metric_id": "throughput_rps",
+    "prev": 460,
+    "curr": 460,
+    "delta": 0,
+    "over_threshold": false
+  }
+]
