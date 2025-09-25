@@ -1,4 +1,6 @@
-﻿[产品功能概览]
+﻿[license]: Apache-2.0 © zipairport 2025
+
+[产品功能概览]
 - 指标与评测：标准化指标定义与可执行脚本（`scripts/eval`, `scripts/bench`），统一输出格式（`unified_v1`）。
 - 模型规格库：`models/*.json` + `templates/model_schema.json`，支持家族/变体、硬件建议与部署提示。
 - 基准目录：`benchmarks/` 记录基准/任务与模型引用，支持快照与报告整合。
