@@ -1,0 +1,74 @@
+{
+  "model_name": "gpt-oss",
+  "homepage": "https://github.com/openai/gpt-oss",
+  "model_card_link": "https://arxiv.org/abs/2508.10925",
+  "license": "Apache-2.0",
+  "provenance": {
+    "provider": "OpenAI",
+    "release_date": "2025-08-15",
+    "notes": "Open-weight models per OpenAI open-models announcement; details per repo README."
+  },
+  "input_types": ["text"],
+  "output_types": ["text"],
+  "architecture_family": "decoder-only",
+  "architecture_details": "Mixture-of-Experts; trained with harmony response format; MXFP4 quantization for MoE weights.",
+  "size_params": {
+    "notable_variants": ["gpt-oss-120b", "gpt-oss-20b"],
+    "activated_params_note": "README states 120b has ~5.1B active params (117B total); 20b has ~3.6B active params (21B total)."
+  },
+  "capabilities": {
+    "reasoning": "configurable reasoning effort (low/medium/high)",
+    "function_calling": true,
+    "agent_tools": ["browser", "python"],
+    "structured_outputs": true
+  },
+  "tags": ["open-weight", "moe", "decoder-only", "harmony-format", "quantization:mxfp4"],
+  "variants": [
+    {
+      "name": "gpt-oss-120b",
+      "params": 120,
+      "context_windows": [32768],
+      "default_seq_len": 32768,
+      "default_num_gpus": 1,
+      "model_card_link": "https://huggingface.co/openai/gpt-oss-120b",
+      "release_date": "2025-08-15",
+      "hardware_recommendations": {
+        "notes": "Per README: MXFP4 allows single 80GB GPU (H100/MI300X) operation; evaluate per target runtime."
+      },
+      "tags": ["mxfp4","single-80gb"]
+    },
+    {
+      "name": "gpt-oss-20b",
+      "params": 21,
+      "context_windows": [32768],
+      "default_seq_len": 32768,
+      "default_num_gpus": 1,
+      "model_card_link": "https://huggingface.co/openai/gpt-oss-20b",
+      "release_date": "2025-08-15",
+      "hardware_recommendations": {
+        "notes": "Per README: runs within ~16GB memory with MXFP4; confirm on target hardware."
+      }
+    }
+  ],
+  "evaluation": {
+    "papers": ["https://arxiv.org/abs/2508.10925"],
+    "benchmarks": [],
+    "model_cards": [
+      "https://huggingface.co/openai/gpt-oss-120b",
+      "https://huggingface.co/openai/gpt-oss-20b"
+    ]
+  },
+  "inference": {
+    "latency_ms": null,
+    "latency_level": "high",
+    "throughput_rps": null,
+    "concurrency": null,
+    "memory_gb": null,
+    "quantization_friendly": true,
+    "supported_hardware": ["NVIDIA H100 80GB", "AMD MI300X"],
+    "distributed_support": true,
+    "notes": "Use harmony response format (via Transformers chat template or openai-harmony). Evaluate with vLLM/Transformers per README."
+  },
+  "notes": "Data derived from https://github.com/openai/gpt-oss README and linked resources at time of addition."
+}
+

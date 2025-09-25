@@ -17,19 +17,24 @@
       "moe multimodal (encoder vision + moe decoder)",
       "transformer encoder-decoder (audio-to-text)"
     ],
+    "size": [
+      "{'notable_variants': ['4b', '8b', '30b', '235b'], 'activated_params_note': 'moe variants report activated params (e.g., 30b-a3b, 235b-a22b)'}",
+      "{'notable_variants': ['gpt-oss-120b', 'gpt-oss-20b'], 'activated_params_note': 'readme states 120b has ~5.1b active params (117b total); 20b has ~3.6b active params (21b total).'}"
+    ],
     "tags": [
       "asr",
+      "decoder-only",
+      "harmony-format",
       "long-context",
       "moe",
       "moonvit",
       "multilingual",
       "native-resolution",
       "open-source",
+      "open-weight",
+      "quantization:mxfp4",
       "speech-to-text",
       "vision-language"
-    ],
-    "size": [
-      "{'notable_variants': ['4b', '8b', '30b', '235b'], 'activated_params_note': 'moe variants report activated params (e.g., 30b-a3b, 235b-a22b)'}"
     ]
   },
   "mappings": [
@@ -68,6 +73,24 @@
       "arch": "decoder-only",
       "size": null,
       "tags": []
+    },
+    {
+      "model_ref": "gpt-oss",
+      "inputs": [
+        "text"
+      ],
+      "outputs": [
+        "text"
+      ],
+      "arch": "decoder-only",
+      "size": "{'notable_variants': ['gpt-oss-120b', 'gpt-oss-20b'], 'activated_params_note': 'readme states 120b has ~5.1b active params (117b total); 20b has ~3.6b active params (21b total).'}",
+      "tags": [
+        "open-weight",
+        "moe",
+        "decoder-only",
+        "harmony-format",
+        "quantization:mxfp4"
+      ]
     },
     {
       "model_ref": "Kimi-Audio",
