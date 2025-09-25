@@ -14,18 +14,24 @@
     "architecture": [
       "decoder-only",
       "encoder-decoder",
+      "mixture-of-experts",
       "moe multimodal (encoder vision + moe decoder)",
       "transformer encoder-decoder (audio-to-text)"
     ],
     "size": [
       "{'notable_variants': ['4b', '8b', '30b', '235b'], 'activated_params_note': 'moe variants report activated params (e.g., 30b-a3b, 235b-a22b)'}",
+      "{'notable_variants': ['deepseek-v3', 'deepseek-r1'], 'activated_params_note': 'deepseek-v3 activates ~37b params per token; trained on ~14.8t tokens (report).'}",
       "{'notable_variants': ['gpt-oss-120b', 'gpt-oss-20b'], 'activated_params_note': 'readme states 120b has ~5.1b active params (117b total); 20b has ~3.6b active params (21b total).'}"
     ],
     "tags": [
       "asr",
+      "commercial-use",
+      "cot",
       "decoder-only",
+      "fp8",
       "harmony-format",
       "long-context",
+      "mla",
       "moe",
       "moonvit",
       "multilingual",
@@ -33,6 +39,7 @@
       "open-source",
       "open-weight",
       "quantization:mxfp4",
+      "rl",
       "speech-to-text",
       "vision-language"
     ]
@@ -49,6 +56,26 @@
       "arch": "decoder-only",
       "size": null,
       "tags": []
+    },
+    {
+      "model_ref": "DeepSeek",
+      "inputs": [
+        "text"
+      ],
+      "outputs": [
+        "text"
+      ],
+      "arch": "mixture-of-experts",
+      "size": "{'notable_variants': ['deepseek-v3', 'deepseek-r1'], 'activated_params_note': 'deepseek-v3 activates ~37b params per token; trained on ~14.8t tokens (report).'}",
+      "tags": [
+        "moe",
+        "mla",
+        "fp8",
+        "rl",
+        "cot",
+        "open-weight",
+        "commercial-use"
+      ]
     },
     {
       "model_ref": "gpt-4o",

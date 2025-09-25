@@ -1,0 +1,70 @@
+{
+  "model_name": "DeepSeek",
+  "homepage": "https://www.deepseek.com/",
+  "model_card_link": "https://arxiv.org/abs/2412.19437",
+  "license": "Mixed: Code MIT; Models under DeepSeek Model License (V3) / MIT (R1). See upstream repos.",
+  "provenance": {
+    "provider": "DeepSeek-AI",
+    "release_date": "2024-12-20",
+    "notes": "DeepSeek-V3 technical report 2412.19437; DeepSeek-R1 reasoning models report 2501.12948."
+  },
+  "input_types": ["text"],
+  "output_types": ["text"],
+  "architecture_family": "mixture-of-experts",
+  "architecture_details": "V3: 671B total parameters, ~37B activated/token; MLA + DeepSeekMoE; FP8 training; R1: reasoning models via large-scale RL with CoT behaviors.",
+  "size_params": {
+    "notable_variants": ["DeepSeek-V3", "DeepSeek-R1"],
+    "activated_params_note": "DeepSeek-V3 activates ~37B params per token; trained on ~14.8T tokens (report)."
+  },
+  "capabilities": {
+    "reasoning_and_code": "V3 strong general + distilled reasoning; R1 specialized for reasoning via RL",
+    "long_context_support": null,
+    "multilingual": true
+  },
+  "tags": ["moe","mla","fp8","rl","cot","open-weight","commercial-use"],
+  "variants": [
+    {
+      "name": "DeepSeek-V3",
+      "params": 671,
+      "model_card_link": "https://github.com/deepseek-ai/DeepSeek-V3",
+      "release_date": "2024-12-20",
+      "hardware_recommendations": {
+        "notes": "Supported by SGLang, LMDeploy, TensorRT-LLM, vLLM; NVIDIA & AMD GPUs; FP8/BF16 paths; multi-node tensor/pipeline parallel recommended."
+      },
+      "tags": ["base","chat","moe","671b_total","37b_active"]
+    },
+    {
+      "name": "DeepSeek-R1",
+      "params": 70,
+      "model_card_link": "https://github.com/deepseek-ai/DeepSeek-R1",
+      "release_date": "2025-01-25",
+      "hardware_recommendations": {
+        "notes": "Reasoning models and distilled dense variants (1.5B–70B) available; choose variant per task/latency."
+      },
+      "tags": ["reasoning","rl","cot"]
+    }
+  ],
+  "evaluation": {
+    "papers": [
+      "https://arxiv.org/abs/2412.19437",
+      "https://arxiv.org/abs/2501.12948"
+    ],
+    "benchmarks": ["mmlu","gsm8k"],
+    "model_cards": [
+      "https://github.com/deepseek-ai/DeepSeek-V3",
+      "https://github.com/deepseek-ai/DeepSeek-R1"
+    ]
+  },
+  "inference": {
+    "latency_ms": null,
+    "latency_level": "high",
+    "throughput_rps": null,
+    "concurrency": null,
+    "memory_gb": null,
+    "quantization_friendly": true,
+    "supported_hardware": ["NVIDIA H100/H800","AMD MI300X"],
+    "distributed_support": true,
+    "notes": "Use SGLang/LMDeploy/TRT-LLM/vLLM per DeepSeek-V3 README; FP8/BF16 supported; ensure MLA optimizations where available."
+  },
+  "notes": "Sources: DeepSeek-V3 README (github.com/deepseek-ai/DeepSeek-V3), DeepSeek-R1 README (github.com/deepseek-ai/DeepSeek-R1), associated arXiv reports."
+}
