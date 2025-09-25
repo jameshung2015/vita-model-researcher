@@ -20,15 +20,16 @@ Work Items
 - [ ] Accuracy example: accuracy_f1 (existing unified evaluator)
 
 3) Snapshots & Reports
-- [ ] Generate new LM Arena snapshot for all Qwen3 variants
-- [ ] Normalize to unified_v1 JSON under reports/
-- [ ] Add summary.md via scripts/report/unified_to_md.py
-- [ ] Establish/update baselines and run baseline_diff as needed
+- [x] Generate new LM Arena snapshot for all Qwen3 variants
+- [x] Normalize to unified_v1 JSON under reports/
+- [x] Add summary.md via scripts/report/unified_to_md.py
+- [x] Establish/update baselines and run baseline_diff as needed
+- [x] Publish stable baseline for Qwen3 at `reports/baselines/qwen3/1758819673/`
 
 4) Docs
 - [x] Add docs/PHASE3_QUICKSTART.md
-- [ ] Add snapshots blurb (benchmarks/index.md or separate doc)
-- [ ] Update README with Phase 3 quickstart link
+- [x] Add snapshots blurb (benchmarks/index.md)
+- [x] Update README with Phase 3 quickstart link
 
 5) Validation
 - [ ] Run scripts/validate_models.py; fix any schema issues
