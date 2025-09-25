@@ -28,7 +28,7 @@
   ],
   "evaluation": {
     "papers": ["https://arxiv.org/abs/2212.04356"],
-    "benchmarks": ["Common Voice","Fleurs","WMT (for translation)"],
+    "benchmarks": [],
     "model_cards": ["https://github.com/openai/whisper/blob/main/model-card.md"]
   },
   "notes": "Sources: OpenAI Whisper GitHub repository (README, model-card.md) and Whisper paper. VRAM and context window are implementation-dependent; Whisper processes audio in sliding windows (~30s) by default."

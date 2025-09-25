@@ -1,6 +1,11 @@
 #!/usr/bin/env python3
-"""Minimal F1 runbook stub: reads optional --gold and --pred JSON files (list of labels)
-and prints a JSON result with precision/recall/f1. If files not provided, prints example output.
+"""Minimal F1 runbook stub with unified output.
+
+Reads optional --gold and --pred JSON files (list of labels) and prints a JSON
+result. By default emits a unified structure:
+  {"metric_id","value","ci","samples_used","meta"}
+
+Use --legacy to emit {"precision","recall","f1"} for backward compatibility.
 """
 import argparse
 import json
@@ -19,6 +24,8 @@ def main():
     parser.add_argument('--gold')
     parser.add_argument('--pred')
     parser.add_argument('--output')
+    parser.add_argument('--metric_id', default='accuracy_f1')
+    parser.add_argument('--legacy', action='store_true', help='Emit legacy precision/recall/f1 shape')
     args = parser.parse_args()
 
     if args.gold and args.pred:
@@ -26,11 +33,29 @@ def main():
             gold = json.load(open(args.gold))
             pred = json.load(open(args.pred))
             p,r,f = compute_f1(gold, pred)
-            out = {"precision": round(p,4), "recall": round(r,4), "f1": round(f,4)}
+            if args.legacy:
+                out = {"precision": round(p,4), "recall": round(r,4), "f1": round(f,4)}
+            else:
+                out = {
+                    "metric_id": args.metric_id,
+                    "value": round(f, 4),
+                    "ci": None,
+                    "samples_used": len(gold) if isinstance(gold, list) else None,
+                    "meta": {"precision": round(p,4), "recall": round(r,4)}
+                }
         except Exception as e:
             out = {"error": str(e)}
     else:
-        out = {"precision": 0.82, "recall": 0.78, "f1": 0.80, "note": "example output (no files provided)"}
+        if args.legacy:
+            out = {"precision": 0.82, "recall": 0.78, "f1": 0.80, "note": "example output (no files provided)"}
+        else:
+            out = {
+                "metric_id": args.metric_id,
+                "value": 0.80,
+                "ci": None,
+                "samples_used": 100,
+                "meta": {"precision": 0.82, "recall": 0.78, "note": "example output (no files provided)"}
+            }
 
     text = json.dumps(out, ensure_ascii=False)
     if args.output:

@@ -1,0 +1,10 @@
+{
+  "model_name": "gpt-4o",
+  "input_types": ["text"],
+  "output_types": ["text"],
+  "architecture_family": "decoder-only",
+  "variants": [
+    {"name": "gpt-4o", "params": 1, "context_windows": [8192], "default_seq_len": 8192, "default_num_gpus": 1}
+  ],
+  "notes": "Placeholder metadata for validation; replace with official details."
+}

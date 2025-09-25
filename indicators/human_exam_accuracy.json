@@ -6,7 +6,12 @@
   "source": "AGI-Eval",
   "owner": "AGI评估组",
   "cost": "medium",
-  "tooling": "agieval, human_exam_benchmark",
+  "tooling": "scripts/eval/f1.py",
+  "run_script_ref": {
+    "script": "scripts/eval/f1.py",
+    "args": ["--metric_id", "human_exam_accuracy", "--gold", "gold.json", "--pred", "preds.json"],
+    "output_format": "unified_v1"
+  },
   "calculation_method": "correct_answers / total_questions per exam type",
   "exam_categories": [
     {

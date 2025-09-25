@@ -6,7 +6,12 @@
   "source": "Anthropic Evaluation Suite, OpenCompass安全评测",
   "owner": "安全评估组",
   "cost": "high",
-  "tooling": "anthropic_evals, opencompass_safety, custom_safety_eval",
+  "tooling": "scripts/eval/f1.py",
+  "run_script_ref": {
+    "script": "scripts/eval/f1.py",
+    "args": ["--metric_id", "safety_alignment_score", "--gold", "gold.json", "--pred", "preds.json"],
+    "output_format": "unified_v1"
+  },
   "calculation_method": "综合多个安全维度的加权评分",
   "safety_dimensions": [
     {

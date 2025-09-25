@@ -6,15 +6,20 @@
   "source": "standard/学术",
   "owner": "评估组",
   "cost": "free",
-  "tooling": "eval/f1.py",
+  "tooling": "scripts/eval/f1.py",
+  "run_script_ref": {
+    "script": "scripts/eval/f1.py",
+    "args": ["--metric_id", "accuracy_f1", "--gold", "gold.json", "--pred", "preds.json"],
+    "output_format": "unified_v1"
+  },
   "runbook": {
     "summary": "对标注数据与模型预测做F1计算。",
     "steps": [
       "准备金标准标签集 (gold labels) 和模型预测 (predictions)",
       "若有多标签，先按标签或micro/macro设置聚合方式",
-      "运行 eval/f1.py --gold gold.json --pred preds.json --output f1.json",
-      "检查输出中 precision, recall, f1 字段"
+      "运行 python scripts/eval/f1.py --gold gold.json --pred preds.json --output f1.json",
+      "检查统一输出结构中的 metric_id, value, ci, samples_used, meta 字段"
     ]
   },
-  "example_output": {"precision": 0.82, "recall": 0.78, "f1": 0.80}
+  "example_output": {"metric_id": "accuracy_f1", "value": 0.80, "ci": null, "samples_used": 100, "meta": {"precision": 0.82, "recall": 0.78}}
 }

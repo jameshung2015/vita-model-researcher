@@ -6,9 +6,14 @@
   "source": "open_source_standard",
   "owner": "ML评估组",
   "cost": "free",
-  "tooling": "eval/f1.py",
-  "runbook": "使用标准预测与gold文件，运行eval/f1.py --pred preds.json --gold gold.json",
-  "example_output": {"precision": 0.82, "recall": 0.78, "f1": 0.80},
+  "tooling": "scripts/eval/f1.py",
+  "run_script_ref": {
+    "script": "scripts/eval/f1.py",
+    "args": ["--metric_id", "accuracy_f1", "--gold", "gold.json", "--pred", "preds.json"],
+    "output_format": "unified_v1"
+  },
+  "runbook": "使用标准预测与 gold 文件，运行 python scripts/eval/f1.py --pred preds.json --gold gold.json",
+  "example_output": {"metric_id": "accuracy_f1", "value": 0.80, "ci": null, "samples_used": 100, "meta": {"precision": 0.82, "recall": 0.78}},
   "measurement_recommendations": {
     "hardware": "建议的硬件与配置，例如 'A100:80GB x1'",
     "batch_size": "建议的 batch 用于测量指标",

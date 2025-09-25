@@ -1,0 +1,10 @@
+{
+  "model_name": "Baichuan-Omni",
+  "input_types": ["text"],
+  "output_types": ["text"],
+  "architecture_family": "decoder-only",
+  "variants": [
+    {"name": "base", "params": 1, "context_windows": [2048], "default_seq_len": 2048, "default_num_gpus": 1}
+  ],
+  "notes": "Placeholder entry to satisfy schema; update with accurate details."
+}

@@ -1,0 +1,9 @@
+[
+  {
+    "metric_id": "accuracy_f1",
+    "prev": 0.8,
+    "curr": 0.7,
+    "delta": -0.1,
+    "over_threshold": true
+  }
+]

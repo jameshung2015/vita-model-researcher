@@ -6,7 +6,12 @@
   "source": "AlpacaEval, Chatbot Arena",
   "owner": "评估组",
   "cost": "medium",
-  "tooling": "alpaca_eval, chatbot_arena",
+  "tooling": "scripts/bench/lmarena_pull.py",
+  "run_script_ref": {
+    "script": "scripts/bench/lmarena_pull.py",
+    "args": ["--models", "<model_name>", "--fields", "model,win_rate,votes", "--out", "benchmarks/snapshots/lmarena/<ts>.json"],
+    "output_format": "custom"
+  },
   "calculation_method": "wins / (wins + losses)",
   "variants": [
     {

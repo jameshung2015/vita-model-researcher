@@ -1,0 +1,10 @@
+{
+  "model_name": "Qwen2.5-Omni",
+  "input_types": ["text"],
+  "output_types": ["text"],
+  "architecture_family": "decoder-only",
+  "variants": [
+    {"name": "Qwen2.5-Omni", "params": 1, "context_windows": [32768], "default_seq_len": 32768, "default_num_gpus": 1}
+  ],
+  "notes": "Placeholder to satisfy schema; fill with official spec."
+}

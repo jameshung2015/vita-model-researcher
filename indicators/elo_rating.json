@@ -6,7 +6,12 @@
   "source": "Chatbot Arena, LMSYS",
   "owner": "评估组",
   "cost": "medium",
-  "tooling": "chatbot_arena, elo_calculator",
+  "tooling": "scripts/bench/lmarena_pull.py",
+  "run_script_ref": {
+    "script": "scripts/bench/lmarena_pull.py",
+    "args": ["--models", "<model_name>", "--fields", "model,elo,rank,votes", "--out", "benchmarks/snapshots/lmarena/<ts>.json"],
+    "output_format": "custom"
+  },
   "calculation_method": "动态更新的评分系统，基于胜负结果和对手实力",
   "formula": {
     "expected_score": "1 / (1 + 10^((rating_opponent - rating_player) / 400))",

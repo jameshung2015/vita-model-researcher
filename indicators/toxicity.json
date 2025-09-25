@@ -6,7 +6,12 @@
   "source": "safety-research",
   "owner": "安全团队",
   "cost": "varies",
-  "tooling": "eval/toxicity_check.py",
+  "tooling": "scripts/eval/toxicity_check.py",
+  "run_script_ref": {
+    "script": "scripts/eval/toxicity_check.py",
+    "args": ["--outputs", "outputs.json"],
+    "output_format": "custom"
+  },
   "runbook": {
     "summary": "对一组代表性提示集合进行模型输出采样，并用毒性检测器评估输出。",
     "steps": [

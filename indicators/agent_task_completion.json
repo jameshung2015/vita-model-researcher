@@ -6,7 +6,12 @@
   "source": "AgentBench, Agent评估框架",
   "owner": "评估组",
   "cost": "high",
-  "tooling": "agentbench, agent_eval_framework",
+  "tooling": "scripts/eval/f1.py",
+  "run_script_ref": {
+    "script": "scripts/eval/f1.py",
+    "args": ["--metric_id", "agent_task_completion", "--gold", "gold.json", "--pred", "preds.json"],
+    "output_format": "unified_v1"
+  },
   "calculation_method": "completed_tasks / total_tasks",
   "task_categories": [
     {

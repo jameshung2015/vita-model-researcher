@@ -1,0 +1,8 @@
+﻿- [ ] Add `benchmarks/index.md` entry referencing the snapshot(s)
+- [ ] Cross-reference checks: model -> indicators -> evaluator script exists (deferred)
+- [ ] Update `README.md` quickstart for Phase 2 commands
+- [ ] Append QA notes to `qa/qa_history.jsonl` via tooling
+- [ ] Scope and deliverables match Phase 2 intent
+- [ ] ACs are testable with current repo layout
+- [ ] Paths/commands align with repository guidelines
+- [ ] Any renames/conflicts or blocking dependencies

@@ -4,11 +4,14 @@ This folder mirrors the previous `eval/` and `bench/` locations and centralizes 
 
 Quick examples (PowerShell)
 
-Run the F1 stub:
+Run the F1 stub (unified output by default):
 
 ```powershell
 python .\scripts\eval\f1.py
 ```
+
+Unified output shape (unified_v1): `{ metric_id, value, ci, samples_used, meta }`.
+Use `--legacy` to emit `{ precision, recall, f1 }`.
 
 Latency profiler (deterministic):
 
@@ -27,6 +30,12 @@ Robustness and toxicity checks:
 ```powershell
 python .\scripts\eval\robustness_suite.py
 python .\scripts\eval\toxicity_check.py
+```
+
+LM Arena snapshot puller (stub):
+
+```powershell
+python .\scripts\bench\lmarena_pull.py --out .\benchmarks\snapshots\lmarena\<ts>.json
 ```
 
 Notes

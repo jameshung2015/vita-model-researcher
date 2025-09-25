@@ -55,7 +55,7 @@
   ],
   "evaluation": {
     "papers": ["https://arxiv.org/abs/2504.07491"],
-    "benchmarks": ["LongVideoBench","MMLongBench-Doc","MathVision","MMMU","InfoVQA","ScreenSpot-Pro"],
+    "benchmarks": ["opencompass","modelscope_leaderboard","chatbot_arena"],
     "model_cards": ["https://huggingface.co/moonshotai/Kimi-VL-A3B-Instruct","https://huggingface.co/moonshotai/Kimi-VL-A3B-Thinking-2506"]
   },
   "notes": "Sources: Kimi-VL Technical Report (arXiv:2504.07491), MoonshotAI GitHub, and Hugging Face model pages."

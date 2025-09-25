@@ -9,6 +9,7 @@ SCHEMA_PATH = os.path.join(ROOT, "templates", "model_schema.json")
 MODELS_GLOB = os.path.join(ROOT, "models", "*.json")
 BENCHMARKS_DIR = os.path.join(ROOT, "benchmarks")
 ABILITIES_PATH = os.path.join(ROOT, "templates", "abilities.json")
+INDICATORS_DIR = os.path.join(ROOT, "indicators")
 
 def load(path):
     with open(path, "r", encoding="utf-8") as f:
@@ -65,6 +66,32 @@ def main():
             print(f"ERROR reading {m}: {e}")
     if not ok:
         sys.exit(2)
+
+    # Extend: validate indicators' run_script_ref
+    ind_ok = True
+    for entry in os.scandir(INDICATORS_DIR):
+        if not (entry.is_file() and entry.name.endswith('.json')):
+            continue
+        path = entry.path
+        try:
+            data = load(path)
+            rsr = data.get('run_script_ref') or {}
+            script_rel = rsr.get('script')
+            if script_rel:
+                script_abs = os.path.join(ROOT, script_rel.replace('/', os.sep))
+                if not os.path.exists(script_abs):
+                    ind_ok = False
+                    print(f"XREF ERROR: {path} run_script_ref.script not found: {script_rel}")
+            else:
+                # If tooling present but run_script_ref missing, warn (Phase 2 expectation)
+                if data.get('tooling'):
+                    print(f"WARN: {path} has 'tooling' but missing 'run_script_ref'.")
+        except Exception as e:
+            ind_ok = False
+            print(f"ERROR reading {path}: {e}")
+
+    if not ind_ok:
+        sys.exit(3)
 
 if __name__ == '__main__':
     main()

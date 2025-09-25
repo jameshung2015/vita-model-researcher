@@ -1,5 +1,9 @@
 # 指标索引
 
+说明
+- 指标条目新增 `run_script_ref` 字段，指向可运行的评测脚本及参数，便于自动化执行与追溯。
+- 评测脚本默认输出统一结构：`{ metric_id, value, ci, samples_used, meta }`（统一版本 unified_v1）。
+
 本目录包含初始的指标条目（JSON 格式）、对应的 runbook（Markdown）以及样例输入/输出。当前文件一览：
 
 ## 现有指标：

@@ -6,7 +6,12 @@
   "source": "industry-practice",
   "owner": "平台工程",
   "cost": "free",
-  "tooling": "bench/load_test.py",
+  "tooling": "scripts/bench/load_test.py",
+  "run_script_ref": {
+    "script": "scripts/bench/load_test.py",
+    "args": ["--concurrency", "50"],
+    "output_format": "custom"
+  },
   "runbook": {
     "summary": "对目标部署在不同并发级别下测量系统吞吐。",
     "steps": [

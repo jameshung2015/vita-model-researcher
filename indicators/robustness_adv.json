@@ -6,7 +6,12 @@
   "source": "research-methods",
   "owner": "评估组",
   "cost": "free",
-  "tooling": "eval/robustness_suite.py",
+  "tooling": "scripts/eval/robustness_suite.py",
+  "run_script_ref": {
+    "script": "scripts/eval/robustness_suite.py",
+    "args": ["--gold", "gold.json", "--pred", "preds.json"],
+    "output_format": "custom"
+  },
   "runbook": {
     "summary": "使用一套扰动生成器（拼写错误、同义替换、格式变化）并测量关键任务指标退化程度。",
     "steps": [

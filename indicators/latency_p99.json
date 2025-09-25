@@ -6,7 +6,12 @@
   "source": "industry-practice",
   "owner": "平台工程",
   "cost": "free",
-  "tooling": "bench/latency_profiler.py",
+  "tooling": "scripts/bench/latency_profiler.py",
+  "run_script_ref": {
+    "script": "scripts/bench/latency_profiler.py",
+    "args": ["--seed", "42"],
+    "output_format": "custom"
+  },
   "runbook": {
     "summary": "在目标部署环境下使用代表性请求集测量P99延迟。",
     "steps": [

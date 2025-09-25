@@ -6,7 +6,12 @@
   "source": "OpenCompass VLMEvalKit, MMBench",
   "owner": "多模态评估组",
   "cost": "high",
-  "tooling": "vlmevalkit, mmbench, opencompass_multimodal",
+  "tooling": "scripts/eval/f1.py",
+  "run_script_ref": {
+    "script": "scripts/eval/f1.py",
+    "args": ["--metric_id", "multimodal_understanding_score", "--gold", "gold.json", "--pred", "preds.json"],
+    "output_format": "unified_v1"
+  },
   "calculation_method": "跨多个多模态任务的加权平均得分",
   "task_categories": [
     {
