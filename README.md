@@ -106,3 +106,9 @@ CI 涓庢牎楠屽缓璁細
 璐ㄩ噺闂紙Quality Gates / QA锛?
 - 鍩烘湰鏍￠獙锛氭墍鏈夋潯鐩繀椤诲寘鍚獻D銆乶ame銆乻ource/owner锛涙寚鏍囧繀椤诲甫鏈塺unbook鎴栨墽琛岃鏄?
 - 鑷姩鍖栵細鍚庣画娣诲姞CI鑴氭湰妫€鏌SON/YAML鐨剆chema涓庡繀瑕佸瓧娈
+
+# Phase 3 Quickstart（Qwen3 全变体 smoke）
+
+- 文档：见 docs/PHASE3_QUICKSTART.md（Windows/PowerShell 命令）。
+- LM Arena 快照保存在 enchmarks/snapshots/lmarena/ 以便历史追踪。
+- 统一输出（unified_v1）指标：win_rate、elo_rating、latency_p99、throughput_rps、toxicity_rate、accuracy_f1。
