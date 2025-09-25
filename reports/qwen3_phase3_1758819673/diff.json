@@ -1,0 +1,37 @@
+[
+  {
+    "metric_id": "win_rate",
+    "prev": 0.63,
+    "curr": 0.63,
+    "delta": 0.0,
+    "over_threshold": false
+  },
+  {
+    "metric_id": "elo_rating",
+    "prev": 1332.4,
+    "curr": 1332.4,
+    "delta": 0.0,
+    "over_threshold": false
+  },
+  {
+    "metric_id": "latency_p99",
+    "prev": 119.49,
+    "curr": 119.49,
+    "delta": 0.0,
+    "over_threshold": false
+  },
+  {
+    "metric_id": "throughput_rps",
+    "prev": 460,
+    "curr": 460,
+    "delta": 0,
+    "over_threshold": false
+  },
+  {
+    "metric_id": "toxicity_rate",
+    "prev": 0.006,
+    "curr": 0.006,
+    "delta": 0.0,
+    "over_threshold": false
+  }
+]
