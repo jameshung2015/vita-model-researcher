@@ -103,6 +103,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--id', required=True, help='indicator id, e.g., win_rate, elo_rating, latency_p99, throughput_rps, toxicity, accuracy_f1')
     ap.add_argument('--models', type=str, default='', help='comma-separated models (for win_rate/elo)')
+    ap.add_argument('--model', type=str, default=None, help='single model tag for latency/throughput/toxicity/f1 meta')
     ap.add_argument('--snapshot', type=Path, default=None, help='existing leaderboard snapshot file')
     ap.add_argument('--seed', type=int, default=None, help='seed for latency stub')
     ap.add_argument('--concurrency', type=int, default=50, help='for throughput stub')
@@ -115,6 +116,27 @@ def main():
     mid = args.id.strip().lower()
     models = [m.strip() for m in args.models.split(',') if m.strip()]
 
+    def _inject_model(path: Path, model: str | None):
+        if not model:
+            return
+        try:
+            data = json.loads(path.read_text(encoding='utf-8-sig'))
+        except Exception:
+            data = json.loads(path.read_text(encoding='utf-8'))
+        if isinstance(data, list):
+            for it in data:
+                meta = it.get('meta') or {}
+                if 'model' not in meta:
+                    meta['model'] = model
+                    it['meta'] = meta
+        else:
+            meta = data.get('meta') or {}
+            if 'model' not in meta:
+                meta['model'] = model
+                data['meta'] = meta
+            data = [data]
+        path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding='utf-8')
+
     if mid == 'win_rate':
         if not models:
             raise SystemExit('win_rate requires --models')
@@ -125,18 +147,21 @@ def main():
         run_elo(models, args.out, args.snapshot)
     elif mid == 'latency_p99':
         run_latency_p99(args.seed, args.out)
+        _inject_model(args.out, args.model)
     elif mid == 'throughput_rps':
         run_throughput(args.concurrency, args.out)
+        _inject_model(args.out, args.model)
     elif mid == 'toxicity':
         run_toxicity(args.toxicity_outputs, args.out)
+        _inject_model(args.out, args.model)
     elif mid == 'accuracy_f1':
         if not (args.gold and args.pred):
             raise SystemExit('accuracy_f1 requires --gold and --pred')
         run_f1(args.gold, args.pred, args.out)
+        _inject_model(args.out, args.model)
     else:
         raise SystemExit(f'Unsupported indicator id: {args.id}')
 
 
 if __name__ == '__main__':
     main()
-

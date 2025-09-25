@@ -1,0 +1,50 @@
+[
+  {
+    "metric_id": "latency_p99",
+    "value": 119.49,
+    "ci": null,
+    "samples_used": null,
+    "meta": {
+      "p50_ms": 49.45,
+      "p90_ms": 89.13,
+      "seed": 42,
+      "model": "Qwen3-4B"
+    }
+  },
+  {
+    "metric_id": "latency_p99",
+    "value": 119.49,
+    "ci": null,
+    "samples_used": null,
+    "meta": {
+      "p50_ms": 49.45,
+      "p90_ms": 89.13,
+      "seed": 42,
+      "model": "Qwen3-8B"
+    }
+  },
+  {
+    "metric_id": "latency_p99",
+    "value": 119.49,
+    "ci": null,
+    "samples_used": null,
+    "meta": {
+      "p50_ms": 49.45,
+      "p90_ms": 89.13,
+      "seed": 42,
+      "model": "Qwen3-30B-A3B"
+    }
+  },
+  {
+    "metric_id": "latency_p99",
+    "value": 119.49,
+    "ci": null,
+    "samples_used": null,
+    "meta": {
+      "p50_ms": 49.45,
+      "p90_ms": 89.13,
+      "seed": 42,
+      "model": "Qwen3-235B-A22B"
+    }
+  }
+]
