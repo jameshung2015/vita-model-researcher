@@ -1,4 +1,4 @@
-Phase 3 (Qwen3-first) TODO
+﻿Phase 3 (Qwen3-first) TODO
 --------------------------
 
 Scope
@@ -13,11 +13,11 @@ Work Items
 - [x] Update indicators/win_rate.json, indicators/elo_rating.json to unified_v1 via runner
 
 2) Qwen3 Smoke Metrics (from public perf themes)
-- [ ] Human preference: win_rate (LM Arena snapshot)
-- [ ] Ranking: elo_rating (LM Arena snapshot)
-- [ ] Safety: toxicity_rate (stub)
-- [ ] Efficiency: latency_p99 (stub), throughput_rps (stub)
-- [ ] Accuracy example: accuracy_f1 (existing unified evaluator)
+- [x] Human preference: win_rate (LM Arena snapshot)
+- [x] Ranking: elo_rating (LM Arena snapshot)
+- [x] Safety: toxicity_rate (stub)
+- [x] Efficiency: latency_p99 (stub), throughput_rps (stub)
+- [x] Accuracy example: accuracy_f1 (existing unified evaluator)
 
 3) Snapshots & Reports
 - [x] Generate new LM Arena snapshot for all Qwen3 variants
@@ -37,3 +37,4 @@ Work Items
 
 Notes
 - Do not add GitHub Actions. Commit snapshots for history under benchmarks/snapshots/lmarena/.
+
