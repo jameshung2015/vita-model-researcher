@@ -1,0 +1,32 @@
+{
+  "id": "mecat",
+  "name": "MECAT: Multi-Experts Constructed Audio Tasks",
+  "description": "A comprehensive benchmark for fine-grained audio understanding with two core tasks: audio captioning and audio question answering.",
+  "source": "https://github.com/xiaomi-research/mecat",
+  "datasets": [
+    { "name": "MECAT-Caption", "link": "https://huggingface.co/datasets/mispeech/MECAT-Caption", "license": "CC BY 3.0 (per repo README)" },
+    { "name": "MECAT-QA", "link": "https://huggingface.co/datasets/mispeech/MECAT-QA", "license": "CC BY 3.0 (per repo README)" }
+  ],
+  "tasks": [
+    { "id": "caption", "name": "Audio Captioning" },
+    { "id": "qa", "name": "Audio Question Answering" }
+  ],
+  "metrics": [
+    { "name": "BLEU", "definition": "Machine translation-style n-gram overlap for generated captions.", "calculation": "BLEU-n (per implementation)" },
+    { "name": "FENSE", "definition": "Fluency Error-based Sentence-BERT Evaluation for audio captioning.", "calculation": "mecat.evaluate --metrics fense" }
+  ],
+  "inference_environment": {
+    "description": "Environment used for running MECAT evaluations (example).",
+    "fields": {
+      "hardware": "A100 80GB x1 (example)",
+      "framework": "PyTorch + Transformers/vLLM (example)",
+      "batch_size": "variable; report with results",
+      "concurrency": "N/A",
+      "measurement_script": "python -m mecat.evaluate --prediction <file> --task <caption|qa> --metrics fense"
+    }
+  },
+  "test_method": "Follow the upstream README. Prepare prediction CSVs for caption/qa tasks and run `python -m mecat.evaluate` selecting tasks/subtasks and metrics (e.g., FENSE, BLEU).",
+  "example_scores": {},
+  "notes": "Per upstream README: supports multiple subtasks (e.g., long/short/music/speech/sound for caption; direct_perception/sound_characteristics/etc. for QA). Results in README show per-subtask scores for several models."
+}
+

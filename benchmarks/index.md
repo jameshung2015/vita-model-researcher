@@ -20,3 +20,4 @@ Snapshots（历史快照）
 - 生成（stub）：
   - `python scripts/bench/lmarena_pull.py --models "Qwen3-4B,Qwen3-8B,Qwen3-30B-A3B,Qwen3-235B-A22B" --out benchmarks/snapshots/lmarena/<ts>.json`
 
+- `mecat.json` MECAT（音频理解，Caption/QA；指标：FENSE、BLEU 等）来源：xiaomi-research/mecat
