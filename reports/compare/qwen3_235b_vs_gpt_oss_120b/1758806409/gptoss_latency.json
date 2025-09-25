@@ -1,0 +1,14 @@
+[
+  {
+    "metric_id": "latency_p99",
+    "value": 116.48,
+    "ci": null,
+    "samples_used": null,
+    "meta": {
+      "p50_ms": 51.7,
+      "p90_ms": 86.8,
+      "seed": 456,
+      "model": "gpt-oss-120b"
+    }
+  }
+]

@@ -1,0 +1,48 @@
+﻿[
+    {
+        "metric_id":  "latency_p99",
+        "value":  124.14,
+        "ci":  null,
+        "samples_used":  null,
+        "meta":  {
+                     "p50_ms":  52.41,
+                     "p90_ms":  87.11,
+                     "seed":  123,
+                     "model":  "qwen3-235b"
+                 }
+    },
+    {
+        "metric_id":  "latency_p99",
+        "value":  116.48,
+        "ci":  null,
+        "samples_used":  null,
+        "meta":  {
+                     "p50_ms":  51.7,
+                     "p90_ms":  86.8,
+                     "seed":  456,
+                     "model":  "gpt-oss-120b"
+                 }
+    },
+    {
+        "metric_id":  "throughput_rps",
+        "value":  430,
+        "ci":  null,
+        "samples_used":  null,
+        "meta":  {
+                     "concurrency":  80,
+                     "error_rate":  0.0004,
+                     "model":  "qwen3-235b"
+                 }
+    },
+    {
+        "metric_id":  "throughput_rps",
+        "value":  430,
+        "ci":  null,
+        "samples_used":  null,
+        "meta":  {
+                     "concurrency":  80,
+                     "error_rate":  0.0004,
+                     "model":  "gpt-oss-120b"
+                 }
+    }
+]

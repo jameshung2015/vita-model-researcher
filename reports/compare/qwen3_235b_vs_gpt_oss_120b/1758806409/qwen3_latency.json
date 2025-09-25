@@ -1,0 +1,14 @@
+[
+  {
+    "metric_id": "latency_p99",
+    "value": 124.14,
+    "ci": null,
+    "samples_used": null,
+    "meta": {
+      "p50_ms": 52.41,
+      "p90_ms": 87.11,
+      "seed": 123,
+      "model": "qwen3-235b"
+    }
+  }
+]

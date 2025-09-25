@@ -1,0 +1,13 @@
+[
+  {
+    "metric_id": "throughput_rps",
+    "value": 430,
+    "ci": null,
+    "samples_used": null,
+    "meta": {
+      "concurrency": 80,
+      "error_rate": 0.0004,
+      "model": "gpt-oss-120b"
+    }
+  }
+]
