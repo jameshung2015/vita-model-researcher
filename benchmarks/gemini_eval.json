@@ -1,0 +1,29 @@
+{
+  "id": "benchmark.gemini_eval_refs",
+  "name": "Gemini Public Evaluation References",
+  "description": "References to public evaluation results and leaderboards involving Google Gemini models (1.5 Pro/Flash, 2.0 Flash).",
+  "source": "Google AI for Developers; third-party leaderboards",
+  "models_referenced": ["gemini-1.5-pro", "gemini-1.5-flash", "gemini-2.0-flash"],
+  "references": [
+    {
+      "benchmark": "Chatbot Arena / LM Arena",
+      "link": "https://lmarena.ai/leaderboard",
+      "type": "human_preference (elo, win_rate)",
+      "notes": "Gemini 系列在 Arena 榜单可查实时 Elo/排名/胜率（以实际榜单为准）"
+    },
+    {
+      "benchmark": "MMLU",
+      "link": "https://ai.google.dev/gemini-api/docs/models/gemini",
+      "type": "accuracy",
+      "notes": "官方与第三方评测链接汇总入口；具体数值随版本/提示/上下文而变"
+    },
+    {
+      "benchmark": "GSM8K",
+      "link": "https://ai.google.dev/gemini-api/docs/models/gemini",
+      "type": "pass@1/accuracy",
+      "notes": "建议记录 prompt、CoT/verification、解析策略等复现细节"
+    }
+  ],
+  "notes": "本条目聚合链接而不固化数值，避免过时；如需固化分数，请将具体实测及配置写入 reports/ 并附快照。"
+}
+
