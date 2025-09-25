@@ -1,0 +1,79 @@
+{
+  "model_name": "Gemini",
+  "homepage": "https://ai.google.dev/gemini-api",
+  "model_card_link": "https://ai.google.dev/gemini-api/docs/models/gemini",
+  "license": "Proprietary (Google AI for Developers / Gemini API Terms)",
+  "provenance": {
+    "provider": "Google DeepMind",
+    "release_date": "2024-02-01",
+    "notes": "Public Gemini API models include 1.5 Pro/Flash and 2.0 Flash variants; multimodal support and long-context per docs."
+  },
+  "input_types": ["text", "image", "audio", "video"],
+  "output_types": ["text"],
+  "architecture_family": "multimodal",
+  "architecture_details": "Proprietary multimodal transformer; long-context support in select variants (e.g., 1.5 Pro experimental 1M tokens per docs).",
+  "size_params": {
+    "notable_variants": ["gemini-1.5-pro", "gemini-1.5-flash", "gemini-2.0-flash"],
+    "activated_params_note": "Parameter counts not publicly disclosed; API-managed deployment."
+  },
+  "capabilities": {
+    "multimodal": true,
+    "function_calling": true,
+    "tool_use": true,
+    "long_context_support": ["128k+", "up to 1M (select)"],
+    "streaming": true
+  },
+  "tags": ["multimodal","api","closed-weight","long-context"],
+  "variants": [
+    {
+      "name": "gemini-1.5-pro",
+      "params": 1,
+      "context_windows": [128000, 1000000],
+      "default_seq_len": 128000,
+      "default_num_gpus": 0,
+      "model_card_link": "https://ai.google.dev/gemini-api/docs/models/gemini#model-versions",
+      "release_date": "2024-02-01",
+      "hardware_recommendations": {"notes": "Hosted via Gemini API; client-side compute not applicable."},
+      "tags": ["pro","long-context"]
+    },
+    {
+      "name": "gemini-1.5-flash",
+      "params": 1,
+      "context_windows": [128000],
+      "default_seq_len": 128000,
+      "default_num_gpus": 0,
+      "model_card_link": "https://ai.google.dev/gemini-api/docs/models/gemini#model-versions",
+      "release_date": "2024-05-01",
+      "hardware_recommendations": {"notes": "Hosted via Gemini API; optimized for speed/cost."},
+      "tags": ["flash","cost-effective"]
+    },
+    {
+      "name": "gemini-2.0-flash",
+      "params": 1,
+      "context_windows": [128000],
+      "default_seq_len": 128000,
+      "default_num_gpus": 0,
+      "model_card_link": "https://ai.google.dev/gemini-api/docs/models/gemini#model-versions",
+      "release_date": "2024-12-01",
+      "hardware_recommendations": {"notes": "Hosted via Gemini API; newer generation Flash variant."},
+      "tags": ["2.0","flash"]
+    }
+  ],
+  "evaluation": {
+    "papers": ["https://ai.googleblog.com/", "https://deepmind.google/technologies/gemini/"],
+    "benchmarks": ["mmlu", "gsm8k", "chatbot_arena", "lmarena"],
+    "model_cards": ["https://ai.google.dev/gemini-api/docs/models/gemini"]
+  },
+  "inference": {
+    "latency_ms": null,
+    "latency_level": "variable (API-managed)",
+    "throughput_rps": null,
+    "concurrency": null,
+    "memory_gb": null,
+    "quantization_friendly": false,
+    "supported_hardware": ["Cloud API"],
+    "distributed_support": false,
+    "notes": "Use Gemini API clients; see ai.google.dev for SDKs and model features."
+  },
+  "notes": "Data derived from Google AI for Developers Gemini docs and public announcements. Parameter counts not disclosed; numeric placeholders used to satisfy schema."
+}

@@ -16,15 +16,19 @@
       "encoder-decoder",
       "mixture-of-experts",
       "moe multimodal (encoder vision + moe decoder)",
+      "multimodal",
       "transformer encoder-decoder (audio-to-text)"
     ],
     "size": [
       "{'notable_variants': ['4b', '8b', '30b', '235b'], 'activated_params_note': 'moe variants report activated params (e.g., 30b-a3b, 235b-a22b)'}",
       "{'notable_variants': ['deepseek-v3', 'deepseek-r1'], 'activated_params_note': 'deepseek-v3 activates ~37b params per token; trained on ~14.8t tokens (report).'}",
+      "{'notable_variants': ['gemini-1.5-pro', 'gemini-1.5-flash', 'gemini-2.0-flash'], 'activated_params_note': 'parameter counts not publicly disclosed; api-managed deployment.'}",
       "{'notable_variants': ['gpt-oss-120b', 'gpt-oss-20b'], 'activated_params_note': 'readme states 120b has ~5.1b active params (117b total); 20b has ~3.6b active params (21b total).'}"
     ],
     "tags": [
+      "api",
       "asr",
+      "closed-weight",
       "commercial-use",
       "cot",
       "decoder-only",
@@ -35,6 +39,7 @@
       "moe",
       "moonvit",
       "multilingual",
+      "multimodal",
       "native-resolution",
       "open-source",
       "open-weight",
@@ -75,6 +80,26 @@
         "cot",
         "open-weight",
         "commercial-use"
+      ]
+    },
+    {
+      "model_ref": "Gemini",
+      "inputs": [
+        "text",
+        "image",
+        "audio",
+        "video"
+      ],
+      "outputs": [
+        "text"
+      ],
+      "arch": "multimodal",
+      "size": "{'notable_variants': ['gemini-1.5-pro', 'gemini-1.5-flash', 'gemini-2.0-flash'], 'activated_params_note': 'parameter counts not publicly disclosed; api-managed deployment.'}",
+      "tags": [
+        "multimodal",
+        "api",
+        "closed-weight",
+        "long-context"
       ]
     },
     {
