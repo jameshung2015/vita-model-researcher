@@ -8,7 +8,7 @@ Usage:
 import argparse
 import json
 import os
-from datetime import datetime
+from datetime import datetime, timezone
 
 
 def load(path: str) -> dict:
@@ -32,7 +32,7 @@ def diff_cats(old: dict, new: dict) -> dict:
 
 def write_reports(diff: dict, out_dir: str) -> tuple[str, str]:
     os.makedirs(out_dir, exist_ok=True)
-    ts = datetime.utcnow().strftime('%Y%m%dT%H%M%SZ')
+    ts = datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')
     jpath = os.path.join(out_dir, f"taxonomy_diff_{ts}.json")
     mpath = os.path.join(out_dir, f"taxonomy_diff_{ts}.md")
     with open(jpath, 'w', encoding='utf-8') as f:
@@ -65,4 +65,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-

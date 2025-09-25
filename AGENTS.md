@@ -38,3 +38,18 @@
 ## Security & Configuration Tips
 - Do not commit secrets or private data; keep `.env` local. Run `python tools/check_sensitive.py` before pushing.
 - Document required environment variables in `README.md` or the relevant tool doc.
+
+## Agent Playbook
+- Day‑to‑day commands (PowerShell):
+  - Validate models: `python agents-toolchain/governance/validate_models_cli.py --report`
+  - Build taxonomy: `python agents-toolchain/governance/build_taxonomy.py`
+  - Diff taxonomy: `python agents-toolchain/governance/diff_taxonomy.py taxonomy_versions/old.json taxonomy_versions/new.json --out reports`
+  - Phase 5 checks: `python scripts/governance/run_phase5_checks.py --report --threshold 0.95`
+- Add a new model:
+  - Create `models/<name>.json` following `templates/model_schema.json`.
+  - Run schema validation and update taxonomy snapshot.
+- Add a new benchmark:
+  - Create `benchmarks/<id>.json` (see `templates/benchmark_template.json`).
+  - Link to upstream repo, tasks covered, and any model references.
+- QA logging:
+  - Append Q&A cases to `qa/qa_history.jsonl` as JSONL entries with fields like `{ ts, q, a, tags }`.

@@ -16,7 +16,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
-from datetime import datetime
+from datetime import datetime, timezone
 
 
 def load_json(path: str) -> dict:
@@ -63,7 +63,7 @@ def main():
 
     os.makedirs(os.path.dirname(args.logs), exist_ok=True)
     os.makedirs(args.out, exist_ok=True)
-    ts = datetime.utcnow().strftime('%Y%m%dT%H%M%SZ')
+    ts = datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')
 
     actions = []
     for cat, d in diff.items():
@@ -113,4 +113,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-

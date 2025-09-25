@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Ownership Registry Schema",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string" },
+    "name": { "type": "string" },
+    "owners": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "owner_id": { "type": "string" },
+          "display_name": { "type": "string" },
+          "email": { "type": "string" },
+          "areas": { "type": "array", "items": { "type": "string" } },
+          "paths": { "type": "array", "items": { "type": "string" } },
+          "service_level": { "type": "string", "enum": ["gold", "silver", "bronze"] },
+          "review_policy": { "type": "string" }
+        },
+        "required": ["owner_id", "display_name", "paths"],
+        "additionalProperties": false
+      }
+    },
+    "updated_at": { "type": "string" },
+    "source": { "type": "string" }
+  },
+  "required": ["id", "name", "owners"],
+  "additionalProperties": false
+}
+

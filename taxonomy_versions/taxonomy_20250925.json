@@ -1,0 +1,161 @@
+{
+  "version": "20250925",
+  "categories": {
+    "inputs": [
+      "audio",
+      "document",
+      "image",
+      "text",
+      "video"
+    ],
+    "outputs": [
+      "text"
+    ],
+    "architecture": [
+      "decoder-only",
+      "encoder-decoder",
+      "moe multimodal (encoder vision + moe decoder)",
+      "transformer encoder-decoder (audio-to-text)"
+    ],
+    "tags": [
+      "asr",
+      "long-context",
+      "moe",
+      "moonvit",
+      "multilingual",
+      "native-resolution",
+      "open-source",
+      "speech-to-text",
+      "vision-language"
+    ],
+    "size": [
+      "{'notable_variants': ['4b', '8b', '30b', '235b'], 'activated_params_note': 'moe variants report activated params (e.g., 30b-a3b, 235b-a22b)'}"
+    ]
+  },
+  "mappings": [
+    {
+      "model_ref": "Baichuan-Omni",
+      "inputs": [
+        "text"
+      ],
+      "outputs": [
+        "text"
+      ],
+      "arch": "decoder-only",
+      "size": null,
+      "tags": []
+    },
+    {
+      "model_ref": "gpt-4o",
+      "inputs": [
+        "text"
+      ],
+      "outputs": [
+        "text"
+      ],
+      "arch": "decoder-only",
+      "size": null,
+      "tags": []
+    },
+    {
+      "model_ref": "gpt-5o",
+      "inputs": [
+        "text"
+      ],
+      "outputs": [
+        "text"
+      ],
+      "arch": "decoder-only",
+      "size": null,
+      "tags": []
+    },
+    {
+      "model_ref": "Kimi-Audio",
+      "inputs": [
+        "audio"
+      ],
+      "outputs": [
+        "text"
+      ],
+      "arch": "encoder-decoder",
+      "size": null,
+      "tags": []
+    },
+    {
+      "model_ref": "Kimi-VL",
+      "inputs": [
+        "text",
+        "image",
+        "video",
+        "document"
+      ],
+      "outputs": [
+        "text"
+      ],
+      "arch": "moe multimodal (encoder vision + moe decoder)",
+      "size": null,
+      "tags": [
+        "vision-language",
+        "moe",
+        "long-context",
+        "open-source",
+        "moonvit",
+        "native-resolution"
+      ]
+    },
+    {
+      "model_ref": "Qwen2.5-Omni",
+      "inputs": [
+        "text"
+      ],
+      "outputs": [
+        "text"
+      ],
+      "arch": "decoder-only",
+      "size": null,
+      "tags": []
+    },
+    {
+      "model_ref": "Qwen3",
+      "inputs": [
+        "text"
+      ],
+      "outputs": [
+        "text"
+      ],
+      "arch": "decoder-only",
+      "size": "{'notable_variants': ['4b', '8b', '30b', '235b'], 'activated_params_note': 'moe variants report activated params (e.g., 30b-a3b, 235b-a22b)'}",
+      "tags": []
+    },
+    {
+      "model_ref": "STEP-Audio-AQAA",
+      "inputs": [
+        "audio"
+      ],
+      "outputs": [
+        "text"
+      ],
+      "arch": "encoder-decoder",
+      "size": null,
+      "tags": []
+    },
+    {
+      "model_ref": "Whisper ASR",
+      "inputs": [
+        "audio"
+      ],
+      "outputs": [
+        "text"
+      ],
+      "arch": "transformer encoder-decoder (audio-to-text)",
+      "size": null,
+      "tags": [
+        "asr",
+        "speech-to-text",
+        "multilingual",
+        "open-source"
+      ]
+    }
+  ],
+  "source": "models_index"
+}

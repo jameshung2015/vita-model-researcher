@@ -25,12 +25,17 @@ AWS_KEY_RE = re.compile(r'AKIA[0-9A-Z]{16}')
 PRIVATE_KEY_HEADER = re.compile(r'-----BEGIN (RSA |)?PRIVATE KEY-----')
 
 
+SKIP_DIR_PARTS = {'.git', 'node_modules', '.venv', 'venv', '__pycache__'}
+
+
 def scan_files():
     findings = []
     for dirpath, dirnames, filenames in os.walk(ROOT):
-        # skip .git and node_modules quickly
-        if '.git' in dirpath.split(os.sep) or 'node_modules' in dirpath.split(os.sep):
+        # prune unwanted directories in-place
+        parts = set(dirpath.split(os.sep))
+        if parts & SKIP_DIR_PARTS:
             continue
+        dirnames[:] = [d for d in dirnames if d not in SKIP_DIR_PARTS]
         for fn in filenames:
             path = os.path.join(dirpath, fn)
             rel = os.path.relpath(path, ROOT)
@@ -57,8 +62,8 @@ def scan_files():
             if AWS_KEY_RE.search(data):
                 findings.append((rel, 'possible AWS access key'))
             if EMAIL_RE.search(data):
-                # only report emails in files likely to be personal (not docs)
-                if len(data) < 5000:
+                # only report emails in reasonably small, repo-authored files (not vendored)
+                if len(data) < 5000 and not rel.startswith('.venv' + os.sep):
                     findings.append((rel, 'email address found'))
 
     return findings

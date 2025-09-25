@@ -1,0 +1,27 @@
+{
+  "id": "repo_owners_v1",
+  "name": "Repository Owners and Areas",
+  "owners": [
+    {
+      "owner_id": "owner_models",
+      "display_name": "Models Maintainers",
+      "email": "models@example.com",
+      "areas": ["models", "taxonomy"],
+      "paths": ["models/*.json", "taxonomy_versions/*.json"],
+      "service_level": "gold",
+      "review_policy": "Require review from any member of Models Maintainers for changes under declared paths."
+    },
+    {
+      "owner_id": "owner_indicators",
+      "display_name": "Indicators Maintainers",
+      "email": "indicators@example.com",
+      "areas": ["indicators", "benchmarks"],
+      "paths": ["indicators/*.json", "benchmarks/*.json"],
+      "service_level": "silver",
+      "review_policy": "Require review for indicator/benchmark definitions and schema updates."
+    }
+  ],
+  "updated_at": "2025-09-25",
+  "source": "templates/ownership_template.json"
+}
+

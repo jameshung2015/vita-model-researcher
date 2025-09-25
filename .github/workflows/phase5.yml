@@ -1,0 +1,37 @@
+name: Phase 5 Governance Checks
+
+on:
+  pull_request:
+    branches: [ main, master ]
+  push:
+    branches: [ main, master ]
+
+jobs:
+  phase5:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install deps
+        run: |
+          python -m pip install -U pip jsonschema
+
+      - name: Run Phase 5 checks
+        run: |
+          python scripts/governance/run_phase5_checks.py --report --threshold 0.95
+
+      - name: Upload reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: governance-reports
+          path: |
+            reports/**
+            taxonomy_versions/**
+

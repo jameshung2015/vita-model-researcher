@@ -12,7 +12,7 @@ Output:
 import glob
 import json
 import os
-from datetime import datetime
+from datetime import datetime, timezone
 from collections import defaultdict
 
 
@@ -59,7 +59,7 @@ def synthesize(models: list[dict]) -> dict:
         })
 
     return {
-        'version': datetime.utcnow().strftime('%Y%m%d'),
+        'version': datetime.now(timezone.utc).strftime('%Y%m%d'),
         'categories': {k: sorted(v) for k, v in cats.items()},
         'mappings': mappings,
         'source': 'models_index',
@@ -85,4 +85,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-

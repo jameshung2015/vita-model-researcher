@@ -1,4 +1,4 @@
-﻿# TODO (Phase 5 Governance)
+# TODO (Phase 5 Governance)
 
 - [x] CI: 集成一键检查到 PR/Push（.github/workflows/phase5.yml）。
 - [x] README: 添加 Phase 5 快速入口与命令。
