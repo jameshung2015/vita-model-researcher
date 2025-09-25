@@ -6,11 +6,11 @@
   "source": "AlpacaEval, Chatbot Arena",
   "owner": "评估组",
   "cost": "medium",
-  "tooling": "scripts/bench/lmarena_pull.py",
+  "tooling": "scripts/run_indicator.py",
   "run_script_ref": {
-    "script": "scripts/bench/lmarena_pull.py",
-    "args": ["--models", "<model_name>", "--fields", "model,win_rate,votes", "--out", "benchmarks/snapshots/lmarena/<ts>.json"],
-    "output_format": "custom"
+    "script": "scripts/run_indicator.py",
+    "args": ["--id", "win_rate", "--models", "Qwen3-4B,Qwen3-8B,Qwen3-30B-A3B,Qwen3-235B-A22B", "--out", "reports/qwen3_win_rate_<ts>.json"],
+    "output_format": "unified_v1"
   },
   "calculation_method": "wins / (wins + losses)",
   "variants": [

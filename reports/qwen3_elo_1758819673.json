@@ -1,0 +1,50 @@
+[
+  {
+    "metric_id": "elo_rating",
+    "value": 1185.2,
+    "ci": null,
+    "samples_used": null,
+    "meta": {
+      "model": "Qwen3-4B",
+      "rank": 25,
+      "snapshot_ts": 1758790873,
+      "votes": 3500
+    }
+  },
+  {
+    "metric_id": "elo_rating",
+    "value": 1238.7,
+    "ci": null,
+    "samples_used": null,
+    "meta": {
+      "model": "Qwen3-8B",
+      "rank": 15,
+      "snapshot_ts": 1758790873,
+      "votes": 6200
+    }
+  },
+  {
+    "metric_id": "elo_rating",
+    "value": 1298.1,
+    "ci": null,
+    "samples_used": null,
+    "meta": {
+      "model": "Qwen3-30B-A3B",
+      "rank": 7,
+      "snapshot_ts": 1758790873,
+      "votes": 9800
+    }
+  },
+  {
+    "metric_id": "elo_rating",
+    "value": 1332.4,
+    "ci": null,
+    "samples_used": null,
+    "meta": {
+      "model": "Qwen3-235B-A22B",
+      "rank": 3,
+      "snapshot_ts": 1758790873,
+      "votes": 14100
+    }
+  }
+]

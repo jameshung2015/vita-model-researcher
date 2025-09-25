@@ -10,6 +10,10 @@ def _load_leaderboard(snapshot: Path | None):
             return json.load(f)
     # Fallback placeholder structure
     return [
+        {"model": "Qwen3-4B",        "elo": 1185.2, "rank": 25, "votes": 3500,  "win_rate": 0.49},
+        {"model": "Qwen3-8B",        "elo": 1238.7, "rank": 15, "votes": 6200,  "win_rate": 0.55},
+        {"model": "Qwen3-30B-A3B",   "elo": 1298.1, "rank": 7,  "votes": 9800,  "win_rate": 0.60},
+        {"model": "Qwen3-235B-A22B", "elo": 1332.4, "rank": 3,  "votes": 14100, "win_rate": 0.63},
         {"model": "Llama-3-70B-Instruct", "elo": 1250.3, "rank": 5, "votes": 12000, "win_rate": 0.56},
         {"model": "GPT-4o", "elo": 1325.8, "rank": 2, "votes": 20000, "win_rate": 0.61}
     ]
