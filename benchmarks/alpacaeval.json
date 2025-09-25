@@ -27,10 +27,26 @@
     "语言流畅性"
   ],
   "metrics": [
-    {"name": "胜率", "definition": "模型输出相对于参考模型的胜率", "calculation": "wins / (wins + losses)"},
-    {"name": "长度控制胜率", "definition": "控制长度偏差后的胜率", "calculation": "length_controlled_win_rate"},
-    {"name": "标准误差", "definition": "胜率的统计标准误差", "calculation": "standard_error_of_mean"},
-    {"name": "样本数", "definition": "用于计算胜率的样本总数", "calculation": "total_comparisons"}
+    {
+      "name": "胜率",
+      "definition": "模型输出相对于参考模型的胜率",
+      "calculation": "wins / (wins + losses)"
+    },
+    {
+      "name": "长度控制胜率",
+      "definition": "控制长度偏差后的胜率",
+      "calculation": "length_controlled_win_rate"
+    },
+    {
+      "name": "标准误差",
+      "definition": "胜率的统计标准误差",
+      "calculation": "standard_error_of_mean"
+    },
+    {
+      "name": "样本数",
+      "definition": "用于计算胜率的样本总数",
+      "calculation": "total_comparisons"
+    }
   ],
   "test_method": "使用强大的LLM（如GPT-4）作为自动评估器，比较目标模型与参考模型的输出质量。支持缓存、批处理和输出随机化。默认使用weighted_alpaca_eval_gpt4_turbo评估器。",
   "technical_features": [
@@ -50,7 +66,7 @@
   ],
   "example_scores": {
     "gpt4": "95.3% 胜率",
-    "claude": "88.4% 胜率", 
+    "claude": "88.4% 胜率",
     "chatgpt": "86.1% 胜率",
     "guanaco-65b": "71.8% 胜率",
     "text_davinci_003": "50.0% 胜率 (基准)"
@@ -69,6 +85,8 @@
     "偏好长输出和列表格式"
   ],
   "website": "https://tatsu-lab.github.io/alpaca_eval/",
-  "github": "https://github.com/tatsu-lab/alpaca_eval", 
-  "notes": "快速且成本低廉的指令跟随能力评估工具，与人类偏好高度相关。长度控制版本有效减少了长度偏差问题。适合模型开发阶段的快速评估。"
+  "github": "https://github.com/tatsu-lab/alpaca_eval",
+  "notes": "快速且成本低廉的指令跟随能力评估工具，与人类偏好高度相关。长度控制版本有效减少了长度偏差问题。适合模型开发阶段的快速评估。",
+  "research_doc": "agents-toolchain/doc-eval-system/alpacaeval_research.md",
+  "last_reviewed": "2025-09-25"
 }

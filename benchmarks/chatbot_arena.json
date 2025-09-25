@@ -28,10 +28,26 @@
     "有用性和实用性"
   ],
   "metrics": [
-    {"name": "ELO评分", "definition": "基于胜负关系计算的模型实力评分", "calculation": "elo_rating_system"},
-    {"name": "胜率", "definition": "模型在对战中的获胜比例", "calculation": "wins / total_battles"},
-    {"name": "投票数", "definition": "模型参与的总投票数量", "calculation": "total_votes"},
-    {"name": "排名", "definition": "基于ELO评分的排名位置", "calculation": "rank_by_elo_score"}
+    {
+      "name": "ELO评分",
+      "definition": "基于胜负关系计算的模型实力评分",
+      "calculation": "elo_rating_system"
+    },
+    {
+      "name": "胜率",
+      "definition": "模型在对战中的获胜比例",
+      "calculation": "wins / total_battles"
+    },
+    {
+      "name": "投票数",
+      "definition": "模型参与的总投票数量",
+      "calculation": "total_votes"
+    },
+    {
+      "name": "排名",
+      "definition": "基于ELO评分的排名位置",
+      "calculation": "rank_by_elo_score"
+    }
   ],
   "test_method": "用户提交问题，系统随机选择两个模型匿名生成回答，用户评估后投票选择更好的回答。使用ELO评分系统计算和更新模型排名。",
   "technical_features": [
@@ -90,5 +106,7 @@
   "leaderboard": "https://lmarena.ai/leaderboard",
   "huggingface": "https://huggingface.co/spaces/lmsys/chatbot-arena-leaderboard",
   "community": "活跃的用户社区和研究者",
-  "notes": "最接近真实用户体验的评估平台，通过大规模人类偏好投票提供客观的模型性能排名。是当前最具影响力的LLM评估基准之一。"
+  "notes": "最接近真实用户体验的评估平台，通过大规模人类偏好投票提供客观的模型性能排名。是当前最具影响力的LLM评估基准之一。",
+  "research_doc": "agents-toolchain/doc-eval-system/chatbot_arena_research.md",
+  "last_reviewed": "2025-09-25"
 }

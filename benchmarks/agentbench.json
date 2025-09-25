@@ -9,7 +9,7 @@
     {
       "name": "AgentBench评测环境",
       "description": "8个不同的Agent评测环境数据集",
-      "link": "https://github.com/THUDM/AgentBench", 
+      "link": "https://github.com/THUDM/AgentBench",
       "license": "Apache-2.0"
     }
   ],
@@ -17,27 +17,67 @@
     {
       "category": "新创建环境",
       "environments": [
-        {"name": "操作系统 (OS)", "description": "系统级操作任务"},
-        {"name": "数据库 (DB)", "description": "数据库查询和管理"},
-        {"name": "知识图谱 (KG)", "description": "知识图谱推理和查询"},
-        {"name": "数字卡牌游戏 (DCG)", "description": "策略游戏决策"},
-        {"name": "横向思维谜题 (LTP)", "description": "创造性问题解决"}
+        {
+          "name": "操作系统 (OS)",
+          "description": "系统级操作任务"
+        },
+        {
+          "name": "数据库 (DB)",
+          "description": "数据库查询和管理"
+        },
+        {
+          "name": "知识图谱 (KG)",
+          "description": "知识图谱推理和查询"
+        },
+        {
+          "name": "数字卡牌游戏 (DCG)",
+          "description": "策略游戏决策"
+        },
+        {
+          "name": "横向思维谜题 (LTP)",
+          "description": "创造性问题解决"
+        }
       ]
     },
     {
-      "category": "重编译环境", 
+      "category": "重编译环境",
       "environments": [
-        {"name": "家庭管理 (HH)", "description": "基于ALFWorld的家庭任务"},
-        {"name": "网络购物 (WS)", "description": "基于WebShop的购物任务"},
-        {"name": "网络浏览 (WB)", "description": "基于Mind2Web的网页操作"}
+        {
+          "name": "家庭管理 (HH)",
+          "description": "基于ALFWorld的家庭任务"
+        },
+        {
+          "name": "网络购物 (WS)",
+          "description": "基于WebShop的购物任务"
+        },
+        {
+          "name": "网络浏览 (WB)",
+          "description": "基于Mind2Web的网页操作"
+        }
       ]
     }
   ],
   "metrics": [
-    {"name": "任务完成率", "definition": "成功完成任务的比例", "calculation": "completed_tasks / total_tasks"},
-    {"name": "效率指标", "definition": "完成任务所需的步骤数", "calculation": "average_steps_to_completion"},
-    {"name": "错误率", "definition": "任务执行中的错误频率", "calculation": "errors / total_actions"},
-    {"name": "综合Agent能力得分", "definition": "跨环境的综合Agent能力评分", "calculation": "weighted_cross_environment_score"}
+    {
+      "name": "任务完成率",
+      "definition": "成功完成任务的比例",
+      "calculation": "completed_tasks / total_tasks"
+    },
+    {
+      "name": "效率指标",
+      "definition": "完成任务所需的步骤数",
+      "calculation": "average_steps_to_completion"
+    },
+    {
+      "name": "错误率",
+      "definition": "任务执行中的错误频率",
+      "calculation": "errors / total_actions"
+    },
+    {
+      "name": "综合Agent能力得分",
+      "definition": "跨环境的综合Agent能力评分",
+      "calculation": "weighted_cross_environment_score"
+    }
   ],
   "test_method": "使用Docker容器化部署多个测试环境，通过分布式任务分发系统进行并行评测。每个环境运行独立的任务服务器，支持多轮交互和实时反馈。",
   "technical_features": [
@@ -56,14 +96,46 @@
     "充足的内存和存储"
   ],
   "resource_consumption": [
-    {"environment": "webshop", "time": "~3min", "memory": "~15G"},
-    {"environment": "mind2web", "time": "~5min", "memory": "~1G"},
-    {"environment": "db", "time": "~20s", "memory": "<500M"},
-    {"environment": "alfworld", "time": "~10s", "memory": "<500M"},
-    {"environment": "card_game", "time": "~5s", "memory": "<500M"},
-    {"environment": "ltp", "time": "~5s", "memory": "<500M"},
-    {"environment": "os", "time": "~5s", "memory": "<500M"},
-    {"environment": "kg", "time": "~5s", "memory": "<500M"}
+    {
+      "environment": "webshop",
+      "time": "~3min",
+      "memory": "~15G"
+    },
+    {
+      "environment": "mind2web",
+      "time": "~5min",
+      "memory": "~1G"
+    },
+    {
+      "environment": "db",
+      "time": "~20s",
+      "memory": "<500M"
+    },
+    {
+      "environment": "alfworld",
+      "time": "~10s",
+      "memory": "<500M"
+    },
+    {
+      "environment": "card_game",
+      "time": "~5s",
+      "memory": "<500M"
+    },
+    {
+      "environment": "ltp",
+      "time": "~5s",
+      "memory": "<500M"
+    },
+    {
+      "environment": "os",
+      "time": "~5s",
+      "memory": "<500M"
+    },
+    {
+      "environment": "kg",
+      "time": "~5s",
+      "memory": "<500M"
+    }
   ],
   "supported_models": [
     "GPT-3.5-turbo",
@@ -89,7 +161,7 @@
   ],
   "extensibility": [
     "支持添加新的评测任务",
-    "支持集成新的LLM模型", 
+    "支持集成新的LLM模型",
     "可定制评测标准和指标",
     "可创建新的评测环境"
   ],
@@ -103,5 +175,7 @@
   "website": "https://llmbench.ai/",
   "paper": "https://arxiv.org/abs/2308.03688",
   "community": "Slack讨论组",
-  "notes": "首个专门评估LLM Agent能力的综合基准，提供多样化的真实场景测试环境。对于Agent研究和应用开发具有重要参考价值。"
+  "notes": "首个专门评估LLM Agent能力的综合基准，提供多样化的真实场景测试环境。对于Agent研究和应用开发具有重要参考价值。",
+  "research_doc": "agents-toolchain/doc-eval-system/agentbench_research.md",
+  "last_reviewed": "2025-09-25"
 }

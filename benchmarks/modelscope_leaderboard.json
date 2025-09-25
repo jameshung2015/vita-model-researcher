@@ -16,7 +16,7 @@
   "evaluation_dimensions": [
     "语言理解能力",
     "文本生成能力",
-    "推理能力", 
+    "推理能力",
     "知识问答能力",
     "多模态能力",
     "代码能力",
@@ -26,30 +26,66 @@
     {
       "name": "ModelScope",
       "description": "统一的模型推理、微调和评估Python库",
-      "features": ["高效模型访问", "多模型支持", "统一接口"]
+      "features": [
+        "高效模型访问",
+        "多模型支持",
+        "统一接口"
+      ]
     },
     {
-      "name": "Eval-Scope", 
+      "name": "Eval-Scope",
       "description": "简化大模型评估和性能基准测试的框架",
-      "features": ["高效评估", "可定制", "多指标支持"]
+      "features": [
+        "高效评估",
+        "可定制",
+        "多指标支持"
+      ]
     },
     {
       "name": "Swift",
       "description": "魔搭大模型训练推理工具箱",
-      "features": ["多模型支持", "多训练方式", "推理优化"]
+      "features": [
+        "多模型支持",
+        "多训练方式",
+        "推理优化"
+      ]
     },
     {
       "name": "ModelScope-Agent",
       "description": "连接模型能力与现实世界的Agent框架",
-      "features": ["Agent支持", "工具集成", "应用转化"]
+      "features": [
+        "Agent支持",
+        "工具集成",
+        "应用转化"
+      ]
     }
   ],
   "metrics": [
-    {"name": "综合排名", "definition": "跨多个维度的综合排名", "calculation": "weighted_multi_dimension_score"},
-    {"name": "语言理解得分", "definition": "中英文理解能力评分", "calculation": "language_understanding_accuracy"},
-    {"name": "生成质量得分", "definition": "文本生成质量评分", "calculation": "generation_quality_score"},
-    {"name": "推理能力得分", "definition": "逻辑和数学推理能力评分", "calculation": "reasoning_accuracy"},
-    {"name": "中文能力得分", "definition": "中文特定任务能力评分", "calculation": "chinese_task_performance"}
+    {
+      "name": "综合排名",
+      "definition": "跨多个维度的综合排名",
+      "calculation": "weighted_multi_dimension_score"
+    },
+    {
+      "name": "语言理解得分",
+      "definition": "中英文理解能力评分",
+      "calculation": "language_understanding_accuracy"
+    },
+    {
+      "name": "生成质量得分",
+      "definition": "文本生成质量评分",
+      "calculation": "generation_quality_score"
+    },
+    {
+      "name": "推理能力得分",
+      "definition": "逻辑和数学推理能力评分",
+      "calculation": "reasoning_accuracy"
+    },
+    {
+      "name": "中文能力得分",
+      "definition": "中文特定任务能力评分",
+      "calculation": "chinese_task_performance"
+    }
   ],
   "test_method": "基于云计算的评测基础设施，使用标准化API和分布式评测架构。支持大规模并行评测，采用统一的模型访问接口。",
   "technical_features": [
@@ -77,7 +113,7 @@
   ],
   "partners": [
     "阿里巴巴",
-    "腾讯", 
+    "腾讯",
     "百度",
     "华为",
     "清华大学",
@@ -93,5 +129,7 @@
   "leaderboard_url": "https://modelscope.cn/leaderboard/",
   "github": "https://github.com/modelscope/",
   "documentation": "https://modelscope.cn/docs",
-  "notes": "开源社区驱动的评测平台，特别关注开源模型和中文能力。提供完整的Model-as-a-Service生态系统，从模型开发到应用部署的全链路支持。"
+  "notes": "开源社区驱动的评测平台，特别关注开源模型和中文能力。提供完整的Model-as-a-Service生态系统，从模型开发到应用部署的全链路支持。",
+  "research_doc": "agents-toolchain/doc-eval-system/modelscope_research.md",
+  "last_reviewed": "2025-09-25"
 }

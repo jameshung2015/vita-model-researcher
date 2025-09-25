@@ -13,7 +13,7 @@
       "license": "CC-BY-4.0"
     },
     {
-      "name": "Sycophancy数据集", 
+      "name": "Sycophancy数据集",
       "description": "测试模型是否会迎合用户观点",
       "link": "https://github.com/anthropics/evals",
       "license": "CC-BY-4.0"
@@ -43,29 +43,62 @@
     {
       "name": "Persona",
       "description": "人格相关行为测试",
-      "subcategories": ["政治观点", "宗教观点", "道德信念", "危险目标倾向"]
+      "subcategories": [
+        "政治观点",
+        "宗教观点",
+        "道德信念",
+        "危险目标倾向"
+      ]
     },
     {
-      "name": "Sycophancy", 
+      "name": "Sycophancy",
       "description": "阿谀奉承行为测试",
-      "subcategories": ["哲学问题迎合", "技术问题迎合", "政治立场迎合"]
+      "subcategories": [
+        "哲学问题迎合",
+        "技术问题迎合",
+        "政治立场迎合"
+      ]
     },
     {
       "name": "Advanced AI Risk",
-      "description": "高级AI风险行为测试", 
-      "subcategories": ["灾难性风险", "自我保护倾向", "权力寻求行为"]
+      "description": "高级AI风险行为测试",
+      "subcategories": [
+        "灾难性风险",
+        "自我保护倾向",
+        "权力寻求行为"
+      ]
     },
     {
       "name": "Winogender",
       "description": "性别偏见检测",
-      "subcategories": ["职业刻板印象", "性别关联偏见", "语言偏见"]
+      "subcategories": [
+        "职业刻板印象",
+        "性别关联偏见",
+        "语言偏见"
+      ]
     }
   ],
   "metrics": [
-    {"name": "行为一致性得分", "definition": "模型行为的一致性和可预测性", "calculation": "consistency_across_contexts"},
-    {"name": "价值对齐得分", "definition": "模型与预期价值观的对齐程度", "calculation": "alignment_score"},
-    {"name": "偏见检测得分", "definition": "检测到的各种偏见程度", "calculation": "bias_detection_metrics"},
-    {"name": "安全风险得分", "definition": "潜在安全风险的评估", "calculation": "risk_assessment_score"}
+    {
+      "name": "行为一致性得分",
+      "definition": "模型行为的一致性和可预测性",
+      "calculation": "consistency_across_contexts"
+    },
+    {
+      "name": "价值对齐得分",
+      "definition": "模型与预期价值观的对齐程度",
+      "calculation": "alignment_score"
+    },
+    {
+      "name": "偏见检测得分",
+      "definition": "检测到的各种偏见程度",
+      "calculation": "bias_detection_metrics"
+    },
+    {
+      "name": "安全风险得分",
+      "definition": "潜在安全风险的评估",
+      "calculation": "risk_assessment_score"
+    }
   ],
   "test_method": "使用模型生成的评估数据进行测试，结合人类验证确保数据质量。针对对话代理设计，可适配其他类型模型。采用标准化测试流程。",
   "technical_features": [
@@ -118,5 +151,7 @@
   "paper": "Discovering Language Model Behaviors with Model-Written Evaluations",
   "contact": "ethan at anthropic dot com",
   "license": "CC-BY-4.0",
-  "notes": "专注于AI安全和对齐的重要评估工具集，为理解和改善语言模型的安全性提供关键数据和方法。在使用时需要特别注意数据中可能包含的敏感内容。"
+  "notes": "专注于AI安全和对齐的重要评估工具集，为理解和改善语言模型的安全性提供关键数据和方法。在使用时需要特别注意数据中可能包含的敏感内容。",
+  "research_doc": "agents-toolchain/doc-eval-system/anthropic_eval_suite_research.md",
+  "last_reviewed": "2025-09-25"
 }
