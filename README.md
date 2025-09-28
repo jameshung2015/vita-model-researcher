@@ -60,6 +60,8 @@
 安全与敏感信息
 - 请勿将密钥或凭证提交到仓库；在提交前运行：python tools/check_sensitive.py
 - 将环境变量与运行时配置放入本地 `.env`（不提交），并在 README 或相应工具文档中记录必要的变量说明。
+- 已提供示例文件：`agents-toolchain/bi/infra/metabase.env.example`, `gemini.env.example`。不要直接使用示例中的占位密码或 API Key（如 `replace_me_with_real_key` / `P@ssw0rd123`）。
+- 若误提交真实密钥（例如云/模型提供商 API Key），立即：1）删除文件；2）通过新提交移除历史；3）在提供商控制台吊销并重新生成。
 
 附：常用入口命令总结
 ```

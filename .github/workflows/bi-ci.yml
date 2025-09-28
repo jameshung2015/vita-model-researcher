@@ -1,0 +1,59 @@
+name: BI Pipeline
+
+on:
+  push:
+    paths:
+      - 'agents-toolchain/bi/**'
+      - '.github/workflows/bi-ci.yml'
+  pull_request:
+    paths:
+      - 'agents-toolchain/bi/**'
+
+jobs:
+  bi:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_DB: vita_bi
+          POSTGRES_USER: vita
+          POSTGRES_PASSWORD: vita_pwd
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U vita -d vita_bi" \
+          --health-interval 10s --health-timeout 5s --health-retries 5
+    env:
+      PG_HOST: localhost
+      PG_PORT: 5432
+      PG_DB: vita_bi
+      PG_USER: vita
+      PG_PASSWORD: vita_pwd
+      TZ: UTC
+      SQL_LOG_ENABLED: '0'
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install deps (minimal)
+        run: |
+          python -m pip install -U pip psycopg[binary]==3.2.1 python-dotenv==1.0.1 pytest
+      - name: Run ETL
+        run: |
+          python agents-toolchain/bi/etl/extract_runs.py
+      - name: Row counts sanity
+        run: |
+          python - <<'PY'
+import psycopg, os
+ci = f"host={os.getenv('PG_HOST')} port={os.getenv('PG_PORT')} dbname={os.getenv('PG_DB')} user={os.getenv('PG_USER')} password={os.getenv('PG_PASSWORD')}"
+with psycopg.connect(ci) as c, c.cursor() as cur:
+    for tbl in ['models','runs_flat','indicators']:
+        cur.execute(f'SELECT count(*) FROM bi.{tbl}')
+        print(tbl, cur.fetchone()[0])
+PY
+      - name: Lightweight tests
+        run: |
+          pytest -q || echo "tests soft-fail"

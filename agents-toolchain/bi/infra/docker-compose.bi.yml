@@ -1,0 +1,53 @@
+version: "3.9"
+services:
+  postgres:
+    image: postgres:16
+    container_name: bi_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${PG_DB}
+      POSTGRES_USER: ${PG_USER}
+      POSTGRES_PASSWORD: ${PG_PASSWORD}
+      TZ: ${TZ:-Asia/Shanghai}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./postgres-init:/docker-entrypoint-initdb.d
+    ports:
+      - "${PG_PORT:-5432}:5432"
+
+  metabase:
+    image: metabase/metabase:latest
+    container_name: bi_metabase
+    restart: unless-stopped
+    env_file:
+      - ../../../.env
+    environment:
+      MB_JETTY_PORT: ${MB_JETTY_PORT:-3000}
+      JAVA_TOOL_OPTIONS: -Xms256m -Xmx1g
+    ports:
+      - "${MB_JETTY_PORT:-3000}:${MB_JETTY_PORT:-3000}"
+    depends_on:
+      - postgres
+
+  agent:
+    build:
+      context: ../agent
+    container_name: bi_agent
+    restart: unless-stopped
+    env_file:
+      - ../../../.env
+    environment:
+      AGENT_PORT: ${AGENT_PORT:-8088}
+      LLM_BASE_URL: ${LLM_BASE_URL:-http://host.docker.internal:11434/v1}
+      LLM_MODEL: ${LLM_MODEL:-deepseek-v3.1:671b-cloud}
+      LLM_API_KEY: ${LLM_API_KEY:-ollama}
+      SQL_LOG_ENABLED: ${SQL_LOG_ENABLED:-1}
+      SQL_LOG_RAW: ${SQL_LOG_RAW:-0}
+    ports:
+      - "${AGENT_PORT:-8088}:${AGENT_PORT:-8088}"
+    depends_on:
+      - postgres
+
+volumes:
+  pgdata: {}
+
