@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.openbookqa_audio",
+  "name": "OpenBookQA (Audio)",
+  "description": "Audio-rendered version of OpenBookQA multiple-choice questions where prompts are delivered via speech.",
+  "source": "VoiceBench Authors, 2024",
+  "datasets": [
+    {
+      "name": "OpenBookQA (audio)",
+      "link": "https://arxiv.org/abs/2406.14192",
+      "license": "OpenBookQA license + VoiceBench usage terms"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "Percentage of questions answered correctly",
+      "calculation": "correct / total"
+    }
+  ],
+  "test_method": "Convert audio prompts to text (if non-speech models) or feed directly for speech LLMs; predictions scored against the answer key.",
+  "example_scores": {
+    "Qwen3-Omni-30B-A3B": "95.0 (VoiceBench report)",
+    "GPT-4o-mini": "92.0 (VoiceBench report)"
+  },
+  "notes": "Report whether the model consumed transcripts, audio, or both. Document TTS voices used in the benchmark."
+}

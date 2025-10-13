@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.visionmagic_sub",
+  "name": "VisionMagic (Subset)",
+  "description": "Puzzle-style visual reasoning benchmark challenging models with compositional logic tasks.",
+  "source": "OpenCompass, 2024",
+  "datasets": [
+    {
+      "name": "VisionMagic",
+      "link": "https://huggingface.co/datasets/OpenCompass/VisionMagic",
+      "license": "Refer to dataset repository"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "Puzzle success rate on the VisionMagic subset",
+      "calculation": "correct / total"
+    }
+  ],
+  "test_method": "Provide puzzle image(s) and textual clues. Evaluate using exact-match answers supplied by dataset.",
+  "example_scores": {
+    "Qwen3-VL-235B-A22B": "89.9% (Qwen3-VL technical report)",
+    "GPT-4V": "84.2% (OpenCompass evaluation)"
+  },
+  "notes": "Mention whether chain-of-thought or search heuristics were used."
+}

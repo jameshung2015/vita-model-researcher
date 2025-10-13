@@ -89,5 +89,5 @@
   "documentation": "https://opencompass.readthedocs.io/",
   "notes": "提供完整的评测工具链和标准化流程，支持从模型到数据集的全面扩展。建议记录具体的配置文件和评测环境信息以确保结果可复现。",
   "research_doc": "agents-toolchain/doc-eval-system/opencompass_research.md",
-  "last_reviewed": "2025-09-25"
+  "last_reviewed": "2025-10-13"
 }

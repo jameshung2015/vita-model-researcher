@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.robospatialhome",
+  "name": "RoboSpatialHome",
+  "description": "Embodied spatial reasoning benchmark situated in simulated home environments for robot planning.",
+  "source": "OpenCompass, 2024",
+  "datasets": [
+    {
+      "name": "RoboSpatialHome",
+      "link": "https://huggingface.co/datasets/OpenCompass/RoboSpatialHome",
+      "license": "Refer to dataset repository"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "Correct plan or location identification rate",
+      "calculation": "correct / total"
+    }
+  ],
+  "test_method": "Use the provided environment snapshots and queries describing desired manipulations or positions.",
+  "example_scores": {
+    "Qwen3-VL-235B-A22B": "69.5% (Qwen3-VL technical report)",
+    "GPT-4V": "62.7% (OpenCompass evaluation)"
+  },
+  "notes": "Specify whether additional affordance maps were used. Some items need multi-step reasoning (e.g., between rooms)."
+}

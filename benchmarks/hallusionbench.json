@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.hallusionbench",
+  "name": "HallusionBench",
+  "description": "Benchmark targeting visual hallucination detection and factual grounding in image understanding.",
+  "source": "LianjiaTech, 2023",
+  "datasets": [
+    {
+      "name": "HallusionBench",
+      "link": "https://github.com/LianjiaTech/HallusionBench",
+      "license": "MIT License"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "Fraction of responses that remain factual given the image evidence",
+      "calculation": "factual_responses / total"
+    }
+  ],
+  "test_method": "Each sample contains a prompt designed to trigger hallucinations. Models must determine whether statements are supported by the image.",
+  "example_scores": {
+    "Qwen3-VL-235B-A22B": "63.2% (Qwen3-VL technical report)",
+    "GPT-4V": "58.0% (HallusionBench leaderboard)"
+  },
+  "notes": "Report judgement rubric or automatic judge used. Many tasks expect binary yes/no answers."
+}

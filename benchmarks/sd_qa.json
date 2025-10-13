@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.sd_qa",
+  "name": "SD-QA",
+  "description": "Speech-domain question answering benchmark requiring comprehension of spoken narratives and factual recall.",
+  "source": "VoiceBench Authors, 2024",
+  "datasets": [
+    {
+      "name": "Speech-Driven QA",
+      "link": "https://arxiv.org/abs/2406.14192",
+      "license": "Research use; see VoiceBench paper"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "score",
+      "definition": "Judge-quality score aggregated over QA prompts (0-100)",
+      "calculation": "mean(judge_scores)"
+    }
+  ],
+  "test_method": "Provide spoken passages followed by QA prompts; responses are scored using VoiceBench automatic judges or human evaluation.",
+  "example_scores": {
+    "Qwen3-Omni-30B-A3B": "78.5 (VoiceBench report)",
+    "GPT-4o-mini": "74.2 (VoiceBench report)"
+  },
+  "notes": "Clarify whether transcripts were used as auxiliary input; VoiceBench allows multi-modal (speech+text) assistance."
+}

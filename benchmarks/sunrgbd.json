@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.sunrgbd",
+  "name": "SUN RGB-D",
+  "description": "Indoor scene understanding benchmark with RGB-D images annotated for detection and segmentation.",
+  "source": "Song et al., 2015",
+  "datasets": [
+    {
+      "name": "SUN RGB-D",
+      "link": "https://rgbd.cs.princeton.edu/",
+      "license": "Refer to dataset site"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "detection_accuracy",
+      "definition": "Normalized detection accuracy over SUN RGB-D tasks",
+      "calculation": "See official evaluation scripts"
+    }
+  ],
+  "test_method": "Perform 3D object detection or semantic segmentation using RGB-D inputs and score via official toolkit.",
+  "example_scores": {
+    "Qwen3-VL-235B-A22B": "70.7% (Qwen3-VL technical report)",
+    "VoteNet": "64.0% (SUN RGB-D benchmark)"
+  },
+  "notes": "Report task variant (detection vs segmentation) and whether depth data was consumed directly or projected."
+}

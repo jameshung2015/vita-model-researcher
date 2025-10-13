@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.mmmu_val",
+  "name": "MMMU-VAL",
+  "description": "Validation split of MMMU, covering university-level multimodal knowledge and reasoning questions.",
+  "source": "Yuan et al., 2024",
+  "datasets": [
+    {
+      "name": "MMMU",
+      "link": "https://huggingface.co/datasets/MMMU/MMMU",
+      "license": "CC BY-NC 4.0"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "Multiple-choice accuracy across MMMU validation set",
+      "calculation": "correct / total"
+    }
+  ],
+  "test_method": "Same as official MMMU evaluation. Provide prompts with images embedded or referenced via URLs.",
+  "example_scores": {
+    "Qwen3-VL-235B-A22B": "78.7% (Qwen3-VL technical report)",
+    "GPT-4V": "73.5% (MMMU leaderboard)"
+  },
+  "notes": "Clarify input format (base64 vs URL). MMMU recommends deterministic decoding for comparability."
+}

@@ -1,0 +1,31 @@
+{
+  "id": "benchmark.lcb_v6",
+  "name": "LiveCodeBench v6",
+  "description": "LiveCodeBench continuous evaluation suite for code generation and execution-based correctness across diverse repositories.",
+  "source": "Gu et al., 2024",
+  "datasets": [
+    {
+      "name": "LiveCodeBench v6",
+      "link": "https://github.com/THUDM/LiveCodeBench",
+      "license": "Apache-2.0"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "pass@1",
+      "definition": "Fraction of programming tasks solved correctly on first attempt",
+      "calculation": "correct / total"
+    },
+    {
+      "name": "pass@k",
+      "definition": "Estimated success rate with k samples",
+      "calculation": "1 - prod(1 - correct_i)"
+    }
+  ],
+  "test_method": "Follow official evaluator: run sandboxed execution to validate solutions. Report interpreter version, timeouts, and number of samples.",
+  "example_scores": {
+    "GPT-4o": "74 pass@1 (LiveCodeBench v6 scoreboard)",
+    "Qwen2.5-72B": "70 pass@1 (LiveCodeBench report)"
+  },
+  "notes": "Specify runtime (e.g., Python 3.10, Node.js), docker image, and test harness commit. Bench updates frequently; include snapshot hash."
+}

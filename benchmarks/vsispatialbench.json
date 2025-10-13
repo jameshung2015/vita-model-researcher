@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.vsispatialbench",
+  "name": "VSiSpatialBench",
+  "description": "Vision-spatial reasoning benchmark evaluating understanding of spatial relationships within complex scenes.",
+  "source": "OpenCompass, 2024",
+  "datasets": [
+    {
+      "name": "VSiSpatialBench",
+      "link": "https://huggingface.co/datasets/OpenCompass/VSiSpatialBench",
+      "license": "Refer to dataset repository"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "Correct classification of spatial relationships or answers to spatial queries",
+      "calculation": "correct / total"
+    }
+  ],
+  "test_method": "Provide image(s) with textual query referencing spatial arrangement; score using official key.",
+  "example_scores": {
+    "Qwen3-VL-235B-A22B": "62.6% (Qwen3-VL technical report)",
+    "GPT-4V": "56.8% (OpenCompass evaluation)"
+  },
+  "notes": "Describe whether bounding boxes or object tags were supplied. Some items require multi-image comparison."
+}

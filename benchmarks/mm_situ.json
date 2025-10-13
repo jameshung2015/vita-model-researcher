@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.mm_situ",
+  "name": "MM-Situ",
+  "description": "Multimodal situational understanding benchmark covering commonsense reasoning about everyday visual scenes.",
+  "source": "OpenCompass, 2024",
+  "datasets": [
+    {
+      "name": "MM-Situ",
+      "link": "https://huggingface.co/datasets/OpenCompass/MM-Situ",
+      "license": "Refer to dataset repository"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "Multiple-choice accuracy over situational reasoning questions",
+      "calculation": "correct / total"
+    }
+  ],
+  "test_method": "Present scenario description, image, and question. Evaluate using official answer keys.",
+  "example_scores": {
+    "Qwen3-VL-235B-A22B": "78.4% (Qwen3-VL technical report)",
+    "GPT-4V": "72.9% (OpenCompass evaluation)"
+  },
+  "notes": "Mention whether extra commonsense knowledge bases were used. Some prompts include multiple images."
+}

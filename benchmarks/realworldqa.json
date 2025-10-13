@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.realworldqa",
+  "name": "RealWorldQA",
+  "description": "Visual question answering benchmark over real-world photos emphasizing fine-grained reasoning.",
+  "source": "OpenCompass, 2024",
+  "datasets": [
+    {
+      "name": "RealWorldQA",
+      "link": "https://huggingface.co/datasets/OpenCompass/RealWorldQA",
+      "license": "Refer to dataset repository"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "Correct answer rate on RealWorldQA test set",
+      "calculation": "correct / total"
+    }
+  ],
+  "test_method": "Single-image VQA: present the image with textual question and evaluate using exact match.",
+  "example_scores": {
+    "Qwen3-VL-235B-A22B": "78.4% (Qwen3-VL technical report)",
+    "GPT-4V": "72.8% (OpenCompass evaluation)"
+  },
+  "notes": "Indicate whether answers were lowercased or normalized. Certain questions rely on OCR."
+}

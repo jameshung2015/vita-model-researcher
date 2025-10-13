@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.mmbench_en_v1_1_dev",
+  "name": "MMBench EN v1.1 (Dev)",
+  "description": "Comprehensive multimodal evaluation suite covering perception, reasoning, math, and OCR for English prompts.",
+  "source": "MMBench Team, 2023",
+  "datasets": [
+    {
+      "name": "MMBench",
+      "link": "https://github.com/open-compass/MMBench",
+      "license": "MIT License"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "Weighted accuracy across all sub-tasks",
+      "calculation": "normalized_correct / total"
+    }
+  ],
+  "test_method": "Follow MMBench evaluation pipeline using the provided prompt template and scoring script.",
+  "example_scores": {
+    "Qwen3-VL-235B-A22B": "90.6% (Qwen3-VL technical report)",
+    "GPT-4V": "86.5% (MMBench leaderboard)"
+  },
+  "notes": "Record prompt template version (e.g., InstructBLIP style). Mixed-choice questions require consistent option formatting."
+}

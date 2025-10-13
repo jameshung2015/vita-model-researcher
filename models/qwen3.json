@@ -1,31 +1,23 @@
 {
   "model_name": "Qwen3",
-  "homepage": "https://qwenlm.github.io/blog/qwen3/",
-  "model_card_link": "https://huggingface.co/Qwen",
-  "license": "Apache-2.0 (per model cards)",
-  "provenance": {
-    "provider": "QwenLM",
-    "release_date": "2025-04-29",
-    "notes": "Family release; later 2507 variants updated in July 2025"
-  },
-  "input_types": ["text"],
-  "output_types": ["text"],
-  "architecture_family": "decoder-only",
-  "architecture_details": "Dense and MoE variants in the family",
-  "size_params": {
-    "notable_variants": ["4B","8B","30B","235B"],
-    "activated_params_note": "MoE variants report activated params (e.g., 30B-A3B, 235B-A22B)"
-  },
-  "capabilities": {
-    "languages_supported": "100+",
-    "long_context_support": ["40k","256k"],
-    "reasoning_and_code": "Strong coding/math/common-sense benchmarks"
-  },
+  "input_types": [
+    "text",
+    "image",
+    "audio",
+    "video"
+  ],
+  "output_types": [
+    "text",
+    "audio"
+  ],
+  "architecture_family": "mixture-of-experts transformer",
   "variants": [
     {
       "name": "Qwen3-4B",
       "params": 4,
-      "context_windows": [32768],
+      "context_windows": [
+        32768
+      ],
       "default_seq_len": 32768,
       "default_num_gpus": 1,
       "model_card_link": "https://huggingface.co/Qwen/Qwen3-4B",
@@ -34,13 +26,19 @@
         "fp16_gb_per_gpu": 10,
         "int8_gb_per_gpu": 6,
         "recommended_num_gpus": 1,
-        "notes": "Small dense model; CPU or single-GPU feasible"
-      }
+        "notes": "Small dense model; CPU or single-GPU feasible Dense 4B model rivaling older 72B performance:contentReference[oaicite:0]{index=0}; Apache-2.0 open release:contentReference[oaicite:1]{index=1}."
+      },
+      "tags": [
+        "open_source"
+      ]
     },
     {
       "name": "Qwen3-8B",
       "params": 8.2,
-      "context_windows": [32768, 131072],
+      "context_windows": [
+        32768,
+        131072
+      ],
       "default_seq_len": 32768,
       "default_num_gpus": 1,
       "model_card_link": "https://huggingface.co/Qwen/Qwen3-8B",
@@ -49,13 +47,19 @@
         "fp16_gb_per_gpu": 20,
         "int8_gb_per_gpu": 12,
         "recommended_num_gpus": 1,
-        "notes": "Runs on a single 24–48GB GPU depending on context/batch"
-      }
+        "notes": "Runs on a single 24–48GB GPU depending on context/batch Dense 8B model with 128K-token long context support; Apache-2.0 open release:contentReference[oaicite:2]{index=2}."
+      },
+      "tags": [
+        "open_source"
+      ]
     },
     {
       "name": "Qwen3-30B-A3B",
       "params": 30,
-      "context_windows": [131072, 256000],
+      "context_windows": [
+        131072,
+        256000
+      ],
       "default_seq_len": 131072,
       "default_num_gpus": 4,
       "model_card_link": "https://huggingface.co/Qwen/Qwen3-30B-A3B",
@@ -64,13 +68,19 @@
         "fp16_gb_per_gpu": 24,
         "int8_gb_per_gpu": 16,
         "recommended_num_gpus": 4,
-        "notes": "MoE; memory depends on active experts and context"
-      }
+        "notes": "MoE; memory depends on active experts and context MoE model (30B total, ~3B activated) outperforming dense models like QwQ-32B with less compute:contentReference[oaicite:3]{index=3}; Apache-2.0 open."
+      },
+      "tags": [
+        "open_source"
+      ]
     },
     {
       "name": "Qwen3-235B-A22B",
       "params": 235,
-      "context_windows": [131072, 256000],
+      "context_windows": [
+        131072,
+        256000
+      ],
       "default_seq_len": 131072,
       "default_num_gpus": 8,
       "model_card_link": "https://huggingface.co/Qwen/Qwen3-235B-A22B",
@@ -79,30 +89,93 @@
         "fp16_gb_per_gpu": 80,
         "int8_gb_per_gpu": 40,
         "recommended_num_gpus": 8,
-        "notes": "Large MoE; requires distributed inference runtimes"
-      }
+        "notes": "Large MoE; requires distributed inference runtimes Flagship 235B model (22B activated) achieving competitive results vs top-tier LLMs:contentReference[oaicite:4]{index=4}; Apache-2.0 open."
+      },
+      "tags": [
+        "open_source"
+      ]
+    },
+    {
+      "name": "Qwen3-VL-30B-A3B",
+      "params": 30,
+      "context_windows": [
+        256000,
+        1048576
+      ],
+      "default_seq_len": 256000,
+      "default_num_gpus": 4,
+      "model_card_link": "https://huggingface.co/Qwen/Qwen3-VL-30B-A3B-Instruct",
+      "release_date": "2025-10-04",
+      "hardware_recommendations": {
+        "fp16_gb_per_gpu": 32,
+        "int8_gb_per_gpu": 20,
+        "recommended_num_gpus": 4,
+        "notes": "MoE vision-language model; high VRAM (FP8 checkpoints available for memory savings) Vision-Language 30B model (text+image/video in, text out) with native 256K context (extendable to 1M):contentReference[oaicite:5]{index=5}; Apache-2.0 open."
+      },
+      "tags": [
+        "open_source"
+      ]
+    },
+    {
+      "name": "Qwen3-VL-235B-A22B",
+      "params": 235,
+      "context_windows": [
+        256000,
+        1048576
+      ],
+      "default_seq_len": 256000,
+      "default_num_gpus": 8,
+      "model_card_link": "https://huggingface.co/Qwen/Qwen3-VL-235B-A22B-Instruct",
+      "release_date": "2025-09-23",
+      "hardware_recommendations": {
+        "fp16_gb_per_gpu": 80,
+        "int8_gb_per_gpu": 40,
+        "recommended_num_gpus": 8,
+        "notes": "Huge MoE VLM (~471GB FP16 weights) requiring 8×80GB GPUs:contentReference[oaicite:6]{index=6} Vision-Language 235B model (22B activated) for text+image/video inputs, achieving state-of-art multimodal results:contentReference[oaicite:7]{index=7}:contentReference[oaicite:8]{index=8}."
+      },
+      "tags": [
+        "open_source"
+      ]
+    },
+    {
+      "name": "Qwen3-Audio",
+      "params": 0.0,
+      "hardware_recommendations": {
+        "notes": "暂未公开 Standalone audio-LM not yet released (暂未公开); Qwen3's speech capabilities are provided via Qwen3-Omni:contentReference[oaicite:9]{index=9}."
+      },
+      "tags": [
+        "closed_source"
+      ]
+    },
+    {
+      "name": "Qwen3-Omni-30B-A3B",
+      "params": 30,
+      "context_windows": [
+        65536
+      ],
+      "default_seq_len": 65536,
+      "default_num_gpus": 4,
+      "model_card_link": "https://huggingface.co/Qwen/Qwen3-Omni-30B-A3B-Instruct",
+      "release_date": "2025-09-22",
+      "hardware_recommendations": {
+        "fp16_gb_per_gpu": 24,
+        "int8_gb_per_gpu": 16,
+        "recommended_num_gpus": 4,
+        "notes": "30B MoE unified multimodal model; multi-GPU recommended for real-time audio/video processing Omni-modal 30B model (text, image, video, audio in; text or speech out) achieving SOTA on 22 of 36 audio benchmarks:contentReference[oaicite:10]{index=10}; Apache-2.0 open release:contentReference[oaicite:11]{index=11}."
+      },
+      "tags": [
+        "open_source"
+      ]
+    },
+    {
+      "name": "Qwen3-Agent",
+      "params": 0.0,
+      "model_card_link": "https://github.com/QwenLM/Qwen-Agent",
+      "release_date": "2025-05-01",
+      "tags": [
+        "open_source"
+      ],
+      "deploy_requirements": "Open-source agent framework (Apache-2.0) enabling Qwen3's tool use, planning, and function calling:contentReference[oaicite:12]{index=12}:contentReference[oaicite:13]{index=13} (not a standalone model)."
     }
-  ],
-  "evaluation": {
-    "papers": ["https://arxiv.org/abs/2505.09388"],
-    "benchmarks": ["lmarena", "chatbot_arena", "mmlu", "gsm8k"],
-    "model_cards": [
-      "https://huggingface.co/Qwen/Qwen3-4B",
-      "https://huggingface.co/Qwen/Qwen3-8B",
-      "https://huggingface.co/Qwen/Qwen3-30B-A3B",
-      "https://huggingface.co/Qwen/Qwen3-235B-A22B"
-    ]
-  },
-  "inference": {
-    "latency_ms": null,
-    "latency_level": "medium",
-    "throughput_rps": null,
-    "concurrency": null,
-    "memory_gb": null,
-    "quantization_friendly": true,
-    "supported_hardware": ["A100","H100","RTX 6000","CPU"],
-    "distributed_support": true,
-    "notes": "Use scripts/estimate_vram.py for heuristic sizing of Qwen3-8B / long context"
-  },
-  "notes": "Qwen3 is the third-generation Qwen family with dense and MoE variants."
+  ]
 }

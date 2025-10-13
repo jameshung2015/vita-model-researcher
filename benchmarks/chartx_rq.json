@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.chartx_rq",
+  "name": "ChartX (RQ)",
+  "description": "ChartX reasoning questions subset focusing on data interpretation, trend analysis, and numeric comparison over charts.",
+  "source": "OpenCompass, 2024",
+  "datasets": [
+    {
+      "name": "ChartX",
+      "link": "https://huggingface.co/datasets/OpenCompass/ChartX",
+      "license": "Refer to dataset repository"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "Correct answer rate on reasoning-focused chart questions",
+      "calculation": "correct / total"
+    }
+  ],
+  "test_method": "Provide chart image and question text. The evaluator expects short textual answers or option IDs.",
+  "example_scores": {
+    "Qwen3-VL-235B-A22B": "62.1% (Qwen3-VL technical report)",
+    "Gemini 1.5 Pro": "58.4% (OpenCompass evaluation)"
+  },
+  "notes": "Record whether numerical extraction relied on OCR or vector reconstruction. Some questions require multi-step calculations."
+}

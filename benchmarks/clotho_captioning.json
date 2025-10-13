@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.clotho_captioning",
+  "name": "Clotho Captioning",
+  "description": "Audio captioning benchmark with crowd-sourced descriptions for diverse audio events.",
+  "source": "Drossos et al., 2020",
+  "datasets": [
+    {
+      "name": "Clotho v2",
+      "link": "https://zenodo.org/records/3490684",
+      "license": "Creative Commons Attribution 4.0"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "spider",
+      "definition": "SPIDEr = (CIDEr + SPICE) / 2, combining semantic and lexical similarity",
+      "calculation": "(CIDEr + SPICE) / 2"
+    }
+  ],
+  "test_method": "Generate five captions per clip, compute SPIDEr using the official evaluation script based on pycocoevalcap.",
+  "example_scores": {
+    "Qwen3-Audio": "0.288 SPIDEr (Qwen3 Audio report)",
+    "AudioCaps baseline": "0.256 SPIDEr (Clotho challenge 2020)"
+  },
+  "notes": "State language of generated captions and beam-search settings; dataset includes five human references per clip."
+}

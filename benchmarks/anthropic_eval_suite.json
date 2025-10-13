@@ -153,5 +153,5 @@
   "license": "CC-BY-4.0",
   "notes": "专注于AI安全和对齐的重要评估工具集，为理解和改善语言模型的安全性提供关键数据和方法。在使用时需要特别注意数据中可能包含的敏感内容。",
   "research_doc": "agents-toolchain/doc-eval-system/anthropic_eval_suite_research.md",
-  "last_reviewed": "2025-09-25"
+  "last_reviewed": "2025-10-13"
 }

@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.supergpqa",
+  "name": "SuperGPQA",
+  "description": "Graduate-level professional question answering benchmark focusing on math, physics, computer science, and finance.",
+  "source": "Rein et al., 2023",
+  "datasets": [
+    {
+      "name": "SuperGPQA",
+      "link": "https://huggingface.co/datasets/IdavidRein/SuperGPQA",
+      "license": "CC BY-NC-SA 4.0"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "Share of questions with exactly correct final answer",
+      "calculation": "correct / total"
+    }
+  ],
+  "test_method": "Use the multiple-choice format; prompts often benefit from chain-of-thought plus alternatives elimination. Evaluate with deterministic decoding to avoid tie-breaking issues.",
+  "example_scores": {
+    "GPT-4": "52.9 (original paper)",
+    "DeepSeek-V3": "60.4 (community leaderboard)"
+  },
+  "notes": "Dataset includes long questions; ensure context window supports full question and answers. Report whether external tools or calculators were used."
+}

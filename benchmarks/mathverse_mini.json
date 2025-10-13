@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.mathverse_mini",
+  "name": "MathVerse Mini",
+  "description": "Subset of MathVerse focusing on visual math puzzles, diagrams, and symbolic reasoning.",
+  "source": "OpenCompass, 2024",
+  "datasets": [
+    {
+      "name": "MathVerse",
+      "link": "https://huggingface.co/datasets/OpenCompass/MathVerse-mini",
+      "license": "Refer to dataset repository"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "Exact answer accuracy on math problems",
+      "calculation": "correct / total"
+    }
+  ],
+  "test_method": "Extract relevant text from diagrams, perform reasoning, and output final numeric answers. Official script performs exact-match.",
+  "example_scores": {
+    "Qwen3-VL-235B-A22B": "85.0% (Qwen3-VL technical report)",
+    "GPT-4V": "78.6% (OpenCompass evaluation)"
+  },
+  "notes": "Document whether symbolic solvers were used. Provide prompt templates for equation extraction."
+}

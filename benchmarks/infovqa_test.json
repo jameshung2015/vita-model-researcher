@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.infovqa_test",
+  "name": "InfoVQA (Test)",
+  "description": "Infographic VQA benchmark challenging models to read dense charts, icons, and mixed text within infographics.",
+  "source": "Mathew et al., 2022",
+  "datasets": [
+    {
+      "name": "InfographicVQA",
+      "link": "https://github.com/InfographicVQA/InfographicVQA",
+      "license": "Creative Commons Attribution 4.0"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "Exact-match or normalized string accuracy on infographic questions",
+      "calculation": "correct / total"
+    }
+  ],
+  "test_method": "Use OCR extraction plus reasoning to answer open-ended questions. Evaluation accepts minor lexical variations via normalized matching.",
+  "example_scores": {
+    "Qwen3-VL-235B-A22B": "97.1% (Qwen3-VL technical report)",
+    "Kosmos-2": "86.4% (InfographicVQA benchmark)"
+  },
+  "notes": "Share OCR engine and text normalization steps. Some answers depend on reading legends and multi-column layouts."
+}

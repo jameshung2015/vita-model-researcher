@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.hypersim",
+  "name": "HyperSim",
+  "description": "Photorealistic synthetic indoor dataset supporting depth, surface normals, and semantic labels for 3D understanding.",
+  "source": "Roberts et al., 2021",
+  "datasets": [
+    {
+      "name": "HyperSim",
+      "link": "https://github.com/apple/ml-hypersim",
+      "license": "CC BY 4.0"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "Task-specific metric (e.g., semantic mIoU) aggregated into normalized score",
+      "calculation": "See HyperSim evaluation protocol"
+    }
+  ],
+  "test_method": "Render synthetic scenes and perform segmentation or depth estimation. Aggregate results following the benchmark scripts.",
+  "example_scores": {
+    "Qwen3-VL-235B-A22B": "39.4% (Qwen3-VL technical report)",
+    "Point-M2AE": "34.7% (HyperSim benchmark)"
+  },
+  "notes": "Specify which task variant (semantic segmentation, layout, etc.) was measured. Provide camera intrinsics if used."
+}

@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.ilvbench",
+  "name": "iLVBench",
+  "description": "Long video understanding benchmark assessing reasoning over minute-scale videos with multiple sub-questions.",
+  "source": "OpenGVLab, 2023",
+  "datasets": [
+    {
+      "name": "iLVBench",
+      "link": "https://github.com/OpenGVLab/iLVL",
+      "license": "Research use"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "Question answering accuracy over long videos",
+      "calculation": "correct / total"
+    }
+  ],
+  "test_method": "Sample clips or use long-context encoders to process full videos; evaluate using official scoring.",
+  "example_scores": {
+    "Qwen3-VL-235B-A22B": "84.3% (Qwen3-VL technical report)",
+    "GPT-4V": "78.5% (iLVBench evaluation)"
+  },
+  "notes": "Specify clip sampling strategy, frame rate, and whether textual subtitles were incorporated."
+}

@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.refospatialbench",
+  "name": "RefoSpatialBench",
+  "description": "Spatial language understanding benchmark linking referring expressions with relationships and spatial layouts.",
+  "source": "OpenCompass, 2024",
+  "datasets": [
+    {
+      "name": "RefoSpatialBench",
+      "link": "https://huggingface.co/datasets/OpenCompass/RefoSpatialBench",
+      "license": "Refer to dataset repository"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "Success rate on spatial comprehension questions",
+      "calculation": "correct / total"
+    }
+  ],
+  "test_method": "Prompts describe spatial relations; models must identify target regions or answer relational questions.",
+  "example_scores": {
+    "Qwen3-VL-235B-A22B": "83.1% (Qwen3-VL technical report)",
+    "GPT-4V": "77.6% (OpenCompass evaluation)"
+  },
+  "notes": "Clarify output format (bounding box vs textual answer). Many questions require relative position reasoning."
+}

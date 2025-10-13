@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.include",
+  "name": "INCLUDE",
+  "description": "Inclusive cross-lingual knowledge and reasoning benchmark spanning 46 language varieties and dialects.",
+  "source": "MBZUAI & CMU, 2023",
+  "datasets": [
+    {
+      "name": "INCLUDE",
+      "link": "https://huggingface.co/datasets/mbzuai/INCLUDE",
+      "license": "CC BY-SA 4.0"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "Exact-match or judge-verified accuracy over factoid questions",
+      "calculation": "correct / total"
+    }
+  ],
+  "test_method": "Follow dataset instructions; prompts are short-answer. Use normalized string comparison with Unicode canonicalization.",
+  "example_scores": {
+    "mT5-XXL": "63 (original paper)",
+    "GPT-4": "79 (follow-up community eval)"
+  },
+  "notes": "Track per-language breakdown; dataset includes under-resourced dialects requiring custom tokenization."
+}

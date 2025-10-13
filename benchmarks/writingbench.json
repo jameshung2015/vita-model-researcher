@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.writingbench",
+  "name": "WritingBench",
+  "description": "Comprehensive creative and technical writing benchmark featuring expert-created rubrics across genres.",
+  "source": "WritingBench Authors, 2024",
+  "datasets": [
+    {
+      "name": "WritingBench",
+      "link": "https://huggingface.co/datasets/OpenCompass/WritingBench",
+      "license": "CC BY-NC-SA 4.0"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "score",
+      "definition": "Average rubric score normalized to 0-100",
+      "calculation": "mean(rubric_scores)"
+    }
+  ],
+  "test_method": "Follow the WritingBench evaluation toolkit to sample prompts, collect responses, and score via pairwise or absolute grading.",
+  "example_scores": {
+    "GPT-4o": "87.2 (WritingBench report)",
+    "Claude 3 Opus": "85.5 (WritingBench report)"
+  },
+  "notes": "Document graders (human vs LLM) and normalization method for comparability."
+}

@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.cochlscene",
+  "name": "CochlScene",
+  "description": "Acoustic scene classification dataset with 115 classes collected from real-world environments.",
+  "source": "Cochl.ai, 2020",
+  "datasets": [
+    {
+      "name": "CochlScene",
+      "link": "https://zenodo.org/records/3987831",
+      "license": "Creative Commons Attribution 4.0"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "Classification accuracy across scene labels",
+      "calculation": "correct / total"
+    }
+  ],
+  "test_method": "Train or evaluate on 16kHz log-mel features. Official split uses 80/10/10 train/val/test.",
+  "example_scores": {
+    "Qwen3-Audio": "79.5% accuracy (Qwen3 Audio report)",
+    "ResNet-50 baseline": "72.0% accuracy (CochlScene baseline)"
+  },
+  "notes": "Document augmentation pipeline such as SpecAugment or mixup; dataset includes background noise labels for analysis."
+}

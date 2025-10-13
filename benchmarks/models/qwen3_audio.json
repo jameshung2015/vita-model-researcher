@@ -1,0 +1,132 @@
+[
+  {
+    "name": "LibriSpeech (test-other)",
+    "metric": "WER",
+    "value": "4.2%",
+    "description": "英文语音识别基准（LibriSpeech测试集，杂噪场景）:contentReference[oaicite:8]{index=8}",
+    "source_type": "repo",
+    "source": "Qwen-Audio GitHub",
+    "link": "https://github.com/QwenLM/Qwen-Audio",
+    "benchmark_id": "benchmark.librispeech_test_other"
+  },
+  {
+    "name": "AIShell-1 (test)",
+    "metric": "WER",
+    "value": "1.3%",
+    "description": "中文语音识别基准（AIShell-1 测试集）:contentReference[oaicite:9]{index=9}",
+    "source_type": "repo",
+    "source": "Qwen-Audio GitHub",
+    "link": "https://github.com/QwenLM/Qwen-Audio",
+    "benchmark_id": "benchmark.aishell_1_test"
+  },
+  {
+    "name": "AIShell-2",
+    "metric": "WER",
+    "value": "3.3%",
+    "description": "中文长语音识别基准（AIShell-2，不同设备平均）:contentReference[oaicite:10]{index=10}",
+    "source_type": "repo",
+    "source": "Qwen-Audio GitHub",
+    "link": "https://github.com/QwenLM/Qwen-Audio",
+    "benchmark_id": "benchmark.aishell_2"
+  },
+  {
+    "name": "CoVoST2 (En→Zh)",
+    "metric": "BLEU",
+    "value": "41.5",
+    "description": "语音翻译基准（英语到中文）:contentReference[oaicite:11]{index=11}",
+    "source_type": "repo",
+    "source": "Qwen-Audio GitHub",
+    "link": "https://github.com/QwenLM/Qwen-Audio",
+    "benchmark_id": "benchmark.covost2_en_zh"
+  },
+  {
+    "name": "Clotho Captioning",
+    "metric": "SPIDEr",
+    "value": "0.288",
+    "description": "音频内容描述（Clotho 数据集，SPIDEr 指标）:contentReference[oaicite:12]{index=12}",
+    "source_type": "repo",
+    "source": "Qwen-Audio GitHub",
+    "link": "https://github.com/QwenLM/Qwen-Audio",
+    "benchmark_id": "benchmark.clotho_captioning"
+  },
+  {
+    "name": "Word Align (Industrial)",
+    "metric": "AAC (ms)",
+    "value": "51.5",
+    "description": "语音单词级别对齐误差（毫秒）:contentReference[oaicite:13]{index=13}",
+    "source_type": "repo",
+    "source": "Qwen-Audio GitHub",
+    "link": "https://github.com/QwenLM/Qwen-Audio",
+    "benchmark_id": "benchmark.word_align_industrial"
+  },
+  {
+    "name": "CochlScene",
+    "metric": "Accuracy",
+    "value": "79.5%",
+    "description": "环境声音场景分类（CochlScene 数据集）:contentReference[oaicite:14]{index=14}",
+    "source_type": "repo",
+    "source": "Qwen-Audio GitHub",
+    "link": "https://github.com/QwenLM/Qwen-Audio",
+    "benchmark_id": "benchmark.cochlscene"
+  },
+  {
+    "name": "TUT2017",
+    "metric": "Accuracy",
+    "value": "64.9%",
+    "description": "环境声音场景分类（TUT 2017 数据集）:contentReference[oaicite:15]{index=15}",
+    "source_type": "repo",
+    "source": "Qwen-Audio GitHub",
+    "link": "https://github.com/QwenLM/Qwen-Audio",
+    "benchmark_id": "benchmark.tut2017"
+  },
+  {
+    "name": "MELD",
+    "metric": "Accuracy",
+    "value": "55.7%",
+    "description": "语音情感识别基准（MELD 数据集）:contentReference[oaicite:16]{index=16}",
+    "source_type": "repo",
+    "source": "Qwen-Audio GitHub",
+    "link": "https://github.com/QwenLM/Qwen-Audio",
+    "benchmark_id": "benchmark.meld"
+  },
+  {
+    "name": "ClothoAQA",
+    "metric": "Accuracy (binary)",
+    "value": "74.9%",
+    "description": "音频问答评测（ClothoAQA 数据集，二分类准确率）:contentReference[oaicite:17]{index=17}",
+    "source_type": "repo",
+    "source": "Qwen-Audio GitHub",
+    "link": "https://github.com/QwenLM/Qwen-Audio",
+    "benchmark_id": "benchmark.clothoaqa"
+  },
+  {
+    "name": "VocalSound",
+    "metric": "Accuracy",
+    "value": "92.9%",
+    "description": "动物声音分类基准（VocalSound 数据集）:contentReference[oaicite:18]{index=18}",
+    "source_type": "repo",
+    "source": "Qwen-Audio GitHub",
+    "link": "https://github.com/QwenLM/Qwen-Audio",
+    "benchmark_id": "benchmark.vocalsound"
+  },
+  {
+    "name": "NSynth (Pitch)",
+    "metric": "MAP",
+    "value": "47.4%",
+    "description": "音乐音高特征分析（NSynth 数据集，MAP 指标）:contentReference[oaicite:19]{index=19}",
+    "source_type": "repo",
+    "source": "Qwen-Audio GitHub",
+    "link": "https://github.com/QwenLM/Qwen-Audio",
+    "benchmark_id": "benchmark.nsynth_pitch"
+  },
+  {
+    "name": "NSynth (Instrument)",
+    "metric": "Accuracy",
+    "value": "78.8%",
+    "description": "乐器分类准确率（NSynth 数据集）:contentReference[oaicite:20]{index=20}",
+    "source_type": "repo",
+    "source": "Qwen-Audio GitHub",
+    "link": "https://github.com/QwenLM/Qwen-Audio",
+    "benchmark_id": "benchmark.nsynth_instrument"
+  }
+]

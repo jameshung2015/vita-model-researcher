@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.librispeech_test_other",
+  "name": "LibriSpeech (test-other)",
+  "description": "Difficult split of LibriSpeech audiobook corpus featuring diverse speakers and recording conditions.",
+  "source": "Panayotov et al., 2015",
+  "datasets": [
+    {
+      "name": "LibriSpeech",
+      "link": "https://www.openslr.org/12",
+      "license": "Creative Commons Attribution 4.0"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "wer",
+      "definition": "Word Error Rate on the official test-other split",
+      "calculation": "(S + D + I) / N"
+    }
+  ],
+  "test_method": "Use the official test-other list with provided lexicon. Most setups rely on 16kHz sampling and cased text normalization.",
+  "example_scores": {
+    "Whisper-large-v3": "5.4 WER (OpenAI report)",
+    "Qwen3-Omni-30B-A3B": "2.44 WER (Qwen3-Omni paper)"
+  },
+  "notes": "Report whether language model rescoring or additional text normalization was applied. Provide decoder settings."
+}

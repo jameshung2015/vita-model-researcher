@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.muirbench",
+  "name": "MUIRBench",
+  "description": "Multi-image understanding benchmark requiring joint reasoning over several related images.",
+  "source": "OpenCompass, 2024",
+  "datasets": [
+    {
+      "name": "MUIRBench",
+      "link": "https://huggingface.co/datasets/OpenCompass/MUIRBench",
+      "license": "Refer to dataset repository"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "Question answering accuracy when multiple images must be compared or aggregated",
+      "calculation": "correct / total"
+    }
+  ],
+  "test_method": "Provide all image assets and textual prompt simultaneously. Use official evaluation script for answer checking.",
+  "example_scores": {
+    "Qwen3-VL-235B-A22B": "72.8% (Qwen3-VL technical report)",
+    "Gemini 1.5 Pro": "68.9% (OpenCompass evaluation)"
+  },
+  "notes": "Clarify how images are serialized (grids, captions). Some tasks require referencing specific image indices."
+}

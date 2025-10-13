@@ -1,0 +1,131 @@
+{
+  "version": "20251013",
+  "categories": {
+    "inputs": [
+      "audio",
+      "image",
+      "text",
+      "video"
+    ],
+    "outputs": [
+      "audio",
+      "text"
+    ],
+    "architecture": [
+      "decoder-only",
+      "mixture-of-experts",
+      "mixture-of-experts transformer",
+      "multimodal"
+    ],
+    "size": [
+      "{'notable_variants': ['deepseek-v3', 'deepseek-r1'], 'activated_params_note': 'deepseek-v3 activates ~37b params per token; trained on ~14.8t tokens (report).'}",
+      "{'notable_variants': ['gemini-1.5-pro', 'gemini-1.5-flash', 'gemini-2.0-flash'], 'activated_params_note': 'parameter counts not publicly disclosed; api-managed deployment.'}",
+      "{'notable_variants': ['gpt-oss-120b', 'gpt-oss-20b'], 'activated_params_note': 'readme states 120b has ~5.1b active params (117b total); 20b has ~3.6b active params (21b total).'}"
+    ],
+    "tags": [
+      "api",
+      "closed-weight",
+      "commercial-use",
+      "cot",
+      "decoder-only",
+      "fp8",
+      "harmony-format",
+      "long-context",
+      "mla",
+      "moe",
+      "multimodal",
+      "open-weight",
+      "quantization:mxfp4",
+      "rl"
+    ]
+  },
+  "mappings": [
+    {
+      "model_ref": "Baichuan-Omni",
+      "inputs": [
+        "text"
+      ],
+      "outputs": [
+        "text"
+      ],
+      "arch": "decoder-only",
+      "size": null,
+      "tags": []
+    },
+    {
+      "model_ref": "DeepSeek",
+      "inputs": [
+        "text"
+      ],
+      "outputs": [
+        "text"
+      ],
+      "arch": "mixture-of-experts",
+      "size": "{'notable_variants': ['deepseek-v3', 'deepseek-r1'], 'activated_params_note': 'deepseek-v3 activates ~37b params per token; trained on ~14.8t tokens (report).'}",
+      "tags": [
+        "moe",
+        "mla",
+        "fp8",
+        "rl",
+        "cot",
+        "open-weight",
+        "commercial-use"
+      ]
+    },
+    {
+      "model_ref": "Gemini",
+      "inputs": [
+        "text",
+        "image",
+        "audio",
+        "video"
+      ],
+      "outputs": [
+        "text"
+      ],
+      "arch": "multimodal",
+      "size": "{'notable_variants': ['gemini-1.5-pro', 'gemini-1.5-flash', 'gemini-2.0-flash'], 'activated_params_note': 'parameter counts not publicly disclosed; api-managed deployment.'}",
+      "tags": [
+        "multimodal",
+        "api",
+        "closed-weight",
+        "long-context"
+      ]
+    },
+    {
+      "model_ref": "gpt-oss",
+      "inputs": [
+        "text"
+      ],
+      "outputs": [
+        "text"
+      ],
+      "arch": "decoder-only",
+      "size": "{'notable_variants': ['gpt-oss-120b', 'gpt-oss-20b'], 'activated_params_note': 'readme states 120b has ~5.1b active params (117b total); 20b has ~3.6b active params (21b total).'}",
+      "tags": [
+        "open-weight",
+        "moe",
+        "decoder-only",
+        "harmony-format",
+        "quantization:mxfp4"
+      ]
+    },
+    {
+      "model_ref": "Qwen3",
+      "inputs": [
+        "text",
+        "image",
+        "audio",
+        "video"
+      ],
+      "outputs": [
+        "text",
+        "audio"
+      ],
+      "arch": "mixture-of-experts transformer",
+      "size": null,
+      "tags": []
+    }
+  ],
+  "source": "models_index"
+}

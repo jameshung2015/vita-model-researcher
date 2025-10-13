@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.blink",
+  "name": "BLINK",
+  "description": "Multi-image reasoning benchmark requiring cross-image comparison, alignment, and factual inference.",
+  "source": "OpenCompass, 2024",
+  "datasets": [
+    {
+      "name": "BLINK",
+      "link": "https://huggingface.co/datasets/OpenCompass/BLINK",
+      "license": "Refer to dataset repository"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "Question answering accuracy over multi-image inputs",
+      "calculation": "correct / total"
+    }
+  ],
+  "test_method": "Provide all related images alongside the text query. The official evaluator expects deterministic single-choice answers.",
+  "example_scores": {
+    "Qwen3-VL-235B-A22B": "70.7% (Qwen3-VL technical report)",
+    "Gemini 1.5 Pro": "65.1% (OpenCompass evaluation)"
+  },
+  "notes": "State how images are concatenated or serialized within prompts. Models must reference multiple images distinctly."
+}

@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.bbh_audio",
+  "name": "BBH (Audio)",
+  "description": "Speech adaptation of BIG-Bench Hard where prompts and answers are handled via spoken language.",
+  "source": "VoiceBench Authors, 2024",
+  "datasets": [
+    {
+      "name": "BBH (Audio)",
+      "link": "https://arxiv.org/abs/2406.14192",
+      "license": "BIG-bench license + VoiceBench usage terms"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "Answer accuracy measured on spoken prompts",
+      "calculation": "correct / total"
+    }
+  ],
+  "test_method": "Run VoiceBench audio prompts through the target speech model and compare textual answers after ASR or transcripts.",
+  "example_scores": {
+    "Qwen3-Omni-30B-A3B": "89.6 (VoiceBench report)",
+    "GPT-4o-mini": "84.1 (VoiceBench report)"
+  },
+  "notes": "Clarify evaluation pipeline for speech-to-text conversion and any post-processing of model outputs."
+}

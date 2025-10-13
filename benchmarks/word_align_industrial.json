@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.word_align_industrial",
+  "name": "Word Align (Industrial)",
+  "description": "Industrial-grade dataset for word-level speech-text alignment used to benchmark forced aligners.",
+  "source": "Alibaba DAMO Academy, 2025",
+  "datasets": [
+    {
+      "name": "Word Align Industrial",
+      "link": "https://arxiv.org/abs/2509.17765",
+      "license": "Proprietary (results reported in Qwen3-Omni paper)"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "aac_ms",
+      "definition": "Average Alignment Cost in milliseconds between predicted and reference word boundaries",
+      "calculation": "mean(|predicted_time - reference_time|)"
+    }
+  ],
+  "test_method": "Run a forced alignment model to obtain word timestamps, then compute absolute timing error against annotated references.",
+  "example_scores": {
+    "Qwen3-Audio": "51.5 ms AAC (Qwen3 Audio report)",
+    "Commercial aligner baseline": "65.0 ms AAC (internal benchmark)"
+  },
+  "notes": "Dataset is not publicly released; only aggregate metrics are available. Document alignment algorithm and decoder configuration."
+}

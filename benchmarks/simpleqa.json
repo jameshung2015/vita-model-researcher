@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.simpleqa",
+  "name": "SimpleQA",
+  "description": "Short-form knowledge and commonsense questions designed to probe rapid factual recall without heavy reasoning.",
+  "source": "OpenCompass, 2024",
+  "datasets": [
+    {
+      "name": "SimpleQA",
+      "link": "https://huggingface.co/datasets/OpenCompass/SimpleQA",
+      "license": "Refer to dataset repository"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "Exact match on single-choice answers",
+      "calculation": "correct / total"
+    }
+  ],
+  "test_method": "Prompt each question with available choices or open-ended depending on variant; evaluate by string match (case-insensitive).",
+  "example_scores": {
+    "GPT-4o-mini": "86.4 (OpenCompass quick baseline)",
+    "Qwen2.5-7B": "78.3 (OpenCompass quick baseline)"
+  },
+  "notes": "Dataset includes both Chinese and English questions; note language mixing when reporting results."
+}

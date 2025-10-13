@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.simplyvqa",
+  "name": "SimplyVQA",
+  "description": "Balanced visual question answering benchmark emphasizing concise, single-step reasoning.",
+  "source": "OpenCompass, 2024",
+  "datasets": [
+    {
+      "name": "SimplyVQA",
+      "link": "https://huggingface.co/datasets/OpenCompass/SimplyVQA",
+      "license": "Refer to dataset repository"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "Exact-match accuracy on SimplyVQA questions",
+      "calculation": "correct / total"
+    }
+  ],
+  "test_method": "Each question has a short answer; evaluate using provided normalization script.",
+  "example_scores": {
+    "Qwen3-VL-235B-A22B": "63.0% (Qwen3-VL technical report)",
+    "GPT-4V": "58.9% (OpenCompass evaluation)"
+  },
+  "notes": "Note whether answers were lowercased and if synonyms were accepted."
+}

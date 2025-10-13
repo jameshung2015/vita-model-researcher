@@ -1,0 +1,260 @@
+{
+  "model": "qwen3",
+  "notes": "汇总公开报道与社区跑分，包含官方 blog/arXiv、代码仓、媒体报道与社区复现（注明来源类型）。",
+  "benchmarks": [
+    {
+      "name": "MMLU",
+      "metric": "Accuracy",
+      "value": "90.6%",
+      "description": "大规模多任务语言理解评测:contentReference[oaicite:0]{index=0}",
+      "source_type": "paper",
+      "source": "Qwen3 技术报告",
+      "link": "https://arxiv.org/abs/2505.09388",
+      "benchmark_id": "benchmark.mmlu"
+    },
+    {
+      "name": "MMLU-Pro",
+      "metric": "Accuracy",
+      "value": "83.8%",
+      "description": "更具挑战性的大规模多任务理解基准，包含12K跨学科复杂问题:contentReference[oaicite:1]{index=1}",
+      "source_type": "blog",
+      "source": "HyperAI 博客",
+      "link": "https://blog.csdn.net/HyperAI/article/details/142397260",
+      "benchmark_id": "benchmark.mmlu_pro"
+    },
+    {
+      "name": "MMLU-Redux",
+      "metric": "Accuracy",
+      "value": "93.7%",
+      "description": "改进版 MMLU 数据集（Redux 版本）",
+      "source_type": "paper",
+      "source": "Qwen3 技术报告",
+      "link": "https://arxiv.org/abs/2505.09388",
+      "benchmark_id": "benchmark.mmlu_redux"
+    },
+    {
+      "name": "SuperGPQA",
+      "metric": "Accuracy",
+      "value": "64.4%",
+      "description": "大规模通用知识问答评测",
+      "source_type": "paper",
+      "source": "Qwen3 技术报告",
+      "link": "https://arxiv.org/abs/2505.09388",
+      "benchmark_id": "benchmark.supergpqa"
+    },
+    {
+      "name": "SimpleQA",
+      "metric": "Accuracy",
+      "value": "44.4%",
+      "description": "简单问答评测",
+      "source_type": "paper",
+      "source": "Qwen3 技术报告",
+      "link": "https://arxiv.org/abs/2505.09388",
+      "benchmark_id": "benchmark.simpleqa"
+    },
+    {
+      "name": "AIME25",
+      "metric": "Accuracy",
+      "value": "89.7%",
+      "description": "数学竞赛问题（2025 年 AIME）:contentReference[oaicite:2]{index=2}",
+      "source_type": "blog",
+      "source": "Jan X 平台帖子",
+      "link": "https://x.com/jan/status/1706876177762588934",
+      "benchmark_id": "benchmark.aime25"
+    },
+    {
+      "name": "HMMT25",
+      "metric": "Accuracy",
+      "value": "77.4%",
+      "description": "数学竞赛 Harvard-MIT 数学锦标赛题目",
+      "source_type": "paper",
+      "source": "Qwen3 技术报告",
+      "link": "https://arxiv.org/abs/2505.09388",
+      "benchmark_id": "benchmark.hmmt25"
+    },
+    {
+      "name": "LCB v6",
+      "metric": "Accuracy",
+      "value": "70.1%",
+      "description": "编程题评测 (LiveCodeBench v6)",
+      "source_type": "repo",
+      "source": "Qwen3 模型卡",
+      "link": "https://huggingface.co/Qwen/Qwen3-VL-235B-A22B-Thinking",
+      "benchmark_id": "benchmark.lcb_v6"
+    },
+    {
+      "name": "ZebraLogic",
+      "metric": "Accuracy",
+      "value": "97.3%",
+      "description": "逻辑网格谜题推理评测:contentReference[oaicite:3]{index=3}",
+      "source_type": "reddit",
+      "source": "ZebraLogic 介绍",
+      "link": "https://www.reddit.com/r/LocalLLaMA/comments/15f614u",
+      "benchmark_id": "benchmark.zebralogic"
+    },
+    {
+      "name": "LiveBench1125",
+      "metric": "Accuracy",
+      "value": "79.6%",
+      "description": "实时更新的推理评测集 (2024-11-25)",
+      "source_type": "repo",
+      "source": "Qwen3 模型卡",
+      "link": "https://huggingface.co/Qwen/Qwen3-VL-235B-A22B-Thinking",
+      "benchmark_id": "benchmark.livebench1125"
+    },
+    {
+      "name": "HLE",
+      "metric": "Accuracy",
+      "value": "13.6%",
+      "description": "Holistic LLM Evaluation 基准",
+      "source_type": "repo",
+      "source": "Qwen3 模型卡",
+      "link": "https://huggingface.co/Qwen/Qwen3-VL-235B-A22B-Thinking",
+      "benchmark_id": "benchmark.hle"
+    },
+    {
+      "name": "SIFO",
+      "metric": "Accuracy",
+      "value": "77.3%",
+      "description": "单轮指令跟随评测 (Single-turn Instruction Following)",
+      "source_type": "paper",
+      "source": "Qwen3 技术报告",
+      "link": "https://arxiv.org/abs/2505.09388",
+      "benchmark_id": "benchmark.sifo"
+    },
+    {
+      "name": "SIFO-multiturn",
+      "metric": "Accuracy",
+      "value": "71.1%",
+      "description": "多轮指令跟随评测 (Multi-turn Instruction Following)",
+      "source_type": "paper",
+      "source": "Qwen3 技术报告",
+      "link": "https://arxiv.org/abs/2505.09388",
+      "benchmark_id": "benchmark.sifo_multiturn"
+    },
+    {
+      "name": "IFEval",
+      "metric": "Accuracy",
+      "value": "88.2%",
+      "description": "指令跟随能力评估:contentReference[oaicite:4]{index=4}",
+      "source_type": "arxiv",
+      "source": "Generalizing Verifiable Instruction Following",
+      "link": "https://arxiv.org/abs/2308.16768",
+      "benchmark_id": "benchmark.ifeval"
+    },
+    {
+      "name": "Creative Writing v3",
+      "metric": "Score",
+      "value": "85.7",
+      "description": "创意写作任务评估 (版本3)",
+      "source_type": "repo",
+      "source": "Qwen3 模型卡",
+      "link": "https://huggingface.co/Qwen/Qwen3-VL-235B-A22B-Thinking",
+      "benchmark_id": "benchmark.creative_writing_v3"
+    },
+    {
+      "name": "WritingBench",
+      "metric": "Score",
+      "value": "86.7",
+      "description": "写作能力评测基准",
+      "source_type": "repo",
+      "source": "Qwen3 模型卡",
+      "link": "https://huggingface.co/Qwen/Qwen3-VL-235B-A22B-Thinking",
+      "benchmark_id": "benchmark.writingbench"
+    },
+    {
+      "name": "BFCL",
+      "metric": "Accuracy",
+      "value": "71.9%",
+      "description": "Berkeley 函数调用能力评测 (BFCL):contentReference[oaicite:5]{index=5}",
+      "source_type": "website",
+      "source": "BFCL v4 项目",
+      "link": "https://gorilla.cs.berkeley.edu",
+      "benchmark_id": "benchmark.bfcl"
+    },
+    {
+      "name": "MultiIF",
+      "metric": "Accuracy",
+      "value": "79.1%",
+      "description": "多语言/多任务指令跟随评测",
+      "source_type": "repo",
+      "source": "Qwen3 模型卡",
+      "link": "https://huggingface.co/Qwen/Qwen3-VL-235B-A22B-Thinking",
+      "benchmark_id": "benchmark.multiif"
+    },
+    {
+      "name": "MMLU-ProX",
+      "metric": "Accuracy",
+      "value": "80.0%",
+      "description": "覆盖29种语言的多语言 MMLU 基准:contentReference[oaicite:6]{index=6}",
+      "source_type": "paper",
+      "source": "MMLU-ProX 论文",
+      "link": "https://arxiv.org/abs/2503.10497",
+      "benchmark_id": "benchmark.mmlu_prox"
+    },
+    {
+      "name": "INCLUDE",
+      "metric": "Accuracy",
+      "value": "80.0%",
+      "description": "跨44种语言的知识与推理评测:contentReference[oaicite:7]{index=7}",
+      "source_type": "arxiv",
+      "source": "INCLUDE 基准论文",
+      "link": "https://arxiv.org/abs/2309.03409",
+      "benchmark_id": "benchmark.include"
+    }
+  ],
+  "inference": {
+    "notes": "Representative inference/deployment guidance synthesized from model card and community sources.",
+    "variants": {
+      "Qwen3-4B": {
+        "latency_ms": null,
+        "latency_level": "low",
+        "throughput_rps": null,
+        "memory_gb": 8,
+        "quantization_friendly": true,
+        "supported_hardware": [
+          "CPU",
+          "small GPU"
+        ],
+        "notes": "Estimate: FP16 ~8-12GB, INT8 ~4-6GB"
+      },
+      "Qwen3-8B": {
+        "latency_ms": null,
+        "latency_level": "medium",
+        "throughput_rps": null,
+        "memory_gb": 20,
+        "quantization_friendly": true,
+        "supported_hardware": [
+          "A100",
+          "H100",
+          "large GPU"
+        ],
+        "notes": "Estimate: FP16 ~16-24GB, INT8 ~8-12GB"
+      },
+      "Qwen3-30B-A3B": {
+        "latency_ms": null,
+        "latency_level": "high",
+        "throughput_rps": null,
+        "memory_gb": 64,
+        "quantization_friendly": true,
+        "supported_hardware": [
+          "multi-GPU",
+          "cloud"
+        ],
+        "notes": "MoE: activated params reduce memory but require MoE runtime; FP16 estimate ~48-80GB"
+      },
+      "Qwen3-235B-A22B": {
+        "latency_ms": null,
+        "latency_level": "very-high",
+        "throughput_rps": null,
+        "memory_gb": 400,
+        "quantization_friendly": true,
+        "supported_hardware": [
+          "multi-node GPU clusters",
+          "cloud"
+        ],
+        "notes": "Large MoE: total memory highly variable; use cloud hosted inference or multi-node clusters"
+      }
+    }
+  }
+}

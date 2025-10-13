@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.odinw13",
+  "name": "OdinW13",
+  "description": "Open-domain detection benchmark with 13 diverse visual domains to test zero-shot detection robustness.",
+  "source": "OpenCompass, 2024",
+  "datasets": [
+    {
+      "name": "OdinW13",
+      "link": "https://huggingface.co/datasets/OpenCompass/OdinW13",
+      "license": "Refer to dataset repository"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "Normalized detection score aggregated over domains",
+      "calculation": "mean(domain_scores)"
+    }
+  ],
+  "test_method": "Evaluate detection outputs using the provided script; report per-domain scores and macro average.",
+  "example_scores": {
+    "Qwen3-VL-235B-A22B": "53.9% (Qwen3-VL technical report)",
+    "GPT-4V": "48.7% (OpenCompass evaluation)"
+  },
+  "notes": "Document detection thresholds, confidence aggregation, and whether language priors were used."
+}

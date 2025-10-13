@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.alpacaeval_voicebench",
+  "name": "AlpacaEval (VoiceBench)",
+  "description": "VoiceBench adaptation of AlpacaEval combining speech inputs and subjective preference judging for instruction following.",
+  "source": "VoiceBench Authors, 2024",
+  "datasets": [
+    {
+      "name": "VoiceBench AlpacaEval split",
+      "link": "https://arxiv.org/abs/2406.14192",
+      "license": "Research use; see VoiceBench paper"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "score",
+      "definition": "LLM-judge or human preference score (0-100) for speech responses",
+      "calculation": "mean(preference_scores)"
+    }
+  ],
+  "test_method": "Generate spoken responses with TTS or direct speech decoding, then submit transcripts and audio to the VoiceBench judge.",
+  "example_scores": {
+    "Qwen3-Omni-30B-A3B": "96.4 (VoiceBench report)",
+    "GPT-4o-mini": "92.1 (VoiceBench report)"
+  },
+  "notes": "Document TTS backend, sampling rate, and judge model. VoiceBench recommends 16kHz mono WAV inputs."
+}

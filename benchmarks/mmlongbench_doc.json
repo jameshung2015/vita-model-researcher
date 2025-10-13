@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.mmlongbench_doc",
+  "name": "MMLongBench-Doc",
+  "description": "Long-context multimodal benchmark focusing on document understanding and reasoning across dozens of pages.",
+  "source": "OpenCompass, 2024",
+  "datasets": [
+    {
+      "name": "MMLongBench-Doc",
+      "link": "https://huggingface.co/datasets/OpenCompass/MMLongBench-Doc",
+      "license": "Refer to dataset repository"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "Correct answer rate on long document questions",
+      "calculation": "correct / total"
+    }
+  ],
+  "test_method": "Chunk documents into manageable segments or use long-context encoders. Evaluate using provided answer keys.",
+  "example_scores": {
+    "Qwen3-VL-235B-A22B": "57.0% (Qwen3-VL technical report)",
+    "Gemini 1.5 Pro": "53.2% (OpenCompass evaluation)"
+  },
+  "notes": "State context window, chunking strategy, and retrieval approach. Some questions span multiple document pages."
+}

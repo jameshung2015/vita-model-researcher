@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.aime25",
+  "name": "AIME 2025",
+  "description": "American Invitational Mathematics Examination 2025 free-response problems requiring olympiad-style reasoning with three-digit answers.",
+  "source": "Mathematical Association of America (MAA), 2025",
+  "datasets": [
+    {
+      "name": "AIME 2025 problem set",
+      "link": "https://artofproblemsolving.com/wiki/index.php/2025_AIME_I_Problems",
+      "license": "MAA contest problems (educational use)"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "Fraction of problems where the three-digit final answer matches the official solution",
+      "calculation": "correct / total"
+    }
+  ],
+  "test_method": "Provide each problem statement and ask the model for a boxed three-digit answer. Parse the final integer (000-999). Optionally enable chain-of-thought with solution verification.",
+  "example_scores": {
+    "AoPS median human": "6/15 (historical median)",
+    "IMO medalist baseline": "12/15 (coaching benchmark)"
+  },
+  "notes": "Clarify whether calculators, external tools, or repeated attempts were allowed. Keep scratch reasoning but score only the final value."
+}

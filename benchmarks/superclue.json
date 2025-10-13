@@ -78,5 +78,5 @@
   "website": "https://www.superclueai.com/",
   "notes": "专门针对中文环境设计，是评估中文大模型能力的权威基准。需要通过官方渠道申请评测，结果具有较高权威性。",
   "research_doc": "agents-toolchain/doc-eval-system/superclue_research.md",
-  "last_reviewed": "2025-09-25"
+  "last_reviewed": "2025-10-13"
 }

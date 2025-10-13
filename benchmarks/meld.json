@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.meld",
+  "name": "MELD",
+  "description": "Multimodal EmotionLines Dataset with audio, video, and text from Friends TV show conversations for emotion recognition.",
+  "source": "Poria et al., 2019",
+  "datasets": [
+    {
+      "name": "MELD",
+      "link": "https://github.com/declare-lab/MELD",
+      "license": "Research use"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "Speaker-level emotion classification accuracy",
+      "calculation": "correct / total"
+    }
+  ],
+  "test_method": "The dataset includes audio, text, and video; specify which modalities were used. Evaluate on the official test split.",
+  "example_scores": {
+    "Qwen3-Audio": "55.7% accuracy (Qwen3 Audio report)",
+    "DialogueRNN baseline": "57.0% accuracy (MELD paper)"
+  },
+  "notes": "Emotion classes are imbalanced; report macro-F1 in addition to accuracy when possible."
+}

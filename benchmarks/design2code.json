@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.design2code",
+  "name": "Design2Code",
+  "description": "Image-to-code benchmark converting UI design screenshots into executable front-end code snippets.",
+  "source": "THUDM, 2024",
+  "datasets": [
+    {
+      "name": "Design2Code",
+      "link": "https://huggingface.co/datasets/THUDM/Design2Code",
+      "license": "Apache-2.0"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "Layout fidelity score comparing generated code render to ground truth",
+      "calculation": "See official UI similarity metric"
+    }
+  ],
+  "test_method": "Generate HTML/CSS (and optional JS) and render with the evaluation toolkit. Compute similarity via structural and pixel metrics.",
+  "example_scores": {
+    "Qwen3-VL-235B-A22B": "92.0% (Qwen3-VL technical report)",
+    "GPT-4V": "86.2% (Design2Code benchmark)"
+  },
+  "notes": "Specify whether component libraries were allowed. Provide rendering engine (Chrome/Playwright) version to ensure consistent screenshots."
+}

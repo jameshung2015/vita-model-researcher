@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.commoneval_voicebench",
+  "name": "CommonEval (VoiceBench)",
+  "description": "VoiceBench conversational subset derived from the CommonEval instruction-following benchmark.",
+  "source": "VoiceBench Authors, 2024",
+  "datasets": [
+    {
+      "name": "VoiceBench CommonEval split",
+      "link": "https://arxiv.org/abs/2406.14192",
+      "license": "Research use; see VoiceBench paper"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "score",
+      "definition": "Preference or rubric score for dialogue quality",
+      "calculation": "mean(judge_scores)"
+    }
+  ],
+  "test_method": "Follow VoiceBench pipeline to synthesize prompts to speech, then evaluate model audio responses using the provided judge prompt.",
+  "example_scores": {
+    "Qwen3-Omni-30B-A3B": "90.9 (VoiceBench report)",
+    "GPT-4o-mini": "87.5 (VoiceBench report)"
+  },
+  "notes": "Note whether latency constraints or streaming decoding were enforced during evaluation."
+}

@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.arkwebcoms",
+  "name": "ARK-WebComics",
+  "description": "Sequential visual reasoning benchmark from ARK evaluating narrative understanding over multi-panel web comics.",
+  "source": "ARK Team, 2024",
+  "datasets": [
+    {
+      "name": "ARK-WebComics",
+      "link": "https://huggingface.co/datasets/ARKagent/ARK-WebComics",
+      "license": "Research use; see dataset repository"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "Multiple-choice accuracy over story comprehension questions",
+      "calculation": "correct / total"
+    }
+  ],
+  "test_method": "Each sample includes an ordered set of panels and a question. Preserve panel order and provide textual grounding hints when available.",
+  "example_scores": {
+    "Qwen3-VL-235B-A22B": "13.0% (Qwen3-VL technical report)",
+    "GPT-4V": "11.5% (ARK WebComics benchmark)"
+  },
+  "notes": "Long-context models benefit from panel-level captions. Record whether panel descriptions or only raw images were supplied."
+}

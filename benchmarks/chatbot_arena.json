@@ -108,5 +108,5 @@
   "community": "活跃的用户社区和研究者",
   "notes": "最接近真实用户体验的评估平台，通过大规模人类偏好投票提供客观的模型性能排名。是当前最具影响力的LLM评估基准之一。",
   "research_doc": "agents-toolchain/doc-eval-system/chatbot_arena_research.md",
-  "last_reviewed": "2025-09-25"
+  "last_reviewed": "2025-10-13"
 }

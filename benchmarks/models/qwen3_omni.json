@@ -1,0 +1,122 @@
+[
+  {
+    "name": "WenetSpeech (meeting)",
+    "metric": "WER",
+    "value": "5.75%",
+    "description": "中文会议语音识别（WenetSpeech 数据集，会议录音集）:contentReference[oaicite:21]{index=21}",
+    "source_type": "paper",
+    "source": "Qwen3-Omni 技术报告",
+    "link": "https://arxiv.org/abs/2509.17765",
+    "benchmark_id": "benchmark.wenetspeech_meeting"
+  },
+  {
+    "name": "LibriSpeech (test-other)",
+    "metric": "WER",
+    "value": "2.44%",
+    "description": "英文语音识别（LibriSpeech 测试困难集）:contentReference[oaicite:22]{index=22}",
+    "source_type": "paper",
+    "source": "Qwen3-Omni 技术报告",
+    "link": "https://arxiv.org/abs/2509.17765",
+    "benchmark_id": "benchmark.librispeech_test_other"
+  },
+  {
+    "name": "Fleurs (19-lang avg)",
+    "metric": "WER",
+    "value": "5.3%",
+    "description": "多语言语音识别平均错词率（Fleurs 数据集 19种语言平均）:contentReference[oaicite:23]{index=23}",
+    "source_type": "paper",
+    "source": "Qwen3-Omni 技术报告",
+    "link": "https://arxiv.org/abs/2509.17765",
+    "benchmark_id": "benchmark.fleurs_19_lang_avg"
+  },
+  {
+    "name": "MIR-1K (Lyrics ASR)",
+    "metric": "WER",
+    "value": "5.85%",
+    "description": "歌曲歌词识别（MIR-1K 数据集，清唱人声）:contentReference[oaicite:24]{index=24}",
+    "source_type": "paper",
+    "source": "Qwen3-Omni 技术报告",
+    "link": "https://arxiv.org/abs/2509.17765",
+    "benchmark_id": "benchmark.mir_1k_lyrics_asr"
+  },
+  {
+    "name": "AlpacaEval (VoiceBench)",
+    "metric": "Score",
+    "value": "96.4",
+    "description": "语音对话评测（AlpacaEval 基准）:contentReference[oaicite:25]{index=25}",
+    "source_type": "paper",
+    "source": "Qwen3-Omni 技术报告",
+    "link": "https://arxiv.org/abs/2509.17765",
+    "benchmark_id": "benchmark.alpacaeval_voicebench"
+  },
+  {
+    "name": "CommonEval (VoiceBench)",
+    "metric": "Score",
+    "value": "90.9",
+    "description": "语音对话评测（CommonEval 基准）:contentReference[oaicite:26]{index=26}",
+    "source_type": "paper",
+    "source": "Qwen3-Omni 技术报告",
+    "link": "https://arxiv.org/abs/2509.17765",
+    "benchmark_id": "benchmark.commoneval_voicebench"
+  },
+  {
+    "name": "WildVoice (VoiceBench)",
+    "metric": "Score",
+    "value": "90.9",
+    "description": "开放场景语音对话评测（WildVoice 基准）:contentReference[oaicite:27]{index=27}",
+    "source_type": "paper",
+    "source": "Qwen3-Omni 技术报告",
+    "link": "https://arxiv.org/abs/2509.17765",
+    "benchmark_id": "benchmark.wildvoice_voicebench"
+  },
+  {
+    "name": "SD-QA",
+    "metric": "Score",
+    "value": "78.5",
+    "description": "语音场景对话问答评测（SD-QA 基准）:contentReference[oaicite:28]{index=28}",
+    "source_type": "paper",
+    "source": "Qwen3-Omni 技术报告",
+    "link": "https://arxiv.org/abs/2509.17765",
+    "benchmark_id": "benchmark.sd_qa"
+  },
+  {
+    "name": "MMSU",
+    "metric": "Score",
+    "value": "83.0",
+    "description": "多模态语音理解评测（MMSU 基准）:contentReference[oaicite:29]{index=29}",
+    "source_type": "paper",
+    "source": "Qwen3-Omni 技术报告",
+    "link": "https://arxiv.org/abs/2509.17765",
+    "benchmark_id": "benchmark.mmsu"
+  },
+  {
+    "name": "OpenBookQA (Audio)",
+    "metric": "Accuracy",
+    "value": "95.0%",
+    "description": "听觉版开放题目问答（OpenBookQA，通过语音输入）:contentReference[oaicite:30]{index=30}",
+    "source_type": "paper",
+    "source": "Qwen3-Omni 技术报告",
+    "link": "https://arxiv.org/abs/2509.17765",
+    "benchmark_id": "benchmark.openbookqa_audio"
+  },
+  {
+    "name": "BBH (Audio)",
+    "metric": "Accuracy",
+    "value": "89.6%",
+    "description": "听觉版 Big-Bench Hard 综合推理评测:contentReference[oaicite:31]{index=31}",
+    "source_type": "paper",
+    "source": "Qwen3-Omni 技术报告",
+    "link": "https://arxiv.org/abs/2509.17765",
+    "benchmark_id": "benchmark.bbh_audio"
+  },
+  {
+    "name": "IFEval (Audio)",
+    "metric": "Accuracy",
+    "value": "80.8%",
+    "description": "听觉版指令跟随能力评估（语音输入的 IFEval）:contentReference[oaicite:32]{index=32}",
+    "source_type": "paper",
+    "source": "Qwen3-Omni 技术报告",
+    "link": "https://arxiv.org/abs/2509.17765",
+    "benchmark_id": "benchmark.ifeval_audio"
+  }
+]

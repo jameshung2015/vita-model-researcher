@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.hle",
+  "name": "Holistic LLM Evaluation (HLE)",
+  "description": "Comprehensive suite evaluating instruction following, safety, factuality, coding, and multilingual capability.",
+  "source": "THUDM & collaborators, 2024",
+  "datasets": [
+    {
+      "name": "HLE benchmark",
+      "link": "https://github.com/THUDM/HLE",
+      "license": "Apache-2.0"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "Task-specific normalized accuracy aggregated to a single score",
+      "calculation": "See official scorer"
+    }
+  ],
+  "test_method": "Run the provided pipeline which orchestrates multiple sub-evaluations and aggregates a normalized score.",
+  "example_scores": {
+    "Qwen2.5-72B": "62 (HLE leaderboard)",
+    "GPT-4o": "68 (HLE leaderboard)"
+  },
+  "notes": "Document compute environment for each subtask; some rely on external APIs (safety classification, etc.)."
+}

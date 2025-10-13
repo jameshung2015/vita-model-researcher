@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.clothoaqa",
+  "name": "ClothoAQA",
+  "description": "Audio question answering benchmark built on Clotho captions with binary and open-ended questions.",
+  "source": "Turpault et al., 2021",
+  "datasets": [
+    {
+      "name": "ClothoAQA",
+      "link": "https://zenodo.org/records/4749871",
+      "license": "Creative Commons Attribution 4.0"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "Binary classification accuracy for yes/no questions",
+      "calculation": "correct / total"
+    }
+  ],
+  "test_method": "Use the official train/validation/test splits. Evaluate binary accuracy or F1 depending on question type.",
+  "example_scores": {
+    "Qwen3-Audio": "74.9% accuracy (Qwen3 Audio report)",
+    "PANNs baseline": "66.4% accuracy (ClothoAQA baseline)"
+  },
+  "notes": "Report handling of open-ended questions and whether additional captioning outputs were leveraged."
+}

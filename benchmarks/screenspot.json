@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.screenspot",
+  "name": "ScreenSpot",
+  "description": "GUI grounding benchmark requiring models to locate target UI elements on desktop screenshots.",
+  "source": "Zhao et al., 2023",
+  "datasets": [
+    {
+      "name": "ScreenSpot",
+      "link": "https://github.com/yuekaizhao/ScreenSpot",
+      "license": "MIT License"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "success_rate",
+      "definition": "Percentage of correctly localized UI elements",
+      "calculation": "correct / total"
+    }
+  ],
+  "test_method": "Models receive text descriptions and must output bounding boxes or click coordinates. Evaluate using IoU or pixel-distance thresholds.",
+  "example_scores": {
+    "Qwen3-VL-235B-A22B": "74.7% (Qwen3-VL technical report)",
+    "GPT-4V": "68.3% (ScreenSpot benchmark)"
+  },
+  "notes": "State coordinate normalization and whether UI accessibility metadata was used."
+}

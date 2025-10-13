@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.wildvoice_voicebench",
+  "name": "WildVoice (VoiceBench)",
+  "description": "VoiceBench open-domain conversational benchmark with noisy, in-the-wild user recordings.",
+  "source": "VoiceBench Authors, 2024",
+  "datasets": [
+    {
+      "name": "VoiceBench WildVoice split",
+      "link": "https://arxiv.org/abs/2406.14192",
+      "license": "Research use; see VoiceBench paper"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "score",
+      "definition": "Subjective quality and helpfulness score (0-100)",
+      "calculation": "mean(judge_scores)"
+    }
+  ],
+  "test_method": "Use the provided real-world recordings as prompts and evaluate generated speech with the standardized VoiceBench judge prompt.",
+  "example_scores": {
+    "Qwen3-Omni-30B-A3B": "90.9 (VoiceBench report)",
+    "GPT-4o-mini": "85.3 (VoiceBench report)"
+  },
+  "notes": "State background-noise handling and whether voice activity detection was applied prior to decoding."
+}

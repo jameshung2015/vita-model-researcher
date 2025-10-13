@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.ifeval_audio",
+  "name": "IFEval (Audio)",
+  "description": "Audio-rendered variant of IFEval where models must follow spoken instructions and satisfy programmatic checks.",
+  "source": "VoiceBench Authors, 2024",
+  "datasets": [
+    {
+      "name": "IFEval (Audio)",
+      "link": "https://arxiv.org/abs/2406.14192",
+      "license": "IFEval license + VoiceBench usage terms"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "Fraction of audio prompts producing outputs that pass all verifiable checks",
+      "calculation": "passing / total"
+    }
+  ],
+  "test_method": "Use the IFEval verifier on transcripts of speech outputs while providing spoken instructions as inputs.",
+  "example_scores": {
+    "Qwen3-Omni-30B-A3B": "80.8 (VoiceBench report)",
+    "GPT-4o-mini": "77.6 (VoiceBench report)"
+  },
+  "notes": "Ensure consistent ASR pipeline for transcription; IFEval checks are case-sensitive."
+}

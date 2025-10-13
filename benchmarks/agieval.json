@@ -95,5 +95,5 @@
   "paper": "https://arxiv.org/abs/2304.06364",
   "notes": "基于真实人类考试的权威评估基准，能够客观反映模型在各种认知任务上的表现。评估结果可直接与人类表现对比，为AGI发展提供重要指标。",
   "research_doc": "agents-toolchain/doc-eval-system/agieval_research.md",
-  "last_reviewed": "2025-09-25"
+  "last_reviewed": "2025-10-13"
 }

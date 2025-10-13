@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.nsynth_pitch",
+  "name": "NSynth (Pitch)",
+  "description": "Neural Audio Synthesis (NSynth) benchmark focusing on pitch classification of instrument notes.",
+  "source": "Engel et al., 2017",
+  "datasets": [
+    {
+      "name": "NSynth",
+      "link": "https://magenta.tensorflow.org/datasets/nsynth",
+      "license": "Creative Commons Attribution 4.0"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "map",
+      "definition": "Mean Average Precision on pitch label prediction",
+      "calculation": "average_precision"
+    }
+  ],
+  "test_method": "Train or evaluate on 16kHz waveforms; compute MAP over pitch labels using provided evaluation scripts.",
+  "example_scores": {
+    "Qwen3-Audio": "47.4 MAP (Qwen3 Audio report)",
+    "WaveNet baseline": "45.4 MAP (NSynth paper)"
+  },
+  "notes": "Specify train/validation/test split version (balanced vs unbalanced)."
+}

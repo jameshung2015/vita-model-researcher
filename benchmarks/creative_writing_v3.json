@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.creative_writing_v3",
+  "name": "Creative Writing v3",
+  "description": "Writing tasks spanning story, poetry, and stylistic adaptation evaluated by LLM or human judges.",
+  "source": "OpenCompass, 2024",
+  "datasets": [
+    {
+      "name": "Creative Writing v3",
+      "link": "https://huggingface.co/datasets/OpenCompass/CreativeWritingV3",
+      "license": "Refer to dataset repository"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "score",
+      "definition": "Mean preference or rubric-based score (1-100)",
+      "calculation": "average of judge scores"
+    }
+  ],
+  "test_method": "Generate responses per prompt and score using the provided rubrics or LLM-as-a-judge prompts.",
+  "example_scores": {
+    "GPT-4o": "86.0 (OpenCompass report)",
+    "Qwen2.5-32B": "82.0 (OpenCompass report)"
+  },
+  "notes": "Record judge model and sampling configuration; pairwise comparisons require consistent seeds."
+}

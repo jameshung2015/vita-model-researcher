@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.charmimir_v2_direct",
+  "name": "CharMimir V2 (Direct)",
+  "description": "Chart-to-code generation benchmark where models reproduce source charts by emitting plotting code directly.",
+  "source": "OpenCompass, 2024",
+  "datasets": [
+    {
+      "name": "CharMimir V2",
+      "link": "https://huggingface.co/datasets/OpenCompass/CharMimir-V2",
+      "license": "Refer to dataset repository"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "execution_accuracy",
+      "definition": "Percentage of generated programs that compile and visually match the ground-truth chart",
+      "calculation": "matching_programs / total"
+    }
+  ],
+  "test_method": "Generate plotting code (e.g., Matplotlib) from chart screenshots, execute it, and compare rendered images using SSIM/LPIPS.",
+  "example_scores": {
+    "Qwen3-VL-235B-A22B": "80.5% (Qwen3-VL technical report)",
+    "Claude 3.5 Sonnet": "72.4% (OpenCompass results)"
+  },
+  "notes": "Record runtime environment (Python version, Matplotlib backend). Some charts require seeded randomness for reproducibility."
+}

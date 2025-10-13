@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.fleurs_19_lang_avg",
+  "name": "FLEURS (19-lang avg)",
+  "description": "Multilingual speech recognition benchmark averaging the 19-language subset of the Google FLEURS corpus.",
+  "source": "Conneau et al., 2022",
+  "datasets": [
+    {
+      "name": "FLEURS",
+      "link": "https://huggingface.co/datasets/google/fleurs",
+      "license": "Creative Commons Attribution 4.0"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "wer",
+      "definition": "Average Word Error Rate across the selected language evaluation sets",
+      "calculation": "mean_language(WER_language)"
+    }
+  ],
+  "test_method": "Evaluate each language independently following the official scripts, then average macro-wise over the chosen 19 languages.",
+  "example_scores": {
+    "Whisper-large-v3": "6.0 avg WER (Google benchmark report)",
+    "Qwen3-Omni-30B-A3B": "5.3 avg WER (Qwen3-Omni paper)"
+  },
+  "notes": "Clearly state language list, normalization rules, and whether punctuation is removed prior to scoring."
+}

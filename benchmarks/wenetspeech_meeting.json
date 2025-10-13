@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.wenetspeech_meeting",
+  "name": "WenetSpeech (meeting)",
+  "description": "Mandarin meeting transcription subset of WenetSpeech covering far-field, overlapping speech and spontaneous dialogue.",
+  "source": "Zhang et al., 2021",
+  "datasets": [
+    {
+      "name": "WenetSpeech",
+      "link": "https://github.com/wenet-e2e/WenetSpeech",
+      "license": "Creative Commons Attribution 4.0"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "wer",
+      "definition": "Word Error Rate (edit distance between hypothesis and reference, normalized by reference length)",
+      "calculation": "(S + D + I) / N"
+    }
+  ],
+  "test_method": "Decode meeting recordings with streaming or offline ASR, then compute WER with the official scoring script.",
+  "example_scores": {
+    "Qwen3-Omni-30B-A3B": "5.75 WER (Qwen3-Omni paper, 2025)",
+    "Paraformer-Large": "8.4 WER (WenetSpeech baseline)"
+  },
+  "notes": "Meeting subset includes overlapping speech; specify diarization or VAD pipeline and language model usage."
+}

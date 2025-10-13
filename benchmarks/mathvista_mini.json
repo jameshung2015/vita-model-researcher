@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.mathvista_mini",
+  "name": "MathVista Mini",
+  "description": "Mini split of MathVista covering math word problems combined with charts, tables, and graphics.",
+  "source": "Lu et al., 2023",
+  "datasets": [
+    {
+      "name": "MathVista",
+      "link": "https://huggingface.co/datasets/MathVista/MathVista",
+      "license": "CC BY-NC-SA 4.0"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "Answer accuracy on MathVista mini subset",
+      "calculation": "correct / total"
+    }
+  ],
+  "test_method": "Follow MathVista evaluation pipeline with unified prompts. Provide final numeric answer tokens.",
+  "example_scores": {
+    "Qwen3-VL-235B-A22B": "84.9% (Qwen3-VL technical report)",
+    "GPT-4V": "79.0% (MathVista paper)"
+  },
+  "notes": "Note whether retrieval augmentation (OCR, table parsing) was used, as the dataset mixes modalities."
+}

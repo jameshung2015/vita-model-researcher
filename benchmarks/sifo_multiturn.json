@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.sifo_multiturn",
+  "name": "SIFO-MultiTurn",
+  "description": "Multi-turn extension of SIFO assessing sustained compliance across conversational turns.",
+  "source": "OpenCompass, 2024",
+  "datasets": [
+    {
+      "name": "SIFO Multi-Turn",
+      "link": "https://huggingface.co/datasets/OpenCompass/SIFO-MultiTurn",
+      "license": "Refer to dataset repository"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "Fraction of conversations with fully compliant responses at every turn",
+      "calculation": "compliant_dialogues / total"
+    }
+  ],
+  "test_method": "Simulate conversations using provided scripts; run an LLM or rule-based judge across turns to flag failures.",
+  "example_scores": {
+    "GPT-4o": "73 (OpenCompass report)",
+    "Qwen2.5-72B": "71 (OpenCompass report)"
+  },
+  "notes": "Include details on judge prompt and whether memory/stateful prompting was used."
+}

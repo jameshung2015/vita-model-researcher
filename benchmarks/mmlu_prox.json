@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.mmlu_prox",
+  "name": "MMLU-ProX",
+  "description": "Multilingual variant of MMLU-Pro covering 29 languages with adversarially curated questions.",
+  "source": "OpenCompass, 2025",
+  "datasets": [
+    {
+      "name": "MMLU-ProX",
+      "link": "https://huggingface.co/datasets/OpenCompass/MMLU-ProX",
+      "license": "Refer to dataset repository"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "Multiple-choice accuracy aggregated across languages",
+      "calculation": "See official scorer (macro mean)"
+    }
+  ],
+  "test_method": "Evaluate each language subset independently, then aggregate macro average. Ensure prompts specify language codes and instructions to answer in target language.",
+  "example_scores": {
+    "Qwen3-235B-A22B": "80.0 (Qwen3 technical report)",
+    "GPT-4o": "78.2 (OpenCompass report)"
+  },
+  "notes": "Document judge or normalization for languages with diacritics. Provide decoding temperature and max tokens."
+}

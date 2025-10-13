@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.ai2d_test",
+  "name": "AI2D Test",
+  "description": "Grade-school science diagram question answering benchmark covering annotated diagrams and multi-choice questions.",
+  "source": "Kembhavi et al., 2016",
+  "datasets": [
+    {
+      "name": "AI2D",
+      "link": "https://allenai.org/data/ai2d",
+      "license": "Creative Commons Attribution 4.0"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "Multiple-choice question accuracy on the AI2D test split",
+      "calculation": "correct / total"
+    }
+  ],
+  "test_method": "Provide diagram, labels, and question text (with four options). Evaluate using exact-match on the selected option.",
+  "example_scores": {
+    "Qwen3-VL-235B-A22B": "89.7% (Qwen3-VL technical report)",
+    "Flamingo-80B": "74.9% (AI2D benchmark paper)"
+  },
+  "notes": "Prompts often include diagram context text; document whether bounding boxes or OCR tokens were used."
+}

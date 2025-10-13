@@ -177,5 +177,5 @@
   "community": "Slack讨论组",
   "notes": "首个专门评估LLM Agent能力的综合基准，提供多样化的真实场景测试环境。对于Agent研究和应用开发具有重要参考价值。",
   "research_doc": "agents-toolchain/doc-eval-system/agentbench_research.md",
-  "last_reviewed": "2025-09-25"
+  "last_reviewed": "2025-10-13"
 }

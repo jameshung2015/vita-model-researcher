@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.osworldg",
+  "name": "OSWorld-G",
+  "description": "Graphical operating system control benchmark measuring desktop task automation through GUI understanding.",
+  "source": "AGI Odyssey, 2024",
+  "datasets": [
+    {
+      "name": "OSWorld",
+      "link": "https://github.com/agiresearch/OSWorld",
+      "license": "Apache-2.0"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "success_rate",
+      "definition": "Percentage of GUI tasks completed within allowed steps",
+      "calculation": "successful_tasks / total"
+    }
+  ],
+  "test_method": "Run the OSWorld simulator, feed screen captures to the model, and execute predicted actions on the virtual desktop.",
+  "example_scores": {
+    "Qwen3-VL-235B-A22B": "62.0% (Qwen3-VL technical report)",
+    "GPT-4.1": "55.8% (OSWorld benchmark)"
+  },
+  "notes": "Record tool availability (keyboard, mouse), step budget, and whether intermediate reasoning was externalized."
+}

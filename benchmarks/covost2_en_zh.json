@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.covost2_en_zh",
+  "name": "CoVoST2 (En→Zh)",
+  "description": "Multilingual speech translation task translating English speech to Mandarin Chinese text.",
+  "source": "Wang et al., 2021",
+  "datasets": [
+    {
+      "name": "CoVoST 2",
+      "link": "https://huggingface.co/datasets/facebook/covost2",
+      "license": "Creative Commons Attribution 4.0"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "bleu",
+      "definition": "BLEU score computed on detokenized translations using SacreBLEU",
+      "calculation": "sacrebleu(predictions, references)"
+    }
+  ],
+  "test_method": "Follow the official evaluation pipeline using SacreBLEU with signature 'case.lc+numrefs.1+smooth.exp+tok.zh+version.1.5.1'.",
+  "example_scores": {
+    "SeamlessM4T-Large": "42.0 BLEU (Meta AI report)",
+    "Qwen3-Audio": "41.5 BLEU (Qwen3 Audio report)"
+  },
+  "notes": "Provide beam search parameters and whether language identification or punctuation restoration were applied."
+}

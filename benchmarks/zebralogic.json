@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.zebralogic",
+  "name": "ZebraLogic",
+  "description": "Logic grid puzzles requiring consistent reasoning over structured clues to determine entity assignments.",
+  "source": "ZebraLogic Team, 2023",
+  "datasets": [
+    {
+      "name": "ZebraLogic",
+      "link": "https://huggingface.co/datasets/THUDM/ZebraLogic",
+      "license": "CC BY-NC-SA 4.0"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "Percentage of puzzles solved completely correctly",
+      "calculation": "correct / total"
+    }
+  ],
+  "test_method": "Provide full puzzle text and require final structured answer (e.g., JSON mapping). Evaluate with official checker to ensure global consistency.",
+  "example_scores": {
+    "GPT-4": "85% (ZebraLogic leaderboard, 2023)",
+    "Claude 3 Opus": "92% (community report)"
+  },
+  "notes": "Encourage structured output (tables). Document validators used to grade predictions."
+}

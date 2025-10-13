@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.docvqa_test",
+  "name": "DocVQA (Test)",
+  "description": "Document visual question answering benchmark involving scanned forms, tables, and complex layouts.",
+  "source": "Tonioni et al., 2020",
+  "datasets": [
+    {
+      "name": "DocVQA Challenge",
+      "link": "https://rrc.cvc.uab.es/?ch=17",
+      "license": "Research use"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "String accuracy or edit-distance normalized score depending on subtask",
+      "calculation": "DocVQA official metric"
+    }
+  ],
+  "test_method": "Follow DocVQA evaluation server protocols. Extract text via OCR and reason over layout to produce answers.",
+  "example_scores": {
+    "Qwen3-VL-235B-A22B": "89.2% (Qwen3-VL technical report)",
+    "Donut-Large": "83.1% (DocVQA leaderboard)"
+  },
+  "notes": "Report OCR system and layout parsing method (document graph, table recognition). Some splits require answer normalization."
+}

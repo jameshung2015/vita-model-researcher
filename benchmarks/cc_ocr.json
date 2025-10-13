@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.cc_ocr",
+  "name": "CC-OCR",
+  "description": "Challenging document OCR benchmark with dense Chinese-English mixed text, layout noise, and varied typography.",
+  "source": "OpenCompass, 2024",
+  "datasets": [
+    {
+      "name": "CC-OCR",
+      "link": "https://huggingface.co/datasets/OpenCompass/CC-OCR",
+      "license": "Refer to dataset repository"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "Exact-match accuracy of recognized text spans against reference transcription",
+      "calculation": "correct / total"
+    }
+  ],
+  "test_method": "Use official evaluation scripts that normalize punctuation and spaces. Provide bounding-box ordering when formatting prompts.",
+  "example_scores": {
+    "Qwen3-VL-235B-A22B": "82.2% (Qwen3-VL technical report)",
+    "GPT-4V": "76.8% (OpenCompass OCR benchmark)"
+  },
+  "notes": "Document OCR-specific decoding steps (e.g., reading direction, language tags). Dataset mixes long receipts and signage."
+}

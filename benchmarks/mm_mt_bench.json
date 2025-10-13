@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.mm_mt_bench",
+  "name": "MM MT Bench",
+  "description": "Multimodal multi-turn benchmark assessing dialogue coherence, helpfulness, and grounding across turns.",
+  "source": "OpenCompass, 2024",
+  "datasets": [
+    {
+      "name": "MM MT Bench",
+      "link": "https://huggingface.co/datasets/OpenCompass/MM-MT-Bench",
+      "license": "Refer to dataset repository"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "quality_score",
+      "definition": "LLM-judge score (0-100) evaluating overall dialogue quality",
+      "calculation": "mean(judge_scores)"
+    }
+  ],
+  "test_method": "Generate multi-turn responses following provided conversation prompts, then use the official judge prompt to score each turn.",
+  "example_scores": {
+    "Qwen3-VL-235B-A22B": "91.3 (Qwen3-VL technical report)",
+    "GPT-4o": "89.4 (MM MT Bench report)"
+  },
+  "notes": "State judge configuration and conversation termination criteria. Provide random seeds for reproducibility."
+}

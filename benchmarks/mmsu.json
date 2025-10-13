@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.mmsu",
+  "name": "MMSU",
+  "description": "Multi-modal Speech Understanding benchmark covering classification, retrieval, and QA tasks with spoken inputs.",
+  "source": "VoiceBench Authors, 2024",
+  "datasets": [
+    {
+      "name": "MMSU",
+      "link": "https://arxiv.org/abs/2406.14192",
+      "license": "Research use; see VoiceBench paper"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "score",
+      "definition": "Composite score averaged over MMSU sub-tasks",
+      "calculation": "mean(subtask_scores)"
+    }
+  ],
+  "test_method": "Use MMSU evaluation toolkit covering intent detection, slot filling, and QA tasks; aggregate normalized subtask scores.",
+  "example_scores": {
+    "Qwen3-Omni-30B-A3B": "83.0 (VoiceBench report)",
+    "GPT-4o-mini": "79.2 (VoiceBench report)"
+  },
+  "notes": "Specify weighting across subtasks and whether transcripts or only audio were provided to the model."
+}

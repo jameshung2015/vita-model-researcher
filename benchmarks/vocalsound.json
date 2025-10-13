@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.vocalsound",
+  "name": "VocalSound",
+  "description": "Animal vocalization classification benchmark spanning birds, mammals, and amphibians.",
+  "source": "Qwen Audio Team, 2024",
+  "datasets": [
+    {
+      "name": "VocalSound",
+      "link": "https://huggingface.co/datasets/Qwen/VocalSound",
+      "license": "CC BY-NC 4.0"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "Top-1 classification accuracy over species labels",
+      "calculation": "correct / total"
+    }
+  ],
+  "test_method": "Segment animal calls into fixed-length clips and evaluate using the provided taxonomy mapping.",
+  "example_scores": {
+    "Qwen3-Audio": "92.9% accuracy (Qwen3 Audio report)",
+    "Audio-MAE baseline": "88.1% accuracy (dataset report)"
+  },
+  "notes": "Dataset aggregates recordings from multiple wildlife corpora; ensure label harmonization when fine-tuning."
+}

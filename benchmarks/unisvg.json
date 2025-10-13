@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.unisvg",
+  "name": "UniSVG",
+  "description": "Image-to-SVG generation benchmark requiring structural vector graphics output from input images.",
+  "source": "OpenCompass, 2024",
+  "datasets": [
+    {
+      "name": "UniSVG",
+      "link": "https://huggingface.co/datasets/OpenCompass/UniSVG",
+      "license": "Refer to dataset repository"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "similarity_score",
+      "definition": "Structural similarity between generated SVG and ground truth",
+      "calculation": "official UniSVG similarity metric"
+    }
+  ],
+  "test_method": "Generate SVG markup from input images and evaluate using canonicalization plus similarity scoring.",
+  "example_scores": {
+    "Qwen3-VL-235B-A22B": "69.3% (Qwen3-VL technical report)",
+    "Claude 3.5 Sonnet": "61.4% (OpenCompass evaluation)"
+  },
+  "notes": "Report renderer (e.g., resvg) and whether post-processing (path simplification) was applied."
+}

@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.mmlu_pro",
+  "name": "MMLU-Pro",
+  "description": "Harder revision of Massive Multitask Language Understanding with adversarial filtering, multi-step questions, and long-form rationales across 12 knowledge areas.",
+  "source": "OpenCompass Team, 2024",
+  "datasets": [
+    {
+      "name": "MMLU-Pro (OpenCompass)",
+      "link": "https://huggingface.co/datasets/OpenCompass/MMLU-Pro",
+      "license": "Refer to dataset repository"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "Share of questions answered exactly correctly (single-choice)",
+      "calculation": "correct / total"
+    }
+  ],
+  "test_method": "Use official JSON or CSV; prompt with question, choices, and require the model to select the gold option. Track prompt setup (zero-shot vs few-shot) and context length.",
+  "example_scores": {
+    "GPT-4o": "~80 (OpenCompass report, zero-shot CoT)",
+    "Qwen2.5-72B": "~77 (OpenCompass report)"
+  },
+  "notes": "Record whether majority voting, chain-of-thought, or self-consistency was used; include random seed if sampling."
+}

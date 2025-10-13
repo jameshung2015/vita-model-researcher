@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.mir_1k_lyrics_asr",
+  "name": "MIR-1K (Lyrics ASR)",
+  "description": "Mandarin and English karaoke singing speech corpus for lyrics transcription with vocal accompaniment removed.",
+  "source": "Hsu & Jang, 2010",
+  "datasets": [
+    {
+      "name": "MIR-1K",
+      "link": "https://sites.google.com/site/unvoicedsoundseparation/mir-1k",
+      "license": "Non-commercial research use"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "wer",
+      "definition": "Word Error Rate on lyric transcripts",
+      "calculation": "(S + D + I) / N"
+    }
+  ],
+  "test_method": "Apply lyric-aligned decoding; remove musical symbols prior to scoring. Most works perform uppercase normalization.",
+  "example_scores": {
+    "Qwen3-Omni-30B-A3B": "5.85 WER (Qwen3-Omni paper)",
+    "Paraformer-L": "8.1 WER (MIR-1K baseline)"
+  },
+  "notes": "Explicitly mention beat-synchronous segmentation or chunking settings when comparing scores."
+}

@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.aishell_2",
+  "name": "AIShell-2",
+  "description": "Large-scale Mandarin speech recognition dataset with speakers recorded on mobile, iOS, and microphone channels.",
+  "source": "Du et al., 2018",
+  "datasets": [
+    {
+      "name": "AIShell-2",
+      "link": "https://www.openslr.org/62",
+      "license": "Creative Commons Attribution 4.0"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "cer",
+      "definition": "Character Error Rate averaged across device conditions",
+      "calculation": "mean_channel(CER_channel)"
+    }
+  ],
+  "test_method": "Train or fine-tune with multi-condition audio. Evaluate CER separately per channel then average.",
+  "example_scores": {
+    "Qwen3-Audio": "3.3 CER (Qwen3 Audio report)",
+    "Paraformer-L": "4.1 CER (AIShell-2 baseline)"
+  },
+  "notes": "State whether channel-specific language models or normalization were used; dataset includes 1,000+ speakers."
+}

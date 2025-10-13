@@ -1,0 +1,31 @@
+{
+  "id": "benchmark.bfcl",
+  "name": "Berkeley Function-Calling Leaderboard (BFCL)",
+  "description": "Function-calling evaluation focused on tool invocation correctness and argument accuracy across APIs.",
+  "source": "Gorilla Lab, UC Berkeley, 2024",
+  "datasets": [
+    {
+      "name": "BFCL v4",
+      "link": "https://gorilla.cs.berkeley.edu/",
+      "license": "Research use"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "call_accuracy",
+      "definition": "Percentage of examples where the correct function is selected",
+      "calculation": "correct_function / total"
+    },
+    {
+      "name": "argument_accuracy",
+      "definition": "Exact match of structured arguments with ground truth",
+      "calculation": "correct_arguments / total"
+    }
+  ],
+  "test_method": "Use the BFCL harness to execute model outputs against validators; compute accuracy separately for function choice and arguments.",
+  "example_scores": {
+    "GPT-4o": "74 call / 68 argument (BFCL v4 leaderboard)",
+    "Qwen2.5-72B": "69 call / 63 argument (BFCL v4 leaderboard)"
+  },
+  "notes": "State whether tool schemas were provided verbatim or simplified; BFCL updates versions frequently—record dataset hash."
+}

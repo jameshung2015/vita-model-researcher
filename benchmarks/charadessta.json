@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.charadessta",
+  "name": "Charades-STA",
+  "description": "Spatio-temporal activity localization benchmark aligning natural language descriptions with video segments.",
+  "source": "Gao et al., 2017",
+  "datasets": [
+    {
+      "name": "Charades-STA",
+      "link": "https://github.com/jiyanggao/TALL",
+      "license": "Non-commercial research use"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "tIoU@0.5",
+      "definition": "Temporal Intersection-over-Union >= 0.5 retrieval accuracy",
+      "calculation": "correct_segments / total"
+    }
+  ],
+  "test_method": "Sample candidate windows from videos and score them using cross-modal alignment. Evaluate at tIoU thresholds 0.3/0.5.",
+  "example_scores": {
+    "Qwen3-VL-235B-A22B": "67.7% (Qwen3-VL technical report, tIoU@0.5)",
+    "Video-LLaVA": "61.2% (Charades-STA leaderboard)"
+  },
+  "notes": "Document video sampling rate, frame resolution, and whether optical flow features were used."
+}

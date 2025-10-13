@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.multiif",
+  "name": "MultiIF",
+  "description": "Multilingual instruction following benchmark covering 12 languages with parallel prompts and machine-verifiable checks.",
+  "source": "MBZUAI & collaborators, 2024",
+  "datasets": [
+    {
+      "name": "MultiIF",
+      "link": "https://huggingface.co/datasets/MBZUAI/MultiIF",
+      "license": "CC BY-NC-SA 4.0"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "Proportion of prompts satisfying all verification rules per language",
+      "calculation": "passing / total"
+    }
+  ],
+  "test_method": "Run the provided checker per language; optionally average results with macro or micro weighting across languages.",
+  "example_scores": {
+    "GPT-4o": "82 macro accuracy (paper)",
+    "Qwen2.5-72B": "79 macro accuracy (paper)"
+  },
+  "notes": "Specify language-specific prompts, locale settings, and judge version; dataset includes regex files for each language."
+}

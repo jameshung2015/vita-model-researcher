@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.livebench1125",
+  "name": "LiveBench (2024-11-25)",
+  "description": "Snapshot of the LiveBench evolving benchmark dated 2024-11-25, covering reasoning, math, coding, and knowledge tasks.",
+  "source": "LiveBench Contributors, 2024",
+  "datasets": [
+    {
+      "name": "LiveBench 2024-11-25",
+      "link": "https://github.com/LiveBench/LiveBench",
+      "license": "Apache-2.0"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "composite_score",
+      "definition": "Average of task-specific normalized scores",
+      "calculation": "mean(task_scores)"
+    }
+  ],
+  "test_method": "Use the provided evaluation scripts to fetch the dated tasks. Log the commit hash to guarantee reproducibility.",
+  "example_scores": {
+    "GPT-4o-2024-11-20": "82.1 (LiveBench report)",
+    "Qwen2.5-72B": "78.4 (LiveBench report)"
+  },
+  "notes": "LiveBench updates frequently; always record snapshot date and commit. Some tasks rely on simulated judges—capture evaluation seeds."
+}

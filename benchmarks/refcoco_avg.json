@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.refcoco_avg",
+  "name": "RefCOCO (avg)",
+  "description": "Referring expression comprehension benchmark averaged over RefCOCO, RefCOCO+, and RefCOCOg splits.",
+  "source": "Yu et al., 2016",
+  "datasets": [
+    {
+      "name": "RefCOCO family",
+      "link": "https://github.com/lichengunc/refer",
+      "license": "Refer to dataset repository"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "Percentage of correctly localized referring expressions",
+      "calculation": "hits / total"
+    }
+  ],
+  "test_method": "Predict bounding boxes for each referring expression; compute IoU with ground truth and average across splits.",
+  "example_scores": {
+    "Qwen3-VL-235B-A22B": "91.9% (Qwen3-VL technical report)",
+    "Kosmos-2": "86.4% (RefCOCO benchmark)"
+  },
+  "notes": "Report per-split results and IoU threshold (commonly 0.5). Clarify whether beam search or iterative refinement was used."
+}

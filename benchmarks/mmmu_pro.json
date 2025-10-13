@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.mmmu_pro",
+  "name": "MMMU-Pro",
+  "description": "Advanced track of Multimodal Massive Multi-discipline University exam covering professional-level topics.",
+  "source": "Yuan et al., 2024",
+  "datasets": [
+    {
+      "name": "MMMU-Pro",
+      "link": "https://huggingface.co/datasets/MMMU/MMMU_Pro",
+      "license": "CC BY-NC 4.0"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "Multiple-choice accuracy across professional subjects",
+      "calculation": "correct / total"
+    }
+  ],
+  "test_method": "Use official evaluation script; each question includes image(s) and a four-option answer set. Record reasoning style.",
+  "example_scores": {
+    "Qwen3-VL-235B-A22B": "68.1% (Qwen3-VL technical report)",
+    "GPT-4V": "63.4% (MMMU leaderboard)"
+  },
+  "notes": "Document whether chain-of-thought or majority voting was used. Some questions rely heavily on text within images."
+}

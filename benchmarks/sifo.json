@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.sifo",
+  "name": "SIFO",
+  "description": "Single-turn Instruction Following benchmark with 1,000+ natural language instructions covering safety, refusal, and compliance scenarios.",
+  "source": "OpenCompass, 2024",
+  "datasets": [
+    {
+      "name": "SIFO",
+      "link": "https://huggingface.co/datasets/OpenCompass/SIFO",
+      "license": "Refer to dataset repository"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "Percentage of model responses judged compliant with instructions",
+      "calculation": "judged_compliant / total"
+    }
+  ],
+  "test_method": "Use automatic judge (LMSYS or rubric-based). Provide reference rubric and judge prompt.",
+  "example_scores": {
+    "GPT-4o-mini": "74% (OpenCompass report)",
+    "Qwen2.5-32B": "71% (OpenCompass report)"
+  },
+  "notes": "Record judge model/version; human spot checks are advised for safety-related instructions."
+}

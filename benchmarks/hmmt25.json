@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.hmmt25",
+  "name": "HMMT 2025",
+  "description": "Harvard-MIT Mathematics Tournament 2025 individual round problems covering algebra, combinatorics, geometry, and number theory.",
+  "source": "Harvard-MIT Mathematics Tournament, 2025",
+  "datasets": [
+    {
+      "name": "HMMT Archive 2025",
+      "link": "https://www.hmmt.org",
+      "license": "HMMT educational license"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "Percentage of problems solved exactly with correct final answer",
+      "calculation": "correct / total"
+    }
+  ],
+  "test_method": "Deliver each question verbatim; evaluate on final numeric or algebraic answer as specified. Multi-part questions should be split into independent items for scoring.",
+  "example_scores": {
+    "Top competitor (2025)": "~70% (official stats)",
+    "Strong high-school contestant": "~40% (practice reports)"
+  },
+  "notes": "Some problems expect proofs; define whether short answers or full derivations are required. Document parsing heuristics for symbolic answers."
+}

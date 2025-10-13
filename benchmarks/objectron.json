@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.objectron",
+  "name": "Objectron",
+  "description": "3D object pose estimation dataset with annotated videos of common items captured from multiple viewpoints.",
+  "source": "Ahmadyan et al., 2020",
+  "datasets": [
+    {
+      "name": "Objectron",
+      "link": "https://github.com/google-research-datasets/Objectron",
+      "license": "Apache-2.0"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "ap_3d",
+      "definition": "Average precision over 3D bounding boxes and pose alignment",
+      "calculation": "mean(AP@IoU thresholds)"
+    }
+  ],
+  "test_method": "Predict 3D bounding boxes/poses for each object track and score using official evaluation scripts.",
+  "example_scores": {
+    "Qwen3-VL-235B-A22B": "71.2% (Qwen3-VL technical report, normalized score)",
+    "MobilePose": "64.0% (Objectron benchmark)"
+  },
+  "notes": "Specify camera calibration usage and frame sampling rate. Some categories have limited annotations."
+}

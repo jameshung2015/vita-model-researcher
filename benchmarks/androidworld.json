@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.androidworld",
+  "name": "AndroidWorld",
+  "description": "Interactive benchmark for smartphone UI control requiring agents to operate Android apps via screenshots and action traces.",
+  "source": "AndroidWorld Authors, 2024",
+  "datasets": [
+    {
+      "name": "AndroidWorld Tasks",
+      "link": "https://github.com/google-research/android_world",
+      "license": "Apache-2.0"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "success_rate",
+      "definition": "Percentage of tasks completed within the allowed step budget",
+      "calculation": "successful_tasks / total_tasks"
+    }
+  ],
+  "test_method": "Run the AndroidWorld environment with the provided emulator. Supply screen captures and metadata to the model, then execute actions via accessibility APIs.",
+  "example_scores": {
+    "Qwen3-VL-235B-A22B": "63.7% (Qwen3-VL technical report)",
+    "GPT-4.1": "58.4% (AndroidWorld benchmark)"
+  },
+  "notes": "Report action budget and whether demonstrations or planner assistance were used. Logging UI hierarchies improves reproducibility."
+}

@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.ifeval",
+  "name": "IFEval",
+  "description": "Instruction Following Evaluation with verifiable checks covering English instructions that embed regex-like assertions.",
+  "source": "Zheng et al., 2023",
+  "datasets": [
+    {
+      "name": "IFEval",
+      "link": "https://github.com/google-research/google-research/tree/master/instruction_following_eval",
+      "license": "Apache-2.0"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "Share of prompts whose outputs satisfy all programmatic checks",
+      "calculation": "passing_prompts / total"
+    }
+  ],
+  "test_method": "Execute the official evaluation harness which parses each output with regex or Python validators.",
+  "example_scores": {
+    "GPT-4": "88.3 (paper)",
+    "PaLM-2": "74.9 (paper)"
+  },
+  "notes": "Ensure outputs are captured verbatim; tests are case-sensitive. Mention decoding parameters and whether retries are allowed."
+}

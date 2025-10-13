@@ -88,5 +88,5 @@
   "github": "https://github.com/tatsu-lab/alpaca_eval",
   "notes": "快速且成本低廉的指令跟随能力评估工具，与人类偏好高度相关。长度控制版本有效减少了长度偏差问题。适合模型开发阶段的快速评估。",
   "research_doc": "agents-toolchain/doc-eval-system/alpacaeval_research.md",
-  "last_reviewed": "2025-09-25"
+  "last_reviewed": "2025-10-13"
 }

@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.screenspot_pro",
+  "name": "ScreenSpot Pro",
+  "description": "Advanced GUI interaction benchmark extending ScreenSpot with multi-step operations and dynamic interfaces.",
+  "source": "Zhao et al., 2024",
+  "datasets": [
+    {
+      "name": "ScreenSpot Pro",
+      "link": "https://github.com/yuekaizhao/ScreenSpot",
+      "license": "MIT License"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "success_rate",
+      "definition": "Task success rate across complex GUI workflows",
+      "calculation": "successful_tasks / total"
+    }
+  ],
+  "test_method": "Execute step-by-step UI actions predicted by the model. Evaluate success if final state matches the goal.",
+  "example_scores": {
+    "Qwen3-VL-235B-A22B": "95.4% (Qwen3-VL technical report)",
+    "GPT-4.1": "88.7% (ScreenSpot Pro benchmark)"
+  },
+  "notes": "Document action budget and whether tool APIs (copy/paste) were allowed."
+}

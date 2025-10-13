@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.mmlu_redux",
+  "name": "MMLU-Redux",
+  "description": "Human-verified refresh of MMLU that removes leaked items and adds new adversarial questions to better stress reasoning depth.",
+  "source": "Redwood Research, 2024",
+  "datasets": [
+    {
+      "name": "MMLU-Redux",
+      "link": "https://huggingface.co/datasets/RedwoodResearch/MMLU-Redux",
+      "license": "Creative Commons Attribution-ShareAlike 4.0"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "Multiple-choice accuracy over redux splits",
+      "calculation": "correct / total"
+    }
+  ],
+  "test_method": "Follow the official evaluation script; present each question with four options, optionally enabling chain-of-thought but scoring on final option.",
+  "example_scores": {
+    "GPT-4o": "93.0 (Redwood blog, 2024)",
+    "Claude 3.5 Sonnet": "90.6 (Redwood blog, 2024)"
+  },
+  "notes": "Include prompt template and temperature when reporting results; Redwood recommends deterministic decoding."
+}

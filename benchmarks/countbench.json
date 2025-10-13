@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.countbench",
+  "name": "CountBench",
+  "description": "Object counting benchmark covering dense scenes, crowd images, and fine-grained category counts.",
+  "source": "OpenCompass, 2024",
+  "datasets": [
+    {
+      "name": "CountBench",
+      "link": "https://huggingface.co/datasets/OpenCompass/CountBench",
+      "license": "Refer to dataset repository"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "Exact count accuracy within tolerance defined by benchmark",
+      "calculation": "correct_predictions / total"
+    }
+  ],
+  "test_method": "Each sample specifies the target object. Evaluate either by exact-match or by tolerance (±1) depending on subtask.",
+  "example_scores": {
+    "Qwen3-VL-235B-A22B": "88.6% (Qwen3-VL technical report)",
+    "GPT-4V": "82.3% (OpenCompass evaluation)"
+  },
+  "notes": "Clarify tolerance rules and whether density maps or segmentation masks were used as hints."
+}

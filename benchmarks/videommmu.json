@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.videommmu",
+  "name": "VideoMMMU",
+  "description": "Video-based extension of MMMU covering long-form educational video questions.",
+  "source": "Yuan et al., 2024",
+  "datasets": [
+    {
+      "name": "VideoMMMU",
+      "link": "https://huggingface.co/datasets/MMMU/VideoMMMU",
+      "license": "CC BY-NC 4.0"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "Multiple-choice accuracy on VideoMMMU tasks",
+      "calculation": "correct / total"
+    }
+  ],
+  "test_method": "Use long video contexts with question prompts; evaluate with official answer keys.",
+  "example_scores": {
+    "Qwen3-VL-235B-A22B": "64.8% (Qwen3-VL technical report)",
+    "GPT-4V": "59.7% (VideoMMMU leaderboard)"
+  },
+  "notes": "State chunking strategy for long videos and whether audio transcripts were used."
+}

@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.erqa",
+  "name": "ERQA",
+  "description": "Embodied visual question answering benchmark where agents explore 3D scenes to answer grounded questions.",
+  "source": "OpenCompass, 2024",
+  "datasets": [
+    {
+      "name": "ERQA",
+      "link": "https://huggingface.co/datasets/OpenCompass/ERQA",
+      "license": "Refer to dataset repository"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "Correct answer rate on embodied QA tasks",
+      "calculation": "correct / total"
+    }
+  ],
+  "test_method": "Simulate agent trajectories (or use provided frames) then allow the model to answer environment-specific questions.",
+  "example_scores": {
+    "Qwen3-VL-235B-A22B": "51.3% (Qwen3-VL technical report)",
+    "GPT-4V": "47.6% (OpenCompass evaluation)"
+  },
+  "notes": "Clarify whether navigation histories were provided or only aggregated views. Some tasks rely on depth or segmentation cues."
+}

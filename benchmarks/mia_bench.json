@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.mia_bench",
+  "name": "MIA-Bench",
+  "description": "Multimodal Instruction Alignment benchmark measuring how well models follow grounded multimodal instructions.",
+  "source": "OpenCompass, 2024",
+  "datasets": [
+    {
+      "name": "MIA-Bench",
+      "link": "https://huggingface.co/datasets/OpenCompass/MIA-Bench",
+      "license": "Refer to dataset repository"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "alignment_score",
+      "definition": "Judge-based score (0-10) evaluating compliance and relevance",
+      "calculation": "mean(judge_scores)"
+    }
+  ],
+  "test_method": "Generate responses to multimodal prompts and grade them with the official LLM judge or human raters.",
+  "example_scores": {
+    "Qwen3-VL-235B-A22B": "8.5 (Qwen3-VL technical report)",
+    "GPT-4V": "7.9 (OpenCompass evaluation)"
+  },
+  "notes": "Provide judge prompt, model, and temperature. Pairwise comparisons require consistent random seeds."
+}
