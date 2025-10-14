@@ -1,0 +1,37 @@
+{
+  "id": "benchmark.musr",
+  "name": "MuSR: Multistep Soft Reasoning",
+  "description": "MuSR evaluates multistep \"soft\" reasoning over long-form natural language narratives across three domains (murder mystery, object placement, and team allocation), stressing chain-of-thought robustness and commonsense integration.",
+  "source": "Sprague et al., 2024 (ICLR Spotlight; arXiv:2310.16049)",
+  "datasets": [
+    {
+      "name": "MuSR Murder Mystery v1",
+      "link": "https://github.com/Zayne-sprague/MuSR/blob/main/datasets/murder_mystery.json",
+      "license": "MIT License (repository); narratives generated via GPT-4 prompts"
+    },
+    {
+      "name": "MuSR Object Placements v1",
+      "link": "https://github.com/Zayne-sprague/MuSR/blob/main/datasets/object_placements.json",
+      "license": "MIT License (repository); narratives generated via GPT-4 prompts"
+    },
+    {
+      "name": "MuSR Team Allocation v1",
+      "link": "https://github.com/Zayne-sprague/MuSR/blob/main/datasets/team_allocation.json",
+      "license": "MIT License (repository); narratives generated via GPT-4 prompts"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "Share of benchmark questions where the model's final answer matches the domain gold answer.",
+      "calculation": "correct_answers / total_instances"
+    }
+  ],
+  "test_method": "Use the provided eval/eval.py script (or an equivalent runner) to load each domain JSON, issue the MuSR prompts, and parse the model's final answer token. Evaluation typically follows the authors' CoT+ prompt that supplies domain reasoning guidelines, optionally with one-shot or few-shot exemplars. Report accuracy per domain and include any self-consistency or verifier strategy applied.",
+  "example_scores": {
+    "GPT-4 (CoT+)": "80.4% MM / 60.9% OP / 68.4% TA accuracy (zero-shot, Sprague et al. 2024)",
+    "GPT-3.5 (CoT+)": "61.6% MM / 46.9% OP / 40.4% TA accuracy (zero-shot)",
+    "Human majority vote": "94.1% MM / 95.0% OP / 100.0% TA accuracy"
+  },
+  "notes": "Stories average ~1k tokens and embed latent commonsense constraints; evaluation quality depends on robust answer extraction and enforcing domain-specific reasoning steps. Datasets were synthesized with GPT-4 via a neurosymbolic generation pipeline, so regenerating variants requires OpenAI API access and adherence to the published prompts."
+}

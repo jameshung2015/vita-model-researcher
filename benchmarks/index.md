@@ -10,6 +10,8 @@
 - `opencompass.json`、`superclue.json`
 - `agentbench.json`、`agieval.json`、`anthropic_eval_suite.json`
 - `modelscope_leaderboard.json`
+- `musr.json` MuSR (multistep soft reasoning benchmark)
+- `bbh.json` BIG-Bench Hard (chain-of-thought reasoning stress test)
 
 维护要求
 - 必备字段：`id`、`name`、`source`、`datasets`、`test_method`、`example_scores`。

@@ -1,0 +1,28 @@
+{
+  "id": "benchmark.bbh",
+  "name": "BIG-Bench Hard (BBH)",
+  "description": "BBH is a curated subset of 23 particularly challenging BIG-Bench tasks (27 subtasks, 6.5K examples) spanning algorithmic reasoning and natural language understanding where early LLMs trailed average human raters.",
+  "source": "Suzgun et al., 2022 (arXiv:2210.09261)",
+  "datasets": [
+    {
+      "name": "BIG-Bench Hard task collection",
+      "link": "https://github.com/suzgunmirac/BIG-Bench-Hard/tree/main/bbh",
+      "license": "MIT License"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "Macro-averaged exact match across tasks (per-task accuracy averaged uniformly).",
+      "calculation": "mean(task_correct / task_total)"
+    }
+  ],
+  "test_method": "Load the 23 JSON task files from `bbh/` using the BIG-Bench evaluation harness or an equivalent runner. For each task, run few-shot prompting with the provided instructions (optionally including the CoT exemplars under `cot-prompts/`), decode with temperature 0, and extract the final answer token (multiple choice or free-form). Report per-task exact-match accuracy and the macro average; note whether chain-of-thought prompting, self-consistency, or other sampling was used.",
+  "example_scores": {
+    "Average human rater": "67.7% macro accuracy (Suzgun et al., 2022)",
+    "PaLM 540B (few-shot CoT)": "65.2% overall (10/23 tasks >= human)",
+    "InstructGPT text-davinci-002 (CoT)": "68.4% overall (15/23 tasks >= human)",
+    "Codex code-davinci-002 (CoT)": "73.9% overall / 73.5% NLP / 74.4% algorithmic (17/23 tasks >= human)"
+  },
+  "notes": "Tasks are mix of multiple-choice and exact-match formats; ensure answer post-processing matches labeling rules and average results across tasks rather than over all examples. Original release includes CoT exemplars and Codex outputs for reproducibility. Dataset creators emphasize keeping benchmark prompts out of training corpora."
+}
