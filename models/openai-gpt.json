@@ -1,0 +1,154 @@
+{
+  "model_name": "OpenAI GPT",
+  "short_description": "Closed-weight multimodal GPT API family (GPT-4o, GPT-4o mini, o1 reasoning).",
+  "homepage": "https://openai.com/index/gpt-4o-mini-and-gpt-4-1-preview/",
+  "model_card_link": "https://platform.openai.com/docs/models",
+  "license": "OpenAI API Terms of Use",
+  "provenance": {
+    "provider": "OpenAI",
+    "release_date": "2024-05-13",
+    "notes": "GPT-4o launched May 2024; GPT-4o mini July 2024; o1 reasoning September 2024."
+  },
+  "input_types": [
+    "text",
+    "image",
+    "audio",
+    "video"
+  ],
+  "output_types": [
+    "text",
+    "audio"
+  ],
+  "architecture_family": "multimodal transformer",
+  "architecture_details": "Proprietary GPT-4o architecture with unified multimodal tokenization; o1 reasoning stack adds multi-pass deliberation traces.",
+  "size_params": {
+    "notable_variants": [
+      "gpt-4o",
+      "gpt-4o-mini",
+      "o1",
+      "o1-mini"
+    ],
+    "activated_params_note": "Parameter counts are undisclosed; API users access hosted inference endpoints."
+  },
+  "capabilities": {
+    "multimodal": true,
+    "function_calling": true,
+    "tool_use": true,
+    "reasoning": "o1 and o1-mini expose multi-step reasoning traces.",
+    "streaming": true,
+    "realtime": "gpt-4o realtime variants support low-latency audio interactions."
+  },
+  "tags": [
+    "closed-weight",
+    "api",
+    "multimodal",
+    "reasoning"
+  ],
+  "variants": [
+    {
+      "name": "gpt-4o",
+      "params": 1,
+      "context_windows": [
+        128000
+      ],
+      "default_seq_len": 128000,
+      "default_num_gpus": 0,
+      "model_card_link": "https://platform.openai.com/docs/models#gpt-4o",
+      "release_date": "2024-05-13",
+      "hardware_recommendations": {
+        "notes": "Hosted via OpenAI API; no customer-managed hardware required."
+      },
+      "tags": [
+        "flagship",
+        "multimodal"
+      ]
+    },
+    {
+      "name": "gpt-4o-mini",
+      "params": 1,
+      "context_windows": [
+        128000
+      ],
+      "default_seq_len": 128000,
+      "default_num_gpus": 0,
+      "model_card_link": "https://platform.openai.com/docs/models#gpt-4o-mini",
+      "release_date": "2024-07-18",
+      "hardware_recommendations": {
+        "notes": "Hosted via OpenAI API; optimized for lower cost and latency."
+      },
+      "tags": [
+        "cost-optimized",
+        "multimodal"
+      ]
+    },
+    {
+      "name": "o1",
+      "params": 1,
+      "context_windows": [
+        200000
+      ],
+      "default_seq_len": 200000,
+      "default_num_gpus": 0,
+      "model_card_link": "https://openai.com/index/introducing-openai-o1/",
+      "release_date": "2024-09-12",
+      "hardware_recommendations": {
+        "notes": "Hosted via OpenAI API; deliberate reasoning traces increase latency."
+      },
+      "tags": [
+        "reasoning",
+        "preview"
+      ]
+    },
+    {
+      "name": "o1-mini",
+      "params": 1,
+      "context_windows": [
+        200000
+      ],
+      "default_seq_len": 200000,
+      "default_num_gpus": 0,
+      "model_card_link": "https://openai.com/index/introducing-openai-o1/",
+      "release_date": "2024-09-12",
+      "hardware_recommendations": {
+        "notes": "Hosted via OpenAI API; faster reasoning with lower accuracy vs o1."
+      },
+      "tags": [
+        "reasoning",
+        "cost-optimized"
+      ]
+    }
+  ],
+  "evaluation": {
+    "papers": [
+      "https://cdn.openai.com/papers/GPT-4o-System-Card.pdf",
+      "https://openai.com/index/introducing-openai-o1/"
+    ],
+    "benchmarks": [
+      "mmlu",
+      "mmlu_pro",
+      "math",
+      "gpqa",
+      "arc_agi",
+      "ai2d_test"
+    ],
+    "model_cards": [
+      "https://platform.openai.com/docs/models#gpt-4o",
+      "https://platform.openai.com/docs/models#gpt-4o-mini",
+      "https://platform.openai.com/docs/models#o1"
+    ]
+  },
+  "inference": {
+    "latency_ms": null,
+    "latency_level": "variable (API-managed)",
+    "throughput_rps": null,
+    "concurrency": null,
+    "memory_gb": null,
+    "quantization_friendly": false,
+    "supported_hardware": [
+      "OpenAI API"
+    ],
+    "distributed_support": false,
+    "notes": "Requests served from OpenAI-managed infrastructure. Pricing (2024-09): gpt-4o $5/$15 per million input/output tokens; gpt-4o-mini $0.6/$2.4; o1 $15/$60; o1-mini $3/$12."
+  },
+  "notes": "Consolidates OpenAI GPT API endpoints (text, multimodal, reasoning). Variant parameters are placeholders because OpenAI does not disclose parameter counts."
+}

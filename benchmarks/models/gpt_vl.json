@@ -1,0 +1,155 @@
+{
+  "model": "gpt-vl",
+  "model_family": "GPT-4o",
+  "notes": "GPT-4o vision-language benchmark数据，汇总自OpenAI官方报告及学术评测。GPT-4o原生支持视觉输入。",
+  "benchmarks": [
+    {
+      "name": "MMMU",
+      "metric": "Accuracy",
+      "value": "69.1%",
+      "scores_by_variant": {
+        "GPT-4o": "69.1%",
+        "GPT-4V": "56.0%",
+        "GPT-4o-mini": "~60%"
+      },
+      "description": "University-level multimodal knowledge exam",
+      "source_type": "website",
+      "source": "MMMU Benchmark",
+      "link": "https://mmmu-benchmark.github.io/",
+      "benchmark_id": "benchmark.mmmu_val"
+    },
+    {
+      "name": "MMBench",
+      "metric": "Accuracy",
+      "value": "~83%",
+      "scores_by_variant": {
+        "GPT-4o": "~83%",
+        "GPT-4V": "~75%",
+        "GPT-4o-mini": "~76%"
+      },
+      "description": "Comprehensive multimodal benchmark",
+      "source_type": "benchmark",
+      "source": "第三方评测",
+      "link": "https://mmbench.opencompass.org.cn/leaderboard",
+      "benchmark_id": "benchmark.mmbench_en_v1_1_dev"
+    },
+    {
+      "name": "DocVQA",
+      "metric": "Accuracy",
+      "value": "~88%",
+      "scores_by_variant": {
+        "GPT-4o": "~88%",
+        "GPT-4V": "~85%",
+        "GPT-4o-mini": "~82%"
+      },
+      "description": "Document image question answering",
+      "source_type": "benchmark",
+      "source": "第三方评测",
+      "link": "https://www.datacamp.com/blog/top-vision-language-models",
+      "benchmark_id": "benchmark.docvqa_test"
+    },
+    {
+      "name": "MathVista",
+      "metric": "Accuracy",
+      "value": "~63%",
+      "scores_by_variant": {
+        "GPT-4o": "~63%",
+        "GPT-4V": "~58%",
+        "GPT-4o-mini": "~52%"
+      },
+      "description": "Mathematics visual reasoning",
+      "source_type": "benchmark",
+      "source": "第三方评测",
+      "link": "https://www.datacamp.com/blog/top-vision-language-models",
+      "benchmark_id": "benchmark.mathvista_mini"
+    },
+    {
+      "name": "AI2D",
+      "metric": "Accuracy",
+      "value": "~94%",
+      "scores_by_variant": {
+        "GPT-4o": "~94%",
+        "GPT-4V": "~90%",
+        "GPT-4o-mini": "~88%"
+      },
+      "description": "AI2D diagram understanding and QA",
+      "source_type": "benchmark",
+      "source": "第三方评测",
+      "link": "https://www.datacamp.com/blog/top-vision-language-models",
+      "benchmark_id": "benchmark.ai2d_test"
+    },
+    {
+      "name": "ChartQA",
+      "metric": "Accuracy",
+      "value": "~81%",
+      "scores_by_variant": {
+        "GPT-4o": "~81%",
+        "GPT-4V": "~78%",
+        "GPT-4o-mini": "~75%"
+      },
+      "description": "Chart interpretation and reasoning",
+      "source_type": "benchmark",
+      "source": "第三方评测",
+      "link": "https://www.datacamp.com/blog/top-vision-language-models",
+      "benchmark_id": "benchmark.chartx_rq"
+    },
+    {
+      "name": "OCRBench",
+      "metric": "Accuracy",
+      "value": "~73%",
+      "scores_by_variant": {
+        "GPT-4o": "~73%",
+        "GPT-4V": "~68%",
+        "GPT-4o-mini": "~65%"
+      },
+      "description": "OCR text recognition accuracy",
+      "source_type": "benchmark",
+      "source": "第三方评测",
+      "link": "https://www.datacamp.com/blog/top-vision-language-models",
+      "benchmark_id": "benchmark.ocrbench_en_zh"
+    },
+    {
+      "name": "RealWorldQA",
+      "metric": "Accuracy",
+      "value": "~76%",
+      "scores_by_variant": {
+        "GPT-4o": "~76%",
+        "GPT-4V": "~72%",
+        "GPT-4o-mini": "~68%"
+      },
+      "description": "General visual question answering on real-world images",
+      "source_type": "benchmark",
+      "source": "第三方评测",
+      "link": "https://www.datacamp.com/blog/top-vision-language-models",
+      "benchmark_id": "benchmark.realworldqa"
+    }
+  ],
+  "model_info": {
+    "variants": [
+      {
+        "name": "GPT-4o",
+        "params": "Unknown",
+        "context_length": "128K",
+        "license": "Proprietary",
+        "release_date": "2024-05-13",
+        "notes": "Native multimodal model with vision, audio, and text capabilities"
+      },
+      {
+        "name": "GPT-4V",
+        "params": "Unknown", 
+        "context_length": "128K",
+        "license": "Proprietary",
+        "release_date": "2023-09-25",
+        "notes": "GPT-4 with vision capabilities (older generation)"
+      },
+      {
+        "name": "GPT-4o-mini",
+        "params": "Unknown",
+        "context_length": "128K",
+        "license": "Proprietary",
+        "release_date": "2024-07-18",
+        "notes": "Smaller, cost-effective variant with vision support"
+      }
+    ]
+  }
+}

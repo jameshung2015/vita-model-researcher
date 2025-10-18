@@ -1,0 +1,45 @@
+{
+  "id": "benchmark.mmstar",
+  "name": "MMStar",
+  "description": "Elite vision-indispensable multi-modal benchmark with 1,500 carefully curated samples evaluating 6 core capabilities across 18 detailed axes. Designed to minimize visual-free shortcuts and data leakage.",
+  "source": "Lin et al., 2024 (arXiv:2403.20330)",
+  "datasets": [
+    {
+      "name": "MMStar",
+      "link": "https://github.com/MMStar-Benchmark/MMStar",
+      "license": "Apache 2.0"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "Average accuracy across all samples",
+      "calculation": "correct / total"
+    },
+    {
+      "name": "multi-modal gain (MG)",
+      "definition": "Performance improvement from multi-modal training vs text-only baseline",
+      "calculation": "(multimodal_score - text_only_score) / text_only_score"
+    },
+    {
+      "name": "multi-modal leakage (ML)",
+      "definition": "Measures data leakage (lower is better)",
+      "calculation": "text_only_score indicating visual-free answering capability"
+    }
+  ],
+  "core_capabilities": [
+    "Coarse Perception (CP)",
+    "Fine-grained Perception (FP)",
+    "Instance Reasoning (IR)",
+    "Logical Reasoning (LR)",
+    "Science & Technology (ST)",
+    "Mathematics (MA)"
+  ],
+  "test_method": "1,500 challenge samples (250 per capability) selected through rigorous human review from 22,401 initial samples. Each sample requires visual dependency and advanced multi-modal capabilities. Random choice baseline: 24.6%.",
+  "example_scores": {
+    "GPT-4V": "57.1% (MG: 43.6%, ML: 1.3%)",
+    "InternLM-XComposer2": "55.4% (MG: 28.1%, ML: 7.5%)",
+    "LLaVA-Next": "52.1% (MG: 29.4%, ML: 2.4%)"
+  },
+  "notes": "Benchmark specifically designed to eliminate visual-free shortcuts where models answer without using image content. Lower ML (multi-modal leakage) scores indicate better visual dependency."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "benchmark.gpqa",
+  "name": "GPQA",
+  "description": "Graduate-Level Google-Proof Q&A Benchmark: 448 multiple-choice questions in biology, physics, and chemistry requiring deep domain expertise. Designed to be unsolvable through web search alone.",
+  "source": "Rein et al., 2023 (arXiv:2311.12022)",
+  "datasets": [
+    {
+      "name": "GPQA",
+      "link": "https://github.com/idavidrein/gpqa",
+      "license": "MIT License"
+    },
+    {
+      "name": "GPQA Diamond",
+      "link": "https://huggingface.co/datasets/Idavidrein/gpqa",
+      "license": "MIT License",
+      "description": "198-question subset of highest quality questions"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "Multiple-choice accuracy",
+      "calculation": "correct / total"
+    }
+  ],
+  "domains": [
+    "Biology",
+    "Physics",
+    "Chemistry"
+  ],
+  "test_method": "Questions written by domain experts (PhDs/PhD candidates). Non-expert validators with unrestricted web access averaged 30+ minutes per question. Evaluates whether models can answer graduate-level questions that resist simple web search solutions.",
+  "example_scores": {
+    "GPT-4 (baseline)": "39%",
+    "Domain experts": "65% (74% excluding identified errors)",
+    "Skilled non-experts": "34%",
+    "Random choice": "25%"
+  },
+  "notes": "GPQA Diamond is the highest-quality 198-question subset. Benchmark enables 'realistic scalable oversight experiments' for evaluating human supervision of superhuman AI systems. Report whether using full GPQA or GPQA Diamond subset."
+}

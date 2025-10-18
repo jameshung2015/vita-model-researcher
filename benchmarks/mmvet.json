@@ -1,0 +1,42 @@
+{
+  "id": "benchmark.mmvet",
+  "name": "MM-Vet",
+  "description": "Multimodal Veterinary benchmark evaluating integrated vision-language capabilities across 6 core abilities and 16 capability integrations. Uses LLM-based evaluator for open-ended responses.",
+  "source": "Yu et al., 2023 (ICML 2024)",
+  "datasets": [
+    {
+      "name": "MM-Vet",
+      "link": "https://github.com/yuweihao/MM-Vet",
+      "license": "Apache 2.0"
+    },
+    {
+      "name": "MM-Vet v2",
+      "link": "https://github.com/yuweihao/MM-Vet",
+      "license": "Apache 2.0",
+      "description": "Updated version with additional challenging samples"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "overall score",
+      "definition": "Unified score across all capability integrations using LLM-based evaluation",
+      "calculation": "Weighted average of scores across 16 capability integrations"
+    }
+  ],
+  "core_capabilities": [
+    "Recognition",
+    "Knowledge",
+    "OCR (Optical Character Recognition)",
+    "Spatial Awareness",
+    "Language Generation",
+    "Math"
+  ],
+  "capability_integrations": 16,
+  "test_method": "Evaluates complex integrated tasks like solving math problems from blackboard images, reasoning about news events with celebrity recognition, and explaining visual jokes. Uses LLM-based evaluator (GPT-4) to score open-ended responses, enabling fair comparison across different answer formats and question types.",
+  "example_scores": {
+    "GPT-4V": "~56% (MM-Vet leaderboard)",
+    "Gemini Pro Vision": "~48%",
+    "LLaVA-1.5": "~35%"
+  },
+  "notes": "Benchmark name 'Vet' refers to veterinary-style comprehensive examination of capabilities, not animal medicine. Focuses on integrated multi-capability tasks rather than single-skill evaluation. LLM-based scoring enables evaluation of creative/open-ended responses. Report whether using MM-Vet v1 or v2."
+}

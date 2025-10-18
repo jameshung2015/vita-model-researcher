@@ -1,0 +1,53 @@
+{
+  "id": "benchmark.mgsm",
+  "name": "MGSM",
+  "description": "Multilingual Grade School Math: 250 grade-school math problems manually translated into ten typologically diverse languages to evaluate multilingual chain-of-thought reasoning.",
+  "source": "Shi et al., 2022 (arXiv:2210.03057)",
+  "datasets": [
+    {
+      "name": "MGSM",
+      "link": "https://github.com/google-research/url-nlp",
+      "license": "CC BY 4.0"
+    },
+    {
+      "name": "MGSM (HuggingFace)",
+      "link": "https://huggingface.co/datasets/juletxara/mgsm",
+      "license": "MIT License"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "Percentage of problems solved correctly across all languages",
+      "calculation": "correct / total"
+    },
+    {
+      "name": "per-language accuracy",
+      "definition": "Accuracy for each individual language",
+      "calculation": "correct_per_language / total_per_language"
+    }
+  ],
+  "languages": [
+    "English (en)",
+    "Bengali (bn)",
+    "Chinese (zh)",
+    "French (fr)",
+    "German (de)",
+    "Japanese (ja)",
+    "Russian (ru)",
+    "Spanish (es)",
+    "Swahili (sw)",
+    "Thai (th)"
+  ],
+  "dataset_size": {
+    "total": 250,
+    "per_language": 25
+  },
+  "test_method": "Grade-school math problems from GSM8K manually translated to 10 languages. Evaluated using chain-of-thought prompting to assess multilingual reasoning. Models must solve word problems requiring arithmetic operations and multi-step reasoning in each language.",
+  "example_scores": {
+    "GPT-3.5 (English)": "~57% (baseline)",
+    "PaLM 540B (avg)": "~52% across languages",
+    "Random baseline": "<10%"
+  },
+  "notes": "Extends GSM8K to multilingual setting with typologically diverse languages including underrepresented ones (Bengali, Swahili). Useful for evaluating whether models can transfer mathematical reasoning across languages. Report per-language breakdown when possible."
+}

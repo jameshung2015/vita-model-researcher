@@ -1,0 +1,67 @@
+[
+  {
+    "name": "MMLU",
+    "metric": "Accuracy",
+    "value": "88.7%",
+    "scores_by_variant": {
+      "GPT-4o": "88.7%"
+    },
+    "description": "大规模多任务语言理解评测（文本模态）",
+    "source_type": "repo",
+    "source": "OpenAI simple-evals",
+    "link": "https://github.com/openai/simple-evals",
+    "benchmark_id": "benchmark.mmlu"
+  },
+  {
+    "name": "MMMU",
+    "metric": "Accuracy",
+    "value": "69.1%",
+    "scores_by_variant": {
+      "GPT-4o": "69.1%"
+    },
+    "description": "University-level multimodal knowledge exam（视觉模态）",
+    "source_type": "website",
+    "source": "MMMU Benchmark",
+    "link": "https://mmmu-benchmark.github.io/",
+    "benchmark_id": "benchmark.mmmu_val"
+  },
+  {
+    "name": "English ASR Average",
+    "metric": "WER",
+    "value": "4.50%",
+    "scores_by_variant": {
+      "GPT-4o-transcribe": "4.50%"
+    },
+    "description": "英文语音识别平均错词率（音频模态）",
+    "source_type": "paper",
+    "source": "Step-Audio 2 Technical Report",
+    "link": "https://arxiv.org/html/2507.16632v1",
+    "benchmark_id": "benchmark.asr_english_avg"
+  },
+  {
+    "name": "MMAU Audio Understanding",
+    "metric": "Accuracy",
+    "value": "58.1%",
+    "scores_by_variant": {
+      "GPT-4o-audio": "58.1%"
+    },
+    "description": "多模态音频理解评测",
+    "source_type": "paper",
+    "source": "Step-Audio 2 Technical Report",
+    "link": "https://arxiv.org/html/2507.16632v1",
+    "benchmark_id": "benchmark.mmau"
+  },
+  {
+    "name": "HumanEval",
+    "metric": "Accuracy",
+    "value": "91.0%",
+    "scores_by_variant": {
+      "GPT-4o": "91.0%"
+    },
+    "description": "代码生成评测",
+    "source_type": "repo",
+    "source": "OpenAI simple-evals",
+    "link": "https://github.com/openai/simple-evals",
+    "benchmark_id": "benchmark.humaneval"
+  }
+]

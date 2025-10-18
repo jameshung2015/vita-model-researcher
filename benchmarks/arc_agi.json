@@ -1,0 +1,45 @@
+{
+  "id": "benchmark.arc_agi",
+  "name": "ARC-AGI",
+  "description": "Abstraction and Reasoning Corpus for Artificial General Intelligence: Benchmark measuring fluid intelligence through visual reasoning tasks using only core cognitive priors. Designed to be easy for humans but hard for AI.",
+  "source": "Chollet, 2019; ARC Prize Foundation",
+  "datasets": [
+    {
+      "name": "ARC-AGI-1",
+      "link": "https://github.com/fchollet/ARC-AGI",
+      "license": "Apache 2.0"
+    },
+    {
+      "name": "ARC-AGI-2",
+      "link": "https://arcprize.org/arc-agi/2/",
+      "license": "Apache 2.0",
+      "description": "Next-generation version released 2025"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "Percentage of tasks solved correctly",
+      "calculation": "correct_tasks / total_tasks"
+    },
+    {
+      "name": "skill-acquisition efficiency",
+      "definition": "Measures efficiency of acquiring new skills on unknown tasks with limited examples",
+      "calculation": "Generalization ability from limited training examples"
+    }
+  ],
+  "core_priors": [
+    "Objectness (object cohesion, persistence)",
+    "Numerosity (basic counting)",
+    "Basic geometry and topology",
+    "Elementary physics (gravity, friction, contact)"
+  ],
+  "test_method": "Visual reasoning tasks where models must infer rules from few examples and apply them to new cases. Uses only innate/early-acquired cognitive priors, avoiding cultural knowledge or language. Measures fluid intelligence (novel problem-solving) over crystallized intelligence (accumulated knowledge).",
+  "example_scores": {
+    "Human performance": "~85% (typical adult)",
+    "AI SOTA 2024": "53% (private eval set)",
+    "AI SOTA 2023": "30%",
+    "AI baseline 2020": "21%"
+  },
+  "notes": "Benchmark explicitly designed to measure progress toward AGI by testing skill acquisition on novel tasks. Success requires interpreting symbolic meaning and flexible rule application, not pattern matching on training data. ARC Prize offers $1M+ competition for solving this benchmark. Report whether using ARC-AGI-1 or ARC-AGI-2."
+}

@@ -1,0 +1,100 @@
+[
+  {
+    "name": "LibriSpeech (test-clean)",
+    "metric": "WER",
+    "value": "~2.5%",
+    "scores_by_variant": {
+      "GPT-4o-audio": "~2.5%",
+      "Whisper-v3": "~3.0%"
+    },
+    "description": "英文语音识别基准（LibriSpeech测试集，clean场景）",
+    "source_type": "paper",
+    "source": "Step-Audio 2 Technical Report",
+    "link": "https://arxiv.org/html/2507.16632v1",
+    "benchmark_id": "benchmark.librispeech_test_clean"
+  },
+  {
+    "name": "English ASR Average",
+    "metric": "WER",
+    "value": "4.50%",
+    "scores_by_variant": {
+      "GPT-4o-transcribe": "4.50%",
+      "Whisper-v3": "~5.2%"
+    },
+    "description": "英文语音识别平均错词率（多数据集平均）",
+    "source_type": "paper",
+    "source": "Step-Audio 2 Technical Report",
+    "link": "https://arxiv.org/html/2507.16632v1",
+    "benchmark_id": "benchmark.asr_english_avg"
+  },
+  {
+    "name": "Chinese ASR Average",
+    "metric": "CER",
+    "value": "14.05%",
+    "scores_by_variant": {
+      "GPT-4o-transcribe": "14.05%",
+      "Qwen2.5-Omni": "4.81%"
+    },
+    "description": "中文语音识别平均字错率（多数据集平均）",
+    "source_type": "paper",
+    "source": "Step-Audio 2 Technical Report",
+    "link": "https://arxiv.org/html/2507.16632v1",
+    "benchmark_id": "benchmark.asr_chinese_avg"
+  },
+  {
+    "name": "MMAU Audio Understanding",
+    "metric": "Accuracy",
+    "value": "58.1%",
+    "scores_by_variant": {
+      "GPT-4o-audio": "58.1%",
+      "Qwen2.5-Omni": "71.5%"
+    },
+    "description": "多模态音频理解评测（MMAU v05.15.25）",
+    "source_type": "paper",
+    "source": "Step-Audio 2 Technical Report",
+    "link": "https://arxiv.org/html/2507.16632v1",
+    "benchmark_id": "benchmark.mmau"
+  },
+  {
+    "name": "CoVoST 2 Translation",
+    "metric": "BLEU",
+    "value": "29.61",
+    "scores_by_variant": {
+      "GPT-4o-audio": "29.61",
+      "Qwen2.5-Omni": "35.40"
+    },
+    "description": "语音翻译基准（CoVoST 2平均BLEU）",
+    "source_type": "paper",
+    "source": "Step-Audio 2 Technical Report",
+    "link": "https://arxiv.org/html/2507.16632v1",
+    "benchmark_id": "benchmark.covost2_avg"
+  },
+  {
+    "name": "URO-Bench English",
+    "metric": "Score",
+    "value": "84.54",
+    "scores_by_variant": {
+      "GPT-4o-audio": "84.54",
+      "Qwen-Omni": "70.58"
+    },
+    "description": "英文语音对话评测（URO-Bench基础任务）",
+    "source_type": "paper",
+    "source": "Step-Audio 2 Technical Report",
+    "link": "https://arxiv.org/html/2507.16632v1",
+    "benchmark_id": "benchmark.urobench_en"
+  },
+  {
+    "name": "URO-Bench Chinese",
+    "metric": "Score",
+    "value": "74.18",
+    "scores_by_variant": {
+      "GPT-4o-audio": "74.18",
+      "Qwen-Omni": "62.08"
+    },
+    "description": "中文语音对话评测（URO-Bench基础任务）",
+    "source_type": "paper",
+    "source": "Step-Audio 2 Technical Report",
+    "link": "https://arxiv.org/html/2507.16632v1",
+    "benchmark_id": "benchmark.urobench_zh"
+  }
+]

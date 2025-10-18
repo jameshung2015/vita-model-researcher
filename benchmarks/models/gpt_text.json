@@ -1,0 +1,260 @@
+{
+  "model": "gpt",
+  "model_family": "GPT Family (GPT-4o + o1 reasoning)",
+  "notes": "整合 GPT-4o 与 OpenAI o1 推理系列 (o1, o1-mini) 的基准数据。来源：OpenAI 官方博客 (2024-09-12), simple-evals 仓库 (2024-09 数据), LLM-Stats 快照 (2024-10) 以及第三方评测。~ 表示官方或聚合来源仅给出近似/四舍五入值。",
+  "benchmarks": [
+    {
+      "name": "MMLU",
+      "metric": "Accuracy",
+      "value": "88.7%",
+      "scores_by_variant": {
+        "OpenAI o1": "~90%",
+        "OpenAI o1-mini": "~83%",
+        "GPT-4o": "88.7%",
+        "GPT-4o-mini": "82.0%",
+        "GPT-4-Turbo": "86.5%"
+      },
+      "description": "大规模多任务语言理解评测 (57 个学科考试)",
+      "source_type": "aggregation",
+      "source": "LLM-Stats + OpenAI simple-evals",
+      "link": "https://llm-stats.com/models/openai-o1",
+      "benchmark_id": "benchmark.mmlu"
+    },
+    {
+      "name": "MMLU-Pro",
+      "metric": "Accuracy",
+      "value": "~78%",
+      "scores_by_variant": {
+        "OpenAI o1": "~82%",
+        "OpenAI o1-mini": "~72%",
+        "GPT-4o": "~78%",
+        "GPT-4o-mini": "~70%",
+        "GPT-4-Turbo": "~75%"
+      },
+      "description": "更具挑战性的大规模多任务理解基准 (更高难度的专业与推理能力挑战)",
+      "source_type": "aggregation",
+      "source": "LLM-Stats + OpenAI 数据汇总",
+      "link": "https://llm-stats.com/models/openai-o1",
+      "benchmark_id": "benchmark.mmlu_pro"
+    },
+    {
+      "name": "GPQA Diamond",
+      "metric": "Accuracy",
+      "value": "53.1%",
+      "scores_by_variant": {
+        "OpenAI o1": "~65%",
+        "OpenAI o1-mini": "~55%",
+        "GPT-4o": "53.1%",
+        "GPT-4o-mini": "40.2%",
+        "GPT-4-Turbo": "~50%"
+      },
+      "description": "研究生级科学问答（Diamond 子集）",
+      "source_type": "aggregation",
+      "source": "OpenAI simple-evals + LLM-Stats",
+      "link": "https://llm-stats.com/models/openai-o1",
+      "benchmark_id": "benchmark.gpqa"
+    },
+    {
+      "name": "MATH",
+      "metric": "Accuracy",
+      "value": "76.6%",
+      "scores_by_variant": {
+        "OpenAI o1": "~96%",
+        "OpenAI o1-mini": "~85%",
+        "GPT-4o": "76.6%",
+        "GPT-4o-mini": "70.2%",
+        "GPT-4-Turbo": "~72%"
+      },
+      "description": "数学推理评测（竞赛级难度）",
+      "source_type": "blog+repo",
+      "source": "OpenAI o1 Blog + simple-evals",
+      "link": "https://openai.com/index/introducing-openai-o1/",
+      "benchmark_id": "benchmark.math"
+    },
+    {
+      "name": "HumanEval",
+      "metric": "Pass@1",
+      "value": "91.0%",
+      "scores_by_variant": {
+        "OpenAI o1": "~93%",
+        "OpenAI o1-mini": "~88%",
+        "GPT-4o": "91.0%",
+        "GPT-4o-mini": "87.2%",
+        "GPT-4-Turbo": "~88%"
+      },
+      "description": "代码生成评测 (164 Python 编程问题)",
+      "source_type": "repo",
+      "source": "OpenAI simple-evals (含 Sept 2024 数据)",
+      "link": "https://github.com/openai/simple-evals",
+      "benchmark_id": "benchmark.humaneval"
+    },
+    {
+      "name": "MGSM",
+      "metric": "Accuracy",
+      "value": "90.3%",
+      "scores_by_variant": {
+        "GPT-4o": "90.3%",
+        "GPT-4o-mini": "87.0%",
+        "GPT-4-Turbo": "~88%",
+        "OpenAI o1": null,
+        "OpenAI o1-mini": null
+      },
+      "description": "多语言数学推理",
+      "source_type": "repo",
+      "source": "OpenAI simple-evals",
+      "link": "https://github.com/openai/simple-evals",
+      "benchmark_id": "benchmark.mgsm"
+    },
+    {
+      "name": "DROP",
+      "metric": "F1",
+      "value": "83.7",
+      "scores_by_variant": {
+        "OpenAI o1": null,
+        "OpenAI o1-mini": null,
+        "GPT-4o": "83.7",
+        "GPT-4o-mini": "79.7",
+        "GPT-4-Turbo": "~82"
+      },
+      "description": "阅读理解与算术推理",
+      "source_type": "repo",
+      "source": "OpenAI simple-evals",
+      "link": "https://github.com/openai/simple-evals",
+      "benchmark_id": "benchmark.drop"
+    },
+    {
+      "name": "SimpleQA",
+      "metric": "Accuracy",
+      "value": "40.1%",
+      "scores_by_variant": {
+        "OpenAI o1": null,
+        "OpenAI o1-mini": null,
+        "GPT-4o": "40.1%",
+        "GPT-4o-mini": "9.5%",
+        "GPT-4-Turbo": "~35%"
+      },
+      "description": "简单问答评测",
+      "source_type": "repo",
+      "source": "OpenAI simple-evals",
+      "link": "https://github.com/openai/simple-evals",
+      "benchmark_id": "benchmark.simpleqa"
+    },
+    {
+      "name": "AIME 2024",
+      "metric": "Accuracy",
+      "value": "~13%",
+      "scores_by_variant": {
+        "OpenAI o1": null,
+        "OpenAI o1-mini": null,
+        "GPT-4o": "~13%",
+        "GPT-4o-mini": "~8%",
+        "GPT-4-Turbo": "~10%"
+      },
+      "description": "美国数学竞赛题目（2024年）",
+      "source_type": "website",
+      "source": "LLM Stats",
+      "link": "https://llm-stats.com/models/gpt-4o-2024-08-06",
+      "benchmark_id": "benchmark.aime25"
+    },
+    {
+      "name": "IFEval",
+      "metric": "Accuracy",
+      "value": "~85%",
+      "scores_by_variant": {
+        "OpenAI o1": null,
+        "OpenAI o1-mini": null,
+        "GPT-4o": "~85%",
+        "GPT-4o-mini": "~78%",
+        "GPT-4-Turbo": "~82%"
+      },
+      "description": "指令跟随能力评估",
+      "source_type": "benchmark",
+      "source": "第三方评测",
+      "link": "https://www.vellum.ai/blog/analysis-gpt-4o-vs-gpt-4-turbo",
+      "benchmark_id": "benchmark.ifeval"
+    }
+    ,
+    {
+      "name": "ARC-AGI",
+      "metric": "Solved%",
+      "value": "~86%",
+      "scores_by_variant": {
+        "OpenAI o1": "~87%",
+        "OpenAI o1-mini": "~72%",
+        "GPT-4o": "~86%",
+        "GPT-4o-mini": null,
+        "GPT-4-Turbo": null
+      },
+      "description": "抽象与推理语料库 (AGI 任务私有评测子集)",
+      "source_type": "blog",
+      "source": "OpenAI o1 发布博客",
+      "link": "https://openai.com/index/introducing-openai-o1/",
+      "benchmark_id": "benchmark.arc_agi"
+    }
+  ],
+  "inference": {
+    "notes": "统一的推理与定价数据：o1 系列采用多步思考 (deliberation) 导致延迟更高；GPT-4o 系列在吞吐与成本上更优。单位为 OpenAI 2024 H2 定价 (USD/百万 tokens)。",
+    "variants": {
+      "OpenAI o1": {
+        "latency_ms": null,
+        "deliberation_seconds": "5-30",
+        "throughput_tokens_per_sec": null,
+        "memory_gb": null,
+        "cost_per_1m_tokens_input": 15.0,
+        "cost_per_1m_tokens_output": 60.0,
+        "supported_hardware": [
+          "OpenAI API"
+        ],
+        "notes": "多步推理，高准确率；使用 model=\"o1\""
+      },
+      "OpenAI o1-mini": {
+        "latency_ms": null,
+        "deliberation_seconds": "2-10",
+        "throughput_tokens_per_sec": null,
+        "memory_gb": null,
+        "cost_per_1m_tokens_input": 3.0,
+        "cost_per_1m_tokens_output": 12.0,
+        "supported_hardware": [
+          "OpenAI API"
+        ],
+        "notes": "较低成本的推理强化版本；使用 model=\"o1-mini\""
+      },
+      "GPT-4o": {
+        "latency_ms": null,
+        "deliberation_seconds": "1-5",
+        "throughput_tokens_per_sec": 109,
+        "memory_gb": null,
+        "cost_per_1m_tokens_input": 2.5,
+        "cost_per_1m_tokens_output": 10.0,
+        "supported_hardware": [
+          "OpenAI API"
+        ],
+        "notes": "相较 GPT-4-Turbo 更快且成本降低约 50%"
+      },
+      "GPT-4o-mini": {
+        "latency_ms": null,
+        "deliberation_seconds": null,
+        "throughput_tokens_per_sec": null,
+        "memory_gb": null,
+        "cost_per_1m_tokens_input": 0.15,
+        "cost_per_1m_tokens_output": 0.60,
+        "supported_hardware": [
+          "OpenAI API"
+        ],
+        "notes": "轻量任务的高性价比选择"
+      },
+      "GPT-4-Turbo": {
+        "latency_ms": null,
+        "deliberation_seconds": null,
+        "throughput_tokens_per_sec": 20,
+        "memory_gb": null,
+        "cost_per_1m_tokens_input": 10.0,
+        "cost_per_1m_tokens_output": 30.0,
+        "supported_hardware": [
+          "OpenAI API"
+        ],
+        "notes": "上一代主力，延迟更高且成本更贵"
+      }
+    }
+  }
+}

@@ -53,4 +53,9 @@ node_modules/
 qa/qa_history.jsonl
 agents-toolchain/storage/
 
+# Local tooling / dashboards (not source of truth)
+.qoder/
+agents-toolchain/dashboard/output/
+agents-toolchain/dashboard/cache/
+
 # End of .gitignore

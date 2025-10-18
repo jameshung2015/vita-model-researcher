@@ -1,0 +1,53 @@
+{
+  "id": "benchmark.math",
+  "name": "MATH",
+  "description": "Mathematics Aptitude Test of Heuristics: 12,500 challenging competition mathematics problems from AMC 10, AMC 12, and AIME, spanning 7 subjects and 5 difficulty levels.",
+  "source": "Hendrycks et al., 2021 (NeurIPS 2021 Datasets and Benchmarks)",
+  "datasets": [
+    {
+      "name": "MATH",
+      "link": "https://github.com/hendrycks/math",
+      "license": "MIT License"
+    },
+    {
+      "name": "competition_math (HuggingFace)",
+      "link": "https://huggingface.co/datasets/hendrycks/competition_math",
+      "license": "MIT License",
+      "note": "Currently unavailable due to DMCA takedown"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "Percentage of problems solved correctly (final answer in \\boxed{} tag)",
+      "calculation": "correct_final_answers / total"
+    }
+  ],
+  "subjects": [
+    "Algebra",
+    "Counting & Probability",
+    "Geometry",
+    "Intermediate Algebra",
+    "Number Theory",
+    "Prealgebra",
+    "Precalculus"
+  ],
+  "difficulty_levels": [
+    "Level 1 (easiest)",
+    "Level 2",
+    "Level 3",
+    "Level 4",
+    "Level 5 (hardest)"
+  ],
+  "dataset_splits": {
+    "train": 7500,
+    "test": 5000
+  },
+  "test_method": "Models solve competition-level math problems and provide step-by-step solutions in LaTeX and natural language. Final answer must be enclosed in LaTeX \\boxed{} tag for evaluation. Problems require advanced mathematical reasoning and multi-step problem solving.",
+  "example_scores": {
+    "GPT-4": "~42.5% (reported in various evaluations)",
+    "Minerva 540B": "~33.6% (Google DeepMind)",
+    "Random baseline": "<5%"
+  },
+  "notes": "Solutions include full step-by-step reasoning, enabling evaluation of both final answers and solution quality. Difficulty levels are subject-specific (easiest problems in each subject = Level 1). Commonly evaluated with chain-of-thought prompting or tool-augmented approaches."
+}
