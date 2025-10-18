@@ -1,0 +1,43 @@
+{
+  "name": "Interim Measures for the Administration of Generative Artificial Intelligence Services",
+  "version": "2023",
+  "provider": "Cyberspace Administration of China (CAC) and related ministries",
+  "contact": {
+    "name": "National Generative AI Service Filing Center",
+    "email": "service@cac.gov.cn",
+    "phone": "+86-10-5563-1114"
+  },
+  "release_date": "2023-07-10",
+  "service_region": "People's Republic of China",
+  "model_type": "Generative AI services",
+  "use_case": "Sets compliance obligations for public-facing generative AI services covering training, security, and content governance.",
+  "risk_level": "High",
+  "data_summary": "Requires lawful data sourcing, intellectual property protection, and mechanisms to prevent biased or harmful outputs.",
+  "cross_border": "Yes",
+  "compliance_materials": [
+    "Security assessment filings for generative AI services",
+    "Training data source compliance documentation",
+    "Content moderation and complaint handling procedures"
+  ],
+  "monitoring": "Requires ongoing algorithm optimization, manual review mechanisms, and reporting of major security incidents.",
+  "emergency_plan": "Mandates emergency response plans for model failures, data leaks, and misuse of generated content.",
+  "categories": [
+    "Regulation",
+    "Generative AI",
+    "Content Governance"
+  ],
+  "type": "Regulation",
+  "applicability": "Mandatory",
+  "obligations": [
+    "Conduct security assessments and algorithm filings before providing public generative AI services.",
+    "Implement user authentication, content filtering, and complaint handling mechanisms.",
+    "Ensure training data complies with intellectual property and personal information laws."
+  ],
+  "penalties": "Subject to rectification orders, service suspension, and fines per the Cybersecurity Law and related regulations.",
+  "reference_links": [
+    "https://www.cac.gov.cn/",
+    "https://digichina.stanford.edu/",
+    "https://www.dataguidance.com/"
+  ],
+  "last_updated": "2023-08-15"
+}

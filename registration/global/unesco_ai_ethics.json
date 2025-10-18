@@ -1,0 +1,42 @@
+{
+  "name": "UNESCO Recommendation on the Ethics of Artificial Intelligence",
+  "version": "2021",
+  "provider": "United Nations Educational, Scientific and Cultural Organization (UNESCO)",
+  "contact": {
+    "name": "UNESCO AI Ethics Secretariat",
+    "email": "aiethics@unesco.org",
+    "phone": "+33-1-4568-1000"
+  },
+  "release_date": "2021-11-23",
+  "service_region": "UN member states (global reference)",
+  "model_type": "AI ethics governance",
+  "use_case": "Global ethical guidance for the development and use of AI systems with respect for human rights and sustainable development.",
+  "risk_level": "Medium",
+  "data_summary": "Emphasizes data governance principles including transparency, fairness, and respect for cultural diversity.",
+  "cross_border": "Yes",
+  "compliance_materials": [
+    "Ethical impact assessment",
+    "Data governance and stewardship policies",
+    "Stakeholder engagement records"
+  ],
+  "monitoring": "Encourages member states to establish oversight mechanisms and periodic reporting on ethical AI implementation.",
+  "emergency_plan": "Promotes remediation strategies to address harmful or discriminatory AI outcomes.",
+  "categories": [
+    "Guidelines",
+    "Ethics",
+    "AI Governance"
+  ],
+  "type": "Guidelines",
+  "applicability": "Reference",
+  "obligations": [
+    "Adopt ethical impact assessment frameworks for AI projects.",
+    "Ensure transparency and explainability commensurate with risk.",
+    "Safeguard human rights, environmental sustainability, and diversity."
+  ],
+  "penalties": "Not applicable; non-binding UNESCO recommendation.",
+  "reference_links": [
+    "https://unesdoc.unesco.org/",
+    "https://www.unesco.org/en/artificial-intelligence/recommendation-ethics"
+  ],
+  "last_updated": "2023-09-25"
+}

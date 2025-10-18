@@ -1,0 +1,43 @@
+{
+  "name": "EU Artificial Intelligence Act",
+  "version": "2024",
+  "provider": "European Union",
+  "contact": {
+    "name": "European Commission AI Office",
+    "email": "europedirect@ec.europa.eu",
+    "phone": ""
+  },
+  "release_date": "2024-07-12",
+  "service_region": "European Union",
+  "model_type": "Cross-sector AI systems",
+  "use_case": "Comprehensive risk-based regulation for AI systems placed on the EU market or used in the Union.",
+  "risk_level": "High",
+  "data_summary": "Establishes obligations for data governance, training, validation and testing data sets for high-risk AI systems.",
+  "cross_border": "Yes",
+  "compliance_materials": [
+    "Risk management system documentation",
+    "Fundamental rights impact assessment",
+    "Technical documentation for high-risk AI systems"
+  ],
+  "monitoring": "Requires post-market monitoring, incident reporting, and cooperation with national supervisory authorities.",
+  "emergency_plan": "High-risk AI deployers must establish incident response processes and notify authorities within 15 days of serious incidents.",
+  "categories": [
+    "Regulation",
+    "AI Governance",
+    "Fundamental Rights"
+  ],
+  "type": "Regulation",
+  "applicability": "Mandatory",
+  "obligations": [
+    "Implement risk management and quality management systems for high-risk AI.",
+    "Ensure data governance, documentation, logging, and transparency for AI systems.",
+    "Provide conformity assessment and register high-risk AI in the EU database."
+  ],
+  "penalties": "Administrative fines up to EUR 35 million or 7% of global annual turnover for non-compliance.",
+  "reference_links": [
+    "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+    "https://artificialintelligenceact.eu/the-act/",
+    "https://artificialintelligenceact.eu/ai-act-explorer/"
+  ],
+  "last_updated": "2024-07-12"
+}

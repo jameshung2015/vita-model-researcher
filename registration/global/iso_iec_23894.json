@@ -1,0 +1,41 @@
+{
+  "name": "ISO/IEC 23894:2023 - Artificial intelligence — Risk management",
+  "version": "2023",
+  "provider": "International Organization for Standardization (ISO) and International Electrotechnical Commission (IEC)",
+  "contact": {
+    "name": "ISO/IEC JTC 1/SC 42 Secretariat",
+    "email": "central@iso.org",
+    "phone": "+41-22-749-0111"
+  },
+  "release_date": "2023-02-01",
+  "service_region": "International",
+  "model_type": "AI risk management standard",
+  "use_case": "Provides guidance on establishing risk management for AI systems across their lifecycle.",
+  "risk_level": "Medium",
+  "data_summary": "Addresses data quality, governance, and documentation to support AI risk assessment and controls.",
+  "cross_border": "Yes",
+  "compliance_materials": [
+    "Risk management framework documentation",
+    "Control implementation records",
+    "Continuous monitoring and review logs"
+  ],
+  "monitoring": "Requires periodic review of risk treatment effectiveness and updates to controls.",
+  "emergency_plan": "Recommends contingency plans for AI failures and adverse impacts.",
+  "categories": [
+    "Standard",
+    "Risk Management",
+    "AI Governance"
+  ],
+  "type": "Standard",
+  "applicability": "Voluntary",
+  "obligations": [
+    "Establish context-specific risk criteria and tolerance for AI systems.",
+    "Implement risk assessment, treatment, monitoring, and communication processes.",
+    "Integrate risk management into organizational governance and lifecycle management."
+  ],
+  "penalties": "Not applicable; voluntary international standard.",
+  "reference_links": [
+    "https://www.iso.org/standard/77304.html"
+  ],
+  "last_updated": "2023-02-01"
+}

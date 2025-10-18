@@ -1,0 +1,42 @@
+{
+  "name": "Provisions on the Administration of Algorithmic Recommendation for Internet Information Services",
+  "version": "2021",
+  "provider": "Cyberspace Administration of China (CAC)",
+  "contact": {
+    "name": "CAC Public Services Center",
+    "email": "service@cac.gov.cn",
+    "phone": "+86-10-5563-1114"
+  },
+  "release_date": "2021-12-31",
+  "service_region": "People's Republic of China",
+  "model_type": "Algorithmic recommendation services",
+  "use_case": "Regulates recommendation algorithms used in internet information services, focusing on user rights, security, and content governance.",
+  "risk_level": "High",
+  "data_summary": "Requires transparency on algorithm mechanics, data usage limitations, and protections against discriminatory or addictive outcomes.",
+  "cross_border": "No",
+  "compliance_materials": [
+    "Algorithm filing and change records",
+    "User rights and opt-out procedures",
+    "Security assessment documentation"
+  ],
+  "monitoring": "Mandates algorithm security assessments and oversight by provincial CAC offices.",
+  "emergency_plan": "Requires mechanisms to rapidly address unlawful content dissemination and system failures.",
+  "categories": [
+    "Regulation",
+    "Content Governance",
+    "Algorithmic Accountability"
+  ],
+  "type": "Regulation",
+  "applicability": "Mandatory",
+  "obligations": [
+    "Filing algorithm recommendation services with CAC for platforms with public opinions impacts or social mobilization capability.",
+    "Provide users with options to disable personalized recommendations and protect minors.",
+    "Prevent illegal content amplification and adopt fairness, transparency, and security safeguards."
+  ],
+  "penalties": "May include warnings, rectification orders, service suspension, and fines per Cybersecurity Law.",
+  "reference_links": [
+    "https://www.cac.gov.cn/",
+    "https://digichina.stanford.edu/work/translation-internet-information-service-algorithmic-recommendation-management-provisions-effective-march-1-2022/"
+  ],
+  "last_updated": "2022-03-01"
+}

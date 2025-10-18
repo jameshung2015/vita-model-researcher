@@ -1,0 +1,44 @@
+{
+  "name": "Personal Information Protection Law of the People's Republic of China",
+  "version": "2021",
+  "provider": "Standing Committee of the National People's Congress of the PRC",
+  "contact": {
+    "name": "National People's Congress Information Center",
+    "email": "webmaster@npc.gov.cn",
+    "phone": "+86-10-6309-6152"
+  },
+  "release_date": "2021-08-20",
+  "service_region": "People's Republic of China",
+  "model_type": "Personal information processing activities",
+  "use_case": "Comprehensive personal data protection law governing the collection, storage, use, processing, transmission, provision, and disclosure of personal information.",
+  "risk_level": "High",
+  "data_summary": "Requires purpose limitation, data minimization, user consent, and security controls with additional rules for sensitive and cross-border data.",
+  "cross_border": "Yes",
+  "compliance_materials": [
+    "Personal information protection impact assessment",
+    "Cross-border data transfer security assessment filings",
+    "Personal information processing records"
+  ],
+  "monitoring": "Mandates ongoing monitoring of personal data processing and cooperation with regulatory inspections.",
+  "emergency_plan": "Requires incident response and user notification for personal information security incidents.",
+  "categories": [
+    "Law",
+    "Data Protection",
+    "Privacy"
+  ],
+  "type": "Law",
+  "applicability": "Mandatory",
+  "obligations": [
+    "Obtain valid user consent and provide transparent processing notices.",
+    "Adopt organizational and technical measures for data security and access control.",
+    "Conduct impact assessments for sensitive processing, automated decision-making, and cross-border transfers."
+  ],
+  "penalties": "Fines up to RMB 50 million or 5% of annual revenue; potential suspension of services and personal liability.",
+  "reference_links": [
+    "https://www.cac.gov.cn/",
+    "http://en.npc.gov.cn.cdurl.cn/2021-12/29/c_694559.htm",
+    "https://digichina.stanford.edu/work/translation-personal-information-protection-law-of-the-peoples-republic-of-china-effective-nov-1-2021/",
+    "https://iapp.org/resources/article/personal-information-protection-law-peoples-republic-of-china-english-translation/"
+  ],
+  "last_updated": "2023-10-01"
+}

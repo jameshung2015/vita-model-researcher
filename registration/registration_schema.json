@@ -33,6 +33,13 @@
     "cross_border": { "type": "string", "enum": ["Yes", "No"] },
     "compliance_materials": { "type": "array", "items": { "type": "string" } },
     "monitoring": { "type": "string" },
-    "emergency_plan": { "type": "string" }
+    "emergency_plan": { "type": "string" },
+    "categories": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+    "type": { "type": "string", "enum": ["Law", "Regulation", "Standard", "Framework", "Principles", "Guidelines"] },
+    "applicability": { "type": "string", "enum": ["Mandatory", "Voluntary", "Reference"] },
+    "obligations": { "type": "array", "items": { "type": "string" } },
+    "penalties": { "type": "string" },
+    "reference_links": { "type": "array", "items": { "type": "string", "format": "uri" } },
+    "last_updated": { "type": "string", "format": "date" }
   }
 }

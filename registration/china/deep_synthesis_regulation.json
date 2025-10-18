@@ -1,0 +1,42 @@
+{
+  "name": "Provisions on the Administration of Deep Synthesis Internet Information Services",
+  "version": "2022",
+  "provider": "Cyberspace Administration of China (CAC)",
+  "contact": {
+    "name": "CAC Deep Synthesis Service Desk",
+    "email": "service@cac.gov.cn",
+    "phone": "+86-10-5563-1114"
+  },
+  "release_date": "2022-11-25",
+  "service_region": "People's Republic of China",
+  "model_type": "Deep synthesis and generative content services",
+  "use_case": "Regulates deep synthesis technologies including synthetic audio, video, and virtual digital humans to prevent misuse.",
+  "risk_level": "High",
+  "data_summary": "Requires clear labeling of synthetic content, data security measures, and user consent for biometric data usage.",
+  "cross_border": "No",
+  "compliance_materials": [
+    "Algorithm and model filing documentation",
+    "Content labeling and watermarking records",
+    "Security assessment and risk mitigation reports"
+  ],
+  "monitoring": "Requires providers to conduct content moderation, security assessments, and establish complaint handling mechanisms.",
+  "emergency_plan": "Mandates rapid response plans for misuse, illegal content dissemination, and system vulnerabilities.",
+  "categories": [
+    "Regulation",
+    "Content Governance",
+    "Synthetic Media"
+  ],
+  "type": "Regulation",
+  "applicability": "Mandatory",
+  "obligations": [
+    "Label deep synthesis outputs and provide opt-out mechanisms.",
+    "File algorithms and conduct security assessments with CAC.",
+    "Prevent generation of prohibited content and handle user complaints promptly."
+  ],
+  "penalties": "May incur warnings, rectification, service suspension, and fines under relevant laws.",
+  "reference_links": [
+    "https://www.cac.gov.cn/",
+    "https://digichina.stanford.edu/"
+  ],
+  "last_updated": "2023-01-10"
+}

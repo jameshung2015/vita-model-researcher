@@ -1,0 +1,42 @@
+{
+  "name": "NIST Artificial Intelligence Risk Management Framework",
+  "version": "1.0",
+  "provider": "National Institute of Standards and Technology (NIST)",
+  "contact": {
+    "name": "NIST AI RMF Program",
+    "email": "ai-rmf@nist.gov",
+    "phone": "+1-301-975-2000"
+  },
+  "release_date": "2023-01-26",
+  "service_region": "United States (global reference)",
+  "model_type": "AI risk management programs",
+  "use_case": "Voluntary framework for managing risks posed by AI systems across their lifecycle.",
+  "risk_level": "Medium",
+  "data_summary": "Encourages documenting data provenance, quality, and governance as part of AI risk management.",
+  "cross_border": "Yes",
+  "compliance_materials": [
+    "Risk register and governance documentation",
+    "Measurement and evaluation artifacts",
+    "Incident response and impact reporting procedures"
+  ],
+  "monitoring": "Promotes continuous monitoring of AI systems' performance, impacts, and risk controls.",
+  "emergency_plan": "Recommends escalation, mitigation, and communication plans for AI-related incidents.",
+  "categories": [
+    "Framework",
+    "Risk Management",
+    "AI Governance"
+  ],
+  "type": "Framework",
+  "applicability": "Voluntary",
+  "obligations": [
+    "Map AI risks by context, stakeholders, and system characteristics.",
+    "Measure risks and effectiveness of controls using qualitative and quantitative metrics.",
+    "Manage risks through governance policies, controls, and iterative improvement."
+  ],
+  "penalties": "Not applicable; voluntary framework without statutory penalties.",
+  "reference_links": [
+    "https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10",
+    "https://nvlpubs.nist.gov/nistpubs/ai/nist.ai.100-1.pdf"
+  ],
+  "last_updated": "2023-01-26"
+}

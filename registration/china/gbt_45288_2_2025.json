@@ -1,0 +1,41 @@
+{
+  "name": "GB/T 45288.2-2025 Intelligent Connected Vehicle — Vehicle Intelligent Agent Assessment Part 2: Performance Requirements",
+  "version": "GB/T 45288.2-2025",
+  "provider": "State Administration for Market Regulation / Standardization Administration of China",
+  "contact": {
+    "name": "Standardization Administration of China",
+    "email": "sac@sac.gov.cn",
+    "phone": "+86-10-6859-4114"
+  },
+  "release_date": "2025-03-01",
+  "service_region": "People's Republic of China",
+  "model_type": "Automotive intelligent agent performance",
+  "use_case": "National recommended standard specifying performance indicators and testing methods for vehicle intelligent agents.",
+  "risk_level": "Medium",
+  "data_summary": "Requires collection of scenario, perception, and interaction data to validate vehicle intelligent agent performance.",
+  "cross_border": "No",
+  "compliance_materials": [
+    "Performance testing reports",
+    "Scenario coverage documentation",
+    "Quality management records for intelligent agent development"
+  ],
+  "monitoring": "Encourages periodic conformity testing and updates aligned with new operational scenarios.",
+  "emergency_plan": "Advises maintaining corrective action plans when performance requirements are not met.",
+  "categories": [
+    "Standard",
+    "Automotive",
+    "Performance Testing"
+  ],
+  "type": "Standard",
+  "applicability": "Reference",
+  "obligations": [
+    "Execute standardized performance tests covering perception, decision, and control.",
+    "Document measurement results and uncertainty for key indicators.",
+    "Maintain traceability between requirements, test cases, and results."
+  ],
+  "penalties": "Not applicable; recommended national standard.",
+  "reference_links": [
+    "https://openstd.samr.gov.cn/"
+  ],
+  "last_updated": "2025-03-01"
+}

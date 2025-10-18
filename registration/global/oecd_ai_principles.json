@@ -1,0 +1,42 @@
+{
+  "name": "OECD Recommendation on Artificial Intelligence",
+  "version": "2019",
+  "provider": "Organisation for Economic Co-operation and Development (OECD)",
+  "contact": {
+    "name": "OECD AI Policy Observatory",
+    "email": "ai@oecd.org",
+    "phone": "+33-1-4524-8200"
+  },
+  "release_date": "2019-05-22",
+  "service_region": "OECD members (global reference)",
+  "model_type": "AI governance principles",
+  "use_case": "High-level principles to promote trustworthy AI, innovation, and human rights protections.",
+  "risk_level": "Medium",
+  "data_summary": "Encourages responsible stewardship of data, privacy protections, and transparency for AI systems.",
+  "cross_border": "Yes",
+  "compliance_materials": [
+    "Internal AI governance policies aligned with OECD principles",
+    "Transparency and stakeholder engagement records",
+    "Accountability and oversight procedures"
+  ],
+  "monitoring": "Recommends continuous monitoring of AI impacts and mechanisms for accountability.",
+  "emergency_plan": "Calls for mechanisms to address and remedy harmful outcomes from AI deployments.",
+  "categories": [
+    "Principles",
+    "AI Governance",
+    "International Cooperation"
+  ],
+  "type": "Principles",
+  "applicability": "Reference",
+  "obligations": [
+    "Promote human-centered values and fairness in AI deployment.",
+    "Ensure transparency and responsible disclosure regarding AI systems.",
+    "Implement robust risk management and accountability measures."
+  ],
+  "penalties": "Not applicable; non-binding intergovernmental recommendation.",
+  "reference_links": [
+    "https://oecd.ai/en/ai-principles",
+    "https://oecd.ai/"
+  ],
+  "last_updated": "2021-11-18"
+}

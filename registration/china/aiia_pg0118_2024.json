@@ -1,0 +1,41 @@
+{
+  "name": "AIIA AI1A/PG0118-2024 Intelligent Vehicle Agent Service Capability Evaluation Specification",
+  "version": "AI1A/PG0118-2024",
+  "provider": "Artificial Intelligence Industry Alliance (AIIA)",
+  "contact": {
+    "name": "AIIA Standards Working Group",
+    "email": "info@aiiaorg.cn",
+    "phone": "+86-10-8206-3080"
+  },
+  "release_date": "2024-04-01",
+  "service_region": "People's Republic of China",
+  "model_type": "Automotive intelligent agent services",
+  "use_case": "Provides evaluation criteria for intelligent vehicle agent service capabilities including perception, interaction, and safety compliance.",
+  "risk_level": "Medium",
+  "data_summary": "Requires documentation of training datasets, scenario coverage, and performance metrics for intelligent agents.",
+  "cross_border": "No",
+  "compliance_materials": [
+    "Capability evaluation reports",
+    "Scenario coverage matrix",
+    "Safety and reliability validation evidence"
+  ],
+  "monitoring": "Recommends periodic re-evaluation to track capability improvements and maintain certification.",
+  "emergency_plan": "Calls for contingency procedures for safety-critical failures in intelligent agent services.",
+  "categories": [
+    "Standard",
+    "Automotive",
+    "Intelligent Agents"
+  ],
+  "type": "Standard",
+  "applicability": "Reference",
+  "obligations": [
+    "Demonstrate compliance with evaluation indicators across perception, cognition, and service modules.",
+    "Provide benchmark test results and validation scenarios for automotive agent functions.",
+    "Maintain traceable documentation for datasets, models, and deployment environments."
+  ],
+  "penalties": "Not applicable; voluntary industry standard.",
+  "reference_links": [
+    "https://www.aiiaorg.cn/"
+  ],
+  "last_updated": "2024-04-01"
+}

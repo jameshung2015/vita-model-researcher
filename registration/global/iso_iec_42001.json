@@ -1,0 +1,41 @@
+{
+  "name": "ISO/IEC 42001:2023 - Artificial intelligence management system",
+  "version": "2023",
+  "provider": "International Organization for Standardization (ISO) and International Electrotechnical Commission (IEC)",
+  "contact": {
+    "name": "ISO/IEC JTC 1/SC 42 Secretariat",
+    "email": "central@iso.org",
+    "phone": "+41-22-749-0111"
+  },
+  "release_date": "2023-12-15",
+  "service_region": "International",
+  "model_type": "AI management system standard",
+  "use_case": "Specifies requirements for establishing, implementing, maintaining, and continually improving an AI management system (AIMS).",
+  "risk_level": "Medium",
+  "data_summary": "Requires policies and controls for data governance, lifecycle management, and documentation supporting the AIMS.",
+  "cross_border": "Yes",
+  "compliance_materials": [
+    "AI management system manual and policies",
+    "Objective and key performance indicator records",
+    "Internal audit and management review reports"
+  ],
+  "monitoring": "Mandates internal audits, management reviews, and monitoring of AIMS performance.",
+  "emergency_plan": "Requires incident response, corrective action procedures, and continual improvement plans.",
+  "categories": [
+    "Standard",
+    "Management System",
+    "AI Governance"
+  ],
+  "type": "Standard",
+  "applicability": "Voluntary",
+  "obligations": [
+    "Define scope, leadership commitment, and roles for the AI management system.",
+    "Plan and implement risk-based controls for AI lifecycle processes.",
+    "Evaluate performance and drive continual improvement through audits and corrective actions."
+  ],
+  "penalties": "Not applicable; voluntary international standard.",
+  "reference_links": [
+    "https://www.iso.org/standard/81230.html"
+  ],
+  "last_updated": "2023-12-15"
+}

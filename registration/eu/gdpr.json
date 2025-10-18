@@ -1,0 +1,41 @@
+{
+  "name": "General Data Protection Regulation (GDPR)",
+  "version": "2016/679",
+  "provider": "European Union",
+  "contact": {
+    "name": "European Data Protection Board Secretariat",
+    "email": "edpb@edpb.europa.eu",
+    "phone": ""
+  },
+  "release_date": "2016-04-27",
+  "service_region": "European Union",
+  "model_type": "Personal data processing systems",
+  "use_case": "Comprehensive data protection framework governing the processing of personal data of individuals in the EU.",
+  "risk_level": "High",
+  "data_summary": "Requires lawful bases, data minimization, purpose limitation, and safeguards for cross-border data transfers.",
+  "cross_border": "Yes",
+  "compliance_materials": [
+    "Records of processing activities",
+    "Data protection impact assessment",
+    "Data processing agreements"
+  ],
+  "monitoring": "Mandates ongoing compliance monitoring, breach detection, and reporting to supervisory authorities.",
+  "emergency_plan": "Requires notification of personal data breaches within 72 hours and communication to affected data subjects when high risk exists.",
+  "categories": [
+    "Regulation",
+    "Data Protection",
+    "Privacy"
+  ],
+  "type": "Regulation",
+  "applicability": "Mandatory",
+  "obligations": [
+    "Appoint data protection officers where required and maintain accountability measures.",
+    "Implement appropriate technical and organizational measures for data security.",
+    "Honor data subject rights including access, erasure, and portability."
+  ],
+  "penalties": "Administrative fines up to EUR 20 million or 4% of global annual turnover, whichever is higher.",
+  "reference_links": [
+    "https://eur-lex.europa.eu/eli/reg/2016/679/oj"
+  ],
+  "last_updated": "2023-05-04"
+}

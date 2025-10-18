@@ -1,0 +1,41 @@
+{
+  "name": "CAICT Vehicle Intelligent Agent Evaluation Guidelines",
+  "version": "2024",
+  "provider": "China Academy of Information and Communications Technology (CAICT)",
+  "contact": {
+    "name": "CAICT Intelligent Connected Vehicle Department",
+    "email": "caict@caict.ac.cn",
+    "phone": "+86-10-6230-8888"
+  },
+  "release_date": "2024-01-15",
+  "service_region": "People's Republic of China",
+  "model_type": "Automotive intelligent agent evaluation",
+  "use_case": "Guidelines for evaluating intelligent vehicle agents across perception, decision-making, and safety assurance.",
+  "risk_level": "Medium",
+  "data_summary": "Encourages data traceability, scenario tagging, and safety-critical dataset coverage for intelligent agents.",
+  "cross_border": "No",
+  "compliance_materials": [
+    "Evaluation protocol documentation",
+    "Scenario-based test reports",
+    "Safety case and validation evidence"
+  ],
+  "monitoring": "Recommends lifecycle monitoring of deployed intelligent agents and feedback loops to improve performance.",
+  "emergency_plan": "Advises on incident response and corrective actions for safety events in automotive agents.",
+  "categories": [
+    "Guidelines",
+    "Automotive",
+    "Intelligent Agents"
+  ],
+  "type": "Guidelines",
+  "applicability": "Reference",
+  "obligations": [
+    "Define evaluation scenarios covering key operational design domains.",
+    "Measure perception, interaction, and safety indicators for intelligent agents.",
+    "Document traceable evidence supporting compliance with safety and reliability expectations."
+  ],
+  "penalties": "Not applicable; voluntary guideline.",
+  "reference_links": [
+    "https://www.caict.ac.cn/"
+  ],
+  "last_updated": "2024-01-15"
+}

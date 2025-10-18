@@ -1,0 +1,41 @@
+{
+  "name": "T/TAF 255-2024 Evaluation Specification for Intelligent Connected Vehicle Agents",
+  "version": "T/TAF 255-2024",
+  "provider": "Telematics Industry Application Alliance (TAF)",
+  "contact": {
+    "name": "TAF Standards Committee",
+    "email": "info@ttia.org.cn",
+    "phone": "+86-10-8201-1000"
+  },
+  "release_date": "2024-05-01",
+  "service_region": "People's Republic of China",
+  "model_type": "Intelligent connected vehicle agent evaluation",
+  "use_case": "Industry association standard covering evaluation criteria for intelligent connected vehicle agents including safety, interaction, and compliance.",
+  "risk_level": "Medium",
+  "data_summary": "Emphasizes test data collection for driving scenarios, human-machine interaction, and safety validation.",
+  "cross_border": "No",
+  "compliance_materials": [
+    "Evaluation checklist and scoring tables",
+    "Scenario simulation datasets",
+    "Safety incident reporting forms"
+  ],
+  "monitoring": "Recommends continuous monitoring of deployed vehicle agents and periodic re-evaluation.",
+  "emergency_plan": "Provides guidance on handling major safety incidents and issuing corrective measures.",
+  "categories": [
+    "Standard",
+    "Automotive",
+    "Safety"
+  ],
+  "type": "Standard",
+  "applicability": "Reference",
+  "obligations": [
+    "Perform conformity testing across interaction, safety, and compliance dimensions.",
+    "Maintain documentation of datasets, tools, and test environments used.",
+    "Implement corrective measures when evaluation thresholds are not achieved."
+  ],
+  "penalties": "Not applicable; voluntary industry standard.",
+  "reference_links": [
+    "https://www.ttia.org.cn/"
+  ],
+  "last_updated": "2024-05-01"
+}
