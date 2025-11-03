@@ -1,0 +1,66 @@
+{
+  "id": "benchmark.tiif_bench",
+  "name": "TIIF-Bench",
+  "description": "文本到图像指令跟随基准，包含 5000 个提示，用于细粒度评估 T2I 模型的指令跟随能力，涵盖多个维度、三个难度级别和短/长两个提示版本",
+  "source": "Wei et al., arXiv:2506.02161, 2025",
+  "datasets": [
+    {
+      "name": "TIIF-Bench",
+      "link": "https://github.com/A113N-W3I/TIIF-Bench",
+      "license": "未明确指定"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "overall_score",
+      "definition": "综合评分，基于多个维度和难度级别的平均表现",
+      "calculation": "average of compositional_accuracy, text_rendering_accuracy, style_control_accuracy across difficulty levels"
+    },
+    {
+      "name": "compositional_accuracy",
+      "definition": "组合准确率，评估模型在六个组合提示维度上的表现",
+      "calculation": "基于 VLM（GPT-4o 或 QwenVL2.5-72B）判断的属性特定是/否问题的准确率"
+    },
+    {
+      "name": "text_rendering_accuracy",
+      "definition": "文本渲染准确率，使用 GNED 指标量化",
+      "calculation": "基于 GNED（Graph-based Normalized Edit Distance）指标的文本合成精度"
+    },
+    {
+      "name": "style_control_accuracy",
+      "definition": "风格控制准确率，评估美学一致性",
+      "calculation": "基于设计师级提示的风格遵循度和美学质量评估"
+    },
+    {
+      "name": "short_prompt_score",
+      "definition": "短提示评分",
+      "calculation": "模型在短版本提示上的综合表现"
+    },
+    {
+      "name": "long_prompt_score",
+      "definition": "长提示评分",
+      "calculation": "模型在长版本提示上的综合表现"
+    },
+    {
+      "name": "prompt_length_robustness",
+      "definition": "提示长度鲁棒性",
+      "calculation": "短提示和长提示评分的一致性度量"
+    }
+  ],
+  "inference_environment": {
+    "description": "使用多维度、多难度级别的提示评估模型的指令跟随能力，通过 VLM 判断和 GNED 指标进行细粒度评估",
+    "fields": {
+      "hardware": "标准 GPU（如 A100、H100）用于图像生成；额外 GPU 用于 VLM 评估（GPT-4o API 或本地 QwenVL2.5-72B）",
+      "framework": "PyTorch, diffusers, transformers, VLM 评估工具",
+      "batch_size": "通常为 1-8（取决于模型和硬件）",
+      "measurement_script": "https://github.com/A113N-W3I/TIIF-Bench"
+    }
+  },
+  "test_method": "模型接收来自 10 个概念池的 5000 个提示，这些提示组织为三个难度级别，每个提示有短版本和长版本（核心语义相同）；生成的图像使用 VLM（GPT-4o 或 QwenVL2.5-72B）进行属性特定的是/否问题判断，文本渲染精度通过 GNED 指标量化；评估涵盖六个组合提示维度、文本渲染和风格控制，包括 100 个设计师级高质量提示",
+  "example_scores": {
+    "Emu3.5": "TIIF-Bench mini 平均分最佳，展示了强大的指令跟随能力（Emu3.5 paper）",
+    "DALL-E 3": "0.82 overall (estimated)",
+    "Stable Diffusion XL": "0.74 overall (estimated)"
+  },
+  "notes": "TIIF-Bench 针对现有 T2I 评估方法的关键局限性进行改进，提供更多样化、更复杂的提示和细粒度评估能力；通过提供短/长两个版本的提示（核心语义相同），严格评估模型对不同提示长度的鲁棒性；使用 VLM 进行细粒度判断，比传统的 CLIP Score 等整体指标更准确；GNED 指标专门用于量化文本渲染精度，解决了 T2I 模型在文本合成方面的评估空白；包含 100 个设计师级高质量提示，确保对高端生成能力的评估"
+}

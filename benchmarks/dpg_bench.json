@@ -1,0 +1,51 @@
+{
+  "id": "benchmark.dpg_bench",
+  "name": "DPG-Bench",
+  "description": "密集提示图基准，包含 1000 个密集提示，用于评估文本到图像模型在密集提示跟随、多对象组合和复杂指令理解方面的能力",
+  "source": "Hu et al., ELLA paper (arXiv:2403.05135), 2024",
+  "datasets": [
+    {
+      "name": "DPG-Bench",
+      "link": "https://github.com/TencentQQGYLab/ELLA",
+      "license": "未明确指定"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "overall_score",
+      "definition": "综合评分，衡量模型在密集提示下生成图像的准确性和质量",
+      "calculation": "基于对象、属性、空间关系等多个维度的综合评估"
+    },
+    {
+      "name": "object_accuracy",
+      "definition": "对象生成准确率",
+      "calculation": "正确生成的对象数 / 提示中要求的对象总数"
+    },
+    {
+      "name": "attribute_accuracy",
+      "definition": "属性准确率",
+      "calculation": "正确生成的属性 / 提示中要求的属性总数"
+    },
+    {
+      "name": "spatial_relationship",
+      "definition": "空间关系准确率",
+      "calculation": "正确表达的空间关系 / 提示中要求的空间关系总数"
+    }
+  ],
+  "inference_environment": {
+    "description": "使用基于模板的多对象提示评估模型的密集提示跟随能力，通过自动评估和人工评估相结合",
+    "fields": {
+      "hardware": "标准 GPU（如 A100、V100）用于图像生成",
+      "framework": "PyTorch, diffusers, transformers",
+      "batch_size": "通常为 1-4（取决于提示复杂度）",
+      "measurement_script": "参考 ELLA 论文和代码库"
+    }
+  },
+  "test_method": "模型接收包含多个对象、属性和空间关系的密集提示，生成相应图像；使用自动评估（对象检测、属性识别）和人工评估相结合的方式，量化模型在复杂组合任务上的性能；通过基于模板的多对象提示扩展组合密度",
+  "example_scores": {
+    "Emu3.5": "具有竞争力（详见论文表 16）",
+    "ELLA": "0.85 baseline (ELLA paper)",
+    "SDXL": "0.72 (estimated)"
+  },
+  "notes": "DPG-Bench 专注于评估模型的指令跟随能力，利用文本丰富的提示来衡量对详细指令的忠实度；虽然通过模板生成的语言缺乏描述性细微差别和叙事结构，但对于评估多对象组合和空间推理能力非常有效；已成为文本到图像生成研究中测试复杂组合生成能力的标准评估工具"
+}

@@ -1,0 +1,193 @@
+{
+  "model_info": {
+    "model_name": "Emu3.5",
+    "model_family": "Emu",
+    "model_type": "multimodal-generation",
+    "provider": "BAAI (Beijing Academy of Artificial Intelligence)",
+    "variants": [
+      {
+        "name": "Emu3.5",
+        "params": "34B",
+        "release_date": "2024-10-30",
+        "context_length": "8K",
+        "license": "Apache-2.0",
+        "model_card": "https://huggingface.co/BAAI/Emu3.5",
+        "description": "通用多模态预测模型，支持视觉-语言交织生成和世界状态预测"
+      },
+      {
+        "name": "Emu3.5-Image",
+        "params": "34B",
+        "release_date": "2024-10-30",
+        "context_length": "8K",
+        "license": "Apache-2.0",
+        "model_card": "https://huggingface.co/BAAI/Emu3.5-Image",
+        "description": "专用于单图生成任务（T2I/X2I）的优化版本"
+      },
+      {
+        "name": "Emu3.5-VisionTokenizer",
+        "params": "1.2B",
+        "release_date": "2024-10-30",
+        "context_length": "4K",
+        "license": "Apache-2.0",
+        "model_card": "https://huggingface.co/BAAI/Emu3.5-VisionTokenizer",
+        "description": "视觉 token 化组件"
+      }
+    ],
+    "key_features": [
+      "统一的下一 token 预测架构，支持视觉-语言交织生成",
+      "在超过 10 万亿 token 的视频帧和字幕数据上预训练",
+      "采用大规模强化学习后训练增强多模态推理和生成",
+      "DiDA 技术实现约 20 倍推理加速（权重即将发布）",
+      "原生多模态世界建模能力，支持时空一致的生成",
+      "具身 AI 和开放世界探索能力"
+    ],
+    "architecture_innovations": [
+      "Discrete Diffusion Adaptation (DiDA): 将逐 token 解码转换为双向并行预测",
+      "统一的视觉-语言交织序列建模，无需独立的模态适配器",
+      "端到端训练的世界状态预测系统"
+    ],
+    "last_updated": "2024-10-30"
+  },
+  "benchmark_results": [
+    {
+      "name": "GenEval",
+      "metric": "Overall Score",
+      "value": "与 Gemini 2.5 Flash Image 相当",
+      "description": "基于对象的文本-图像对齐评估，测试对象共现、位置、计数和颜色等组合性质",
+      "source_type": "paper",
+      "source": "Emu3.5 Technical Report (Table 16)",
+      "link": "https://arxiv.org/abs/2510.26583",
+      "benchmark_id": "benchmark.geneval",
+      "notes": "在组合生成任务上表现出色，具体分数详见论文 Table 16"
+    },
+    {
+      "name": "DPG-Bench",
+      "metric": "Overall Score",
+      "value": "与 Gemini 2.5 Flash Image 相当",
+      "description": "密集提示图基准，评估模型在密集提示跟随和多对象组合方面的能力",
+      "source_type": "paper",
+      "source": "Emu3.5 Technical Report (Table 16)",
+      "link": "https://arxiv.org/abs/2510.26583",
+      "benchmark_id": "benchmark.dpg_bench",
+      "notes": "在复杂组合生成任务上与顶级闭源模型持平"
+    },
+    {
+      "name": "OneIG-Bench (English)",
+      "metric": "Overall Score",
+      "value": "第一名",
+      "description": "全维度细粒度图像生成评估基准（英文赛道）",
+      "source_type": "paper",
+      "source": "Emu3.5 Technical Report",
+      "link": "https://arxiv.org/abs/2510.26583",
+      "benchmark_id": "benchmark.oneig_bench",
+      "notes": "在英文赛道获得最佳表现，展示强大的通用 T2I 生成能力"
+    },
+    {
+      "name": "OneIG-Bench (Chinese)",
+      "metric": "Overall Score",
+      "value": "第二名",
+      "description": "全维度细粒度图像生成评估基准（中文赛道）",
+      "source_type": "paper",
+      "source": "Emu3.5 Technical Report",
+      "link": "https://arxiv.org/abs/2510.26583",
+      "benchmark_id": "benchmark.oneig_bench",
+      "notes": "在中文赛道获得第二名，表现优异"
+    },
+    {
+      "name": "TIIF-Bench mini",
+      "metric": "Average Score",
+      "value": "最佳",
+      "description": "文本到图像指令跟随基准（mini 版本），评估模型的指令跟随能力",
+      "source_type": "paper",
+      "source": "Emu3.5 Technical Report",
+      "link": "https://arxiv.org/abs/2510.26583",
+      "benchmark_id": "benchmark.tiif_bench",
+      "notes": "在开源和闭源模型中获得最佳平均分，展示了强大的指令跟随能力"
+    },
+    {
+      "name": "LeX-Bench (Hard)",
+      "metric": "Score",
+      "value": "0.87",
+      "description": "长文本渲染基准（困难类别），评估复杂文本渲染能力",
+      "source_type": "paper",
+      "source": "Emu3.5 Technical Report",
+      "link": "https://arxiv.org/abs/2510.26583",
+      "benchmark_id": null,
+      "notes": "超过 Gemini 2.5 Flash (0.74)，在长文本渲染方面表现出色"
+    },
+    {
+      "name": "ImgEdit",
+      "metric": "Overall Score",
+      "value": "4.41",
+      "description": "图像编辑综合评估",
+      "source_type": "paper",
+      "source": "Emu3.5 Technical Report",
+      "link": "https://arxiv.org/abs/2510.26583",
+      "benchmark_id": null,
+      "notes": "展示强大的图像编辑能力"
+    },
+    {
+      "name": "GEdit-Bench",
+      "metric": "Score",
+      "value": "7.59",
+      "description": "通用图像编辑基准",
+      "source_type": "paper",
+      "source": "Emu3.5 Technical Report",
+      "link": "https://arxiv.org/abs/2510.26583",
+      "benchmark_id": null,
+      "notes": "在通用图像编辑任务上表现优异"
+    },
+    {
+      "name": "OmniContext",
+      "metric": "Score",
+      "value": "8.82",
+      "description": "全方位上下文理解和生成评估",
+      "source_type": "paper",
+      "source": "Emu3.5 Technical Report",
+      "link": "https://arxiv.org/abs/2510.26583",
+      "benchmark_id": null,
+      "notes": "展示出色的上下文理解和生成能力"
+    },
+    {
+      "name": "ICE-Bench",
+      "metric": "Score",
+      "value": "0.637",
+      "description": "交织内容编辑基准",
+      "source_type": "paper",
+      "source": "Emu3.5 Technical Report",
+      "link": "https://arxiv.org/abs/2510.26583",
+      "benchmark_id": null,
+      "notes": "在交织生成任务上优于竞争对手"
+    }
+  ],
+  "notes": {
+    "data_source": "Primary benchmark results from Emu3.5 Technical Report (arXiv:2510.26583)",
+    "model_tested": "Emu3.5 and Emu3.5-Image",
+    "additional_sources": [
+      "GitHub repository - https://github.com/baaivision/Emu3.5",
+      "Hugging Face model cards",
+      "Third-party benchmarks and evaluations"
+    ],
+    "performance_highlights": [
+      "在 TIIF-Bench mini 上获得开源和闭源模型中的最佳平均分",
+      "在 OneIG-Bench 英文赛道获得第一名，中文赛道第二名",
+      "在图像生成和编辑任务上达到与 Gemini 2.5 Flash Image 相当的性能",
+      "在交织生成任务上表现优于竞争对手",
+      "在长文本渲染（LeX-Bench Hard）上超过 Gemini 2.5 Flash",
+      "DiDA 技术实现约 20 倍推理加速，不损失性能"
+    ],
+    "recommended_for": [
+      "文本到图像生成和编辑",
+      "多模态交织内容生成（视觉-语言混合）",
+      "长时序视频生成和世界建模",
+      "具身 AI 和机器人视觉任务",
+      "复杂指令跟随的图像生成",
+      "需要高质量文本渲染的场景"
+    ],
+    "limitations": [
+      "DiDA 加速权重尚未发布（即将推出）",
+      "当前版本主要提供下一 token 预测模式的推理代码",
+      "需要多 GPU 部署以实现最佳性能（推荐 4×A100/H100）"
+    ]
+  }
+}
