@@ -1,0 +1,148 @@
+{
+  "model_name": "Emu3.5",
+  "short_description": "原生多模态世界学习模型，支持视觉-语言交织生成和世界状态预测",
+  "homepage": "https://github.com/baaivision/Emu3.5",
+  "model_card_link": "https://huggingface.co/BAAI/Emu3.5",
+  "license": "Apache-2.0",
+  "provenance": {
+    "provider": "BAAI (Beijing Academy of Artificial Intelligence)",
+    "release_date": "2024-10-30",
+    "notes": "预训练于超过 10 万亿个交织 token（主要来自互联网视频的连续帧和字幕）；采用大规模强化学习进行后训练以增强多模态推理和生成能力"
+  },
+  "input_types": [
+    "text",
+    "image"
+  ],
+  "output_types": [
+    "text",
+    "image"
+  ],
+  "architecture_family": "multimodal decoder-only transformer",
+  "architecture_details": "统一的下一 token 预测架构，支持视觉-语言交织序列的联合预测；原生处理多模态输入输出，无需独立的模态适配器或任务专用头；包含离散扩散适应 (DiDA) 技术，将逐 token 解码转换为双向并行预测，在不损失性能的情况下将单图推理速度提升约 20 倍",
+  "size_params": {
+    "notable_variants": [
+      "Emu3.5-34B (通用多模态预测)",
+      "Emu3.5-Image (专用于单图生成的优化版本)",
+      "Emu3.5-VisionTokenizer (视觉 token 化组件)"
+    ],
+    "activated_params_note": "主模型 34B 参数"
+  },
+  "capabilities": {
+    "multimodal_generation": "支持文本到图像、图像编辑、交织式视觉-语言生成",
+    "world_modeling": "长时序多模态生成和推理能力，生成在时间上一致且语义连贯的视觉帧和文本序列",
+    "embodied_ai": "支持时空一致的世界探索和开放世界具身操作",
+    "image_generation": "与 Gemini 2.5 Flash Image 性能相当",
+    "interleaved_generation": "在交织生成任务上表现优异"
+  },
+  "tags": [
+    "open_source",
+    "multimodal",
+    "world_model",
+    "image_generation",
+    "video_understanding",
+    "embodied_ai",
+    "reinforcement_learning",
+    "instruction_following"
+  ],
+  "variants": [
+    {
+      "name": "Emu3.5",
+      "params": 34,
+      "context_windows": [
+        8192
+      ],
+      "default_seq_len": 8192,
+      "default_num_gpus": 4,
+      "model_card_link": "https://huggingface.co/BAAI/Emu3.5",
+      "release_date": "2024-10-30",
+      "hardware_recommendations": {
+        "fp16_gb_per_gpu": 80,
+        "int8_gb_per_gpu": 40,
+        "recommended_num_gpus": 4,
+        "notes": "34B 参数多模态模型；建议使用多 GPU 进行实时多模态处理；支持 Flash Attention 2.8.3 优化"
+      },
+      "deploy_requirements": "Python 3.10+, PyTorch, transformers, Flash Attention 2.8.3 (推荐)",
+      "tags": [
+        "open_source",
+        "general_purpose"
+      ]
+    },
+    {
+      "name": "Emu3.5-Image",
+      "params": 34,
+      "context_windows": [
+        8192
+      ],
+      "default_seq_len": 8192,
+      "default_num_gpus": 4,
+      "model_card_link": "https://huggingface.co/BAAI/Emu3.5-Image",
+      "release_date": "2024-10-30",
+      "hardware_recommendations": {
+        "fp16_gb_per_gpu": 80,
+        "int8_gb_per_gpu": 40,
+        "recommended_num_gpus": 4,
+        "notes": "专为单图生成任务（T2I/X2I）优化的版本，提供更高的图像质量"
+      },
+      "deploy_requirements": "Python 3.10+, PyTorch, transformers",
+      "tags": [
+        "open_source",
+        "image_generation",
+        "specialized"
+      ]
+    },
+    {
+      "name": "Emu3.5-VisionTokenizer",
+      "params": 1.2,
+      "context_windows": [
+        4096
+      ],
+      "default_seq_len": 4096,
+      "default_num_gpus": 1,
+      "model_card_link": "https://huggingface.co/BAAI/Emu3.5-VisionTokenizer",
+      "release_date": "2024-10-30",
+      "hardware_recommendations": {
+        "fp16_gb_per_gpu": 10,
+        "int8_gb_per_gpu": 6,
+        "recommended_num_gpus": 1,
+        "notes": "视觉 token 化组件，用于将图像转换为离散 token 表示"
+      },
+      "deploy_requirements": "Python 3.10+, PyTorch",
+      "tags": [
+        "open_source",
+        "vision_tokenizer",
+        "component"
+      ]
+    }
+  ],
+  "evaluation": {
+    "papers": [
+      "https://arxiv.org/abs/2510.26583"
+    ],
+    "benchmarks": [
+      "geneval",
+      "dpg_bench",
+      "oneig_bench",
+      "tiif_bench"
+    ],
+    "model_cards": [
+      "https://huggingface.co/BAAI/Emu3.5",
+      "https://huggingface.co/BAAI/Emu3.5-Image"
+    ]
+  },
+  "inference": {
+    "latency_ms": null,
+    "latency_level": "medium",
+    "throughput_rps": null,
+    "concurrency": null,
+    "memory_gb": 68,
+    "quantization_friendly": true,
+    "supported_hardware": [
+      "A100",
+      "H100",
+      "A800"
+    ],
+    "distributed_support": true,
+    "notes": "支持 DiDA 加速推理（约 20 倍加速，权重即将发布）；当前版本提供下一 token 预测模式的推理代码；高级图像解码器和 DiDA 加速权重计划在未来发布"
+  },
+  "notes": "Emu3.5 是一个统一的世界建模系统，能够联合预测视觉和语言的下一个状态；通过端到端训练和大规模强化学习后训练实现；在图像生成和编辑任务上达到与 Gemini 2.5 Flash Image 相当的性能，在交织生成任务上表现更优；支持长时序多模态生成和推理，实现时空一致的世界探索和具身操作"
+}

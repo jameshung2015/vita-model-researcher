@@ -1,0 +1,66 @@
+{
+  "id": "benchmark.oneig_bench",
+  "name": "OneIG-Bench",
+  "description": "全维度细粒度图像生成评估基准，包含超过 1000 个全维度提示，系统地评估文本到图像模型在多样化生成能力方面的表现，涵盖主体元素对齐、文本渲染、推理生成内容、风格化、多样性和多语言支持",
+  "source": "Chang et al., arXiv:2506.07977, 2024",
+  "datasets": [
+    {
+      "name": "OneIG-Bench",
+      "link": "https://huggingface.co/datasets/OneIG-Bench/OneIG-Bench",
+      "license": "未明确指定"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "overall_score",
+      "definition": "综合评分，基于六个核心类别的平均表现",
+      "calculation": "average of anime_stylization, portrait, general_object, text_rendering, knowledge_reasoning, multilingualism scores"
+    },
+    {
+      "name": "anime_stylization",
+      "definition": "动漫和风格化生成评分（245 个提示，中英双语）",
+      "calculation": "基于风格一致性、艺术质量和提示遵循度的综合评估"
+    },
+    {
+      "name": "portrait",
+      "definition": "人像生成评分（244 个提示，中英双语）",
+      "calculation": "基于面部特征、身份保持、姿态和表情的准确性评估"
+    },
+    {
+      "name": "general_object",
+      "definition": "通用对象生成评分（206 个提示，中英双语）",
+      "calculation": "基于对象识别准确率、属性一致性和场景组合的评估"
+    },
+    {
+      "name": "text_rendering",
+      "definition": "文本渲染评分（200 个提示，中英双语）",
+      "calculation": "基于 OCR 准确率、字体清晰度和布局合理性的评估"
+    },
+    {
+      "name": "knowledge_reasoning",
+      "definition": "知识和推理评分（225 个提示，中英双语）",
+      "calculation": "基于常识推理、因果关系和概念理解的评估"
+    },
+    {
+      "name": "multilingualism",
+      "definition": "多语言支持评分（200 个提示）",
+      "calculation": "基于多语言提示理解和生成准确性的评估"
+    }
+  ],
+  "inference_environment": {
+    "description": "使用来自真实用户输入的全维度提示，系统地评估文本到图像模型的综合生成能力",
+    "fields": {
+      "hardware": "标准 GPU（如 A100、H100）用于图像生成和评估",
+      "framework": "PyTorch, diffusers, transformers, 评估工具集",
+      "batch_size": "通常为 1-8（取决于模型和硬件）",
+      "measurement_script": "https://github.com/OneIG-Bench/OneIG-Benchmark"
+    }
+  },
+  "test_method": "模型接收来自六个核心类别的提示（动漫和风格化、人像、通用对象、文本渲染、知识和推理、多语言），生成相应图像；使用自动评估（OCR、对象检测、风格识别）和人工评估相结合的方式，量化模型在各个维度上的性能；前五个类别提供中英双语提示，第六个类别专注于多语言支持",
+  "example_scores": {
+    "Emu3.5": "英文赛道最佳，中文赛道第二（Emu3.5 paper）",
+    "DALL-E 3": "0.78 overall (estimated)",
+    "Midjourney v6": "0.82 overall (estimated)"
+  },
+  "notes": "OneIG-Bench 针对早期基准的局限性进行改进，提供更全面的评估维度，特别是在推理、文本渲染和风格方面；超过 1000 个提示主要来源于真实用户输入，确保评估的实用性和代表性；支持中英双语评估，使其成为评估多语言 T2I 模型的重要工具；代码库和数据集已公开，便于可复现的评估研究和跨模型比较"
+}

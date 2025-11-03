@@ -1,0 +1,66 @@
+{
+  "id": "benchmark.geneval",
+  "name": "GenEval",
+  "description": "基于对象的文本-图像对齐评估框架，评估图像生成模型在对象共现、位置、计数和颜色等组合性质上的表现",
+  "source": "Ghosh & Scariah, NeurIPS 2023",
+  "datasets": [
+    {
+      "name": "GenEval",
+      "link": "https://github.com/djghosh13/geneval",
+      "license": "MIT"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "overall_score",
+      "definition": "综合评分，基于对象检测、位置、计数、颜色等多个维度的平均表现",
+      "calculation": "average of single_object, two_objects, counting, colors, position, color_attribution scores"
+    },
+    {
+      "name": "single_object",
+      "definition": "单对象生成准确率",
+      "calculation": "correctly generated single objects / total single object prompts"
+    },
+    {
+      "name": "two_objects",
+      "definition": "双对象共现准确率",
+      "calculation": "correctly generated two object scenes / total two object prompts"
+    },
+    {
+      "name": "counting",
+      "definition": "对象计数准确率",
+      "calculation": "correct object counts / total counting prompts"
+    },
+    {
+      "name": "colors",
+      "definition": "颜色属性准确率",
+      "calculation": "correct color attributes / total color prompts"
+    },
+    {
+      "name": "position",
+      "definition": "空间位置准确率",
+      "calculation": "correct spatial positions / total position prompts"
+    },
+    {
+      "name": "color_attribution",
+      "definition": "颜色归属准确率",
+      "calculation": "correct color-object attributions / total color attribution prompts"
+    }
+  ],
+  "inference_environment": {
+    "description": "使用对象检测模型（如 YOLO、Faster R-CNN）和视觉识别模型评估生成图像的组合性质",
+    "fields": {
+      "hardware": "标准 GPU（如 V100、A100）用于运行检测和识别模型",
+      "framework": "PyTorch, torchvision, transformers",
+      "batch_size": "通常为 1（逐图评估）",
+      "measurement_script": "https://github.com/djghosh13/geneval"
+    }
+  },
+  "test_method": "生成模型根据提示生成图像，然后使用对象检测和视觉识别模型自动评估生成图像是否包含正确的对象、数量、颜色和位置；相比 CLIP Score 等整体指标，GenEval 提供细粒度的实例级分析，与人类评判有更强的一致性",
+  "example_scores": {
+    "Emu3.5": "具有竞争力（详见论文表 16）",
+    "SDXL": "0.58 overall (GenEval paper)",
+    "DALL-E 3": "0.67 overall (estimated)"
+  },
+  "notes": "GenEval 在需要组合推理的复杂任务上比 CLIP Score 获得显著更高的人类一致性；特别适合评估文本到图像模型的细粒度对齐能力；需要运行对象检测和属性识别模型，计算成本相对较高"
+}
