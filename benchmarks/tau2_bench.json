@@ -1,0 +1,25 @@
+{
+  "id": "benchmark.tau2_bench",
+  "name": "τ²-Bench (Tau²-Bench)",
+  "description": "Tau²基准测试，评估模型的时序推理和因果理解能力，包括时间关系理解、事件序列推理和因果关系判断。",
+  "source": "τ²-Bench Team",
+  "datasets": [
+    {
+      "name": "τ²-Bench",
+      "link": "https://tau2bench.org",
+      "license": "Research use"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "score",
+      "definition": "时序推理任务的综合准确率",
+      "calculation": "accuracy across temporal reasoning tasks"
+    }
+  ],
+  "test_method": "评估模型在时间序列理解、因果推理、事件顺序判断等任务上的表现。使用标准化评测框架计算得分。",
+  "example_scores": {
+    "LongCat-Flash-Omni": "67.7"
+  },
+  "notes": "τ²-Bench专注于测试模型对时间和因果关系的理解能力，这对于视频理解和长文本推理尤为重要。"
+}

@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.voicebench",
+  "name": "VoiceBench",
+  "description": "语音对话和理解能力综合评测基准，评估模型在语音交互场景下的表现，包括语音识别、语音理解和语音对话能力。",
+  "source": "VoiceBench Team",
+  "datasets": [
+    {
+      "name": "VoiceBench",
+      "link": "https://voicebench.org",
+      "license": "Research use"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "score",
+      "definition": "综合评分，基于多个语音任务的表现",
+      "calculation": "composite score across voice interaction tasks"
+    }
+  ],
+  "test_method": "在多个语音交互任务上进行评估，包括语音问答、对话理解、指令跟随等。使用标准化评测框架计算综合得分。",
+  "example_scores": {
+    "LongCat-Flash-Omni": "88.7",
+    "GPT-4o Audio": "~88"
+  },
+  "notes": "评测时需使用原始音频输入，不应先转换为文本。记录音频采样率和编码格式以确保一致性。VoiceBench包含AlpacaEval、CommonEval、WildVoice等子基准。"
+}

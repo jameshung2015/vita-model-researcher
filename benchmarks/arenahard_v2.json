@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.arenahard_v2",
+  "name": "ArenaHard-V2",
+  "description": "困难对话和推理任务评测基准的第二版，包含更具挑战性的多轮对话、复杂推理和实际场景问题。",
+  "source": "LMSys / Chatbot Arena Team",
+  "datasets": [
+    {
+      "name": "ArenaHard-V2",
+      "link": "https://lmsys.org/blog/2024-arenahard/",
+      "license": "Research use"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "score",
+      "definition": "模型在困难任务上的综合表现评分",
+      "calculation": "win rate against baseline models on challenging tasks"
+    }
+  ],
+  "test_method": "使用人工评判或强模型作为评判者，评估模型在困难对话和推理任务上的表现。计算相对于基准模型的胜率得分。",
+  "example_scores": {
+    "LongCat-Flash-Omni": "86.5",
+    "GPT-4": "~85-90 (varies by version)"
+  },
+  "notes": "ArenaHard-V2相比V1包含更多困难样本和更严格的评判标准。评测时应使用标准prompt格式和一致的采样参数。"
+}

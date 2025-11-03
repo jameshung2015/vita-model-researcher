@@ -1,0 +1,27 @@
+{
+  "id": "benchmark.omnibench",
+  "name": "OmniBench",
+  "description": "全模态基准测试，评估模型在多种模态任务上的综合表现，包括文本、视觉、音频等多模态输入输出的理解和生成能力。",
+  "source": "OmniBench Team",
+  "datasets": [
+    {
+      "name": "OmniBench",
+      "link": "https://omnibench.org",
+      "license": "Research use"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "overall_score",
+      "definition": "综合评分，基于多个子任务的加权平均",
+      "calculation": "weighted average across multimodal tasks"
+    }
+  ],
+  "test_method": "在多个全模态任务上进行评估，包括图像理解、视频理解、音频理解、多模态推理等。使用标准化的评测脚本计算综合得分。",
+  "example_scores": {
+    "Gemini 2.5 Pro": "66.8",
+    "LongCat-Flash-Omni": "61.4",
+    "Qwen 3 Omni Instruct": "58.5"
+  },
+  "notes": "测试时需确保模型能处理所有支持的模态输入。记录所使用的模型配置和推理参数以确保可复现性。"
+}
