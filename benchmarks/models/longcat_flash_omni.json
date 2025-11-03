@@ -1,0 +1,79 @@
+[
+  {
+    "name": "MMLU",
+    "metric": "Accuracy",
+    "value": "89.71%",
+    "description": "大规模多任务语言理解基准测试，涵盖57个学科领域的知识和推理能力评估",
+    "source_type": "paper",
+    "source": "LongCat-Flash-Omni Technical Report",
+    "link": "https://arxiv.org/abs/2509.01322",
+    "benchmark_id": "benchmark.mmlu",
+    "notes": "展示了强大的通用语言理解和推理能力"
+  },
+  {
+    "name": "OmniBench",
+    "metric": "Overall Score",
+    "value": "61.4",
+    "description": "全模态基准测试，评估模型在多模态任务上的综合表现",
+    "source_type": "paper",
+    "source": "LongCat-Flash-Omni Technical Report",
+    "link": "https://arxiv.org/abs/2509.01322",
+    "benchmark_id": "benchmark.omnibench",
+    "notes": "得分61.4，超过Qwen 3 Omni Instruct（58.5），但略低于Gemini 2.5 Pro（66.8）"
+  },
+  {
+    "name": "VideoMME",
+    "metric": "Score",
+    "value": "78.2",
+    "description": "视频多模态评估基准，测试模型的视频理解和推理能力",
+    "source_type": "paper",
+    "source": "LongCat-Flash-Omni Technical Report",
+    "link": "https://arxiv.org/abs/2509.01322",
+    "benchmark_id": "benchmark.videomme",
+    "notes": "得分78.2，接近GPT-4o和Gemini 2.5 Flash的性能水平"
+  },
+  {
+    "name": "VoiceBench",
+    "metric": "Score",
+    "value": "88.7",
+    "description": "语音对话和理解能力综合评测基准",
+    "source_type": "paper",
+    "source": "LongCat-Flash-Omni Technical Report",
+    "link": "https://arxiv.org/abs/2509.01322",
+    "benchmark_id": "benchmark.voicebench",
+    "notes": "得分88.7，略高于GPT-4o Audio，展示了出色的语音交互能力"
+  },
+  {
+    "name": "ArenaHard-V2",
+    "metric": "Score",
+    "value": "86.5",
+    "description": "困难对话和推理任务评测基准的第二版，测试模型在复杂场景下的表现",
+    "source_type": "paper",
+    "source": "LongCat-Flash-Omni Technical Report",
+    "link": "https://arxiv.org/abs/2509.01322",
+    "benchmark_id": "benchmark.arenahard_v2",
+    "notes": "在复杂对话和推理任务上表现优异"
+  },
+  {
+    "name": "TerminalBench",
+    "metric": "Score",
+    "value": "39.5",
+    "description": "终端命令和代码执行任务评测基准",
+    "source_type": "paper",
+    "source": "LongCat-Flash-Omni Technical Report",
+    "link": "https://arxiv.org/abs/2509.01322",
+    "benchmark_id": "benchmark.terminalbench",
+    "notes": "在终端命令任务上的表现，反映代码和命令理解能力"
+  },
+  {
+    "name": "τ²-Bench (Tau²-Bench)",
+    "metric": "Score",
+    "value": "67.7",
+    "description": "Tau²基准测试，评估模型的时序推理和因果理解能力",
+    "source_type": "paper",
+    "source": "LongCat-Flash-Omni Technical Report",
+    "link": "https://arxiv.org/abs/2509.01322",
+    "benchmark_id": "benchmark.tau2_bench",
+    "notes": "展示了模型在时序推理任务上的能力"
+  }
+]

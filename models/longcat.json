@@ -1,0 +1,106 @@
+{
+  "model_name": "LongCat-Flash-Omni",
+  "short_description": "560B开源全模态MoE模型，27B激活参数，擅长实时音视频交互",
+  "homepage": "https://github.com/meituan-longcat/LongCat-Flash-Omni",
+  "model_card_link": "https://huggingface.co/meituan-longcat/LongCat-Flash-Omni",
+  "license": "MIT",
+  "provenance": {
+    "provider": "Meituan LongCat Team",
+    "release_date": "2025-11-02",
+    "notes": "开源全模态模型，无缝集成强大的离线多模态理解与实时音视频交互能力于单一框架；采用快捷连接架构实现高推理速度（>100 tokens/s）；精心设计的轻量级模态编码器和解码器，以及分块式音视频特征交织机制"
+  },
+  "input_types": [
+    "text",
+    "image",
+    "audio",
+    "video"
+  ],
+  "output_types": [
+    "text",
+    "audio"
+  ],
+  "architecture_family": "mixture-of-experts multimodal transformer",
+  "architecture_details": "560B参数的混合专家模型（MoE），根据上下文需求激活18.6B-31.3B参数，平均约27B激活参数；采用快捷连接架构实现高推理速度；包含轻量级模态编码器和解码器；实现分块式音视频特征交织机制以优化实时交互",
+  "size_params": {
+    "notable_variants": [
+      "LongCat-Flash-Omni (560B总参数，27B平均激活)"
+    ],
+    "activated_params_note": "MoE架构平均激活约27B参数（范围18.6B-31.3B，取决于上下文）"
+  },
+  "capabilities": {
+    "omni_modal_interaction": "支持文本、图像、音频、视频的统一多模态输入，输出文本和音频",
+    "real_time_audio_visual": "实时音视频交互能力，推理速度超过100 tokens/s",
+    "long_context": "支持128K token上下文窗口，实现长期记忆、多轮对话和跨模态时序推理",
+    "multimodal_understanding": "强大的离线多模态理解能力",
+    "performance_highlights": "在OmniBench达到61.4分（超过Qwen 3 Omni），VideoMME 78.2分（接近GPT-4o），VoiceBench 88.7分（略高于GPT-4o Audio）"
+  },
+  "tags": [
+    "open_source",
+    "omni_modal",
+    "real_time",
+    "mixture_of_experts",
+    "multimodal",
+    "audio_visual",
+    "long_context",
+    "meituan"
+  ],
+  "variants": [
+    {
+      "name": "LongCat-Flash-Omni",
+      "params": 560,
+      "context_windows": [
+        128000
+      ],
+      "default_seq_len": 128000,
+      "default_num_gpus": 8,
+      "model_card_link": "https://huggingface.co/meituan-longcat/LongCat-Flash-Omni",
+      "release_date": "2025-11-02",
+      "hardware_recommendations": {
+        "fp16_gb_per_gpu": 141,
+        "int8_gb_per_gpu": 70,
+        "recommended_num_gpus": 8,
+        "notes": "560B参数MoE模型；FP8格式至少需要1个节点（例如8×H20-141G）；BF16格式至少需要2个节点（例如16×H800-80G）；平均激活27B参数实现高效推理"
+      },
+      "deploy_requirements": "Python 3.10+, PyTorch, transformers; 建议使用多GPU分布式推理框架（如vLLM, DeepSpeed）",
+      "tags": [
+        "open_source",
+        "omni_modal",
+        "flagship"
+      ]
+    }
+  ],
+  "evaluation": {
+    "papers": [
+      "https://arxiv.org/abs/2509.01322"
+    ],
+    "benchmarks": [
+      "mmlu",
+      "omnibench",
+      "videomme_w_o_sub",
+      "voicebench",
+      "arenahard_v2",
+      "terminalbench",
+      "tau2_bench"
+    ],
+    "model_cards": [
+      "https://huggingface.co/meituan-longcat/LongCat-Flash-Omni"
+    ]
+  },
+  "inference": {
+    "latency_ms": null,
+    "latency_level": "low",
+    "throughput_rps": null,
+    "concurrency": null,
+    "memory_gb": 1128,
+    "quantization_friendly": true,
+    "supported_hardware": [
+      "H20",
+      "H800",
+      "A100",
+      "H100"
+    ],
+    "distributed_support": true,
+    "notes": "采用快捷连接架构实现高推理速度（>100 tokens/s）；支持FP8和BF16格式；需要大规模GPU集群进行部署；MoE架构通过稀疏激活实现高效推理；支持实时音视频交互"
+  },
+  "notes": "LongCat-Flash-Omni是美团LongCat团队发布的560B参数开源全模态MoE模型，在单一框架内无缝集成强大的离线多模态理解与实时音视频交互能力。模型支持128K token上下文窗口，在多个全模态基准测试中达到SOTA性能：OmniBench 61.4（超过Qwen 3 Omni的58.5），VideoMME 78.2（接近GPT-4o和Gemini 2.5 Flash），VoiceBench 88.7（略高于GPT-4o Audio）。在通用能力上也表现出色：MMLU准确率89.71%，ArenaHard-V2得分86.5。采用MIT开源许可，适合商业和研究应用。"
+}

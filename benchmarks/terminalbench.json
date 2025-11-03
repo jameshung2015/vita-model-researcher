@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.terminalbench",
+  "name": "TerminalBench",
+  "description": "终端命令和代码执行任务评测基准，评估模型理解和生成终端命令、Shell脚本和系统管理任务的能力。",
+  "source": "TerminalBench Team",
+  "datasets": [
+    {
+      "name": "TerminalBench",
+      "link": "https://terminalbench.org",
+      "license": "Research use"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "score",
+      "definition": "终端任务完成的准确率和质量评分",
+      "calculation": "task completion rate and command correctness"
+    }
+  ],
+  "test_method": "提供终端环境和任务描述，评估模型生成的命令是否正确完成任务。包括命令生成、脚本编写、系统诊断等场景。",
+  "example_scores": {
+    "LongCat-Flash-Omni": "39.5",
+    "GPT-4": "~45-50 (estimated)"
+  },
+  "notes": "评测时需要实际执行命令验证正确性。注意安全性，应在隔离环境中运行。记录操作系统版本和Shell类型。"
+}
