@@ -1,0 +1,72 @@
+{
+  "id": "benchmark.ceval",
+  "name": "C-Eval",
+  "description": "C-Eval（中文评测基准）是一个全面的中文基础模型评估套件，包含13,948道多项选择题，涵盖52个不同学科和四个难度等级（初中、高中、大学、专业）。C-Eval旨在评估大语言模型在中文语境下的知识掌握和推理能力。",
+  "source": "Huang et al., NeurIPS 2023",
+  "provider": "HKUST NLP Lab",
+  "category": "knowledge_understanding",
+  "datasets": [
+    {
+      "name": "C-Eval",
+      "description": "13,948道多项选择题，涵盖52个学科和4个难度等级",
+      "link": "https://github.com/hkust-nlp/ceval",
+      "license": "CC BY-NC-SA 4.0"
+    },
+    {
+      "name": "C-Eval Hard",
+      "description": "C-Eval的挑战性子集，需要高级推理能力",
+      "link": "https://cevalbenchmark.com/",
+      "license": "CC BY-NC-SA 4.0"
+    }
+  ],
+  "evaluation_dimensions": [
+    "中文知识理解",
+    "多学科知识",
+    "推理能力",
+    "专业领域知识"
+  ],
+  "subject_categories": [
+    "STEM（科学、技术、工程、数学）",
+    "社会科学",
+    "人文学科",
+    "其他专业学科"
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "多项选择题的准确率",
+      "calculation": "correct / total"
+    },
+    {
+      "name": "average_accuracy",
+      "definition": "所有学科的平均准确率",
+      "calculation": "mean(accuracy_per_subject)"
+    }
+  ],
+  "test_method": "使用标准的多项选择题格式，模型需要从4个选项中选择正确答案。评估可采用zero-shot或few-shot方式。建议使用官方评测脚本以确保一致性。",
+  "example_scores": {
+    "GPT-4": "68.7% (官方排行榜)",
+    "GPT-3.5-turbo": "52.5% (官方排行榜)",
+    "Claude-2": "60.4% (官方排行榜)",
+    "Qwen-14B": "72.1% (官方排行榜)",
+    "ChatGLM-3": "66.7% (官方排行榜)"
+  },
+  "difficulty_levels": {
+    "middle_school": "初中难度题目",
+    "high_school": "高中难度题目",
+    "college": "大学难度题目",
+    "professional": "专业水平题目"
+  },
+  "technical_features": [
+    "多难度等级评估",
+    "52个细分学科",
+    "中文语境评测",
+    "标准化评测流程"
+  ],
+  "website": "https://cevalbenchmark.com/",
+  "github": "https://github.com/hkust-nlp/ceval",
+  "leaderboard": "https://cevalbenchmark.com/static/leaderboard.html",
+  "notes": "C-Eval是评估中文大语言模型的权威基准之一。测试集在2023年发布时保持私密以避免泄露，但自2025年7月26日起已公开。评估时应记录是否使用few-shot、prompt格式、温度参数等设置以确保可复现性。GPT-4是首个在C-Eval上达到60%以上平均准确率的模型，表明该基准对当前LLM仍有相当挑战性。",
+  "research_doc": "agents-toolchain/doc-eval-system/ceval_research.md",
+  "last_reviewed": "2025-11-17"
+}

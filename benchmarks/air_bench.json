@@ -1,0 +1,105 @@
+{
+  "id": "benchmark.air_bench",
+  "name": "AIR-Bench",
+  "description": "AIR-Bench (Automated Heterogeneous Information Retrieval Benchmark) 是一个自动化异构信息检索基准，旨在为信息检索模型提供全面、动态且成本高效的评估。通过大语言模型自动生成测试数据，无需人工干预，覆盖多样化的任务、领域和语言。",
+  "source": "Chen et al., ACL 2025",
+  "provider": "AIR-Bench Team",
+  "category": "information_retrieval",
+  "datasets": [
+    {
+      "name": "AIR-Bench 24.04",
+      "description": "第一版本，包含多任务、多领域、多语言的IR评测数据",
+      "link": "https://github.com/AIR-Bench/AIR-Bench",
+      "license": "Research use"
+    },
+    {
+      "name": "AIR-Bench 24.05",
+      "description": "更新版本，扩展了更多领域和语言",
+      "link": "https://github.com/AIR-Bench/AIR-Bench",
+      "license": "Research use"
+    }
+  ],
+  "key_features": [
+    "自动化 (Automated) - 测试数据由LLM自动生成，无需人工干预",
+    "异构性 (Heterogeneous) - 涵盖多样化的任务、领域和语言",
+    "动态性 (Dynamic) - 持续扩展覆盖的领域和语言，提供越来越全面的评估基准"
+  ],
+  "current_coverage": {
+    "tasks": 2,
+    "domains": 9,
+    "languages": 13,
+    "total_datasets": 69
+  },
+  "evaluation_dimensions": [
+    "检索准确性",
+    "跨领域泛化能力",
+    "多语言检索能力",
+    "新兴领域适应能力"
+  ],
+  "metrics": [
+    {
+      "name": "nDCG@10",
+      "definition": "归一化折损累积增益，评估检索结果的排序质量",
+      "calculation": "normalized_dcg(retrieved_docs, gold_docs, k=10)"
+    },
+    {
+      "name": "Recall@k",
+      "definition": "前k个检索结果中相关文档的召回率",
+      "calculation": "relevant_in_top_k / total_relevant"
+    },
+    {
+      "name": "MRR",
+      "definition": "平均倒数排名，衡量第一个相关文档的排名",
+      "calculation": "mean(1 / rank_of_first_relevant)"
+    }
+  ],
+  "supported_tasks": [
+    "文档检索 (Document Retrieval)",
+    "问答检索 (QA Retrieval)"
+  ],
+  "supported_languages": [
+    "英语 (English)",
+    "中文 (Chinese)",
+    "其他11种语言"
+  ],
+  "test_method": "使用大语言模型自动生成针对特定任务、领域和语言的查询和相关文档。评估IR模型在这些自动生成的测试数据上的检索性能。使用标准IR指标（如nDCG@10、Recall@k、MRR）进行评估。",
+  "advantages": [
+    "成本效益高 - 自动生成测试数据，无需昂贵的人工标注",
+    "动态更新 - 可快速适应新兴领域和语言",
+    "数据新鲜度 - 生成的测试数据几乎不可能被现有检索器的训练集覆盖",
+    "全面覆盖 - 涵盖多样化的任务、领域和语言"
+  ],
+  "validation": {
+    "finding": "AIR-Bench生成的测试数据与人工标注的测试数据高度一致",
+    "reliability": "使AIR-Bench成为评估IR模型的可靠基准"
+  },
+  "version_history": [
+    "24.04 - 初始版本",
+    "24.05 - 扩展版本",
+    "未来版本 - 持续扩展中"
+  ],
+  "motivation": "当前基于预定义领域和人工标注数据的基准在应对新兴领域的评估需求时面临成本和效率限制。AIR-Bench通过自动化生成解决了这一问题，使得评估能够以成本高效和高效的方式满足新兴领域的需求。",
+  "technical_features": [
+    "LLM驱动的自动数据生成",
+    "多任务评估框架",
+    "跨领域评估能力",
+    "多语言支持",
+    "版本化管理"
+  ],
+  "limitations": [
+    "依赖LLM生成质量",
+    "可能存在生成数据的偏差",
+    "需要验证生成数据的代表性"
+  ],
+  "use_cases": [
+    "信息检索模型开发",
+    "跨领域检索评估",
+    "多语言检索系统测试",
+    "新兴领域适应性评估"
+  ],
+  "github": "https://github.com/AIR-Bench/AIR-Bench",
+  "publication_venue": "ACL 2025",
+  "notes": "AIR-Bench是首个采用自动化生成方法的异构信息检索基准，解决了传统基准在覆盖新兴领域时的成本和效率问题。通过LLM自动生成测试数据，AIR-Bench能够快速适应新的任务、领域和语言，同时保持与人工标注数据相当的质量。当前版本覆盖2个任务、9个领域和13种语言，共69个数据集，并将持续扩展。评估时应明确使用的AIR-Bench版本（如24.04或24.05）以确保结果可比性。",
+  "research_doc": "agents-toolchain/doc-eval-system/air_bench_research.md",
+  "last_reviewed": "2025-11-17"
+}

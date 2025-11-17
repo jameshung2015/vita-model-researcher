@@ -1,0 +1,82 @@
+{
+  "id": "benchmark.mmau",
+  "name": "MMAU",
+  "description": "MMAU (Massive Multi-Task Audio Understanding and Reasoning) 是一个大规模多任务音频理解和推理基准，旨在评估大型音频-语言模型（LALMs）的专家级多模态推理和知识检索能力。包含10,000个精心策划的音频片段，配有人工标注的自然语言问题和答案，涵盖语音、环境声音和音乐三大音频领域。",
+  "source": "Adobe Research et al., 2024",
+  "provider": "Adobe Research",
+  "category": "audio_understanding",
+  "datasets": [
+    {
+      "name": "MMAU",
+      "description": "10k音频片段配对的问答数据，涵盖语音、声音和音乐三大领域",
+      "link": "https://mmaubench.github.io/",
+      "license": "Research use"
+    },
+    {
+      "name": "MMAU-Pro",
+      "description": "更具挑战性和全面性的音频通用智能评估基准",
+      "link": "https://arxiv.org/abs/2508.13992",
+      "license": "Research use"
+    }
+  ],
+  "audio_domains": [
+    "语音 (Speech)",
+    "环境声音 (Environmental Sounds)",
+    "音乐 (Music)"
+  ],
+  "task_categories": [
+    "推理任务 (Reasoning) - 16个任务",
+    "信息提取任务 (Information Extraction) - 11个任务"
+  ],
+  "evaluation_dimensions": [
+    "高级音频感知能力",
+    "复杂推理能力",
+    "领域特定知识检索",
+    "专家级理解能力"
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "所有任务的总体准确率",
+      "calculation": "correct / total"
+    },
+    {
+      "name": "task_accuracy",
+      "definition": "各个任务的准确率",
+      "calculation": "correct_per_task / total_per_task"
+    },
+    {
+      "name": "domain_accuracy",
+      "definition": "各音频领域（语音/声音/音乐）的准确率",
+      "calculation": "correct_per_domain / total_per_domain"
+    }
+  ],
+  "test_method": "向模型提供音频片段和相应的自然语言问题，评估模型的回答准确性。问题需要基于音频感知的复杂、深思熟虑的推理和知识检索能力。评估涵盖27个不同的任务，测试模型在各个音频领域的专家级能力。",
+  "example_scores": {
+    "Gemini 2.0 Flash": "59.93% (MMAU论文)",
+    "Qwen2-Audio": "52.50% (MMAU论文, SOTA开源模型)",
+    "GPT-4o": "~58% (MMAU论文)",
+    "GLM-4-Voice": "~51% (MMAU论文)"
+  },
+  "total_tasks": 27,
+  "total_audio_clips": 10000,
+  "technical_features": [
+    "三大音频领域全覆盖",
+    "专家级认知能力测试",
+    "人工标注高质量数据",
+    "27个多样化任务",
+    "推理与信息提取并重"
+  ],
+  "key_challenges": [
+    "需要领域特定专业知识",
+    "复杂的多模态推理",
+    "高级音频感知能力",
+    "知识检索与应用"
+  ],
+  "website": "https://mmaubench.github.io/",
+  "paper": "https://arxiv.org/abs/2410.19168",
+  "github": "https://github.com/Sakshi113/MMAU",
+  "notes": "MMAU强调高级感知和需要领域特定知识的推理，挑战模型处理类似专家面临的任务。即使是最先进的Gemini 2.0 Flash也仅达到59.93%的准确率，最好的开源模型Qwen2-Audio仅达到52.50%，表明MMAU对当前音频-语言模型提出了重大挑战。该基准独特地测试LALMs的高级认知能力，要求模型进行基于音频感知的复杂、深思熟虑的推理和知识检索。",
+  "research_doc": "agents-toolchain/doc-eval-system/mmau_research.md",
+  "last_reviewed": "2025-11-17"
+}

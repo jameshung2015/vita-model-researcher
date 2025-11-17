@@ -1,0 +1,83 @@
+{
+  "id": "benchmark.audiobench",
+  "name": "AudioBench",
+  "description": "AudioBench是一个通用的音频大语言模型（AudioLLM）评估基准，涵盖8个不同任务和26个数据集（其中7个为新提出的数据集）。主要评估三个方面：语音理解、音频场景理解和语音理解（副语言特征）。",
+  "source": "Wang et al., NAACL 2025",
+  "provider": "AudioLLMs Team",
+  "category": "audio_llm_comprehensive",
+  "datasets": [
+    {
+      "name": "AudioBench",
+      "description": "包含26个数据集，覆盖8个任务类型，超过50个数据集支持（截至2025年3月）",
+      "link": "https://github.com/AudioLLMs/AudioBench",
+      "license": "Research use"
+    }
+  ],
+  "evaluation_areas": [
+    "语音理解 (Speech Understanding)",
+    "音频场景理解 (Audio Scene Understanding)",
+    "语音理解-副语言特征 (Voice Understanding - Paralinguistic)"
+  ],
+  "task_types": [
+    "自动语音识别 (ASR)",
+    "语音翻译 (Speech Translation)",
+    "音频字幕生成 (Audio Captioning)",
+    "语音问答 (Speech QA)",
+    "音频问答 (Audio QA)",
+    "情感识别 (Emotion Recognition)",
+    "口音识别 (Accent Recognition)",
+    "其他副语言任务"
+  ],
+  "metrics": [
+    {
+      "name": "task_specific_metrics",
+      "definition": "根据不同任务类型使用相应的评估指标",
+      "calculation": "ASR使用WER/CER，问答使用accuracy，字幕生成使用BLEU/METEOR等"
+    },
+    {
+      "name": "overall_score",
+      "definition": "所有任务的综合表现分数",
+      "calculation": "weighted_average(task_scores)"
+    }
+  ],
+  "evaluation_dimensions": [
+    "指令跟随能力",
+    "多任务泛化能力",
+    "音频理解准确性",
+    "副语言特征识别"
+  ],
+  "test_method": "使用官方评测工具包，对AudioLLM在26个数据集上的8个任务进行全面评估。每个任务使用专门的评估指标（如ASR任务的WER、问答任务的准确率等）。支持自动化评测流程和实时排行榜。",
+  "key_findings": [
+    "没有单一模型在所有任务上表现一致优秀",
+    "不同模型在不同任务类型上有各自优势",
+    "指令跟随能力是AudioLLM的关键能力差异点"
+  ],
+  "example_scores": {
+    "Qwen-Audio": "在多个任务上表现优异（具体分数见排行榜）",
+    "SALMONN": "在音频字幕生成任务上表现较好",
+    "LTU": "在语音理解任务上表现较好",
+    "Gemini-1.5-Pro": "在综合任务上表现优异"
+  },
+  "total_tasks": 8,
+  "total_datasets": "50+ (截至2025年3月)",
+  "original_datasets": 7,
+  "technical_features": [
+    "开源评测工具包",
+    "实时排行榜",
+    "多任务全面评估",
+    "标准化评测流程",
+    "持续更新的数据集库"
+  ],
+  "supported_platforms": [
+    "Hugging Face Space（排行榜）",
+    "GitHub（评测工具包）",
+    "本地评测环境"
+  ],
+  "website": "https://github.com/AudioLLMs/AudioBench",
+  "paper": "https://arxiv.org/abs/2406.16020",
+  "github": "https://github.com/AudioLLMs/AudioBench",
+  "publication_venue": "NAACL 2025 Main Conference",
+  "notes": "AudioBench填补了AudioLLM指令跟随能力综合评估的空白，是首个针对音频信号条件下指令跟随能力的全面基准。研究评估了5个流行模型，发现没有单一模型在所有任务上都表现出色，表明AudioLLM领域仍有很大改进空间。截至2025年3月，AudioBench已支持超过50个数据集，并持续扩展中。评估时应指定使用的数据集版本和评测配置以确保可复现性。",
+  "research_doc": "agents-toolchain/doc-eval-system/audiobench_research.md",
+  "last_reviewed": "2025-11-17"
+}
