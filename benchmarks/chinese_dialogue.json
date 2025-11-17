@@ -1,0 +1,36 @@
+{
+  "id": "benchmark.chinese_dialogue",
+  "name": "Chinese Dialogue Understanding",
+  "description": "Evaluates Chinese conversational understanding, context tracking, and natural response generation.",
+  "source": "Chinese NLP Benchmarks",
+  "datasets": [
+    {
+      "name": "Chinese Dialogue Dataset",
+      "link": "https://example.com/chinese-dialogue",
+      "license": "Various"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "dialogue_coherence",
+      "definition": "Multi-turn dialogue coherence score",
+      "calculation": "human_coherence_rating"
+    },
+    {
+      "name": "context_accuracy",
+      "definition": "Accuracy in tracking conversation context",
+      "calculation": "correct_context_refs / total_refs"
+    },
+    {
+      "name": "response_quality",
+      "definition": "Quality of generated responses",
+      "calculation": "avg(response_ratings)"
+    }
+  ],
+  "test_method": "Evaluate multi-turn Chinese dialogues with context tracking, entity resolution, and natural response generation. Include both task-oriented and chitchat scenarios.",
+  "example_scores": {
+    "Doubao Realtime": "4.2/5 dialogue quality",
+    "GPT-4": "4.5/5 dialogue quality"
+  },
+  "notes": "Should test Chinese-specific phenomena: honorifics, measure words, context-dependent particles. Include both Mandarin and regional variations."
+}

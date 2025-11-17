@@ -1,0 +1,36 @@
+{
+  "id": "benchmark.domain_nlu_accuracy",
+  "name": "Domain-Specific NLU Accuracy",
+  "description": "Evaluates natural language understanding accuracy for domain-specific intents and entities (automotive, IoT, customer service, etc.).",
+  "source": "Domain NLU Benchmarks",
+  "datasets": [
+    {
+      "name": "Domain-Specific Intent Datasets",
+      "link": "https://example.com/domain-nlu",
+      "license": "Various"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "intent_accuracy",
+      "definition": "Intent classification accuracy",
+      "calculation": "correct_intents / total_utterances"
+    },
+    {
+      "name": "slot_f1",
+      "definition": "Entity/slot extraction F1 score",
+      "calculation": "2 * (precision * recall) / (precision + recall)"
+    },
+    {
+      "name": "domain_coverage",
+      "definition": "Coverage of domain-specific vocabulary",
+      "calculation": "recognized_terms / total_domain_terms"
+    }
+  ],
+  "test_method": "Evaluate on domain-specific NLU tasks with specialized vocabulary, entities, and intent patterns. Test cross-domain generalization.",
+  "example_scores": {
+    "DusBot automotive": "95% intent accuracy in vehicle control",
+    "General NLU baseline": "78% intent accuracy in specialized domains"
+  },
+  "notes": "Domain-specific NLU requires fine-tuning or domain adaptation. Performance varies significantly across domains."
+}

@@ -1,0 +1,41 @@
+{
+  "id": "benchmark.multilingual_quality",
+  "name": "Multilingual Voice Quality",
+  "description": "Evaluates voice synthesis quality across multiple languages, including pronunciation accuracy and accent authenticity.",
+  "source": "Multilingual TTS Benchmarks",
+  "datasets": [
+    {
+      "name": "Common Voice",
+      "link": "https://commonvoice.mozilla.org/",
+      "license": "CC0"
+    },
+    {
+      "name": "CSS10",
+      "link": "https://github.com/Kyubyong/css10",
+      "license": "Various"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "mos_per_language",
+      "definition": "MOS quality score for each language",
+      "calculation": "avg(quality_ratings) per language"
+    },
+    {
+      "name": "pronunciation_accuracy",
+      "definition": "Native speaker assessment of pronunciation",
+      "calculation": "correct_pronunciations / total_words"
+    },
+    {
+      "name": "accent_authenticity",
+      "definition": "Authenticity of native accent",
+      "calculation": "avg(accent_ratings)"
+    }
+  ],
+  "test_method": "Evaluate TTS quality across supported languages with native speaker panels. Test phonetic coverage and language-specific phenomena.",
+  "example_scores": {
+    "ElevenLabs Multilingual v2": "4.5+ MOS across 29 languages",
+    "Google Cloud TTS": "4.2 average across languages"
+  },
+  "notes": "Multilingual evaluation requires native speakers for each language. Quality often varies significantly across languages based on training data availability."
+}

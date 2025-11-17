@@ -1,0 +1,37 @@
+{
+  "id": "benchmark.emotion_mos",
+  "name": "Emotional Speech Quality (MOS)",
+  "description": "Mean Opinion Score evaluation of emotional speech synthesis quality and emotional expressiveness.",
+  "source": "Emotional TTS Evaluation",
+  "datasets": [
+    {
+      "name": "Emotional Speech Synthesis Corpus",
+      "link": "https://example.com/emotional-tts",
+      "license": "Various"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "emotion_mos",
+      "definition": "MOS for emotional speech quality (1-5 scale)",
+      "calculation": "avg(quality_ratings)"
+    },
+    {
+      "name": "emotion_accuracy",
+      "definition": "Accuracy of perceived emotion",
+      "calculation": "correct_emotion_perceptions / total_samples"
+    },
+    {
+      "name": "emotional_expressiveness",
+      "definition": "Degree of emotional expressiveness",
+      "calculation": "avg(expressiveness_ratings)"
+    }
+  ],
+  "test_method": "Synthesize speech with various emotions (happy, sad, angry, neutral, etc.). Listeners rate quality and identify perceived emotion.",
+  "example_scores": {
+    "iFlyTek emotional TTS": "4.2 MOS with >85% emotion accuracy",
+    "ElevenLabs emotion control": "4.4 MOS",
+    "Neutral TTS baseline": "3.8 MOS"
+  },
+  "notes": "Emotional TTS evaluation requires careful control of text content and speaker characteristics. Cultural differences affect emotional expression and perception."
+}

@@ -1,0 +1,37 @@
+{
+  "id": "benchmark.latency_benchmark",
+  "name": "Realtime Latency Benchmark",
+  "description": "Measures end-to-end latency for realtime voice interactions including first-token latency and streaming performance.",
+  "source": "Realtime AI Performance Standards",
+  "datasets": [
+    {
+      "name": "Latency Test Suite",
+      "link": "https://example.com/latency-tests",
+      "license": "Various"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "first_token_latency",
+      "definition": "Time from end of user speech to first output token (milliseconds)",
+      "calculation": "time_first_token - time_speech_end"
+    },
+    {
+      "name": "total_latency",
+      "definition": "End-to-end response latency (milliseconds)",
+      "calculation": "time_response_complete - time_speech_end"
+    },
+    {
+      "name": "streaming_throughput",
+      "definition": "Audio generation throughput (real-time factor)",
+      "calculation": "audio_duration / generation_time"
+    }
+  ],
+  "test_method": "Measure latency in controlled network conditions. Record timestamps for speech end, first token, and response completion. Average over 100+ test cases.",
+  "example_scores": {
+    "GPT-4o Realtime": "320ms first token (OpenAI)",
+    "ElevenLabs Turbo": "280ms first token",
+    "Doubao Realtime": "450ms first token"
+  },
+  "notes": "Network latency should be controlled or measured separately. Tests should cover various input lengths and complexity levels."
+}

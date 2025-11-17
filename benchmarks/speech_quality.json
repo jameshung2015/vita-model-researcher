@@ -1,0 +1,37 @@
+{
+  "id": "benchmark.speech_quality",
+  "name": "Speech Quality (MOS)",
+  "description": "Mean Opinion Score evaluation of synthesized speech quality, naturalness, and intelligibility.",
+  "source": "ITU-T P.800 Standard",
+  "datasets": [
+    {
+      "name": "MOS Test Corpus",
+      "link": "https://www.itu.int/rec/T-REC-P.800",
+      "license": "ITU Standard"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "mos",
+      "definition": "Mean Opinion Score (1-5 scale)",
+      "calculation": "avg(human_ratings)"
+    },
+    {
+      "name": "naturalness",
+      "definition": "Perceived naturalness of speech",
+      "calculation": "avg(naturalness_ratings)"
+    },
+    {
+      "name": "intelligibility",
+      "definition": "Speech intelligibility score",
+      "calculation": "word_recognition_rate"
+    }
+  ],
+  "test_method": "Human listeners rate speech samples on 1-5 scale for quality, naturalness, and intelligibility following ITU-T P.800 protocol.",
+  "example_scores": {
+    "ElevenLabs Turbo v2.5": "4.6 MOS",
+    "Human speech": "4.8 MOS",
+    "Google Cloud TTS": "4.3 MOS"
+  },
+  "notes": "Requires human evaluation panel. Typically 20+ listeners per sample. Can use automated PESQ/POLQA for objective estimates."
+}

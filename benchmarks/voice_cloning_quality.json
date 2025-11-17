@@ -1,0 +1,41 @@
+{
+  "id": "benchmark.voice_cloning_quality",
+  "name": "Voice Cloning Quality",
+  "description": "Comprehensive evaluation of voice cloning quality including similarity, naturalness, and prosody preservation.",
+  "source": "Voice Cloning Benchmarks",
+  "datasets": [
+    {
+      "name": "VCTK Corpus",
+      "link": "https://datashare.ed.ac.uk/handle/10283/3443",
+      "license": "Creative Commons"
+    },
+    {
+      "name": "LibriSpeech",
+      "link": "https://www.openslr.org/12",
+      "license": "CC BY 4.0"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "speaker_similarity",
+      "definition": "Similarity to target speaker (MOS)",
+      "calculation": "avg(similarity_ratings)"
+    },
+    {
+      "name": "naturalness",
+      "definition": "Naturalness of cloned voice (MOS)",
+      "calculation": "avg(naturalness_ratings)"
+    },
+    {
+      "name": "cosine_similarity",
+      "definition": "Speaker embedding cosine similarity",
+      "calculation": "cosine(cloned_embedding, reference_embedding)"
+    }
+  ],
+  "test_method": "Clone voices from 1-5 minute samples. Evaluate both similarity to reference and overall quality. Test with diverse speakers and languages.",
+  "example_scores": {
+    "ElevenLabs": "4.5/5 cloning quality with 3min sample",
+    "State-of-the-art research": "4.2/5 with 1min sample"
+  },
+  "notes": "Voice cloning quality depends on reference audio quality and duration. Should evaluate across different speaker characteristics (gender, age, accent)."
+}

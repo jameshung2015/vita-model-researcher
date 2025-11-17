@@ -1,0 +1,96 @@
+{
+  "model_name": "GPT Realtime",
+  "short_description": "OpenAI's low-latency multimodal realtime API for natural speech-to-speech conversation with audio-native reasoning.",
+  "homepage": "https://platform.openai.com/docs/guides/realtime",
+  "model_card_link": "https://platform.openai.com/docs/api-reference/realtime",
+  "license": "OpenAI API Terms of Use",
+  "provenance": {
+    "provider": "OpenAI",
+    "release_date": "2024-10-01",
+    "notes": "GPT-4o Realtime API launched October 2024 for WebRTC-based low-latency multimodal conversations with native audio understanding and generation."
+  },
+  "input_types": [
+    "text",
+    "audio"
+  ],
+  "output_types": [
+    "text",
+    "audio"
+  ],
+  "architecture_family": "multimodal transformer with realtime audio processing",
+  "architecture_details": "Built on GPT-4o architecture with specialized low-latency audio encoding and streaming capabilities; native audio understanding without intermediate transcription; supports natural turn-taking and interruptions.",
+  "size_params": {
+    "notable_variants": [
+      "gpt-4o-realtime",
+      "gpt-4o-realtime-preview"
+    ],
+    "activated_params_note": "Parameter counts undisclosed; optimized for sub-second response latency in speech-to-speech scenarios."
+  },
+  "capabilities": {
+    "realtime_audio": true,
+    "natural_turn_taking": true,
+    "interruption_handling": true,
+    "function_calling": true,
+    "streaming": true,
+    "multimodal_reasoning": "Native audio understanding without transcription step",
+    "voice_customization": "Supports voice selection and output audio configuration",
+    "low_latency": "Optimized for <1s response time in conversational scenarios"
+  },
+  "tags": [
+    "closed-weight",
+    "api",
+    "realtime",
+    "voice",
+    "multimodal",
+    "low-latency",
+    "conversational-ai"
+  ],
+  "variants": [
+    {
+      "name": "gpt-4o-realtime-preview",
+      "params": 1,
+      "context_windows": [
+        128000
+      ],
+      "default_seq_len": 128000,
+      "default_num_gpus": 0,
+      "model_card_link": "https://platform.openai.com/docs/guides/realtime",
+      "release_date": "2024-10-01",
+      "hardware_recommendations": {
+        "notes": "Hosted via OpenAI Realtime API over WebRTC; no customer-managed hardware required."
+      },
+      "tags": [
+        "preview",
+        "realtime",
+        "voice"
+      ]
+    }
+  ],
+  "evaluation": {
+    "papers": [
+      "https://openai.com/index/introducing-gpt-4o-realtime-api/"
+    ],
+    "benchmarks": [
+      "conversational_turn_taking",
+      "audio_understanding",
+      "speech_quality"
+    ],
+    "model_cards": [
+      "https://platform.openai.com/docs/guides/realtime"
+    ]
+  },
+  "inference": {
+    "latency_ms": 320,
+    "latency_level": "low",
+    "throughput_rps": null,
+    "concurrency": null,
+    "memory_gb": null,
+    "quantization_friendly": false,
+    "supported_hardware": [
+      "OpenAI API"
+    ],
+    "distributed_support": false,
+    "notes": "WebRTC-based realtime audio streaming with sub-second latency. Pricing (2024-10): $5/$20 per million audio input/output tokens ($100/200 per million text tokens). Supports Server VAD for automatic turn detection and interruption handling. Native audio processing without intermediate transcription reduces latency."
+  },
+  "notes": "GPT-4o Realtime API enables natural voice conversations with low-latency audio-in, audio-out interaction. Supports natural turn-taking, interruptions, and function calling within conversations. Uses WebRTC for streaming audio transport. Distinct from standard GPT-4o as it processes audio natively rather than via transcription/TTS pipeline."
+}

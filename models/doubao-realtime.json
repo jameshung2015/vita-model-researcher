@@ -1,0 +1,114 @@
+{
+  "model_name": "Doubao Realtime",
+  "short_description": "字节跳动豆包实时语音交互API，支持低延迟语音对话和多轮上下文理解。",
+  "homepage": "https://www.volcengine.com/docs/82379/1298794",
+  "model_card_link": "https://www.volcengine.com/product/doubao",
+  "license": "ByteDance API Terms of Use",
+  "provenance": {
+    "provider": "ByteDance (字节跳动)",
+    "release_date": "2024-08-15",
+    "notes": "豆包实时语音API基于字节跳动大模型技术，提供低延迟的语音交互能力，支持中英文对话、情感识别和多轮上下文理解。"
+  },
+  "input_types": [
+    "text",
+    "audio"
+  ],
+  "output_types": [
+    "text",
+    "audio"
+  ],
+  "architecture_family": "multimodal transformer with streaming audio",
+  "architecture_details": "基于字节跳动自研的多模态大模型架构，集成语音识别、自然语言理解和语音合成能力；采用流式处理技术实现低延迟交互；支持端到端的语音理解和生成。",
+  "size_params": {
+    "notable_variants": [
+      "doubao-realtime-standard",
+      "doubao-realtime-pro"
+    ],
+    "activated_params_note": "参数规模未公开；通过火山引擎API提供托管服务。"
+  },
+  "capabilities": {
+    "realtime_voice": true,
+    "chinese_optimization": "针对中文对话场景优化，支持方言理解",
+    "emotion_recognition": "支持语音情感识别和情感化回复",
+    "multi_turn_dialogue": true,
+    "context_awareness": "支持多轮对话上下文理解",
+    "streaming": true,
+    "interruption_handling": true,
+    "voice_customization": "支持多种音色选择和语速调节",
+    "low_latency": "首字延迟<500ms，适合实时交互场景"
+  },
+  "tags": [
+    "closed-weight",
+    "api",
+    "realtime",
+    "voice",
+    "chinese",
+    "multimodal",
+    "bytedance",
+    "low-latency"
+  ],
+  "variants": [
+    {
+      "name": "doubao-realtime-standard",
+      "params": 1,
+      "context_windows": [
+        8192
+      ],
+      "default_seq_len": 8192,
+      "default_num_gpus": 0,
+      "model_card_link": "https://www.volcengine.com/docs/82379/1298794",
+      "release_date": "2024-08-15",
+      "hardware_recommendations": {
+        "notes": "通过火山引擎API托管服务，无需客户自行管理硬件。"
+      },
+      "tags": [
+        "standard",
+        "cost-optimized"
+      ]
+    },
+    {
+      "name": "doubao-realtime-pro",
+      "params": 1,
+      "context_windows": [
+        32768
+      ],
+      "default_seq_len": 32768,
+      "default_num_gpus": 0,
+      "model_card_link": "https://www.volcengine.com/docs/82379/1298794",
+      "release_date": "2024-09-20",
+      "hardware_recommendations": {
+        "notes": "通过火山引擎API托管服务，支持更长上下文和更高质量的语音交互。"
+      },
+      "tags": [
+        "pro",
+        "flagship"
+      ]
+    }
+  ],
+  "evaluation": {
+    "papers": [],
+    "benchmarks": [
+      "chinese_dialogue",
+      "emotion_recognition",
+      "speech_quality",
+      "latency_benchmark"
+    ],
+    "model_cards": [
+      "https://www.volcengine.com/product/doubao"
+    ]
+  },
+  "inference": {
+    "latency_ms": 450,
+    "latency_level": "low",
+    "throughput_rps": null,
+    "concurrency": null,
+    "memory_gb": null,
+    "quantization_friendly": false,
+    "supported_hardware": [
+      "Volcengine API"
+    ],
+    "distributed_support": false,
+    "notes": "基于WebSocket的实时音频流传输，首字延迟<500ms。支持中英文混合对话、情感识别和多轮上下文理解。定价根据音频时长和调用次数计费（具体价格需咨询火山引擎）。支持VAD（语音活动检测）自动断句和打断处理。"
+  },
+  "notes": "豆包实时语音API是字节跳动基于其大模型技术推出的实时语音交互服务，特别针对中文对话场景优化。支持情感识别、多轮对话和低延迟交互，适用于智能客服、语音助手、车载交互等场景。通过火山引擎平台提供API服务。"
+}

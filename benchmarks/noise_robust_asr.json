@@ -1,0 +1,41 @@
+{
+  "id": "benchmark.noise_robust_asr",
+  "name": "Noise-Robust Speech Recognition",
+  "description": "Evaluates ASR performance under various noise conditions typical in real-world environments (traffic, office, machinery, etc.).",
+  "source": "Robust ASR Benchmarks",
+  "datasets": [
+    {
+      "name": "CHiME-4",
+      "link": "https://chimechallenge.github.io/chime4/",
+      "license": "Research Use"
+    },
+    {
+      "name": "Aurora-4",
+      "link": "http://www.cstr.ed.ac.uk/projects/apollo/",
+      "license": "LDC"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "wer_snr_0",
+      "definition": "Word Error Rate at 0dB SNR",
+      "calculation": "(S + D + I) / N"
+    },
+    {
+      "name": "wer_snr_10",
+      "definition": "Word Error Rate at 10dB SNR",
+      "calculation": "(S + D + I) / N"
+    },
+    {
+      "name": "wer_snr_20",
+      "definition": "Word Error Rate at 20dB SNR",
+      "calculation": "(S + D + I) / N"
+    }
+  ],
+  "test_method": "Add calibrated noise (babble, traffic, machinery) at various SNR levels. Measure WER degradation compared to clean conditions.",
+  "example_scores": {
+    "DusBot-Auto": "8% WER at 10dB SNR (vehicle noise)",
+    "iFlyTek Spark": "5% WER at 20dB SNR"
+  },
+  "notes": "Automotive scenarios typically involve 10-20dB SNR with engine and road noise. Should test with domain-specific noise profiles."
+}

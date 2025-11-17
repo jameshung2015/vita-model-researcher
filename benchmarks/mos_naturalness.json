@@ -1,0 +1,32 @@
+{
+  "id": "benchmark.mos_naturalness",
+  "name": "Speech Naturalness (MOS)",
+  "description": "Mean Opinion Score evaluation focused on speech naturalness and human-likeness.",
+  "source": "ITU-T P.800 Standard",
+  "datasets": [
+    {
+      "name": "Naturalness Test Corpus",
+      "link": "https://www.itu.int/rec/T-REC-P.800",
+      "license": "ITU Standard"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "mos_naturalness",
+      "definition": "Mean Opinion Score for naturalness (1-5 scale)",
+      "calculation": "avg(human_naturalness_ratings)"
+    },
+    {
+      "name": "human_likeness",
+      "definition": "Percentage of samples rated as human-like",
+      "calculation": "samples_rated_4_or_5 / total_samples"
+    }
+  ],
+  "test_method": "Human listeners rate speech naturalness on 1-5 scale. Compare synthetic speech against human baseline. Minimum 20 listeners per sample.",
+  "example_scores": {
+    "ElevenLabs Multilingual v2": "4.7 MOS naturalness",
+    "Human speech": "4.8-4.9 MOS",
+    "Traditional TTS": "3.5-4.0 MOS"
+  },
+  "notes": "Naturalness evaluation is subjective and varies by listener background. Should use native speakers and control for listener demographics."
+}

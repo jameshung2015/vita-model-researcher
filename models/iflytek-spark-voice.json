@@ -1,0 +1,122 @@
+{
+  "model_name": "iFlyTek Spark Voice",
+  "short_description": "科大讯飞星火语音大模型，集成语音识别、理解和合成的端到端实时对话系统。",
+  "homepage": "https://xinghuo.xfyun.cn/sparkapi",
+  "model_card_link": "https://www.xfyun.cn/doc/spark/SparkVoice.html",
+  "license": "iFlyTek API Terms of Use",
+  "provenance": {
+    "provider": "iFlyTek (科大讯飞)",
+    "release_date": "2024-06-01",
+    "notes": "星火语音大模型整合了科大讯飞在语音技术领域20余年的积累，结合星火认知大模型能力，提供端到端的智能语音交互体验。支持多语言、多方言识别和高质量语音合成。"
+  },
+  "input_types": [
+    "text",
+    "audio"
+  ],
+  "output_types": [
+    "text",
+    "audio"
+  ],
+  "architecture_family": "end-to-end speech understanding and generation",
+  "architecture_details": "集成科大讯飞自研的ASR（自动语音识别）、NLU（自然语言理解）、对话管理和TTS（语音合成）技术；基于星火认知大模型提供深度语义理解；采用流式架构实现低延迟交互；支持声纹识别和情感计算。",
+  "size_params": {
+    "notable_variants": [
+      "spark-voice-v3.5",
+      "spark-voice-v4.0"
+    ],
+    "activated_params_note": "模型参数规模未公开；通过讯飞开放平台API提供服务。"
+  },
+  "capabilities": {
+    "realtime_voice": true,
+    "asr_accuracy": "支持多语言和23种方言识别，准确率>98%",
+    "tts_quality": "支持500+音色，情感化语音合成",
+    "dialect_support": "支持粤语、四川话、河南话等23种方言",
+    "multi_language": "支持中文、英文、日语、韩语等多语言",
+    "voice_cloning": "支持少样本语音克隆和定制音色",
+    "emotion_synthesis": "支持情感化语音合成（开心、悲伤、愤怒等）",
+    "speaker_recognition": "支持声纹识别和说话人分离",
+    "noise_robustness": "强噪声环境下识别准确率>95%",
+    "streaming": true,
+    "low_latency": "首字延迟<300ms，全链路延迟<600ms"
+  },
+  "tags": [
+    "closed-weight",
+    "api",
+    "voice",
+    "chinese",
+    "multimodal",
+    "iflytek",
+    "dialect",
+    "low-latency",
+    "asr",
+    "tts"
+  ],
+  "variants": [
+    {
+      "name": "spark-voice-v3.5",
+      "params": 1,
+      "context_windows": [
+        8192
+      ],
+      "default_seq_len": 8192,
+      "default_num_gpus": 0,
+      "model_card_link": "https://www.xfyun.cn/doc/spark/SparkVoice.html",
+      "release_date": "2024-06-01",
+      "hardware_recommendations": {
+        "notes": "通过讯飞开放平台API托管服务，无需客户自行管理硬件。"
+      },
+      "tags": [
+        "standard",
+        "multi-dialect"
+      ]
+    },
+    {
+      "name": "spark-voice-v4.0",
+      "params": 1,
+      "context_windows": [
+        32768
+      ],
+      "default_seq_len": 32768,
+      "default_num_gpus": 0,
+      "model_card_link": "https://www.xfyun.cn/doc/spark/SparkVoice.html",
+      "release_date": "2024-10-15",
+      "hardware_recommendations": {
+        "notes": "通过讯飞开放平台API托管服务，支持更长上下文和更高质量的语音交互。"
+      },
+      "tags": [
+        "flagship",
+        "ultra-low-latency"
+      ]
+    }
+  ],
+  "evaluation": {
+    "papers": [
+      "https://www.iflytek.com/research/sparkvoice-technical-report"
+    ],
+    "benchmarks": [
+      "aishell_1_test",
+      "aishell_2",
+      "wenetspeech",
+      "mos_tts_quality",
+      "dialect_recognition",
+      "emotion_mos"
+    ],
+    "model_cards": [
+      "https://www.xfyun.cn/doc/spark/SparkVoice.html"
+    ]
+  },
+  "inference": {
+    "latency_ms": 280,
+    "latency_level": "low",
+    "throughput_rps": null,
+    "concurrency": null,
+    "memory_gb": null,
+    "quantization_friendly": false,
+    "supported_hardware": [
+      "iFlyTek API"
+    ],
+    "distributed_support": false,
+    "notes": "基于WebSocket的实时音频流传输，首字延迟<300ms，全链路延迟<600ms。ASR准确率>98%，支持23种方言和多语言。TTS支持500+音色和情感化合成，MOS分>4.5。定价按音频时长计费（具体价格见讯飞开放平台）。支持流式识别、VAD断句、噪声抑制等功能。"
+  },
+  "notes": "科大讯飞星火语音大模型是基于星火认知大模型的端到端语音交互系统，整合了科大讯飞在ASR、TTS领域的核心技术优势。特别针对中文和方言场景优化，支持23种方言识别和500+音色合成。具备声纹识别、情感计算、噪声鲁棒等能力，适用于智能客服、车载语音、智能家居、教育等场景。"
+}

@@ -1,0 +1,144 @@
+{
+  "model_name": "DusBot",
+  "short_description": "思必驰智能对话机器人平台，提供车载、IoT场景的全链路语音交互解决方案。",
+  "homepage": "https://www.aispeech.com/product/dusbot",
+  "model_card_link": "https://www.aispeech.com/technology/dusbot",
+  "license": "AISpeech Commercial License",
+  "provenance": {
+    "provider": "AISpeech (思必驰)",
+    "release_date": "2023-12-01",
+    "notes": "DusBot是思必驰推出的全栈式智能对话平台，深耕车载、IoT等垂直领域，提供从语音唤醒、识别、理解到合成的完整对话能力。特别针对车载场景优化，支持离在线混合部署。"
+  },
+  "input_types": [
+    "text",
+    "audio"
+  ],
+  "output_types": [
+    "text",
+    "audio"
+  ],
+  "architecture_family": "domain-optimized speech dialogue system",
+  "architecture_details": "集成思必驰自研的语音前端处理、ASR、NLU、对话管理（DM）、NLG和TTS技术栈；针对车载和IoT场景定制优化；支持离线和在线混合部署；采用轻量化模型设计适配边缘设备；集成多轮对话管理和上下文理解能力。",
+  "size_params": {
+    "notable_variants": [
+      "DusBot-Cloud",
+      "DusBot-Edge",
+      "DusBot-Auto"
+    ],
+    "activated_params_note": "云端模型参数规模未公开；边缘模型优化至<500MB，适配车机和IoT设备。"
+  },
+  "capabilities": {
+    "automotive_optimized": "深度优化车载场景，支持导航、音乐、电话等垂直领域",
+    "far_field_asr": "支持远场语音识别，3-5米识别准确率>95%",
+    "noise_cancellation": "车载噪声环境下识别准确率>92%",
+    "domain_nlu": "支持车载、家居、IoT等垂直领域深度语义理解",
+    "multi_turn_dialogue": true,
+    "context_management": "支持多轮对话上下文管理和打断恢复",
+    "offline_capable": "支持离线语音识别和基础对话能力",
+    "hybrid_deployment": "支持离在线混合部署，离线保底、在线增强",
+    "wake_word": "支持自定义唤醒词和低功耗唤醒",
+    "low_latency": "云端首字延迟<400ms，离线模式<200ms"
+  },
+  "tags": [
+    "commercial",
+    "voice",
+    "automotive",
+    "iot",
+    "chinese",
+    "edge-computing",
+    "offline-capable",
+    "aispeech"
+  ],
+  "variants": [
+    {
+      "name": "DusBot-Cloud",
+      "params": 1,
+      "context_windows": [
+        16384
+      ],
+      "default_seq_len": 16384,
+      "default_num_gpus": 0,
+      "model_card_link": "https://www.aispeech.com/product/dusbot",
+      "release_date": "2023-12-01",
+      "hardware_recommendations": {
+        "notes": "云端部署方案，通过思必驰API服务提供。"
+      },
+      "tags": [
+        "cloud",
+        "full-featured"
+      ]
+    },
+    {
+      "name": "DusBot-Edge",
+      "params": 0.5,
+      "context_windows": [
+        2048
+      ],
+      "default_seq_len": 2048,
+      "default_num_gpus": 0,
+      "model_card_link": "https://www.aispeech.com/product/dusbot",
+      "release_date": "2024-03-15",
+      "hardware_recommendations": {
+        "fp16_gb_per_gpu": 0.5,
+        "recommended_num_gpus": 0,
+        "notes": "轻量化边缘模型，<500MB，适配ARM Cortex-A系列CPU，支持Android/Linux车机平台。"
+      },
+      "deploy_requirements": "ARM Cortex-A53以上或等效CPU，2GB RAM，支持NNAPI/SNPE加速",
+      "tags": [
+        "edge",
+        "offline-capable",
+        "lightweight"
+      ]
+    },
+    {
+      "name": "DusBot-Auto",
+      "params": 1,
+      "context_windows": [
+        8192
+      ],
+      "default_seq_len": 8192,
+      "default_num_gpus": 0,
+      "model_card_link": "https://www.aispeech.com/product/dusbot-auto",
+      "release_date": "2024-06-20",
+      "hardware_recommendations": {
+        "notes": "车载专用版本，支持离在线混合部署，适配主流车机平台（高通SA8155P/SA8295P等）。"
+      },
+      "tags": [
+        "automotive",
+        "hybrid",
+        "flagship"
+      ]
+    }
+  ],
+  "evaluation": {
+    "papers": [],
+    "benchmarks": [
+      "automotive_dialogue",
+      "far_field_asr",
+      "noise_robust_asr",
+      "domain_nlu_accuracy",
+      "mos_tts_quality"
+    ],
+    "model_cards": [
+      "https://www.aispeech.com/technology/dusbot"
+    ]
+  },
+  "inference": {
+    "latency_ms": 350,
+    "latency_level": "low",
+    "throughput_rps": null,
+    "concurrency": null,
+    "memory_gb": 0.5,
+    "quantization_friendly": true,
+    "supported_hardware": [
+      "AISpeech Cloud API",
+      "Qualcomm SA8155P",
+      "Qualcomm SA8295P",
+      "ARM Cortex-A",
+      "NVIDIA Jetson"
+    ],
+    "distributed_support": false,
+    "notes": "云端首字延迟<400ms，边缘离线模式<200ms。车载场景远场识别准确率>95%（3-5米），噪声环境>92%。支持离在线混合部署：离线基础能力保底，在线能力增强。边缘模型<500MB，适配主流车机芯片平台。TTS支持多音色和情感化合成，MOS>4.3。"
+  },
+  "notes": "思必驰DusBot是面向车载和IoT场景的全栈式智能对话平台，已服务超过200家车企和IoT厂商，装机量超过1亿台。深度优化车载场景的远场识别、噪声鲁棒、垂直领域理解等能力。支持离在线混合部署，兼顾网络弱覆盖场景和高级能力需求。提供从唤醒词定制、ASR/TTS、对话管理到知识图谱的全链路解决方案。"
+}
