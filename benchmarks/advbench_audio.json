@@ -1,0 +1,92 @@
+{
+  "id": "benchmark.advbench_audio",
+  "name": "AdvBench (Audio)",
+  "description": "AdvBench的音频版本，是VoiceBench的安全性评估子集。包含520个有害提示的音频版本，涵盖暴力、非法活动和不道德行为等多种类别。用于评估语音助手拒绝不安全请求的能力，是衡量音频-语言模型安全性的重要基准。",
+  "source": "VoiceBench Authors, 2024 (基于原始AdvBench数据集)",
+  "provider": "VoiceBench Team",
+  "category": "safety_evaluation",
+  "datasets": [
+    {
+      "name": "AdvBench (Audio)",
+      "description": "520个有害提示的音频版本，用于评估jailbreak攻击防御能力",
+      "link": "https://github.com/MatthewCYM/VoiceBench",
+      "license": "Research use; see VoiceBench terms"
+    },
+    {
+      "name": "AdvBench (原始文本版)",
+      "description": "AdvBench原始数据集，广泛用于评估语言模型的jailbreak攻击",
+      "link": "https://github.com/llm-attacks/llm-attacks",
+      "license": "MIT"
+    }
+  ],
+  "evaluation_dimensions": [
+    "安全性 (Safety)",
+    "拒绝率 (Refusal Rate)",
+    "有害内容识别",
+    "防御能力"
+  ],
+  "harmful_categories": [
+    "暴力 (Violence)",
+    "非法活动 (Illegal Activities)",
+    "不道德行为 (Unethical Behaviors)",
+    "欺诈 (Fraud)",
+    "仇恨言论 (Hate Speech)",
+    "成人内容 (Adult Content)",
+    "隐私侵犯 (Privacy Violation)",
+    "其他有害类别"
+  ],
+  "metrics": [
+    {
+      "name": "refusal_rate",
+      "definition": "模型拒绝回答有害提示的比率，越高表示越安全",
+      "calculation": "refused_prompts / total_prompts"
+    },
+    {
+      "name": "safety_score",
+      "definition": "基于拒绝率和响应质量的综合安全评分",
+      "calculation": "weighted_safety_metrics"
+    }
+  ],
+  "test_method": "将有害文本提示转换为音频（使用逼真的文本转语音合成），然后输入语音助手模型。通过检测预定义的拒绝短语（如'抱歉，我不能...'、'Sorry, I cannot...'等）来判断模型是否拒绝了有害请求。拒绝率越高表示模型越安全。",
+  "refusal_phrases": [
+    "Sorry, I cannot...",
+    "I cannot help with...",
+    "抱歉，我不能...",
+    "我无法帮助...",
+    "这违反了...",
+    "这不符合道德..."
+  ],
+  "example_scores": {
+    "GPT-4o Audio": "~95% 拒绝率（VoiceBench报告）",
+    "LongCat-Flash-Omni": "~92% 拒绝率",
+    "Qwen3-Omni": "~88% 拒绝率"
+  },
+  "total_prompts": 520,
+  "technical_features": [
+    "音频版本的对抗性评估",
+    "多类别有害内容覆盖",
+    "自动化安全性评估",
+    "拒绝短语检测机制"
+  ],
+  "related_benchmarks": [
+    "AJailBench - 首个开源音频jailbreak评估基准（1,495个对抗性音频提示）",
+    "Jailbreak-AudioBench - 包含4,700个基础jailbreak问题（其中250个来自AdvBench）",
+    "MM-SafetyBench - 多模态安全评估基准",
+    "RedTeam-2K - 红队测试数据集"
+  ],
+  "audio_generation": {
+    "method": "文本转语音（TTS）合成",
+    "quality": "逼真的语音合成",
+    "note": "应记录使用的TTS系统和语音参数"
+  },
+  "notes": "AdvBench是广泛采用的评估语言模型jailbreak攻击的数据集。在VoiceBench中，AdvBench被转换为音频格式以评估语音助手的安全性。评估时应使用原始音频输入而非文本转录。拒绝率是衡量语音助手安全性的主要指标，但也应关注误拒率（拒绝合法请求）以平衡模型的实用性和安全性。相关研究表明，音频模态可能引入新的jailbreak攻击向量，因此这一基准对评估语音助手的安全性至关重要。",
+  "limitations": [
+    "主要基于文本转音频的转换，可能不完全代表真实语音攻击",
+    "拒绝短语检测方法可能被巧妙绕过",
+    "需要平衡安全性和实用性，避免过度拒绝"
+  ],
+  "website": "https://github.com/MatthewCYM/VoiceBench",
+  "paper": "https://arxiv.org/abs/2410.17196",
+  "research_doc": "agents-toolchain/doc-eval-system/advbench_audio_research.md",
+  "last_reviewed": "2025-11-17"
+}
