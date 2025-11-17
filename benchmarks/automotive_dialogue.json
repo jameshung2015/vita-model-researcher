@@ -1,0 +1,36 @@
+{
+  "id": "benchmark.automotive_dialogue",
+  "name": "Automotive Dialogue Benchmark",
+  "description": "Evaluates voice interaction performance in automotive scenarios including navigation, music control, phone calls, and vehicle control.",
+  "source": "Automotive Voice Assistant Benchmarks",
+  "datasets": [
+    {
+      "name": "Automotive Intent Dataset",
+      "link": "https://example.com/automotive-intent",
+      "license": "Various"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "intent_accuracy",
+      "definition": "Accuracy in understanding automotive-specific intents",
+      "calculation": "correct_intents / total_utterances"
+    },
+    {
+      "name": "slot_filling_f1",
+      "definition": "F1 score for extracting slot values (destination, artist, contact, etc.)",
+      "calculation": "2 * (precision * recall) / (precision + recall)"
+    },
+    {
+      "name": "task_completion_rate",
+      "definition": "Rate of successful task completion",
+      "calculation": "completed_tasks / total_tasks"
+    }
+  ],
+  "test_method": "Test automotive-specific dialogue scenarios: navigation, entertainment control, phone management, vehicle settings, information queries. Evaluate in both quiet and noisy cabin conditions.",
+  "example_scores": {
+    "DusBot-Auto": "93% intent accuracy",
+    "Commercial baseline": "89% intent accuracy"
+  },
+  "notes": "Should include domain-specific vocabulary (POI names, road types, vehicle features). Test with various accents and speaking styles typical in driving scenarios."
+}

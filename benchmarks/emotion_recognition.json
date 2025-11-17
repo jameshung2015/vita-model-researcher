@@ -1,0 +1,36 @@
+{
+  "id": "benchmark.emotion_recognition",
+  "name": "Speech Emotion Recognition",
+  "description": "Evaluates accuracy in recognizing emotions from speech audio (happiness, sadness, anger, neutral, etc.).",
+  "source": "Speech Emotion Recognition Benchmarks",
+  "datasets": [
+    {
+      "name": "IEMOCAP",
+      "link": "https://sail.usc.edu/iemocap/",
+      "license": "Research Use"
+    },
+    {
+      "name": "CASIA Chinese Emotion",
+      "link": "http://www.chineseldc.org/",
+      "license": "Research Use"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "emotion_accuracy",
+      "definition": "Classification accuracy for emotion categories",
+      "calculation": "correct_predictions / total_samples"
+    },
+    {
+      "name": "f1_score",
+      "definition": "Weighted F1 score across emotion classes",
+      "calculation": "2 * (precision * recall) / (precision + recall)"
+    }
+  ],
+  "test_method": "Classify speech samples into emotion categories. Evaluate on standard emotion corpora with balanced class distribution.",
+  "example_scores": {
+    "State-of-the-art": "75% accuracy on IEMOCAP",
+    "Doubao Realtime": "72% emotion accuracy"
+  },
+  "notes": "Emotion recognition from speech is challenging due to speaker variability and cultural differences. Chinese and English emotion expression differ significantly."
+}

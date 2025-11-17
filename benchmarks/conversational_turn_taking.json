@@ -1,0 +1,36 @@
+{
+  "id": "benchmark.conversational_turn_taking",
+  "name": "Conversational Turn-Taking",
+  "description": "Evaluates natural turn-taking behavior in voice conversations, including interruption handling and response timing.",
+  "source": "Realtime Voice AI Evaluation Framework",
+  "datasets": [
+    {
+      "name": "Turn-Taking Corpus",
+      "link": "https://example.com/turn-taking",
+      "license": "Various"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "turn_accuracy",
+      "definition": "Percentage of correct turn transitions",
+      "calculation": "correct_turns / total_turns"
+    },
+    {
+      "name": "interruption_rate",
+      "definition": "Rate of appropriate interruption handling",
+      "calculation": "appropriate_interruptions / total_interruptions"
+    },
+    {
+      "name": "response_timing",
+      "definition": "Naturalness of response timing (milliseconds)",
+      "calculation": "avg_response_latency"
+    }
+  ],
+  "test_method": "Evaluate conversational scenarios with turn-taking, interruptions, and backchanneling. Measure system's ability to detect speaker turns and respond appropriately.",
+  "example_scores": {
+    "GPT-4o Realtime": "95% turn accuracy (OpenAI internal)",
+    "Human baseline": "98% turn accuracy"
+  },
+  "notes": "Requires real-time audio streaming setup. Evaluation considers both technical accuracy and naturalness of interaction."
+}

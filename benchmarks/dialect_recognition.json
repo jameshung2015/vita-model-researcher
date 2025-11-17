@@ -1,0 +1,36 @@
+{
+  "id": "benchmark.dialect_recognition",
+  "name": "Dialect Recognition and ASR",
+  "description": "Evaluates speech recognition accuracy across regional dialects and ability to identify dialect type.",
+  "source": "Dialect ASR Research",
+  "datasets": [
+    {
+      "name": "Chinese Dialect Dataset",
+      "link": "http://www.chineseldc.org/",
+      "license": "Research Use"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "dialect_identification_accuracy",
+      "definition": "Accuracy in identifying speaker dialect",
+      "calculation": "correct_dialect_predictions / total_samples"
+    },
+    {
+      "name": "cer_per_dialect",
+      "definition": "Character Error Rate for each dialect",
+      "calculation": "(S + D + I) / N per dialect"
+    },
+    {
+      "name": "cross_dialect_robustness",
+      "definition": "ASR performance degradation on non-standard dialects",
+      "calculation": "cer_dialect / cer_standard"
+    }
+  ],
+  "test_method": "Evaluate ASR and dialect identification across major Chinese dialects (Cantonese, Sichuanese, Min, Wu, etc.) and other language dialects.",
+  "example_scores": {
+    "iFlyTek Spark": "23 dialects supported, >90% accuracy",
+    "Standard Mandarin baseline": "95%+ accuracy"
+  },
+  "notes": "Dialect ASR is challenging due to phonological, lexical, and grammatical differences. Chinese dialects are particularly diverse and mutually unintelligible."
+}

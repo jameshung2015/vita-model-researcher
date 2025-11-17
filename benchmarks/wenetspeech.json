@@ -1,0 +1,36 @@
+{
+  "id": "benchmark.wenetspeech",
+  "name": "WenetSpeech",
+  "description": "Large-scale Chinese speech recognition benchmark with 10,000+ hours of multi-domain audio from YouTube.",
+  "source": "Zhang et al., 2022",
+  "datasets": [
+    {
+      "name": "WenetSpeech",
+      "link": "https://github.com/wenet-e2e/WenetSpeech",
+      "license": "Apache 2.0"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "cer",
+      "definition": "Character Error Rate on test sets",
+      "calculation": "(S + D + I) / N"
+    },
+    {
+      "name": "cer_meeting",
+      "definition": "CER on meeting domain",
+      "calculation": "(S + D + I) / N"
+    },
+    {
+      "name": "cer_news",
+      "definition": "CER on news domain",
+      "calculation": "(S + D + I) / N"
+    }
+  ],
+  "test_method": "Evaluate on WenetSpeech test sets covering multiple domains (audiobook, commentary, documentary, drama, interview, etc.). Use character-level error rate.",
+  "example_scores": {
+    "Paraformer": "7.47% CER on test_net",
+    "iFlyTek Spark": "6.8% CER (estimated)"
+  },
+  "notes": "WenetSpeech includes diverse Chinese speech scenarios with varying audio quality. Important benchmark for practical Chinese ASR systems."
+}

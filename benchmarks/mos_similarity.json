@@ -1,0 +1,32 @@
+{
+  "id": "benchmark.mos_similarity",
+  "name": "Voice Similarity (MOS)",
+  "description": "Mean Opinion Score evaluation for voice cloning similarity - how well synthetic voice matches the target speaker.",
+  "source": "Voice Cloning Evaluation Standards",
+  "datasets": [
+    {
+      "name": "Speaker Similarity Corpus",
+      "link": "https://example.com/speaker-similarity",
+      "license": "Various"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "mos_similarity",
+      "definition": "Mean Opinion Score for speaker similarity (1-5 scale)",
+      "calculation": "avg(similarity_ratings)"
+    },
+    {
+      "name": "speaker_verification_eer",
+      "definition": "Equal Error Rate for speaker verification",
+      "calculation": "eer_metric"
+    }
+  ],
+  "test_method": "Listeners compare cloned voice to reference speaker and rate similarity. Also use objective speaker verification metrics (cosine similarity, EER).",
+  "example_scores": {
+    "ElevenLabs voice cloning": "4.4 MOS similarity",
+    "Perfect clone": "5.0 MOS",
+    "Different speaker": "1.0 MOS"
+  },
+  "notes": "Voice similarity evaluation requires reference audio from target speaker. Both subjective (MOS) and objective (speaker verification) metrics should be reported."
+}

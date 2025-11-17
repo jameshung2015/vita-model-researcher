@@ -1,0 +1,36 @@
+{
+  "id": "benchmark.audio_understanding",
+  "name": "Audio Understanding",
+  "description": "Evaluates native audio understanding capability without intermediate transcription, including emotion, speaker characteristics, and acoustic events.",
+  "source": "Multimodal Audio Benchmarks",
+  "datasets": [
+    {
+      "name": "Audio Understanding Dataset",
+      "link": "https://example.com/audio-understanding",
+      "license": "Various"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "emotion_accuracy",
+      "definition": "Accuracy in detecting speaker emotions from audio",
+      "calculation": "correct_emotions / total_samples"
+    },
+    {
+      "name": "speaker_characteristics",
+      "definition": "Accuracy in identifying speaker attributes (age, gender, accent)",
+      "calculation": "correct_attributes / total_attributes"
+    },
+    {
+      "name": "acoustic_event_detection",
+      "definition": "Accuracy in detecting non-speech audio events",
+      "calculation": "correct_events / total_events"
+    }
+  ],
+  "test_method": "Test native audio understanding without ASR intermediate step. Includes emotion recognition, speaker profiling, and acoustic scene understanding.",
+  "example_scores": {
+    "GPT-4o Realtime": "87% emotion accuracy (OpenAI internal)",
+    "Qwen3-Audio": "85% comprehensive audio understanding"
+  },
+  "notes": "Evaluates end-to-end audio reasoning, not just transcription + NLU. Important for realtime voice AI systems."
+}

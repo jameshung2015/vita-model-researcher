@@ -1,0 +1,139 @@
+{
+  "model_name": "ElevenLabs Voice",
+  "short_description": "ElevenLabs high-fidelity AI voice generation and conversational AI platform with natural prosody and emotion.",
+  "homepage": "https://elevenlabs.io/",
+  "model_card_link": "https://elevenlabs.io/docs/introduction",
+  "license": "ElevenLabs API Terms of Use",
+  "provenance": {
+    "provider": "ElevenLabs",
+    "release_date": "2024-01-15",
+    "notes": "ElevenLabs launched conversational AI capabilities in early 2024, building on their industry-leading text-to-speech technology. Focuses on ultra-realistic voice synthesis with natural emotion and prosody."
+  },
+  "input_types": [
+    "text",
+    "audio"
+  ],
+  "output_types": [
+    "text",
+    "audio"
+  ],
+  "architecture_family": "neural audio synthesis with conversational AI",
+  "architecture_details": "Proprietary deep learning architecture combining neural TTS with conversational AI capabilities; specialized in capturing natural prosody, emotion, and speaking style; supports voice cloning from short audio samples; built on transformer-based models with custom audio encoders.",
+  "size_params": {
+    "notable_variants": [
+      "ElevenLabs Turbo v2.5",
+      "ElevenLabs Multilingual v2",
+      "ElevenLabs Conversational AI"
+    ],
+    "activated_params_note": "Parameter counts undisclosed; optimized for high-fidelity voice generation and low-latency conversational scenarios."
+  },
+  "capabilities": {
+    "ultra_realistic_tts": "Industry-leading natural voice synthesis with human-like prosody",
+    "voice_cloning": "Professional voice cloning from 1-5 minutes of audio",
+    "emotion_control": "Fine-grained control over emotion, stability, and style",
+    "multi_language": "Support for 29+ languages with native-quality synthesis",
+    "conversational_ai": "Real-time conversational AI with natural turn-taking",
+    "streaming": true,
+    "low_latency": "Turbo v2.5 optimized for <300ms latency",
+    "custom_voices": "Create and fine-tune custom voice models",
+    "sound_effects": "Experimental sound effects generation",
+    "dubbing": "AI-powered video dubbing with lip-sync"
+  },
+  "tags": [
+    "closed-weight",
+    "api",
+    "tts",
+    "voice-cloning",
+    "conversational-ai",
+    "multilingual",
+    "low-latency",
+    "high-fidelity"
+  ],
+  "variants": [
+    {
+      "name": "ElevenLabs Turbo v2.5",
+      "params": 1,
+      "context_windows": [
+        5000
+      ],
+      "default_seq_len": 5000,
+      "default_num_gpus": 0,
+      "model_card_link": "https://elevenlabs.io/docs/models",
+      "release_date": "2024-09-01",
+      "hardware_recommendations": {
+        "notes": "Hosted via ElevenLabs API; optimized for low-latency streaming TTS."
+      },
+      "tags": [
+        "turbo",
+        "low-latency",
+        "streaming"
+      ]
+    },
+    {
+      "name": "ElevenLabs Multilingual v2",
+      "params": 1,
+      "context_windows": [
+        5000
+      ],
+      "default_seq_len": 5000,
+      "default_num_gpus": 0,
+      "model_card_link": "https://elevenlabs.io/docs/models",
+      "release_date": "2024-03-15",
+      "hardware_recommendations": {
+        "notes": "Hosted via ElevenLabs API; supports 29+ languages with high fidelity."
+      },
+      "tags": [
+        "multilingual",
+        "high-fidelity"
+      ]
+    },
+    {
+      "name": "ElevenLabs Conversational AI",
+      "params": 1,
+      "context_windows": [
+        10000
+      ],
+      "default_seq_len": 10000,
+      "default_num_gpus": 0,
+      "model_card_link": "https://elevenlabs.io/docs/conversational-ai",
+      "release_date": "2024-11-01",
+      "hardware_recommendations": {
+        "notes": "Hosted via ElevenLabs API; WebSocket-based real-time conversational AI."
+      },
+      "tags": [
+        "conversational",
+        "realtime",
+        "flagship"
+      ]
+    }
+  ],
+  "evaluation": {
+    "papers": [
+      "https://elevenlabs.io/research"
+    ],
+    "benchmarks": [
+      "mos_naturalness",
+      "mos_similarity",
+      "voice_cloning_quality",
+      "multilingual_quality",
+      "latency_benchmark"
+    ],
+    "model_cards": [
+      "https://elevenlabs.io/docs/introduction"
+    ]
+  },
+  "inference": {
+    "latency_ms": 280,
+    "latency_level": "low",
+    "throughput_rps": null,
+    "concurrency": null,
+    "memory_gb": null,
+    "quantization_friendly": false,
+    "supported_hardware": [
+      "ElevenLabs API"
+    ],
+    "distributed_support": false,
+    "notes": "WebSocket-based streaming for conversational AI; Turbo v2.5 achieves <300ms latency for TTS. Industry-leading voice quality with MOS scores consistently >4.5. Pricing (2024): Starter $5/month (30K chars), Creator $22/month (100K chars), Pro $99/month (500K chars), Scale $330/month (2M chars). Supports voice cloning, emotion control, and 29+ languages. Conversational AI in beta with WebSocket API."
+  },
+  "notes": "ElevenLabs is a leading AI voice technology platform, recognized for industry-best natural-sounding voice synthesis. Originally focused on TTS and voice cloning, they expanded into conversational AI in 2024. Key strengths include ultra-realistic prosody, professional voice cloning from short samples, and broad multilingual support. Popular use cases include audiobook narration, content creation, accessibility tools, and conversational agents. The Turbo v2.5 model balances quality and latency for real-time applications."
+}

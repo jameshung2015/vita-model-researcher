@@ -1,0 +1,38 @@
+{
+  "id": "benchmark.mos_tts_quality",
+  "name": "TTS Quality (MOS)",
+  "description": "Mean Opinion Score evaluation specifically for Text-to-Speech quality, including naturalness, prosody, and intelligibility.",
+  "source": "ITU-T P.800/P.85 Standards",
+  "datasets": [
+    {
+      "name": "TTS Evaluation Corpus",
+      "link": "https://www.itu.int/rec/T-REC-P.85",
+      "license": "ITU Standard"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "mos_naturalness",
+      "definition": "MOS for speech naturalness (1-5 scale)",
+      "calculation": "avg(naturalness_ratings)"
+    },
+    {
+      "name": "mos_intelligibility",
+      "definition": "MOS for speech intelligibility (1-5 scale)",
+      "calculation": "avg(intelligibility_ratings)"
+    },
+    {
+      "name": "prosody_score",
+      "definition": "Prosody and rhythm naturalness",
+      "calculation": "avg(prosody_ratings)"
+    }
+  ],
+  "test_method": "Synthesize standardized text passages. Human raters evaluate naturalness, intelligibility, and prosody on 1-5 scale following ITU standards.",
+  "example_scores": {
+    "ElevenLabs": "4.6 MOS naturalness",
+    "iFlyTek Spark TTS": "4.3 MOS naturalness",
+    "DusBot TTS": "4.3 MOS naturalness",
+    "Human speech": "4.8 MOS"
+  },
+  "notes": "TTS quality evaluation requires diverse test sentences covering phonetic phenomena. Should evaluate with native speakers for each language."
+}

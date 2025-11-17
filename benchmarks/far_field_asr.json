@@ -1,0 +1,36 @@
+{
+  "id": "benchmark.far_field_asr",
+  "name": "Far-Field Speech Recognition",
+  "description": "Evaluates speech recognition accuracy at distances of 3-5 meters, typical for smart home and automotive scenarios.",
+  "source": "Far-Field ASR Research",
+  "datasets": [
+    {
+      "name": "AMI Corpus",
+      "link": "https://groups.inf.ed.ac.uk/ami/corpus/",
+      "license": "Creative Commons"
+    },
+    {
+      "name": "CHiME Challenge",
+      "link": "https://chimechallenge.github.io/",
+      "license": "Research Use"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "wer_3m",
+      "definition": "Word Error Rate at 3 meters distance",
+      "calculation": "(S + D + I) / N"
+    },
+    {
+      "name": "wer_5m",
+      "definition": "Word Error Rate at 5 meters distance",
+      "calculation": "(S + D + I) / N"
+    }
+  ],
+  "test_method": "Record speech at 3m and 5m distances using array microphones. Evaluate WER on clean and reverberant environments.",
+  "example_scores": {
+    "DusBot-Edge": "5.2% WER at 3m",
+    "Commercial baseline": "8.5% WER at 3m"
+  },
+  "notes": "Far-field ASR requires robust acoustic front-end processing including beamforming, dereverberation, and echo cancellation."
+}
