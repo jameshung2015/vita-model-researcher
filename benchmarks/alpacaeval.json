@@ -9,7 +9,9 @@
     {
       "name": "AlpacaEval数据集",
       "description": "805个指令跟随评估样例，简化自AlpacaFarm评估集",
-      "link": "https://huggingface.co/datasets/tatsu-lab/alpaca_eval",
+      "link": "https://tatsu-lab.github.io/alpaca_eval/",
+      "huggingface": "https://huggingface.co/datasets/tatsu-lab/alpaca_eval",
+      "github": "https://github.com/tatsu-lab/alpaca_eval",
       "license": "Apache-2.0"
     },
     {
@@ -19,12 +21,30 @@
       "license": "Apache-2.0"
     }
   ],
+  "data_structure": {
+    "total_samples": "805个指令跟随评估样例",
+    "source": "基于AlpacaFarm生成的数据（AlpacaEval来自AlpacaFarm evaluation set）",
+    "format": "instruction (用户要求) + input (可选上下文) + model_response / reference answer",
+    "evaluator": {
+      "alpaca_eval_2.0": "使用gpt4_turbo作为annotator + baseline",
+      "alpaca_eval_original": "使用alpaca_eval_gpt4作为annotator + text-davinci-003作为baseline"
+    },
+    "evaluation_method": "自动评估 (auto-annotator)：使用GPT-4（或其他LLM）评判模型与参考回答的胜率 (win rate)"
+  },
+  "data_examples": [
+    {
+      "example": "instruction: '请帮我写一封邮件给客户，内容是解释我们产品的优势并邀请对方参加下周的演示。' input: 一些上下文（比如产品特性、客户背景）。模型生成回应（邮件文本），然后用评判模型（如GPT-4）比较该回应与baseline回应并判断哪一个更好/是否满足指令。"
+    }
+  ],
   "evaluation_dimensions": [
     "指令跟随能力",
     "回答质量",
     "有用性",
     "准确性",
-    "语言流畅性"
+    "语言流畅性",
+    "对话/指令完成能力",
+    "LLM-as-judge评估效率",
+    "与人类评估的相关性 (0.98 with ChatBot Arena)"
   ],
   "metrics": [
     {

@@ -1,13 +1,55 @@
 {
   "id": "benchmark.voicebench",
   "name": "VoiceBench",
-  "description": "语音对话和理解能力综合评测基准，评估模型在语音交互场景下的表现，包括语音识别、语音理解和语音对话能力。",
+  "description": "VoiceBench是专门为基于LLM的语音助手 (voice assistant)设计的评估基准，评估模型在语音交互场景下的表现，包括语音识别、语音理解、语音对话能力和指令遵循能力。",
   "source": "VoiceBench Team",
+  "provider": "HLT Lab",
+  "category": "voice_assistant_evaluation",
   "datasets": [
     {
       "name": "VoiceBench",
+      "description": "约1,817条语音指令数据，包含多种子任务",
       "link": "https://voicebench.org",
+      "huggingface": "https://huggingface.co/hlt-lab/voicebench",
       "license": "Research use"
+    }
+  ],
+  "data_structure": {
+    "total_samples": "约1,817条数据",
+    "subsets": [
+      "alpacaeval - AlpacaEval语音版本",
+      "commoneval - 通用评估任务",
+      "sd-qa - Speech Data QA",
+      "ifeval - 指令遵循评估",
+      "advbench - 高级基准测试"
+    ],
+    "data_format": "语音指令 (voice commands) + 对应任务 (LLM生成回应)",
+    "audio_types": [
+      "真实录制语音",
+      "TTS/语音克隆生成的合成语音"
+    ],
+    "fields": [
+      "语音 (真实/合成)",
+      "文本指令 (transcript)",
+      "期望行为 (LLM回答)"
+    ]
+  },
+  "evaluation_dimensions": [
+    "语音指令理解 (voice instruction understanding)",
+    "指令执行 (instruction-following)",
+    "语音问答能力 (voice QA)",
+    "对话理解",
+    "真实vs合成语音处理能力",
+    "多种语音质量/噪音/环境适应"
+  ],
+  "data_examples": [
+    {
+      "subset": "ifeval",
+      "example": "语音中包含指令，模型需要理解语音并生成文本回应（或执行指令），类似IFEval的约束指令"
+    },
+    {
+      "subset": "sd-qa",
+      "example": "Speech Data QA - 给语音问答场景，模型从语音中理解问题并回答"
     }
   ],
   "metrics": [
@@ -22,5 +64,5 @@
     "LongCat-Flash-Omni": "88.7",
     "GPT-4o Audio": "~88"
   },
-  "notes": "评测时需使用原始音频输入，不应先转换为文本。记录音频采样率和编码格式以确保一致性。VoiceBench包含AlpacaEval、CommonEval、WildVoice等子基准。"
+  "notes": "评测时需使用原始音频输入，不应先转换为文本。记录音频采样率和编码格式以确保一致性。VoiceBench包含AlpacaEval、CommonEval、WildVoice等子基准。该基准覆盖真实录制和通过TTS/语音克隆生成的语音，以测试模型在多种语音质量、噪音和环境下的表现。"
 }

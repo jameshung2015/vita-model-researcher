@@ -14,9 +14,42 @@
     },
     {
       "name": "MMAU-Pro",
-      "description": "更具挑战性和全面性的音频通用智能评估基准",
+      "description": "更具挑战性和全面性的音频通用智能评估基准，包含5,305个专家注释的问题-答案对",
       "link": "https://arxiv.org/abs/2508.13992",
+      "huggingface": "https://huggingface.co/datasets/gamma-lab-umd/MMAU-Pro",
       "license": "Research use"
+    }
+  ],
+  "data_structure": {
+    "total_samples": "5,305个专家注释 (expert-annotated)的问题-答案对",
+    "question_types": [
+      "多项选择 (MCQ)",
+      "开放式问答 (open-ended QA)"
+    ],
+    "audio_characteristics": {
+      "source": "真实环境 (in the wild)音频样本",
+      "length": "包含长音频片段 (up to 10 minutes)",
+      "types": [
+        "语音 (speech)",
+        "环境声音 (environmental sound)",
+        "音乐 (music)",
+        "混合音频 (combination)"
+      ]
+    },
+    "evaluation_methods": {
+      "mcq": "使用embedding相似性评分 (NV-Embed-v2)",
+      "open_ended": "LLM-as-judge (语言模型作为评审者)",
+      "instruction_following": "正则匹配 (regex)检验输出约束"
+    }
+  },
+  "data_examples": [
+    {
+      "type": "MCQ",
+      "example": "给定音频片段（环境声、音乐或语音），问模型推理问题，例如：'这个声音来自哪个乐器'或'这个人是在室内还是室外说话'"
+    },
+    {
+      "type": "开放性QA",
+      "example": "根据音频内容生成文字回答，例如：'这个人在说什么？他们在说什么主题/内容？'或'这个音乐风格是什么？它在哪个区域?'"
     }
   ],
   "audio_domains": [
@@ -32,7 +65,13 @@
     "高级音频感知能力",
     "复杂推理能力",
     "领域特定知识检索",
-    "专家级理解能力"
+    "专家级理解能力",
+    "空间感知 (spatial audio perception)",
+    "因果和物理推理 (causal & physical reasoning)",
+    "长音频理解 (long audio understanding, up to 10 minutes)",
+    "音乐推理 (music reasoning across 8 regions)",
+    "语音-知识问答 (voice-based STEM and world-knowledge QA)",
+    "指令遵循 (instruction-following with verifiable constraints)"
   ],
   "metrics": [
     {

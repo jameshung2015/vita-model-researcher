@@ -10,7 +10,42 @@
       "name": "AudioBench",
       "description": "包含26个数据集，覆盖8个任务类型，超过50个数据集支持（截至2025年3月）",
       "link": "https://github.com/AudioLLMs/AudioBench",
+      "huggingface": "https://huggingface.co/AudioLLMs/AudioBench",
+      "paper": "https://arxiv.org/abs/2406.16020",
       "license": "Research use"
+    }
+  ],
+  "data_structure": {
+    "total_tasks": 8,
+    "total_datasets": "26个核心数据集，50+支持数据集（截至2025年3月）",
+    "evaluation_metrics": {
+      "asr": "WER (Word Error Rate) / CER (Character Error Rate)",
+      "qa": "Accuracy 或 model-as-judge (LLM评估)",
+      "captioning": "BLEU / METEOR / CIDEr",
+      "classification": "Accuracy / F1-score"
+    },
+    "data_format": "音频片段 + 提示/问题 -> 模型回答 -> 评估metric打分"
+  },
+  "data_examples": [
+    {
+      "task": "ASR (自动语音识别)",
+      "dataset": "LibriSpeech-clean",
+      "example": "给音频，模型转录为文字，使用WER评估"
+    },
+    {
+      "task": "SQA (语音问答)",
+      "dataset": "Public-SG-SpeechQA",
+      "example": "给语音+问题，模型回答，使用LLM评审 (model-as-judge)评分"
+    },
+    {
+      "task": "声音理解QA",
+      "dataset": "AudioCaps-QA, WavCaps-QA",
+      "example": "给自然声音（环境音）+问题（例如'这是什么声音？'），模型生成文字回答"
+    },
+    {
+      "task": "Paralinguistic (副语言特征)",
+      "dataset": "VoxCeleb-Gender, IEMOCAP-Emotion",
+      "example": "给语音，模型判断说话人的性别/情绪"
     }
   ],
   "evaluation_areas": [
