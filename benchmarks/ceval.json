@@ -10,6 +10,7 @@
       "name": "C-Eval",
       "description": "13,948道多项选择题，涵盖52个学科和4个难度等级",
       "link": "https://github.com/hkust-nlp/ceval",
+      "huggingface": "https://huggingface.co/datasets/ceval/ceval-exam",
       "license": "CC BY-NC-SA 4.0"
     },
     {
@@ -17,6 +18,28 @@
       "description": "C-Eval的挑战性子集，需要高级推理能力",
       "link": "https://cevalbenchmark.com/",
       "license": "CC BY-NC-SA 4.0"
+    }
+  ],
+  "data_structure": {
+    "format": "多项选择题 (multiple-choice)",
+    "subjects": "52个学科 (52 disciplines)",
+    "difficulty_levels": "四个难度级别 (easy/中等/难/专业)",
+    "splits": {
+      "dev": "每个学科5个示例（带解释），用于few-shot",
+      "val": "用于超参数调优 (hyper-parameter tuning)",
+      "test": "用于模型评估"
+    },
+    "fields": [
+      "question - 题目",
+      "A/B/C/D - 多个选项",
+      "answer - 正确答案",
+      "explanation - 解释（dev集包含）"
+    ]
+  },
+  "data_examples": [
+    {
+      "subject": "computer_network",
+      "example": "下列关于资本结构理论的说法中，不正确的是____。选项包括代理理论、权衡理论、有企业所得税条件下的MM理论等，每题包含单问+多选+正确答案+解释。"
     }
   ],
   "evaluation_dimensions": [

@@ -1,26 +1,72 @@
 {
   "id": "benchmark.ifeval",
   "name": "IFEval",
-  "description": "Instruction Following Evaluation with verifiable checks covering English instructions that embed regex-like assertions.",
-  "source": "Zheng et al., 2023",
+  "description": "IFEval (Instruction-Following Evaluation) 是一个指令遵循评估基准，专注于可验证指令 (verifiable instructions)的评估。包含541个提示(prompts)，定义了25种可验证指令类型，使用基于规则的自动验证方法评估模型是否完全遵循给定的约束条件。",
+  "source": "Zhou et al., Google Research, 2023",
+  "provider": "Google Research",
+  "category": "instruction_following",
   "datasets": [
     {
       "name": "IFEval",
+      "description": "541个提示，每个包含一个或多个可验证指令",
       "link": "https://github.com/google-research/google-research/tree/master/instruction_following_eval",
       "license": "Apache-2.0"
     }
   ],
+  "data_structure": {
+    "total_prompts": "约541个提示 (prompts)",
+    "verifiable_instructions": "25种可验证指令类型",
+    "instruction_examples": [
+      "至少25句话",
+      "至少三次提到关键词'AI'",
+      "生成至少400个字",
+      "包含特定JSON结构",
+      "特定格式约束"
+    ],
+    "format": "提示 (prompts) + 可验证指令 (verifiable instructions)"
+  },
+  "evaluation_dimensions": [
+    "指令遵循 (instruction-following)",
+    "约束满足 (constraint satisfaction)",
+    "可验证性 (verifiability)",
+    "自动评估能力 (automated evaluation)"
+  ],
+  "data_examples": [
+    {
+      "example": "请写至少400个字，并且至少提到关键词'人工智能'三次。模型回复后，用脚本检查输出是否≥400字，并且关键词'人工智能'出现次数≥3。"
+    },
+    {
+      "example": "请生成一个JSON对象，包含键name、age、hobby，并且键值对数量至少为3对。模型输出后可以用正则/JSON parser验证结构。"
+    }
+  ],
   "metrics": [
     {
+      "name": "strict_accuracy",
+      "definition": "严格匹配 - 完全遵循指令的比例",
+      "calculation": "strict_passing_prompts / total"
+    },
+    {
+      "name": "loose_accuracy",
+      "definition": "宽松匹配 - 大致遵循指令的比例",
+      "calculation": "loose_passing_prompts / total"
+    },
+    {
       "name": "accuracy",
-      "definition": "Share of prompts whose outputs satisfy all programmatic checks",
+      "definition": "通过所有程序化检查的提示比例",
       "calculation": "passing_prompts / total"
     }
   ],
-  "test_method": "Execute the official evaluation harness which parses each output with regex or Python validators.",
+  "test_method": "使用官方评估工具，通过regex或Python验证器解析每个输出。评估模型输出是否满足所有可验证指令约束。指令是'原子(atomic)'的（如计数、关键词出现次数等），评估过程简单、明确。",
+  "key_features": [
+    "可验证指令 (verifiable constraints)",
+    "自动评估 (automated evaluation)",
+    "基于规则 (rule-based)",
+    "减少人工成本和偏差",
+    "可解释性强"
+  ],
   "example_scores": {
     "GPT-4": "88.3 (paper)",
     "PaLM-2": "74.9 (paper)"
   },
-  "notes": "Ensure outputs are captured verbatim; tests are case-sensitive. Mention decoding parameters and whether retries are allowed."
+  "notes": "确保输出逐字捕获；测试区分大小写。记录解码参数和是否允许重试。IFEval与人工评估相比，使用规则自动验证指令是否被遵循，大幅减少人工成本和偏差。可验证指令是'原子'指令（如计数、关键词出现次数等），使评估过程简单、明确、可解释。"
 }

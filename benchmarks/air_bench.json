@@ -10,13 +10,41 @@
       "name": "AIR-Bench 24.04",
       "description": "第一版本，包含多任务、多领域、多语言的IR评测数据",
       "link": "https://github.com/AIR-Bench/AIR-Bench",
+      "huggingface": "https://huggingface.co/AIR-Bench",
+      "paper": "https://arxiv.org/abs/2412.13102",
       "license": "Research use"
     },
     {
       "name": "AIR-Bench 24.05",
       "description": "更新版本，扩展了更多领域和语言",
       "link": "https://github.com/AIR-Bench/AIR-Bench",
+      "huggingface": "https://huggingface.co/AIR-Bench",
       "license": "Research use"
+    }
+  ],
+  "data_structure": {
+    "generation_method": "LLM自动生成（无需人工标注）",
+    "components": [
+      "LLM根据文档集合(corpus)生成查询(queries)",
+      "基于用户画像(user profile)和情境(scenario)生成",
+      "生成负样本文档(non-matching but similar)作为检索干扰"
+    ],
+    "evaluation_flow": [
+      "1. LLM生成查询 + 对应真实匹配文档 + 合成但不匹配的文档",
+      "2. 将合成文档与真实文档集合合并",
+      "3. 使用embedding + 重排序(reranker)模型评估检索",
+      "4. 用LLM验证查询和文档相关性"
+    ],
+    "language_support": [
+      "中文 (qa_news_zh, qa_wiki_zh等子数据集)",
+      "英文",
+      "其他11种语言"
+    ]
+  },
+  "data_examples": [
+    {
+      "subset": "qa_news_zh",
+      "example": "中文新闻文档集合 + 自动生成的查询 + 正确文档 + 干扰文档。例如：LLM生成'某用户(某角色)想查某新闻中的统计数据'，对应真实新闻文档 + 合成（但不真正相关的）文档用来测试检索准确性。"
     }
   ],
   "key_features": [
