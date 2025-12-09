@@ -12,6 +12,8 @@
 - `modelscope_leaderboard.json`
 - `musr.json` MuSR (multistep soft reasoning benchmark)
 - `bbh.json` BIG-Bench Hard (chain-of-thought reasoning stress test)
+- `tau2_bench.json` τ²-Bench（时序推理与因果理解基准）
+- `mcp_mark.json`、`mcp_universe.json` Model Context Protocol 服务器与多工具编排评测
 
 维护要求
 - 必备字段：`id`、`name`、`source`、`datasets`、`test_method`、`example_scores`。

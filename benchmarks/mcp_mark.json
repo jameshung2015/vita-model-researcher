@@ -1,0 +1,40 @@
+{
+  "id": "benchmark.mcp_mark",
+  "name": "MCP-Mark",
+  "description": "Model Context Protocol 工具链合规性与可靠性基准，衡量 MCP 服务器在标准化工具调用、上下文约束和安全策略下的执行成功率。",
+  "source": "Model Context Protocol community",
+  "datasets": [
+    {
+      "name": "MCP-Mark",
+      "link": "https://github.com/modelcontextprotocol/benchmarks",
+      "license": "Apache-2.0"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "success_rate",
+      "definition": "在给定场景下成功完成工具调用与响应校验的比例",
+      "calculation": "passed_tasks / total_tasks"
+    },
+    {
+      "name": "latency_p95",
+      "definition": "端到端工具调用完成的 95 分位延迟",
+      "calculation": "p95(runtime_ms) across all tasks"
+    }
+  ],
+  "inference_environment": {
+    "description": "基于官方 harness 与本地或托管的 MCP 服务器进行评测，要求稳定的网络与可观测性。",
+    "fields": {
+      "hardware": "CPU-only 或 GPU（取决于后端模型）",
+      "framework": "Model Context Protocol reference server + client SDK",
+      "batch_size": "逐任务串行执行",
+      "concurrency": "1-5（可通过 CLI 控制）",
+      "measurement_script": "https://github.com/modelcontextprotocol/benchmarks/tree/main/mcp-mark"
+    }
+  },
+  "test_method": "使用 MCP-Mark 提供的 CLI/pytest harness 启动目标 MCP 服务器，按类别（文件、搜索、长周期任务等）运行脚本并汇总成功率与延迟。",
+  "example_scores": {
+    "Reference MCP server": "见官方仓库 leaderboard"
+  },
+  "notes": "适用于验证 MCP 服务器在工具发现、请求/响应 schema、错误恢复与安全策略方面的符合度，可与代理评测结合分析。"
+}
