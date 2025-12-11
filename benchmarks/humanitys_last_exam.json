@@ -1,0 +1,36 @@
+{
+  "id": "benchmark.humanitys_last_exam",
+  "name": "Humanity's Last Exam",
+  "description": "Expert-level benchmark with 2,500+ questions across broad subjects (math, physics, biology, CS, humanities) designed to measure state-of-the-art LLM capabilities beyond MMLU saturation.",
+  "source": "Center for AI Safety and Scale AI (2025)",
+  "datasets": [
+    {
+      "name": "Humanity's Last Exam",
+      "link": "https://scale.com/leaderboard/humanitys_last_exam",
+      "license": "Research use"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "Percentage of expert-level questions answered correctly across all subject areas",
+      "calculation": "correct_answers / total_questions"
+    }
+  ],
+  "inference_environment": {
+    "description": "Multimodal benchmark requiring comprehension of diagrams/figures (14% of questions), with both multiple-choice (24%) and free-response formats",
+    "fields": {
+      "question_composition": "Mathematics (41%), Physics (9%), Biology/Medicine (11%), Humanities/Social Science (9%), CS/AI (10%), Engineering (4%), Chemistry (7%), Other (9%)",
+      "multimodal_content": "14% of questions require diagram/figure comprehension",
+      "format": "76% free-response, 24% multiple-choice"
+    }
+  },
+  "test_method": "Present expert-level questions across diverse subjects. Evaluate answers against expert consensus. Questions sourced from nearly 1000 subject experts affiliated with 500+ institutions across 50 countries. Finalized April 3, 2025.",
+  "example_scores": {
+    "Human graduate students": "~90% (baseline)",
+    "Sup AI multi-model system": "52.15% (Dec 2025, SOTA)",
+    "Gemini 3.0 Pro": "37.5-41% (Nov 2025)",
+    "Early AI systems": "~30% (initial benchmarks)"
+  },
+  "notes": "Created because LLMs achieve >90% on MMLU. Designed as final closed-ended academic benchmark with broad subject coverage. Controversy: FutureHouse found 53.3% of biology/chemistry rationales conflicted with published evidence (chemistry 57.0%, biology 51.6%). Rapid progress expected; models may exceed 50% by end of 2025. See arxiv.org/abs/2501.14249 for technical report."
+}

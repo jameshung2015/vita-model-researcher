@@ -1,0 +1,35 @@
+{
+  "id": "benchmark.matharena_apex",
+  "name": "MathArena Apex",
+  "description": "Set of 12 hard math competition problems from 2025 competitions, designed to rigorously assess LLM reasoning and generalization on uncontaminated problems not seen during training.",
+  "source": "ETH Zürich SRI Lab (May 2025)",
+  "datasets": [
+    {
+      "name": "MathArena Apex 2025",
+      "link": "https://huggingface.co/datasets/MathArena/apex_2025",
+      "license": "Research use"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "solve_rate",
+      "definition": "Percentage of hard competition problems solved correctly",
+      "calculation": "solved_problems / 12"
+    }
+  ],
+  "inference_environment": {
+    "description": "Hard problems manually curated from public final-answer competitions held in 2025, primarily from AoPS community and primary sources",
+    "fields": {
+      "problem_count": "12 hard problems",
+      "evaluation_runs": "16 independent runs per model (vs standard 4 runs) for robust statistical analysis",
+      "public_release": "All 12 questions became public Dec 8, 2025 with SMT 2025 release"
+    }
+  },
+  "test_method": "Present competition-level math problems requiring advanced reasoning. Evaluate final answers against official solutions. Focus on problems sufficiently hard to not be already solved by SOTA models. Manual curation from 2025 competitions ensures no training contamination.",
+  "example_scores": {
+    "Gemini 3.0 Pro": "23.4% (Nov 2025)",
+    "GPT-5 (High) with scaffolding": "Score not publicly disclosed",
+    "8 reasoning models (prompted)": "16 runs each (specific scores vary)"
+  },
+  "notes": "Part of broader MathArena platform evaluating LLMs on latest math competitions and olympiads. Focus on contamination-free evaluation using 2025 problems. Problems manually searched through competition sources. Available on Hugging Face. See arxiv.org/pdf/2505.23281 for methodology paper and matharena.ai for live leaderboard."
+}

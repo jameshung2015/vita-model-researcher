@@ -6,14 +6,14 @@
   "provenance": {
     "provider": "Google DeepMind",
     "release_date": "2024-02-01",
-    "notes": "Public Gemini API models include 1.5 Pro/Flash and 2.0 Flash variants; multimodal support and long-context per docs."
+    "notes": "Public Gemini API models include 1.5 Pro/Flash, 2.0 Flash, and 3.0 series (Pro, Deep Think, Flash) released Nov 2025; multimodal support and long-context per docs."
   },
   "input_types": ["text", "image", "audio", "video"],
   "output_types": ["text"],
   "architecture_family": "multimodal",
   "architecture_details": "Proprietary multimodal transformer; long-context support in select variants (e.g., 1.5 Pro experimental 1M tokens per docs).",
   "size_params": {
-    "notable_variants": ["gemini-1.5-pro", "gemini-1.5-flash", "gemini-2.0-flash"],
+    "notable_variants": ["gemini-1.5-pro", "gemini-1.5-flash", "gemini-2.0-flash", "gemini-3.0-pro", "gemini-3.0-deep-think", "gemini-3.0-flash"],
     "activated_params_note": "Parameter counts not publicly disclosed; API-managed deployment."
   },
   "capabilities": {
@@ -21,7 +21,9 @@
     "function_calling": true,
     "tool_use": true,
     "long_context_support": ["128k+", "up to 1M (select)"],
-    "streaming": true
+    "streaming": true,
+    "reasoning": "Gemini 3.0 Deep Think provides state-of-the-art reasoning over complex problems in code, math, and STEM.",
+    "agentic": "Gemini 3.0 Pro is optimized for agentic workflows and vibe-coding."
   },
   "tags": ["multimodal","api","closed-weight","long-context"],
   "variants": [
@@ -57,11 +59,44 @@
       "release_date": "2024-12-01",
       "hardware_recommendations": {"notes": "Hosted via Gemini API; newer generation Flash variant."},
       "tags": ["2.0","flash"]
+    },
+    {
+      "name": "gemini-3.0-pro",
+      "params": 1,
+      "context_windows": [1000000],
+      "default_seq_len": 1000000,
+      "default_num_gpus": 0,
+      "model_card_link": "https://ai.google.dev/gemini-api/docs/models/gemini",
+      "release_date": "2025-11-18",
+      "hardware_recommendations": {"notes": "Hosted via Gemini API; flagship multimodal model with 1M token context window."},
+      "tags": ["3.0","flagship","multimodal","agentic","reasoning"]
+    },
+    {
+      "name": "gemini-3.0-deep-think",
+      "params": 1,
+      "context_windows": [1000000],
+      "default_seq_len": 1000000,
+      "default_num_gpus": 0,
+      "model_card_link": "https://ai.google.dev/gemini-api/docs/models/gemini",
+      "release_date": "2025-11-18",
+      "hardware_recommendations": {"notes": "Hosted via Gemini API; state-of-the-art reasoning model for complex problems in code, math, and STEM."},
+      "tags": ["3.0","reasoning","math","science","coding"]
+    },
+    {
+      "name": "gemini-3.0-flash",
+      "params": 1,
+      "context_windows": [1000000],
+      "default_seq_len": 1000000,
+      "default_num_gpus": 0,
+      "model_card_link": "https://ai.google.dev/gemini-api/docs/models/gemini",
+      "release_date": "2025-11-18",
+      "hardware_recommendations": {"notes": "Hosted via Gemini API; distilled model with sub-second latency while maintaining high capability."},
+      "tags": ["3.0","flash","fast","cost-effective"]
     }
   ],
   "evaluation": {
-    "papers": ["https://ai.googleblog.com/", "https://deepmind.google/technologies/gemini/"],
-    "benchmarks": ["mmlu", "gsm8k", "chatbot_arena", "lmarena"],
+    "papers": ["https://ai.googleblog.com/", "https://deepmind.google/technologies/gemini/", "https://blog.google/products/gemini/gemini-3/"],
+    "benchmarks": ["mmlu", "mmlu_pro", "gpqa", "gsm8k", "aime25", "swebench", "lmarena", "humanitys_last_exam", "matharena_apex", "livecodebench"],
     "model_cards": ["https://ai.google.dev/gemini-api/docs/models/gemini"]
   },
   "inference": {
@@ -75,5 +110,5 @@
     "distributed_support": false,
     "notes": "Use Gemini API clients; see ai.google.dev for SDKs and model features."
   },
-  "notes": "Data derived from Google AI for Developers Gemini docs and public announcements. Parameter counts not disclosed; numeric placeholders used to satisfy schema."
+  "notes": "Data derived from Google AI for Developers Gemini docs and public announcements. Parameter counts not disclosed; numeric placeholders used to satisfy schema. Key benchmarks (Nov 2025): Gemini 3.0 Pro - MMLU 91.8%, GPQA Diamond 91.9%, AIME 2025 95% (no tools)/100% (with code), SWE-bench 76.2%, LMArena 1501 Elo, Humanity's Last Exam 37.5-41%, MathArena Apex 23.4%, LiveCodeBench Pro 2439. Gemini 3.0 Deep Think - GPQA Diamond 93.8%. Outperformed competitors on 19/20 benchmarks at launch."
 }
