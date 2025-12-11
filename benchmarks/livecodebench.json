@@ -1,0 +1,27 @@
+{
+  "id": "benchmark.livecodebench",
+  "name": "LiveCodeBench",
+  "description": "Contamination-free code generation benchmark using recent competitive programming and interview problems released after LLM training cutoffs.",
+  "source": "LiveCodeBench Team",
+  "datasets": [
+    {
+      "name": "LiveCodeBench",
+      "link": "https://livecodebench.github.io",
+      "license": "Research use"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "pass_rate",
+      "definition": "Percentage of coding problems where generated solution passes all test cases",
+      "calculation": "passed_problems / total_problems"
+    }
+  ],
+  "test_method": "Present fresh coding problems from LeetCode, Codeforces, AtCoder released after model training. Evaluate generated code on hidden test suites. Supports pass@k metrics.",
+  "example_scores": {
+    "Claude Opus 4.5": "+16 p.p. improvement over Sonnet 4.5 (Thinking)",
+    "GPT-4": "~35-40% (baseline estimates)",
+    "Claude Sonnet 4.5": "Leading performance among non-Opus models"
+  },
+  "notes": "Designed to avoid training data contamination by using post-cutoff problems. Specify problem difficulty distribution (easy/medium/hard) and programming language. Document whether hints or multiple attempts were allowed."
+}

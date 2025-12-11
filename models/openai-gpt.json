@@ -1,13 +1,13 @@
 {
   "model_name": "OpenAI GPT",
-  "short_description": "Closed-weight multimodal GPT API family (GPT-4o, GPT-4o mini, o1 reasoning).",
+  "short_description": "Closed-weight multimodal GPT API family (GPT-4o, GPT-4.1, GPT-4.5, o3/o4 reasoning models).",
   "homepage": "https://openai.com/index/gpt-4o-mini-and-gpt-4-1-preview/",
   "model_card_link": "https://platform.openai.com/docs/models",
   "license": "OpenAI API Terms of Use",
   "provenance": {
     "provider": "OpenAI",
     "release_date": "2024-05-13",
-    "notes": "GPT-4o launched May 2024; GPT-4o mini July 2024; o1 reasoning September 2024."
+    "notes": "GPT-4o launched May 2024; GPT-4o mini July 2024; o1 reasoning September 2024; GPT-4.1 Feb 2025; GPT-4.5 Preview Mar 2025; o3/o4 series Dec 2024-Apr 2025."
   },
   "input_types": [
     "text",
@@ -25,8 +25,14 @@
     "notable_variants": [
       "gpt-4o",
       "gpt-4o-mini",
+      "gpt-4.1",
+      "gpt-4.5-preview",
       "o1",
-      "o1-mini"
+      "o1-mini",
+      "o3",
+      "o3-mini",
+      "o3-pro",
+      "o4-mini"
     ],
     "activated_params_note": "Parameter counts are undisclosed; API users access hosted inference endpoints."
   },
@@ -116,12 +122,127 @@
         "reasoning",
         "cost-optimized"
       ]
+    },
+    {
+      "name": "gpt-4.1",
+      "params": 1,
+      "context_windows": [
+        128000
+      ],
+      "default_seq_len": 128000,
+      "default_num_gpus": 0,
+      "model_card_link": "https://openai.com/index/gpt-4-1/",
+      "release_date": "2025-02-01",
+      "hardware_recommendations": {
+        "notes": "Hosted via OpenAI API; optimized for coding and precise instruction following."
+      },
+      "tags": [
+        "coding",
+        "instruction-following"
+      ]
+    },
+    {
+      "name": "gpt-4.5-preview",
+      "params": 1,
+      "context_windows": [
+        128000
+      ],
+      "default_seq_len": 128000,
+      "default_num_gpus": 0,
+      "model_card_link": "https://platform.openai.com/docs/models",
+      "release_date": "2025-03-13",
+      "hardware_recommendations": {
+        "notes": "Hosted via OpenAI API; available for Pro, Plus, Teams, Enterprise, and Edu plans. Deprecation planned July 14, 2025."
+      },
+      "tags": [
+        "preview",
+        "multimodal"
+      ]
+    },
+    {
+      "name": "o3",
+      "params": 1,
+      "context_windows": [
+        200000
+      ],
+      "default_seq_len": 200000,
+      "default_num_gpus": 0,
+      "model_card_link": "https://openai.com/index/introducing-o3-and-o4-mini/",
+      "release_date": "2024-12-20",
+      "hardware_recommendations": {
+        "notes": "Hosted via OpenAI API; state-of-the-art reasoning model with extended deliberation."
+      },
+      "tags": [
+        "reasoning",
+        "flagship",
+        "coding"
+      ]
+    },
+    {
+      "name": "o3-mini",
+      "params": 1,
+      "context_windows": [
+        200000
+      ],
+      "default_seq_len": 200000,
+      "default_num_gpus": 0,
+      "model_card_link": "https://openai.com/index/introducing-o3-and-o4-mini/",
+      "release_date": "2025-01-31",
+      "hardware_recommendations": {
+        "notes": "Hosted via OpenAI API; adjustable reasoning effort (low/medium/high)."
+      },
+      "tags": [
+        "reasoning",
+        "cost-optimized",
+        "coding"
+      ]
+    },
+    {
+      "name": "o3-pro",
+      "params": 1,
+      "context_windows": [
+        200000
+      ],
+      "default_seq_len": 200000,
+      "default_num_gpus": 0,
+      "model_card_link": "https://openai.com/index/introducing-o3-and-o4-mini/",
+      "release_date": "2025-02-01",
+      "hardware_recommendations": {
+        "notes": "Hosted via OpenAI API; extended reasoning for most reliable responses."
+      },
+      "tags": [
+        "reasoning",
+        "premium",
+        "science"
+      ]
+    },
+    {
+      "name": "o4-mini",
+      "params": 1,
+      "context_windows": [
+        200000
+      ],
+      "default_seq_len": 200000,
+      "default_num_gpus": 0,
+      "model_card_link": "https://openai.com/index/introducing-o3-and-o4-mini/",
+      "release_date": "2025-04-15",
+      "hardware_recommendations": {
+        "notes": "Hosted via OpenAI API; best-performing on AIME 2024/2025, optimized for fast reasoning."
+      },
+      "tags": [
+        "reasoning",
+        "cost-efficient",
+        "math",
+        "coding"
+      ]
     }
   ],
   "evaluation": {
     "papers": [
       "https://cdn.openai.com/papers/GPT-4o-System-Card.pdf",
-      "https://openai.com/index/introducing-openai-o1/"
+      "https://openai.com/index/introducing-openai-o1/",
+      "https://openai.com/index/introducing-o3-and-o4-mini/",
+      "https://openai.com/index/gpt-4-1/"
     ],
     "benchmarks": [
       "mmlu",
@@ -129,12 +250,16 @@
       "math",
       "gpqa",
       "arc_agi",
-      "ai2d_test"
+      "ai2d_test",
+      "aime25",
+      "swebench",
+      "codeforces"
     ],
     "model_cards": [
       "https://platform.openai.com/docs/models#gpt-4o",
       "https://platform.openai.com/docs/models#gpt-4o-mini",
-      "https://platform.openai.com/docs/models#o1"
+      "https://platform.openai.com/docs/models#o1",
+      "https://platform.openai.com/docs/models#gpt-4-1"
     ]
   },
   "inference": {
@@ -150,5 +275,5 @@
     "distributed_support": false,
     "notes": "Requests served from OpenAI-managed infrastructure. Pricing (2024-09): gpt-4o $5/$15 per million input/output tokens; gpt-4o-mini $0.6/$2.4; o1 $15/$60; o1-mini $3/$12."
   },
-  "notes": "Consolidates OpenAI GPT API endpoints (text, multimodal, reasoning). Variant parameters are placeholders because OpenAI does not disclose parameter counts."
+  "notes": "Consolidates OpenAI GPT API endpoints (text, multimodal, reasoning). Variant parameters are placeholders because OpenAI does not disclose parameter counts. Key benchmarks (2025): GPT-4.1 90.2% MMLU, 55% SWE-bench; o3 87.7% GPQA, 71.7% SWE-bench, 2727 Codeforces; o4-mini 93.4% AIME 2024, 92.7% AIME 2025; GPT-4.5 89.3% MMLU (deprecated July 2025)."
 }

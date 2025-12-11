@@ -1,0 +1,32 @@
+{
+  "id": "benchmark.imo",
+  "name": "IMO (International Mathematical Olympiad)",
+  "description": "International Mathematical Olympiad problems requiring advanced mathematical reasoning, proof construction, and olympiad-level problem-solving.",
+  "source": "International Mathematical Olympiad (IMO)",
+  "datasets": [
+    {
+      "name": "IMO Archive",
+      "link": "https://www.imo-official.org/problems.aspx",
+      "license": "IMO educational use"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "score",
+      "definition": "Total points earned on IMO problems (typically 7 points per problem, 6 problems per competition)",
+      "calculation": "sum_of_problem_scores / max_possible_score"
+    },
+    {
+      "name": "medal_threshold",
+      "definition": "Whether score meets gold/silver/bronze medal cutoffs",
+      "calculation": "Based on official IMO medal boundaries (gold typically ~29-33/42)"
+    }
+  ],
+  "test_method": "Present IMO competition problems requiring formal mathematical proofs. Evaluate solution correctness, completeness of proof, and mathematical rigor. Score using official IMO rubrics.",
+  "example_scores": {
+    "DeepSeek-V3.2-Speciale": "35/42 points - Gold Medal (IMO 2025)",
+    "Human gold medalist": "29-42/42 (varies by year)",
+    "Human average": "~14/42 (historical average)"
+  },
+  "notes": "IMO problems test combinatorics, number theory, algebra, and geometry at olympiad level. Document whether automated proof verification was used or human expert scoring. Specify which year's problems and whether hints were provided."
+}

@@ -1,0 +1,32 @@
+{
+  "id": "benchmark.icpc",
+  "name": "ICPC World Finals",
+  "description": "ACM-ICPC World Finals programming competition evaluating team problem-solving, algorithm implementation, and debugging under time pressure.",
+  "source": "ICPC Foundation (ACM International Collegiate Programming Contest)",
+  "datasets": [
+    {
+      "name": "ICPC World Finals Archive",
+      "link": "https://icpc.global/worldfinals",
+      "license": "ICPC educational use"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "problems_solved",
+      "definition": "Number of problems solved correctly during the contest (typically 12-14 problems in 5 hours)",
+      "calculation": "count_of_accepted_submissions"
+    },
+    {
+      "name": "ranking",
+      "definition": "Final ranking among competing teams based on problems solved and penalty time",
+      "calculation": "Ranked by (problems_solved DESC, total_time ASC)"
+    }
+  ],
+  "test_method": "Simulate ICPC World Finals: 12-14 problems, 5-hour time limit, team collaboration allowed. Rank by number solved (primary) and total time with penalties (secondary).",
+  "example_scores": {
+    "DeepSeek-V3.2-Speciale": "10/12 problems solved - 2nd place (ICPC World Finals 2025)",
+    "Champion team": "11-12/12 (varies by year)",
+    "Median finalist": "5-7/12 (historical median)"
+  },
+  "notes": "ICPC World Finals represents elite university-level competitive programming. Problems span algorithms, mathematics, and implementation. Document whether model operated as single agent or simulated team collaboration. Penalty time includes wrong submissions."
+}
