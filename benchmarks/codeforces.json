@@ -1,0 +1,29 @@
+{
+  "id": "benchmark.codeforces",
+  "name": "Codeforces Rating",
+  "description": "Competitive programming rating system evaluating algorithm design, implementation, and debugging on timed programming contests.",
+  "source": "Codeforces (codeforces.com)",
+  "datasets": [
+    {
+      "name": "Codeforces Contest Archive",
+      "link": "https://codeforces.com/problemset",
+      "license": "Codeforces terms of use"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "elo_rating",
+      "definition": "Elo-based rating calculated from contest performance (problem-solving accuracy and speed)",
+      "calculation": "Standard Codeforces rating algorithm based on relative ranking"
+    }
+  ],
+  "test_method": "Simulate contest participation: present problems with time constraints, evaluate submitted code on hidden test cases. Rating computed from successful submissions and contest rankings.",
+  "example_scores": {
+    "o3": "2727 Elo (2024)",
+    "DeepSeek-V3.2": "2386 Elo (2025)",
+    "Expert human": "1600-1899 Elo",
+    "Candidate Master": "1900-2099 Elo",
+    "Master": "2100-2299 Elo"
+  },
+  "notes": "Rating reflects competitive programming skill including algorithms, data structures, and implementation under time pressure. Document whether model had access to external tools, libraries, or repeated attempts."
+}

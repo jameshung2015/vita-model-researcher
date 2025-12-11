@@ -6,15 +6,15 @@
   "provenance": {
     "provider": "DeepSeek-AI",
     "release_date": "2024-12-20",
-    "notes": "DeepSeek-V3 technical report 2412.19437; DeepSeek-R1 reasoning models report 2501.12948."
+    "notes": "DeepSeek-V3 technical report 2412.19437; DeepSeek-R1 reasoning models report 2501.12948; DeepSeek-V3.2 report 2512.02556; V3.2 and V3.2-Speciale released Dec 2025."
   },
   "input_types": ["text"],
   "output_types": ["text"],
   "architecture_family": "mixture-of-experts",
-  "architecture_details": "V3: 671B total parameters, ~37B activated/token; MLA + DeepSeekMoE; FP8 training; R1: reasoning models via large-scale RL with CoT behaviors.",
+  "architecture_details": "V3: 671B total parameters, ~37B activated/token; MLA + DeepSeekMoE; FP8 training; R1: reasoning models via large-scale RL with CoT behaviors; V3.2: DeepSeek Sparse Attention (DSA) for long-context efficiency, ~50% inference cost reduction; V3.2-Speciale: reasoning-first model for agents and competition performance.",
   "size_params": {
-    "notable_variants": ["DeepSeek-V3", "DeepSeek-R1"],
-    "activated_params_note": "DeepSeek-V3 activates ~37B params per token; trained on ~14.8T tokens (report)."
+    "notable_variants": ["DeepSeek-V3", "DeepSeek-V3.2", "DeepSeek-V3.2-Speciale", "DeepSeek-R1"],
+    "activated_params_note": "DeepSeek-V3 activates ~37B params per token; trained on ~14.8T tokens (report). V3.2 introduces sparse attention for long-context optimization."
   },
   "capabilities": {
     "reasoning_and_code": "V3 strong general + distilled reasoning; R1 specialized for reasoning via RL",
@@ -42,17 +42,40 @@
         "notes": "Reasoning models and distilled dense variants (1.5B–70B) available; choose variant per task/latency."
       },
       "tags": ["reasoning","rl","cot"]
+    },
+    {
+      "name": "DeepSeek-V3.2",
+      "params": 671,
+      "model_card_link": "https://huggingface.co/deepseek-ai/DeepSeek-V3.2-Exp",
+      "release_date": "2025-12-01",
+      "hardware_recommendations": {
+        "notes": "Successor to V3; introduces DeepSeek Sparse Attention for ~50% inference cost reduction in long-context scenarios; supported by SGLang, LMDeploy, TensorRT-LLM, vLLM."
+      },
+      "tags": ["base","chat","moe","671b_total","37b_active","sparse-attention","long-context"]
+    },
+    {
+      "name": "DeepSeek-V3.2-Speciale",
+      "params": 671,
+      "model_card_link": "https://huggingface.co/deepseek-ai/DeepSeek-V3.2-Speciale",
+      "release_date": "2025-12-01",
+      "hardware_recommendations": {
+        "notes": "Reasoning-first model optimized for agents and competitions; gold-medal performance on IMO, IOI, ICPC World Finals."
+      },
+      "tags": ["reasoning","agent","competition","moe","671b_total"]
     }
   ],
   "evaluation": {
     "papers": [
       "https://arxiv.org/abs/2412.19437",
-      "https://arxiv.org/abs/2501.12948"
+      "https://arxiv.org/abs/2501.12948",
+      "https://arxiv.org/html/2512.02556v1"
     ],
-    "benchmarks": ["mmlu","gsm8k"],
+    "benchmarks": ["mmlu","gsm8k","aime25","codeforces","terminalbench","imo","ioi","icpc","hmmt25"],
     "model_cards": [
       "https://github.com/deepseek-ai/DeepSeek-V3",
-      "https://github.com/deepseek-ai/DeepSeek-R1"
+      "https://github.com/deepseek-ai/DeepSeek-R1",
+      "https://huggingface.co/deepseek-ai/DeepSeek-V3.2-Exp",
+      "https://huggingface.co/deepseek-ai/DeepSeek-V3.2-Speciale"
     ]
   },
   "inference": {
@@ -66,5 +89,5 @@
     "distributed_support": true,
     "notes": "Use SGLang/LMDeploy/TRT-LLM/vLLM per DeepSeek-V3 README; FP8/BF16 supported; ensure MLA optimizations where available."
   },
-  "notes": "Sources: DeepSeek-V3 README (github.com/deepseek-ai/DeepSeek-V3), DeepSeek-R1 README (github.com/deepseek-ai/DeepSeek-R1), associated arXiv reports."
+  "notes": "Sources: DeepSeek-V3 README (github.com/deepseek-ai/DeepSeek-V3), DeepSeek-R1 README (github.com/deepseek-ai/DeepSeek-R1), DeepSeek-V3.2 report (arxiv.org/html/2512.02556v1), associated arXiv reports. Key benchmarks (2025): V3.2 93.1% AIME 2025, Codeforces 2386, 46.4% Terminal-Bench 2.0; V3.2-Speciale 96.0% AIME 2025, 99.2% HMMT Feb 2025, gold medals in IMO (35/42), IOI (492/600), ICPC World Finals (10/12 problems, 2nd place)."
 }

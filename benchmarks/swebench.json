@@ -1,0 +1,28 @@
+{
+  "id": "benchmark.swebench",
+  "name": "SWE-bench Verified",
+  "description": "Software Engineering benchmark evaluating LLMs on real-world GitHub issue resolution from popular Python repositories.",
+  "source": "Princeton NLP Group & Carnegie Mellon University",
+  "datasets": [
+    {
+      "name": "SWE-bench Verified",
+      "link": "https://www.swebench.com",
+      "license": "MIT"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "resolve_rate",
+      "definition": "Percentage of GitHub issues successfully resolved with model-generated patches that pass all unit tests",
+      "calculation": "resolved_issues / total_issues"
+    }
+  ],
+  "test_method": "Provide issue description and codebase context. Model generates a patch. Apply patch and run repository's test suite to verify resolution without breaking existing functionality.",
+  "example_scores": {
+    "Claude Sonnet 4.5": "77.2% (2025)",
+    "GPT-4.1": "55% (2025)",
+    "o3": "71.7% (2025)",
+    "Claude Haiku 4.5": "73.3% (2025)"
+  },
+  "notes": "SWE-bench Verified is a curated subset with validated test cases. Scores depend on tool use, context window, and agentic capabilities. Document whether scaffolding (file browsing, test execution) was provided."
+}

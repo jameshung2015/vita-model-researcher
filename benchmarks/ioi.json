@@ -1,0 +1,32 @@
+{
+  "id": "benchmark.ioi",
+  "name": "IOI (International Olympiad in Informatics)",
+  "description": "International Olympiad in Informatics problems testing algorithmic problem-solving, data structures, and competitive programming at the highest level.",
+  "source": "International Olympiad in Informatics (IOI)",
+  "datasets": [
+    {
+      "name": "IOI Archive",
+      "link": "https://ioinformatics.org/page/contests/",
+      "license": "IOI educational use"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "score",
+      "definition": "Total points earned on IOI tasks (typically 600 points maximum across 6 problems over 2 days)",
+      "calculation": "sum_of_task_scores / 600"
+    },
+    {
+      "name": "medal_threshold",
+      "definition": "Whether score meets gold/silver/bronze medal cutoffs",
+      "calculation": "Based on official IOI medal boundaries (gold typically ~450-500+/600)"
+    }
+  ],
+  "test_method": "Present IOI competition tasks requiring algorithm design and implementation. Evaluate on extensive test suites with partial credit for subtasks. Time limits and memory constraints apply.",
+  "example_scores": {
+    "DeepSeek-V3.2-Speciale": "492/600 points - Gold Medal, 10th place (IOI 2025)",
+    "Human gold medalist": "450-600/600 (varies by year)",
+    "Human average participant": "~200/600 (historical average)"
+  },
+  "notes": "IOI tests advanced algorithms (graph theory, dynamic programming, computational geometry) with strict time/memory limits. Document execution environment, allowed libraries, and whether debugging/retries were permitted. Partial scoring on subtasks is standard."
+}
