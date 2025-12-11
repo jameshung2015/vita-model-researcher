@@ -1,7 +1,7 @@
 {
   "id": "benchmark.tau2_bench",
   "name": "τ²-Bench (Tau²-Bench)",
-  "description": "Tau²基准测试，评估模型的时序推理和因果理解能力，包括时间关系理解、事件序列推理和因果关系判断。",
+  "description": "Tau²基准测试，评估模型的时序推理和因果理解能力，包括时间关系理解、事件序列推理和因果关系判断，覆盖文本与视觉-时间跨模态任务。",
   "source": "τ²-Bench Team",
   "datasets": [
     {
@@ -17,7 +17,17 @@
       "calculation": "accuracy across temporal reasoning tasks"
     }
   ],
-  "test_method": "评估模型在时间序列理解、因果推理、事件顺序判断等任务上的表现。使用标准化评测框架计算得分。",
+  "inference_environment": {
+    "description": "官方评测要求固定随机种子，基于单卡 A100 或同等级 GPU 执行标准推理脚本。",
+    "fields": {
+      "hardware": "NVIDIA A100 80GB x1",
+      "framework": "vLLM / PyTorch",
+      "batch_size": "1-4（按任务难度自动调整）",
+      "concurrency": "单实例串行评测",
+      "measurement_script": "https://github.com/TauBenchmark/tau2bench/blob/main/scripts/eval.py"
+    }
+  },
+  "test_method": "评估模型在时间序列理解、因果推理、事件顺序判断等任务上的表现。使用官方脚本依次运行文本时间推理、视觉-时间对齐与跨事件因果三类子集，按任务平均得分汇总。",
   "example_scores": {
     "LongCat-Flash-Omni": "67.7"
   },
