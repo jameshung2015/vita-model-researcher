@@ -39,7 +39,8 @@
     "Human performance": "~85% (typical adult)",
     "AI SOTA 2024": "53% (private eval set)",
     "AI SOTA 2023": "30%",
-    "AI baseline 2020": "21%"
+    "AI baseline 2020": "21%",
+    "Gemini 3 Deep Think (ARC-AGI-2 with code)": "45.1% (Google, 2025, ARC Prize Verified)"
   },
   "notes": "Benchmark explicitly designed to measure progress toward AGI by testing skill acquisition on novel tasks. Success requires interpreting symbolic meaning and flexible rule application, not pattern matching on training data. ARC Prize offers $1M+ competition for solving this benchmark. Report whether using ARC-AGI-1 or ARC-AGI-2."
 }

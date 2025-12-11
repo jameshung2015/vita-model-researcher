@@ -6,14 +6,14 @@
   "provenance": {
     "provider": "Google DeepMind",
     "release_date": "2024-02-01",
-    "notes": "Public Gemini API models include 1.5 Pro/Flash and 2.0 Flash variants; multimodal support and long-context per docs."
+    "notes": "Public Gemini API models include 1.5 Pro/Flash, 2.0 Flash, and 3.0 Pro variants; multimodal support and long-context per docs. Gemini 3.0 released November 2025."
   },
   "input_types": ["text", "image", "audio", "video"],
   "output_types": ["text"],
   "architecture_family": "multimodal",
   "architecture_details": "Proprietary multimodal transformer; long-context support in select variants (e.g., 1.5 Pro experimental 1M tokens per docs).",
   "size_params": {
-    "notable_variants": ["gemini-1.5-pro", "gemini-1.5-flash", "gemini-2.0-flash"],
+    "notable_variants": ["gemini-1.5-pro", "gemini-1.5-flash", "gemini-2.0-flash", "gemini-3.0-pro"],
     "activated_params_note": "Parameter counts not publicly disclosed; API-managed deployment."
   },
   "capabilities": {
@@ -57,6 +57,17 @@
       "release_date": "2024-12-01",
       "hardware_recommendations": {"notes": "Hosted via Gemini API; newer generation Flash variant."},
       "tags": ["2.0","flash"]
+    },
+    {
+      "name": "gemini-3.0-pro",
+      "params": 1,
+      "context_windows": [1000000],
+      "default_seq_len": 1000000,
+      "default_num_gpus": 0,
+      "model_card_link": "https://ai.google.dev/gemini-api/docs/gemini-3",
+      "release_date": "2025-11-18",
+      "hardware_recommendations": {"notes": "Hosted via Gemini API; trained on TPUs. Supports 1M token input context and up to 64k token output. Features Deep Think mode for advanced reasoning."},
+      "tags": ["3.0","pro","reasoning","deep-think","long-context"]
     }
   ],
   "evaluation": {
@@ -75,5 +86,5 @@
     "distributed_support": false,
     "notes": "Use Gemini API clients; see ai.google.dev for SDKs and model features."
   },
-  "notes": "Data derived from Google AI for Developers Gemini docs and public announcements. Parameter counts not disclosed; numeric placeholders used to satisfy schema."
+  "notes": "Data derived from Google AI for Developers Gemini docs and public announcements. Parameter counts not disclosed; numeric placeholders used to satisfy schema. Gemini 3.0 Pro released Nov 2025 with enhanced reasoning, 1M context window, and Deep Think mode achieving 45.1% on ARC-AGI-2 and 93.8% on GPQA Diamond."
 }
