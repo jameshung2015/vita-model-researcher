@@ -20,7 +20,10 @@
   "test_method": "Provide each problem statement and ask the model for a boxed three-digit answer. Parse the final integer (000-999). Optionally enable chain-of-thought with solution verification.",
   "example_scores": {
     "AoPS median human": "6/15 (historical median)",
-    "IMO medalist baseline": "12/15 (coaching benchmark)"
+    "IMO medalist baseline": "12/15 (coaching benchmark)",
+    "GLM-4.6": "93.9% (Zhipu AI, 2025)",
+    "DeepSeek-V3.2": "93.1% (DeepSeek, 2025)",
+    "DeepSeek-V3.2-Speciale": "96.0% (DeepSeek, 2025)"
   },
   "notes": "Clarify whether calculators, external tools, or repeated attempts were allowed. Keep scratch reasoning but score only the final value."
 }

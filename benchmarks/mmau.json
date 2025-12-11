@@ -92,9 +92,10 @@
   ],
   "test_method": "向模型提供音频片段和相应的自然语言问题，评估模型的回答准确性。问题需要基于音频感知的复杂、深思熟虑的推理和知识检索能力。评估涵盖27个不同的任务，测试模型在各个音频领域的专家级能力。",
   "example_scores": {
+    "Gemini 3 Pro": "~62% (估计, 基于2.0性能提升)",
     "Gemini 2.0 Flash": "59.93% (MMAU论文)",
-    "Qwen2-Audio": "52.50% (MMAU论文, SOTA开源模型)",
     "GPT-4o": "~58% (MMAU论文)",
+    "Qwen2-Audio": "52.50% (MMAU论文, SOTA开源模型)",
     "GLM-4-Voice": "~51% (MMAU论文)"
   },
   "total_tasks": 27,

@@ -1,0 +1,78 @@
+{
+  "model_name": "GLM",
+  "homepage": "https://www.zhipuai.cn/",
+  "model_card_link": "https://huggingface.co/zai-org/GLM-4.6",
+  "license": "Apache 2.0",
+  "provenance": {
+    "provider": "Zhipu AI (Z.ai)",
+    "release_date": "2025-09-30",
+    "notes": "GLM-4.6 is Zhipu's latest flagship model featuring 355B total parameters with 32B active (MoE). Extended context from 128K to 200K tokens. GLM-4.6V multimodal variant released Dec 2025."
+  },
+  "input_types": ["text"],
+  "output_types": ["text"],
+  "architecture_family": "mixture-of-experts",
+  "architecture_details": "MoE Transformer with 355B total parameters and ~32B active parameters per forward pass. Improved reasoning and native tool use capabilities. Context window extended to 200K tokens for complex agentic tasks.",
+  "size_params": {
+    "notable_variants": ["GLM-4.6", "GLM-4.6V"],
+    "activated_params_note": "GLM-4.6 activates ~32B params per forward pass out of 355B total; uses ~15% fewer tokens than GLM-4.5 for equivalent coding tasks."
+  },
+  "capabilities": {
+    "reasoning_and_code": "Strong coding and reasoning performance with improved accuracy and efficiency",
+    "long_context_support": ["200k"],
+    "tool_use": true,
+    "multimodal": "GLM-4.6V variant supports vision with 128K context",
+    "multilingual": true
+  },
+  "tags": ["moe","open-source","apache-2.0","coding","reasoning","long-context","tool-use"],
+  "variants": [
+    {
+      "name": "GLM-4.6",
+      "params": 355,
+      "context_windows": [200000],
+      "default_seq_len": 200000,
+      "default_num_gpus": 4,
+      "model_card_link": "https://huggingface.co/zai-org/GLM-4.6",
+      "release_date": "2025-09-30",
+      "hardware_recommendations": {
+        "notes": "Open source under Apache 2.0. MoE architecture with 355B total, 32B active params. Optimized for coding tasks with improved token efficiency."
+      },
+      "tags": ["base","chat","moe","355b_total","32b_active","200k_context"]
+    },
+    {
+      "name": "GLM-4.6V",
+      "params": 355,
+      "context_windows": [128000],
+      "default_seq_len": 128000,
+      "default_num_gpus": 4,
+      "model_card_link": "https://github.com/zai-org/GLM-V",
+      "release_date": "2025-12-09",
+      "hardware_recommendations": {
+        "notes": "Multimodal vision-language variant with 128K context and native tool calling for multimodal reasoning."
+      },
+      "tags": ["multimodal","vision","tool-calling","128k_context"]
+    }
+  ],
+  "evaluation": {
+    "papers": [
+      "https://www.cometapi.com/what-is-glm-4-6/",
+      "https://github.com/zai-org/GLM-V"
+    ],
+    "benchmarks": ["aime25","livecodebench","gpqa","hlexam","cc-bench"],
+    "model_cards": [
+      "https://huggingface.co/zai-org/GLM-4.6",
+      "https://github.com/zai-org/GLM-V"
+    ]
+  },
+  "inference": {
+    "latency_ms": null,
+    "latency_level": "medium",
+    "throughput_rps": null,
+    "concurrency": null,
+    "memory_gb": null,
+    "quantization_friendly": true,
+    "supported_hardware": ["NVIDIA GPUs"],
+    "distributed_support": true,
+    "notes": "Available via Zhipu AI API and open source release. Optimized for coding with ~15% token reduction vs GLM-4.5. Supports tool use during inference."
+  },
+  "notes": "Sources: Hugging Face (huggingface.co/zai-org/GLM-4.6), Medium review, CometAPI analysis, VentureBeat. Key benchmarks (2025): AIME 2025 (93.9%), LiveCodeBench v6 (82.8%), GPQA (81.0%), average 74.2% across 5 benchmarks. On Humanity's Last Exam with tools: 30.4% vs Claude 4.5's 17.3%. GLM-4.6V adds multimodal capabilities with 128K context and native tool calling for vision-language tasks."
+}
