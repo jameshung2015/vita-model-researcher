@@ -1,0 +1,42 @@
+{
+  "id": "benchmark.frames",
+  "name": "FRAMES (Factuality, Retrieval, And reasoning MEasurement Set)",
+  "description": "Unified benchmark for evaluating RAG (Retrieval-Augmented Generation) systems on factuality, retrieval accuracy, and reasoning through complex multi-hop questions requiring information integration from multiple sources.",
+  "source": "Krishna et al., Google Research, 2024",
+  "datasets": [
+    {
+      "name": "FRAMES Dataset",
+      "link": "https://github.com/google-research/frames",
+      "license": "Apache-2.0"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "End-to-end accuracy on multi-hop questions with retrieval",
+      "calculation": "correct_answers / total_questions * 100"
+    },
+    {
+      "name": "factuality_score",
+      "definition": "Correctness of factual claims in generated responses",
+      "calculation": "See official FRAMES scorer for detailed metrics"
+    },
+    {
+      "name": "retrieval_accuracy",
+      "definition": "Precision and recall of retrieved documents containing answer evidence",
+      "calculation": "Measured using standard IR metrics (P@k, R@k)"
+    },
+    {
+      "name": "reasoning_quality",
+      "definition": "Ability to integrate and reason across multiple retrieved documents",
+      "calculation": "Evaluated on multi-hop question answering correctness"
+    }
+  ],
+  "test_method": "Evaluate RAG pipeline with 824 challenging multi-hop questions requiring integration of multiple Wikipedia sources. Use BM25 or dense retrieval for document fetching, then generate answers with target LLM. Score using official FRAMES evaluation scripts.",
+  "example_scores": {
+    "DeepSeek-R1 with ODS": "75.3% (March 2025)",
+    "GPT-4o Search Preview": "65.3% (March 2025)",
+    "Gemini-Pro-1.5-0514 (4 docs, BM25)": "47.4% (May 2024)"
+  },
+  "notes": "Dataset comprises 824 multi-hop questions from Wikipedia. Benchmark tests three critical dimensions: (1) Factuality - whether generated content is factually correct, (2) Retrieval - whether relevant documents are retrieved, (3) Reasoning - whether model can integrate information across sources. Particularly valuable for evaluating complex RAG systems requiring multi-hop reasoning. Performance varies significantly based on retrieval strategy (single vs. multi-query) and number of retrieved documents."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "benchmark.humanitys_last_exam",
+  "name": "Humanity's Last Exam (HLE)",
+  "description": "Expert-level academic benchmark with 2,500 subject-diverse, multi-modal questions covering mathematics, physics, biology, humanities, computer science, engineering, and chemistry. Designed to test reasoning abilities and human-like intelligence beyond pattern recognition.",
+  "source": "Scale AI & Center for AI Safety (CAIS), 2025",
+  "datasets": [
+    {
+      "name": "Humanity's Last Exam",
+      "link": "https://scale.com/leaderboard/humanitys_last_exam",
+      "license": "Research use"
+    },
+    {
+      "name": "Official Paper",
+      "link": "https://arxiv.org/html/2501.14249v1",
+      "license": "Research use"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "Percentage of correctly answered questions across all subjects",
+      "calculation": "correct_answers / total_questions * 100"
+    },
+    {
+      "name": "calibration",
+      "definition": "Alignment between model confidence and actual accuracy",
+      "calculation": "Measured using calibration error metrics (see official scorer)"
+    }
+  ],
+  "test_method": "Models are evaluated on 2,500 questions across 8 subject areas. 24% are multiple-choice, 76% are short-answer exact-match. 14% require multi-modal understanding (text + images). Evaluate using official scoring scripts from Scale AI leaderboard.",
+  "example_scores": {
+    "Zoom AI": "48.1% (January 2025, state-of-the-art)",
+    "Google Gemini-3-Pro (with tools)": "45.8% (December 2024)",
+    "GLM-4.6 (with tools)": "30.4% (December 2025)",
+    "Claude 4.5": "17.3% (2025)",
+    "Typical frontier models": "<10% (without tool integration)"
+  },
+  "notes": "Questions developed by ~1000 expert contributors from 500+ institutions across 50 countries. Subject distribution: Mathematics (41%), Physics (9%), Biology/Medicine (11%), Humanities/Social Science (9%), CS/AI (10%), Engineering (4%), Chemistry (7%), Other (9%). Models consistently show high calibration errors (>80%) paired with low accuracy (<10%), indicating systematic overconfidence and confabulation issues. Tool integration significantly improves performance."
+}
