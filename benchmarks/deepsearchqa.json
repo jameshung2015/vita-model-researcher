@@ -1,0 +1,56 @@
+{
+  "id": "benchmark.deepsearchqa",
+  "name": "DeepSearchQA",
+  "description": "Google DeepMind 开源的高级 AI 网络搜索基准，用于评估 AI 智能体在复杂多步骤信息检索任务中的表现。该基准包含 900 个手工制作的因果链任务，跨越 17 个领域，每个步骤都依赖于先前的分析。与传统的基于事实的测试不同，DeepSearchQA 衡量全面性，要求智能体生成详尽的答案集，这同时评估了研究精度和检索召回率。",
+  "source": "Google DeepMind, 2025",
+  "provider": "Google DeepMind",
+  "category": "agent_evaluation",
+  "datasets": [
+    {
+      "name": "DeepSearchQA",
+      "description": "包含 900 个多步骤因果链任务的数据集，涵盖 17 个领域",
+      "link": "https://blog.google/technology/developers/deep-research-agent-gemini-api/",
+      "license": "未公开"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "comprehensiveness",
+      "definition": "全面性评分",
+      "calculation": "评估智能体生成详尽答案集的能力，衡量研究精度和检索召回率"
+    }
+  ],
+  "technical_features": [
+    "900 个手工制作的因果链任务",
+    "跨越 17 个专业领域",
+    "多步骤依赖性推理",
+    "真实世界信息检索场景模拟",
+    "思考时间（thinking time）诊断工具"
+  ],
+  "test_method": "通过 API 调用 AI 智能体执行多步骤网络搜索任务，智能体需要迭代规划调查、制定查询、阅读结果、识别知识缺口并再次搜索。评估系统衡量答案的全面性和准确性。",
+  "example_scores": {
+    "Gemini Deep Research": "66.1% (Google Blog, 2025-12-11)",
+    "说明": "Gemini Deep Research 在 DeepSearchQA 上达到 66.1% 的准确率，并在 Humanity's Last Exam 上达到 46.4%，在 BrowseComp 上达到 59.2%"
+  },
+  "evaluation_dimensions": [
+    "多步骤推理能力",
+    "信息检索精度",
+    "答案全面性",
+    "因果链追踪",
+    "知识缺口识别"
+  ],
+  "application_value": [
+    "评估 AI 智能体的复杂研究能力",
+    "测试多步骤推理和规划能力",
+    "衡量真实世界信息检索性能",
+    "诊断思考时间对性能的影响"
+  ],
+  "limitations": [
+    "需要网络访问能力",
+    "评估成本较高（需要多次搜索和推理步骤）",
+    "依赖于网络搜索 API 的可用性和质量"
+  ],
+  "website": "https://blog.google/technology/developers/deep-research-agent-gemini-api/",
+  "last_reviewed": "2025-12-13",
+  "notes": "DeepSearchQA 作为诊断工具可以评估思考时间的好处，内部评估显示当允许智能体执行更多搜索和推理步骤时，性能会有显著提升。该基准于 2025 年 12 月 11 日开源，与 OpenAI 发布 GPT-5.2 同日发布。"
+}
