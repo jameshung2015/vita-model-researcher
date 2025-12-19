@@ -58,4 +58,7 @@ agents-toolchain/storage/
 agents-toolchain/dashboard/output/
 agents-toolchain/dashboard/cache/
 
+# confidence office research data
+docs/research/confid-office/
+
 # End of .gitignore
