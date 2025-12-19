@@ -1,0 +1,93 @@
+{
+  "id": "benchmark.worldbench",
+  "name": "WorldBench",
+  "description": "评估大语言模型在不同国家和地区的事实性知识回忆能力，量化地理偏差。使用世界银行数据指标，跨越约 200 个国家的 11 个发展指标，用于检测 LLM 是否对某些地区的事实回答更准确。",
+  "source": "Moayeri et al., FAccT 2024",
+  "provider": "University of Maryland & Michigan State University",
+  "category": "factual_recall_fairness",
+  "datasets": [
+    {
+      "name": "WorldBench",
+      "description": "基于世界银行数据的基准数据集，包含 11 个指标，每个指标涵盖约 200 个国家，总计 2,225 个问题",
+      "link": "https://huggingface.co/datasets/worldbenchmark/WorldBench",
+      "license": "CC BY 4.0"
+    },
+    {
+      "name": "World Bank Data",
+      "description": "世界银行公开数据，涵盖全球发展指标",
+      "link": "https://data.worldbank.org/",
+      "license": "Creative Commons Attribution 4.0 International"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "mean_absolute_relative_error",
+      "definition": "平均绝对相对误差（Mean Absolute Relative Error）",
+      "calculation": "按国家和指标计算预测值与真实值之间的平均绝对相对误差"
+    },
+    {
+      "name": "error_rate_by_region",
+      "definition": "按地理区域分组的错误率",
+      "calculation": "不同地理区域（如北美、撒哈拉以南非洲、欧洲等）的平均误差率比较"
+    },
+    {
+      "name": "error_rate_by_income",
+      "definition": "按收入水平分组的错误率",
+      "calculation": "不同收入水平国家（高收入、中高收入、中低收入、低收入）的平均误差率比较"
+    }
+  ],
+  "technical_features": [
+    "11 个世界银行多样化指标",
+    "覆盖约 200 个国家",
+    "每个 LLM 生成 2,225 个问题",
+    "自动化、指标无关的提示和解析流程",
+    "标准化提示模板与示例",
+    "数值提取的自动化解析系统"
+  ],
+  "test_method": "使用标准化提示模板向 LLM 提问关于各国世界银行指标的问题（如人口、GDP、CO2 排放等），通过自动化解析系统提取数值答案，计算与世界银行真实数据的平均绝对相对误差。评估跨越不同地理区域和收入水平的国家，以量化地理偏差。",
+  "example_scores": {
+    "北美地区平均误差": "0.316 (FAccT 2024)",
+    "欧洲和中亚地区平均误差": "0.321 (FAccT 2024)",
+    "撒哈拉以南非洲地区误差": "比北美高 1.5 倍 (FAccT 2024)",
+    "高收入国家平均误差": "0.346 (FAccT 2024)",
+    "低收入国家平均误差": "0.480 (FAccT 2024)",
+    "说明": "研究评估了 2023 年发布的 20 个最先进的 LLM，包括 GPT-4、Gemini、Llama-2、Vicuna 等。所有 20 个 LLM 在地理偏差上表现一致。"
+  },
+  "evaluation_dimensions": [
+    "地理公平性",
+    "事实性知识回忆准确度",
+    "跨国家和地区的一致性",
+    "对不同收入水平国家的覆盖",
+    "全球发展指标的理解能力"
+  ],
+  "application_value": [
+    "检测 LLM 在地理覆盖上的偏差",
+    "评估模型对全球发展知识的理解",
+    "指导公平性改进和数据增强策略",
+    "为全球应用场景提供公平性基准",
+    "识别模型训练数据的地理覆盖缺陷"
+  ],
+  "limitations": [
+    "仅限于数值型世界银行指标",
+    "依赖世界银行数据的准确性和时效性",
+    "可能无法涵盖所有类型的地理知识",
+    "需要自动化解析系统提取答案"
+  ],
+  "world_bank_indicators": [
+    "人口总数",
+    "GDP（当前美元）",
+    "CO2 排放量",
+    "预期寿命",
+    "识字率",
+    "婴儿死亡率",
+    "电力获取率",
+    "互联网使用率",
+    "森林面积",
+    "城市人口比例",
+    "出口总额"
+  ],
+  "paper": "https://facctconference.org/static/papers24/facct24-82.pdf",
+  "website": "https://dl.acm.org/doi/10.1145/3630106.3658967",
+  "last_reviewed": "2025-12-19",
+  "notes": "WorldBench 是首个系统性量化 LLM 地理偏差的基准。研究发现所有 20 个评估的 LLM（包括开源的 Llama-2、Vicuna 和商业的 GPT-4、Gemini）都表现出一致的地理偏差：西方和高收入国家的错误率更低。最低错误率的 15 个国家全部是高收入国家（主要是欧洲国家），而最高错误率的 15 个国家全部是低收入国家，两组之间的错误率几乎翻了三倍。该基准使用世界银行的公开数据，确保数据质量和许可合规性。发表于 ACM FAccT 2024 会议。"
+}
