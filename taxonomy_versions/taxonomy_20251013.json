@@ -126,6 +126,87 @@
       "size": null,
       "tags": []
     }
+    ,
+    {
+      "model_ref": "Emu3.5",
+      "inputs": ["text","image"],
+      "outputs": ["text","image"],
+      "arch": "multimodal",
+      "size": null,
+      "tags": ["multimodal","open-weight"]
+    },
+    {
+      "model_ref": "Claude (Anthropic)",
+      "inputs": ["text"],
+      "outputs": ["text"],
+      "arch": "decoder-only",
+      "size": null,
+      "tags": ["api","closed-weight"]
+    },
+    {
+      "model_ref": "Doubao Realtime",
+      "inputs": ["text"],
+      "outputs": ["text"],
+      "arch": "decoder-only",
+      "size": null,
+      "tags": []
+    },
+    {
+      "model_ref": "DusBot",
+      "inputs": ["text"],
+      "outputs": ["text"],
+      "arch": "decoder-only",
+      "size": null,
+      "tags": []
+    },
+    {
+      "model_ref": "ElevenLabs Voice",
+      "inputs": ["text","audio"],
+      "outputs": ["text","audio"],
+      "arch": "neural audio synthesis",
+      "size": null,
+      "tags": ["tts","api"]
+    },
+    {
+      "model_ref": "GLM",
+      "inputs": ["text"],
+      "outputs": ["text"],
+      "arch": "mixture-of-experts",
+      "size": null,
+      "tags": ["moe","long-context"]
+    },
+    {
+      "model_ref": "iFlyTek Spark Voice",
+      "inputs": ["text","audio"],
+      "outputs": ["text","audio"],
+      "arch": "neural audio synthesis",
+      "size": null,
+      "tags": ["tts"]
+    },
+    {
+      "model_ref": "LongCat-Flash-Omni",
+      "inputs": ["text","image","audio","video"],
+      "outputs": ["text"],
+      "arch": "mixture-of-experts transformer",
+      "size": null,
+      "tags": ["long-context"]
+    },
+    {
+      "model_ref": "OpenAI GPT",
+      "inputs": ["text"],
+      "outputs": ["text"],
+      "arch": "decoder-only",
+      "size": null,
+      "tags": ["api","closed-weight"]
+    },
+    {
+      "model_ref": "GPT Realtime",
+      "inputs": ["text"],
+      "outputs": ["text"],
+      "arch": "decoder-only",
+      "size": null,
+      "tags": ["api"]
+    }
   ],
   "source": "models_index"
 }
