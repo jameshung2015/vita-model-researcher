@@ -57,7 +57,7 @@
       "https://www.cometapi.com/what-is-glm-4-6/",
       "https://github.com/zai-org/GLM-V"
     ],
-    "benchmarks": ["aime25","livecodebench","gpqa","hlexam","cc-bench"],
+    "benchmarks": ["aime25","livecodebench","gpqa","humanitys_last_exam","cc_ocr"],
     "model_cards": [
       "https://huggingface.co/zai-org/GLM-4.6",
       "https://github.com/zai-org/GLM-V"
