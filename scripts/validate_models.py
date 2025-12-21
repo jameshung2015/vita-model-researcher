@@ -81,7 +81,12 @@ def main():
         try:
             aliases = load(aliases_path)
         except Exception:
-            aliases = {}
+            # try tolerant read that accepts BOM
+            try:
+                with open(aliases_path, 'r', encoding='utf-8-sig') as f:
+                    aliases = json.load(f)
+            except Exception:
+                aliases = {}
     known_abilities = collect_abilities(ABILITIES_PATH)
     ok = True
     for m in model_paths:
