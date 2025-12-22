@@ -1,0 +1,31 @@
+{
+  "id": "benchmark.omnidocbench",
+  "name": "OmniDocBench",
+  "description": "Comprehensive Document Understanding Benchmark - 全面的文档理解评测基准，涵盖多种文档类型（PDF、Word、表格、图表等）和理解任务。",
+  "source": "OmniDocBench Team, 2024",
+  "datasets": [
+    {
+      "name": "OmniDocBench",
+      "link": "https://github.com/opendatalab/OmniDocBench",
+      "license": "Please refer to the original repository"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "overall_accuracy",
+      "definition": "文档理解任务的总体准确率",
+      "calculation": "correct / total across all document types"
+    },
+    {
+      "name": "per_type_accuracy",
+      "definition": "各类文档的分类准确率",
+      "calculation": "correct / total for each document category"
+    }
+  ],
+  "test_method": "使用多样化的文档类型和理解任务评估模型，包括信息提取、问答、摘要、结构理解等。使用官方评估框架进行测试。",
+  "example_scores": {
+    "GPT-4V": "参考官方leaderboard",
+    "Qwen-VL": "参考官方leaderboard"
+  },
+  "notes": "文档理解需要OCR、布局分析、表格提取、跨页理解等能力。建议记录文档预处理方式和模型输入格式（如图像分辨率、页面切分策略）。"
+}

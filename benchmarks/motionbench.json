@@ -1,0 +1,31 @@
+{
+  "id": "benchmark.motionbench",
+  "name": "MotionBench",
+  "description": "Video Motion Understanding Benchmark - 评估视频理解模型对动作、运动轨迹、时序关系的理解能力。",
+  "source": "MotionBench Team, 2024",
+  "datasets": [
+    {
+      "name": "MotionBench",
+      "link": "https://github.com/OpenGVLab/MotionBench",
+      "license": "Please refer to the original repository"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "motion_accuracy",
+      "definition": "运动理解任务的准确率",
+      "calculation": "correct_motion_predictions / total"
+    },
+    {
+      "name": "temporal_reasoning_score",
+      "definition": "时序推理能力得分",
+      "calculation": "weighted score across temporal understanding tasks"
+    }
+  ],
+  "test_method": "使用包含复杂运动和时序关系的视频片段评估模型，测试动作识别、轨迹预测、事件顺序理解等能力。使用官方评估协议。",
+  "example_scores": {
+    "VideoLLaMA": "参考官方leaderboard或技术报告",
+    "Video-ChatGPT": "参考官方leaderboard或技术报告"
+  },
+  "notes": "运动理解需要模型具备帧间关系建模和时序推理能力。建议记录视频采样策略（如帧率、采样间隔）和输入长度限制。"
+}

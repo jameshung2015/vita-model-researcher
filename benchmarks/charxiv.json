@@ -1,0 +1,31 @@
+{
+  "id": "benchmark.charxiv",
+  "name": "CharXiv",
+  "description": "Chart Understanding Benchmark - 基于arXiv论文的图表理解评测，评估模型对学术图表（折线图、柱状图、散点图等）的理解和推理能力。",
+  "source": "CharXiv Team, 2024",
+  "datasets": [
+    {
+      "name": "CharXiv",
+      "link": "https://github.com/princeton-nlp/CharXiv",
+      "license": "Please refer to the original repository"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "图表问答的准确率",
+      "calculation": "correct_answers / total_questions"
+    },
+    {
+      "name": "chart_reasoning_score",
+      "definition": "图表推理任务的综合得分",
+      "calculation": "weighted average across different chart types and reasoning tasks"
+    }
+  ],
+  "test_method": "向模型提供从arXiv论文中提取的图表图像及相关问题，评估模型对图表内容、趋势、数值的理解能力。使用官方评估脚本进行评分。",
+  "example_scores": {
+    "GPT-4V": "参考官方leaderboard或技术报告",
+    "Gemini Pro Vision": "参考官方leaderboard或技术报告"
+  },
+  "notes": "图表理解需要OCR、数据提取、趋势分析等多种能力。建议记录是否使用few-shot示例以及prompt格式。"
+}
