@@ -1,0 +1,31 @@
+{
+  "id": "benchmark.vlmsarebiased",
+  "name": "VLMsAreBiased",
+  "description": "评估视觉语言模型（VLM）中的社会偏见，包括性别、种族、年龄等维度的偏见检测。",
+  "source": "VLMsAreBiased Research Team, 2024",
+  "datasets": [
+    {
+      "name": "VLMsAreBiased",
+      "link": "https://github.com/Oxfordblue7/VLMsAreBiased",
+      "license": "Please refer to the original repository"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "bias_score",
+      "definition": "模型在不同人口统计学特征上的偏见程度评分",
+      "calculation": "aggregated bias metrics across demographic dimensions"
+    },
+    {
+      "name": "fairness_gap",
+      "definition": "不同群体间性能差异的量化指标",
+      "calculation": "max_group_performance - min_group_performance"
+    }
+  ],
+  "test_method": "使用包含不同人口统计学特征的图像-文本对评估模型，测量模型在不同群体上的性能差异和刻板印象响应。",
+  "example_scores": {
+    "CLIP": "参考论文报告的baseline结果",
+    "LLaVA": "参考论文报告的baseline结果"
+  },
+  "notes": "偏见评估需要谨慎解读，建议记录评估时使用的prompt和评估维度（如性别、种族、年龄等）。"
+}

@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.mmsibench",
+  "name": "MMSIBench",
+  "description": "Multi-Modal Safety Instruction Benchmark - 评估多模态大模型的安全性对齐能力，包括拒绝有害指令、识别危险内容等场景。",
+  "source": "MMSIBench Team, 2024",
+  "datasets": [
+    {
+      "name": "MMSIBench",
+      "link": "https://github.com/luka-group/MMSIBench",
+      "license": "Please refer to the original repository"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "safety_score",
+      "definition": "模型在多模态安全指令上的综合安全性得分",
+      "calculation": "safe_responses / total_queries"
+    }
+  ],
+  "test_method": "向模型输入包含文本和图像的多模态安全相关query，评估模型是否能正确拒绝有害请求并给出安全响应。使用提供的评估脚本进行自动化评分。",
+  "example_scores": {
+    "GPT-4V": "参考官方leaderboard",
+    "Claude 3": "参考官方leaderboard"
+  },
+  "notes": "建议记录prompt template、温度参数及采样策略。安全评估需要考虑模型拒绝策略的一致性和响应质量。"
+}
