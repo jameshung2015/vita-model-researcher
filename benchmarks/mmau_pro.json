@@ -1,0 +1,108 @@
+{
+  "id": "benchmark.mmau_pro",
+  "name": "MMAU-Pro",
+  "description": "MMAU-Pro 是 MMAU 的增强版本，提供更具挑战性和全面性的音频通用智能评估。包含5,305个专家注释的问题-答案对，涵盖真实环境音频样本（最长可达10分钟），评估模型的高级音频理解和推理能力。",
+  "source": "Gamma Lab, University of Maryland et al., 2024",
+  "provider": "Gamma Lab UMD",
+  "category": "audio_understanding",
+  "datasets": [
+    {
+      "name": "MMAU-Pro",
+      "description": "更具挑战性和全面性的音频通用智能评估基准，包含5,305个专家注释的问题-答案对",
+      "link": "https://arxiv.org/abs/2508.13992",
+      "huggingface": "https://huggingface.co/datasets/gamma-lab-umd/MMAU-Pro",
+      "license": "Research use"
+    }
+  ],
+  "data_structure": {
+    "total_samples": "5,305个专家注释 (expert-annotated)的问题-答案对",
+    "question_types": [
+      "多项选择 (MCQ)",
+      "开放式问答 (open-ended QA)"
+    ],
+    "audio_characteristics": {
+      "source": "真实环境 (in the wild)音频样本",
+      "length": "包含长音频片段 (up to 10 minutes)",
+      "types": [
+        "语音 (speech)",
+        "环境声音 (environmental sound)",
+        "音乐 (music)",
+        "混合音频 (combination)"
+      ]
+    },
+    "evaluation_methods": {
+      "mcq": "使用embedding相似性评分 (NV-Embed-v2)",
+      "open_ended": "LLM-as-judge (语言模型作为评审者)",
+      "instruction_following": "正则匹配 (regex)检验输出约束"
+    }
+  },
+  "data_examples": [
+    {
+      "type": "MCQ",
+      "example": "给定音频片段（环境声、音乐或语音），要求模型进行高级推理，例如：'根据声音特征判断场景'或'识别音乐的风格和地域特征'"
+    },
+    {
+      "type": "开放性QA",
+      "example": "根据长音频内容生成深度分析，例如：'总结这段对话的核心观点'或'分析这段音乐的创作手法和情感表达'"
+    }
+  ],
+  "audio_domains": [
+    "语音 (Speech)",
+    "环境声音 (Environmental Sounds)",
+    "音乐 (Music)"
+  ],
+  "evaluation_dimensions": [
+    "高级音频感知能力",
+    "复杂推理能力",
+    "领域特定知识检索",
+    "专家级理解能力",
+    "空间感知 (spatial audio perception)",
+    "因果和物理推理 (causal & physical reasoning)",
+    "长音频理解 (long audio understanding, up to 10 minutes)",
+    "音乐推理 (music reasoning across 8 regions)",
+    "语音-知识问答 (voice-based STEM and world-knowledge QA)",
+    "指令遵循 (instruction-following with verifiable constraints)"
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "所有任务的总体准确率",
+      "calculation": "correct / total"
+    },
+    {
+      "name": "task_accuracy",
+      "definition": "各个任务的准确率",
+      "calculation": "correct_per_task / total_per_task"
+    },
+    {
+      "name": "domain_accuracy",
+      "definition": "各音频领域（语音/声音/音乐）的准确率",
+      "calculation": "correct_per_domain / total_per_domain"
+    }
+  ],
+  "test_method": "向模型提供音频片段和相应的自然语言问题，评估模型的回答准确性。问题需要基于音频感知的复杂、深思熟虑的推理和知识检索能力。MMAU-Pro 相比原始 MMAU 提供更具挑战性的场景和更长的音频样本。",
+  "example_scores": {
+    "Fun-Audio-Chat-8B": "Top-tier performance (Fun-Audio-Chat技术报告)"
+  },
+  "technical_features": [
+    "专家级认知能力测试",
+    "人工标注高质量数据",
+    "长音频理解能力评估（最长10分钟）",
+    "全面的音频领域覆盖",
+    "高难度推理任务"
+  ],
+  "key_challenges": [
+    "需要领域特定专业知识",
+    "复杂的多模态推理",
+    "高级音频感知能力",
+    "知识检索与应用",
+    "长音频上下文理解"
+  ],
+  "paper": "https://arxiv.org/abs/2508.13992",
+  "huggingface": "https://huggingface.co/datasets/gamma-lab-umd/MMAU-Pro",
+  "notes": "MMAU-Pro 是 MMAU 的增强版本，提供更具挑战性的评估场景。它包含5,305个专家注释的问题-答案对，支持长达10分钟的音频片段，对模型的音频理解和推理能力提出了更高要求。该基准特别强调专家级认知能力和长音频理解能力，是评估高级音频-语言模型的重要工具。",
+  "related_benchmarks": [
+    "mmau"
+  ],
+  "last_reviewed": "2024-12-24"
+}
