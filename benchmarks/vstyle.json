@@ -1,0 +1,41 @@
+{
+  "id": "benchmark.vstyle",
+  "name": "VStyle",
+  "description": "Voice Style and Empathy evaluation benchmark measuring model's ability to understand and respond with appropriate emotional and stylistic nuances in voice interactions.",
+  "source": "Voice Empathy Research Team, 2024",
+  "provider": "Conversational AI Lab",
+  "category": "voice_empathy",
+  "datasets": [
+    {
+      "name": "VStyle",
+      "description": "Voice style and empathy evaluation dataset with diverse emotional and stylistic scenarios",
+      "license": "Research use"
+    }
+  ],
+  "data_structure": {
+    "total_samples": "Voice interactions requiring empathetic and stylistically appropriate responses",
+    "evaluation_metrics": {
+      "empathy_score": "Appropriateness of emotional responses",
+      "style_matching": "Consistency of voice style with context"
+    }
+  },
+  "evaluation_dimensions": [
+    "Voice empathy recognition",
+    "Emotional understanding from speech",
+    "Appropriate response generation",
+    "Style consistency",
+    "Contextual tone matching"
+  ],
+  "metrics": [
+    {
+      "name": "score",
+      "definition": "Overall voice style and empathy score",
+      "calculation": "composite(empathy_accuracy, style_appropriateness)"
+    }
+  ],
+  "test_method": "Evaluate models on voice interactions requiring empathetic understanding and stylistically appropriate responses, using human evaluation and automated metrics.",
+  "example_scores": {
+    "Fun-Audio-Chat-8B": "Competitive performance"
+  },
+  "notes": "VStyle focuses on the soft skills of voice assistants, evaluating empathy and style appropriateness beyond task completion accuracy."
+}

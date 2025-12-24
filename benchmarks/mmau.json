@@ -96,7 +96,8 @@
     "Gemini 2.0 Flash": "59.93% (MMAU论文)",
     "GPT-4o": "~58% (MMAU论文)",
     "Qwen2-Audio": "52.50% (MMAU论文, SOTA开源模型)",
-    "GLM-4-Voice": "~51% (MMAU论文)"
+    "GLM-4-Voice": "~51% (MMAU论文)",
+    "Fun-Audio-Chat-8B": "Top-tier performance (Fun-Audio-Chat技术报告)"
   },
   "total_tasks": 27,
   "total_audio_clips": 10000,

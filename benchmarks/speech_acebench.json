@@ -1,0 +1,40 @@
+{
+  "id": "benchmark.speech_acebench",
+  "name": "Speech-ACEBench",
+  "description": "Audio-grounded Code Execution benchmark for evaluating speech function calling capabilities. Tests model's ability to understand spoken instructions and execute corresponding function calls correctly.",
+  "source": "Speech Function Calling Research Team, 2024",
+  "provider": "Audio Agent Research Group",
+  "category": "speech_function_calling",
+  "datasets": [
+    {
+      "name": "Speech-ACEBench",
+      "description": "Benchmark for speech-based function calling with code execution validation",
+      "license": "Research use"
+    }
+  ],
+  "data_structure": {
+    "total_samples": "Function calling scenarios with spoken instructions",
+    "evaluation_metrics": {
+      "call_accuracy": "Correctness of function calls from speech",
+      "execution_accuracy": "Successful execution of called functions"
+    }
+  },
+  "evaluation_dimensions": [
+    "Speech understanding for function calling",
+    "Function selection accuracy from audio",
+    "Parameter extraction from speech",
+    "Tool invocation correctness"
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "Overall accuracy of speech-based function calling",
+      "calculation": "correct_calls / total_calls"
+    }
+  ],
+  "test_method": "Evaluate models on their ability to understand spoken function calling instructions and execute correct API calls with proper parameters.",
+  "example_scores": {
+    "Fun-Audio-Chat-8B": "SOTA performance"
+  },
+  "notes": "Speech-ACEBench evaluates the challenging task of function calling from audio input, requiring models to understand speech and map to structured API calls."
+}

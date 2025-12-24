@@ -1,0 +1,41 @@
+{
+  "id": "benchmark.openaudiobench",
+  "name": "OpenAudioBench",
+  "description": "Comprehensive benchmark for evaluating audio language models on spoken question answering and audio understanding tasks. Covers multiple dimensions of audio-language model capabilities.",
+  "source": "Audio LLM Research Community, 2024",
+  "provider": "OpenAudio Research Team",
+  "category": "audio_llm_comprehensive",
+  "datasets": [
+    {
+      "name": "OpenAudioBench",
+      "description": "Comprehensive audio language model evaluation suite covering spoken QA and audio understanding",
+      "link": "https://github.com/OpenAudio/OpenAudioBench",
+      "license": "Research use"
+    }
+  ],
+  "data_structure": {
+    "total_samples": "Multiple datasets covering spoken QA tasks",
+    "evaluation_metrics": {
+      "accuracy": "Overall accuracy across all tasks",
+      "task_specific": "Per-task performance metrics"
+    }
+  },
+  "evaluation_dimensions": [
+    "Spoken question answering",
+    "Audio understanding",
+    "Speech comprehension",
+    "Multi-task generalization"
+  ],
+  "metrics": [
+    {
+      "name": "overall_accuracy",
+      "definition": "Overall accuracy across all OpenAudioBench tasks",
+      "calculation": "weighted_average(task_accuracies)"
+    }
+  ],
+  "test_method": "Evaluate audio language models on comprehensive spoken QA and audio understanding tasks using standardized evaluation protocols.",
+  "example_scores": {
+    "Fun-Audio-Chat-8B": "76.61% (First-rank among 8B-30B models)"
+  },
+  "notes": "OpenAudioBench is designed to evaluate audio-language models' ability to understand and respond to spoken questions. Models are ranked based on overall performance across all tasks."
+}

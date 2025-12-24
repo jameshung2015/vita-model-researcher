@@ -1,0 +1,45 @@
+{
+  "id": "benchmark.speech_bfcl",
+  "name": "Speech-BFCL",
+  "description": "Speech version of Berkeley Function-Calling Leaderboard. Evaluates function-calling capabilities from audio inputs, testing tool invocation correctness and argument accuracy when instructions are given via speech.",
+  "source": "Gorilla Lab, UC Berkeley (Speech Extension), 2024",
+  "provider": "Audio Function Calling Research Team",
+  "category": "speech_function_calling",
+  "datasets": [
+    {
+      "name": "Speech-BFCL",
+      "description": "Audio-grounded function calling benchmark extending BFCL to speech modality",
+      "license": "Research use"
+    }
+  ],
+  "data_structure": {
+    "total_samples": "Function calling tasks with spoken instructions",
+    "evaluation_metrics": {
+      "call_accuracy": "Function selection accuracy from speech",
+      "argument_accuracy": "Parameter extraction accuracy from audio"
+    }
+  },
+  "evaluation_dimensions": [
+    "Speech-to-function mapping",
+    "Argument extraction from audio",
+    "Tool selection from spoken instructions",
+    "API invocation correctness"
+  ],
+  "metrics": [
+    {
+      "name": "call_accuracy",
+      "definition": "Percentage of correct function selections from speech",
+      "calculation": "correct_function / total"
+    },
+    {
+      "name": "argument_accuracy",
+      "definition": "Exact match of extracted arguments from speech",
+      "calculation": "correct_arguments / total"
+    }
+  ],
+  "test_method": "Evaluate models on function calling tasks where instructions are provided via speech rather than text. Measure both function selection and argument extraction accuracy.",
+  "example_scores": {
+    "Fun-Audio-Chat-8B": "SOTA performance"
+  },
+  "notes": "Speech-BFCL extends the standard BFCL benchmark to the audio domain, presenting unique challenges in understanding spoken function calling instructions and extracting structured parameters."
+}

@@ -1,0 +1,41 @@
+{
+  "id": "benchmark.speech_smartinteract",
+  "name": "Speech-SmartInteract",
+  "description": "Benchmark for evaluating intelligent interaction capabilities through speech, including multi-turn dialogue, context understanding, and task completion via voice commands.",
+  "source": "Speech Interaction Research Team, 2024",
+  "provider": "Conversational AI Research Group",
+  "category": "speech_interaction",
+  "datasets": [
+    {
+      "name": "Speech-SmartInteract",
+      "description": "Multi-turn speech interaction scenarios for evaluating intelligent voice assistants",
+      "license": "Research use"
+    }
+  ],
+  "data_structure": {
+    "total_samples": "Multi-turn speech interaction scenarios",
+    "evaluation_metrics": {
+      "task_completion": "Success rate of completing tasks via speech",
+      "interaction_quality": "Quality of multi-turn speech interactions"
+    }
+  },
+  "evaluation_dimensions": [
+    "Multi-turn speech dialogue",
+    "Context maintenance in voice conversations",
+    "Task understanding from speech",
+    "Natural interaction flow",
+    "Speech-based task completion"
+  ],
+  "metrics": [
+    {
+      "name": "score",
+      "definition": "Overall speech interaction capability score",
+      "calculation": "composite(task_completion, dialogue_quality, context_understanding)"
+    }
+  ],
+  "test_method": "Evaluate models on multi-turn speech interaction scenarios, measuring task completion rates and interaction quality.",
+  "example_scores": {
+    "Fun-Audio-Chat-8B": "SOTA performance"
+  },
+  "notes": "Speech-SmartInteract evaluates sophisticated voice interaction capabilities beyond simple command execution, requiring context understanding and natural dialogue flow."
+}
