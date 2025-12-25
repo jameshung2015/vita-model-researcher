@@ -1,0 +1,143 @@
+{
+  "model_info": {
+    "model_name": "Doubao Seed 1.8",
+    "model_family": "Doubao (豆包)",
+    "model_type": "multimodal-agent",
+    "variants": [
+      {
+        "name": "Seed-1.8",
+        "params": "未公开",
+        "release_date": "2025-01-15",
+        "context_length": "32K-128K (可配置视频token预算)",
+        "license": "Apache 2.0",
+        "model_card": "https://github.com/ByteDance-Seed/Seed-1.8"
+      }
+    ],
+    "key_features": [
+      "通用Agent能力 - 支持信息检索、代码生成、GUI交互",
+      "多模态理解 - 图像、视频、文档、图表理解",
+      "增强的工具调用能力",
+      "可配置思维模式 - 支持延迟和成本感知推理",
+      "OS Agent能力 - 操作系统级任务执行",
+      "长视频理解 - 支持不同token预算配置",
+      "视觉推理和空间理解",
+      "中文场景优化"
+    ],
+    "architecture_innovations": [
+      "统一的代理交互框架",
+      "可配置的思维模式（latency-aware & cost-aware）",
+      "多步骤任务执行能力",
+      "视觉感知与语言理解深度融合"
+    ],
+    "last_updated": "2025-01-15"
+  },
+  "benchmark_results": [
+    {
+      "name": "VLMsAreBiased",
+      "metric": "Score",
+      "value": "62.0",
+      "description": "视觉语言模型社会偏见评估 - 性别、种族、年龄等维度偏见检测",
+      "source_type": "web_search",
+      "source": "Seed 1.8 Model Card & Technical Report",
+      "link": "https://github.com/ByteDance-Seed/Seed-1.8",
+      "benchmark_id": "benchmark.vlmsarebiased",
+      "notes": "SOTA performance, 超越Gemini 3 Pro (50.6) 显著优势"
+    },
+    {
+      "name": "MMSIBench (circular)",
+      "metric": "Pass@1",
+      "value": "25.8",
+      "description": "多模态安全指令基准 - 评估多模态大模型的安全性对齐能力",
+      "source_type": "web_search",
+      "source": "Seed 1.8 Model Card & Technical Report",
+      "link": "https://github.com/ByteDance-Seed/Seed-1.8",
+      "benchmark_id": "benchmark.mmsibench",
+      "notes": "优于Gemini 3 Pro (25.4)"
+    },
+    {
+      "name": "VideoMME (w/o sub)",
+      "metric": "Accuracy",
+      "value": "87.0%",
+      "description": "视频问答基准（无字幕） - 评估多模态视频理解能力",
+      "source_type": "web_search",
+      "source": "Seed 1.8 Model Card & Technical Report",
+      "link": "https://github.com/ByteDance-Seed/Seed-1.8",
+      "benchmark_id": "benchmark.videomme_w_o_sub",
+      "notes": "根据不同视频token预算(32K-80K)，准确率范围86.6%-87.8%，显著优于Seed1.5-VL；超越Gemini 2.5 Pro (84.8%)"
+    },
+    {
+      "name": "MotionBench",
+      "metric": "Accuracy",
+      "value": "SOTA (5/6 tasks)",
+      "description": "视频运动理解基准 - 评估对动作、运动轨迹、时序关系的理解能力",
+      "source_type": "web_search",
+      "source": "Seed 1.8 Model Card & Technical Report",
+      "link": "https://github.com/ByteDance-Seed/Seed-1.8",
+      "benchmark_id": "benchmark.motionbench",
+      "notes": "在Motion & Perception任务上展现卓越能力，在6个评估任务中的5个达到SOTA性能"
+    },
+    {
+      "name": "MMStar",
+      "metric": "Accuracy",
+      "value": "Best/Near-Best",
+      "description": "多模态推理综合评估基准",
+      "source_type": "web_search",
+      "source": "ByteDance Seed 1.8 官方发布",
+      "link": "https://seed.bytedance.com/zh/seed1_8",
+      "benchmark_id": "benchmark.mmstar",
+      "notes": "在通用视觉问答和视觉推理任务上达到最佳或接近最佳结果"
+    },
+    {
+      "name": "BrowseComp-en",
+      "metric": "Score",
+      "value": "67.6",
+      "description": "通用Agent评估基准（英文） - 评估浏览和搜索任务执行能力",
+      "source_type": "web_search",
+      "source": "ByteDance Seed 1.8 官方发布",
+      "link": "https://seed.bytedance.com/zh/seed1_8",
+      "benchmark_id": "benchmark.browsecomp_en",
+      "notes": "在搜索任务中超越Gemini-3-Pro等顶级模型，全球领先"
+    },
+    {
+      "name": "BLINK",
+      "metric": "Accuracy",
+      "value": "Best/Near-Best",
+      "description": "多图像推理基准 - 跨图像推理任务",
+      "source_type": "web_search",
+      "source": "ByteDance Seed 1.8 官方发布",
+      "link": "https://seed.bytedance.com/zh/seed1_8",
+      "benchmark_id": "benchmark.blink",
+      "notes": "在多图像理解和视觉感知任务上排名第一或第二"
+    }
+  ],
+  "notes": {
+    "data_source": "Primary sources: ByteDance Seed 1.8 official website, GitHub repository, web search results",
+    "model_tested": "Seed-1.8",
+    "additional_sources": [
+      "Seed 1.8 Model Card PDF (https://github.com/ByteDance-Seed/Seed-1.8/blob/main/Seed-1.8-Modelcard.pdf)",
+      "ByteDance Seed official blog posts",
+      "Web search results from multiple sources"
+    ],
+    "performance_highlights": [
+      "在VLMsAreBiased上达到SOTA (62.0)，显著超越Gemini 3 Pro",
+      "在VideoMME上达到87%准确率，超越Gemini 2.5 Pro",
+      "在MotionBench的6个任务中有5个达到SOTA",
+      "在BrowseComp-en搜索任务中得分67.6，全球领先",
+      "在视觉推理、通用视觉问答、空间理解和视频理解等任务上达到最佳或接近最佳结果",
+      "在多图像理解和视觉感知任务上排名第一或第二"
+    ],
+    "recommended_for": [
+      "通用Agent应用 - 信息检索、代码生成、工作流自动化",
+      "多模态内容理解 - 视频分析、文档理解、图表解析",
+      "智能助手场景 - GUI交互、OS级任务执行",
+      "中文场景应用 - 针对中文优化的多模态理解",
+      "视觉推理和空间理解任务",
+      "长视频分析和时序理解"
+    ],
+    "limitations": [
+      "参数规模未公开披露",
+      "部分benchmark具体数值未在公开文档中详细披露",
+      "主要通过火山引擎API提供，不支持本地部署"
+    ]
+  }
+}
