@@ -1,0 +1,111 @@
+{
+  "model_name": "Doubao Seed 1.8",
+  "short_description": "字节跳动Seed 1.8通用Agent多模态大模型，支持图文输入、工具调用、GUI交互和复杂任务执行。",
+  "homepage": "https://seed.bytedance.com/zh/seed1_8",
+  "model_card_link": "https://github.com/ByteDance-Seed/Seed-1.8",
+  "license": "Apache-2.0",
+  "provenance": {
+    "provider": "ByteDance Seed Team (字节跳动)",
+    "release_date": "2025-01-15",
+    "notes": "Seed 1.8是字节跳动Seed团队推出的通用Agent模型，针对多模态Agent场景优化，显著增强了工具调用能力、复杂指令遵循能力和OS Agent能力。在BrowseComp通用代理评估基准上实现全球领先性能。"
+  },
+  "input_types": [
+    "text",
+    "image",
+    "video"
+  ],
+  "output_types": [
+    "text"
+  ],
+  "architecture_family": "multimodal transformer with agent capabilities",
+  "architecture_details": "基于Transformer的多模态大模型架构，集成视觉理解、语言理解和代理执行能力；支持统一的代理交互和多步骤执行；具备可配置的思维模式以适应不同延迟和成本需求；支持视频、文档、图表等多种视觉输入的感知和理解。",
+  "size_params": {
+    "notable_variants": [
+      "Seed-1.8"
+    ],
+    "activated_params_note": "参数规模未公开披露；通过火山引擎API提供托管服务。"
+  },
+  "capabilities": {
+    "agent_execution": "支持信息检索、代码生成、GUI交互和复杂工作流等Agent任务",
+    "multimodal_understanding": "支持图像、视频、文档、图表等多模态输入理解",
+    "tool_calling": "增强的工具调用能力，支持多种外部工具集成",
+    "visual_reasoning": "在视觉推理任务上达到最佳或接近最佳性能",
+    "spatial_understanding": "优秀的空间理解能力",
+    "video_understanding": "强大的视频理解能力，支持长视频分析",
+    "code_generation": "支持代码生成和理解",
+    "complex_instruction_following": "显著增强的复杂指令遵循能力",
+    "thinking_modes": "可配置的思维模式，支持延迟和成本感知推理",
+    "os_agent": "增强的操作系统级Agent能力",
+    "chinese_optimization": "针对中文场景优化"
+  },
+  "tags": [
+    "closed-weight",
+    "api",
+    "multimodal",
+    "agent",
+    "vision-language",
+    "video-understanding",
+    "tool-calling",
+    "bytedance",
+    "chinese"
+  ],
+  "variants": [
+    {
+      "name": "Seed-1.8",
+      "params": 1,
+      "context_windows": [
+        32768,
+        65536,
+        131072
+      ],
+      "default_seq_len": 32768,
+      "default_num_gpus": 0,
+      "model_card_link": "https://github.com/ByteDance-Seed/Seed-1.8",
+      "release_date": "2025-01-15",
+      "hardware_recommendations": {
+        "notes": "通过火山引擎API托管服务，无需客户自行管理硬件。支持不同视频token预算配置（32K-80K）以平衡性能和成本。"
+      },
+      "tags": [
+        "flagship",
+        "agent",
+        "multimodal"
+      ]
+    }
+  ],
+  "evaluation": {
+    "papers": [
+      "https://github.com/ByteDance-Seed/Seed-1.8/blob/main/Seed-1.8-Modelcard.pdf"
+    ],
+    "benchmarks": [
+      "vlmsarebiased",
+      "mmsibench",
+      "videomme_w_o_sub",
+      "motionbench",
+      "mmstar",
+      "mmmu_val",
+      "realworldqa",
+      "ai2d_test",
+      "mathvision",
+      "hallusionbench",
+      "blink"
+    ],
+    "model_cards": [
+      "https://github.com/ByteDance-Seed/Seed-1.8",
+      "https://seed.bytedance.com/zh/seed1_8"
+    ]
+  },
+  "inference": {
+    "latency_ms": null,
+    "latency_level": "medium",
+    "throughput_rps": null,
+    "concurrency": null,
+    "memory_gb": null,
+    "quantization_friendly": false,
+    "supported_hardware": [
+      "Volcengine API"
+    ],
+    "distributed_support": false,
+    "notes": "通过火山引擎平台提供API服务。支持可配置的视频token预算（32K/48K/64K/80K）以平衡性能和延迟。具备统一的代理交互框架，支持搜索、代码生成、多模态搜索、MCP工具、视觉思维、2D定位、3D理解和视频分析等多种场景。"
+  },
+  "notes": "Seed 1.8是字节跳动Seed团队推出的通用Agent多模态大模型，在多项公开评测中达到全球领先水平。在视觉推理、通用视觉问答、空间理解和视频理解等任务上取得最佳或接近最佳结果。在BrowseComp通用代理评估基准的搜索任务中得分67.6，超越Gemini-3-Pro等顶级模型。特别针对中文场景优化，适用于智能助手、内容理解、代码生成等多种应用场景。"
+}
