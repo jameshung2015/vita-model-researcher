@@ -20,7 +20,8 @@
   "test_method": "Use MMSU evaluation toolkit covering intent detection, slot filling, and QA tasks; aggregate normalized subtask scores.",
   "example_scores": {
     "Qwen3-Omni-30B-A3B": "83.0 (VoiceBench report)",
-    "GPT-4o-mini": "79.2 (VoiceBench report)"
+    "GPT-4o-mini": "79.2 (VoiceBench report)",
+    "Fun-Audio-Chat-8B": "Top-tier performance (Fun-Audio-Chat技术报告)"
   },
   "notes": "Specify weighting across subtasks and whether transcripts or only audio were provided to the model."
 }

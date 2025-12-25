@@ -1,0 +1,40 @@
+{
+  "id": "benchmark.ultraeval_audio",
+  "name": "UltraEval-Audio",
+  "description": "Comprehensive audio evaluation benchmark covering spoken question answering and audio understanding capabilities of large audio language models.",
+  "source": "UltraEval Team, 2024",
+  "provider": "Audio Evaluation Research Group",
+  "category": "audio_llm_evaluation",
+  "datasets": [
+    {
+      "name": "UltraEval-Audio",
+      "description": "Audio version of UltraEval benchmark for evaluating spoken QA capabilities",
+      "license": "Research use"
+    }
+  ],
+  "data_structure": {
+    "total_samples": "Comprehensive spoken QA dataset",
+    "evaluation_metrics": {
+      "accuracy": "Overall performance on spoken question answering",
+      "comprehension": "Audio comprehension accuracy"
+    }
+  },
+  "evaluation_dimensions": [
+    "Spoken question answering",
+    "Audio comprehension",
+    "Language understanding from speech",
+    "Multi-domain audio tasks"
+  ],
+  "metrics": [
+    {
+      "name": "score",
+      "definition": "Composite score across UltraEval-Audio tasks",
+      "calculation": "mean(task_scores)"
+    }
+  ],
+  "test_method": "Evaluate models on spoken QA tasks using audio inputs, measuring comprehension and response accuracy.",
+  "example_scores": {
+    "Fun-Audio-Chat-8B": "First-rank among 8B-30B models"
+  },
+  "notes": "UltraEval-Audio extends traditional text-based evaluation to the audio domain, focusing on spoken question answering capabilities."
+}

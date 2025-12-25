@@ -1,0 +1,106 @@
+{
+  "model_name": "Fun-Audio-Chat",
+  "short_description": "Large Audio Language Model built for natural, low-latency voice interactions using Dual-Resolution Speech Representations.",
+  "homepage": "https://funaudiollm.github.io/funaudiochat/",
+  "model_card_link": "https://huggingface.co/FunAudioLLM/Fun-Audio-Chat-8B",
+  "license": "Apache-2.0",
+  "provenance": {
+    "provider": "FunAudioLLM (Alibaba Group)",
+    "release_date": "2024-12-23",
+    "notes": "Parallel large audio language model (LALM) trained on millions of hours of diverse audio data, adopting Dual-Resolution Speech Representations (DRSR) that maps 25Hz audio tokens to 5Hz speech representations for efficient processing."
+  },
+  "input_types": [
+    "audio",
+    "text"
+  ],
+  "output_types": [
+    "audio",
+    "text"
+  ],
+  "architecture_family": "multimodal transformer with dual-resolution speech processing",
+  "architecture_details": "Based on Qwen3-VL-8B vision-language model as shared LLM backbone; Speech Encoder initialized with Whisper-Large-v3; Pre-trained Speech Tokenizer and Detokenizer from CosyVoice 3; Uses grouping mechanism to operate at efficient 5Hz frame rate (vs. 12.5Hz or 25Hz for other models), reducing GPU hours by nearly 50% while maintaining high speech quality.",
+  "size_params": {
+    "notable_variants": [
+      "Fun-Audio-Chat-8B"
+    ],
+    "activated_params_note": "Dense 8B parameter architecture achieving first-rank performance among models of same size (8B and 30B-A3B) on OpenAudioBench, VoiceBench and UltraEval-Audio."
+  },
+  "capabilities": {
+    "spoken_qa": "First-rank among 8B-30B models on OpenAudioBench, VoiceBench, UltraEval-Audio",
+    "audio_understanding": "Top-tier performance on MMAU, MMAU-Pro, and MMSU",
+    "speech_function_calling": "SOTA on Speech-ACEBench, Speech-BFCL, Speech-SmartInteract",
+    "speech_instruction_following": true,
+    "voice_empathy": true,
+    "low_latency": "5Hz frame rate processing for efficient real-time interaction",
+    "frame_rate": "5Hz (vs. 12.5Hz or 25Hz for other models)",
+    "computational_efficiency": "Nearly 50% reduction in GPU hours compared to higher frame rate models"
+  },
+  "tags": [
+    "open_source",
+    "audio_llm",
+    "voice_assistant",
+    "low_latency",
+    "multimodal",
+    "speech_to_speech",
+    "function_calling"
+  ],
+  "variants": [
+    {
+      "name": "Fun-Audio-Chat-8B",
+      "params": 8,
+      "context_windows": [
+        32768
+      ],
+      "default_seq_len": 32768,
+      "default_num_gpus": 1,
+      "model_card_link": "https://huggingface.co/FunAudioLLM/Fun-Audio-Chat-8B",
+      "release_date": "2024-12-23",
+      "hardware_recommendations": {
+        "fp16_gb_per_gpu": 20,
+        "int8_gb_per_gpu": 12,
+        "recommended_num_gpus": 1,
+        "notes": "Dense 8B model with efficient 5Hz processing; single GPU deployment feasible; reduced computational requirements due to DRSR architecture."
+      },
+      "tags": [
+        "open_source",
+        "audio_native"
+      ]
+    }
+  ],
+  "evaluation": {
+    "papers": [
+      "https://arxiv.org/abs/2512.20156"
+    ],
+    "benchmarks": [
+      "openaudiobench",
+      "voicebench",
+      "ultraeval_audio",
+      "mmau",
+      "mmau_pro",
+      "mmsu",
+      "speech_acebench",
+      "speech_bfcl",
+      "speech_smartinteract",
+      "vstyle"
+    ],
+    "model_cards": [
+      "https://huggingface.co/FunAudioLLM/Fun-Audio-Chat-8B"
+    ]
+  },
+  "inference": {
+    "latency_ms": null,
+    "latency_level": "low",
+    "throughput_rps": null,
+    "concurrency": null,
+    "memory_gb": 20,
+    "quantization_friendly": true,
+    "supported_hardware": [
+      "GPU",
+      "A100",
+      "H100"
+    ],
+    "distributed_support": false,
+    "notes": "Operates at 5Hz frame rate for efficient processing. Trained with millions of hours of diverse audio data. Open-sourced training and inference code available. Achieves best overall performance (76.61% on OpenAudioBench, 83.21% on VoiceBench) among ~8B-scale audio LLMs."
+  },
+  "notes": "Fun-Audio-Chat is a parallel large audio language model (LALM) that adopts Dual-Resolution Speech Representations (DRSR) architecture, enabling efficient 5Hz processing while maintaining high quality. It ranks first among models of the same size on spoken QA tasks and achieves SOTA results on speech function calling benchmarks. The model demonstrates strong capabilities across spoken QA, audio understanding, speech function calling, speech instruction-following, and voice empathy tasks."
+}

@@ -1,17 +1,11 @@
 {
-  "id": "benchmark.mmau",
-  "name": "MMAU",
-  "description": "MMAU (Massive Multi-Task Audio Understanding and Reasoning) 是一个大规模多任务音频理解和推理基准，旨在评估大型音频-语言模型（LALMs）的专家级多模态推理和知识检索能力。包含10,000个精心策划的音频片段，配有人工标注的自然语言问题和答案，涵盖语音、环境声音和音乐三大音频领域。",
-  "source": "Adobe Research et al., 2024",
-  "provider": "Adobe Research",
+  "id": "benchmark.mmau_pro",
+  "name": "MMAU-Pro",
+  "description": "MMAU-Pro 是 MMAU 的增强版本，提供更具挑战性和全面性的音频通用智能评估。包含5,305个专家注释的问题-答案对，涵盖真实环境音频样本（最长可达10分钟），评估模型的高级音频理解和推理能力。",
+  "source": "Gamma Lab, University of Maryland et al., 2024",
+  "provider": "Gamma Lab UMD",
   "category": "audio_understanding",
   "datasets": [
-    {
-      "name": "MMAU",
-      "description": "10k音频片段配对的问答数据，涵盖语音、声音和音乐三大领域",
-      "link": "https://mmaubench.github.io/",
-      "license": "Research use"
-    },
     {
       "name": "MMAU-Pro",
       "description": "更具挑战性和全面性的音频通用智能评估基准，包含5,305个专家注释的问题-答案对",
@@ -45,21 +39,17 @@
   "data_examples": [
     {
       "type": "MCQ",
-      "example": "给定音频片段（环境声、音乐或语音），问模型推理问题，例如：'这个声音来自哪个乐器'或'这个人是在室内还是室外说话'"
+      "example": "给定音频片段（环境声、音乐或语音），要求模型进行高级推理，例如：'根据声音特征判断场景'或'识别音乐的风格和地域特征'"
     },
     {
       "type": "开放性QA",
-      "example": "根据音频内容生成文字回答，例如：'这个人在说什么？他们在说什么主题/内容？'或'这个音乐风格是什么？它在哪个区域?'"
+      "example": "根据长音频内容生成深度分析，例如：'总结这段对话的核心观点'或'分析这段音乐的创作手法和情感表达'"
     }
   ],
   "audio_domains": [
     "语音 (Speech)",
     "环境声音 (Environmental Sounds)",
     "音乐 (Music)"
-  ],
-  "task_categories": [
-    "推理任务 (Reasoning) - 16个任务",
-    "信息提取任务 (Information Extraction) - 11个任务"
   ],
   "evaluation_dimensions": [
     "高级音频感知能力",
@@ -90,34 +80,29 @@
       "calculation": "correct_per_domain / total_per_domain"
     }
   ],
-  "test_method": "向模型提供音频片段和相应的自然语言问题，评估模型的回答准确性。问题需要基于音频感知的复杂、深思熟虑的推理和知识检索能力。评估涵盖27个不同的任务，测试模型在各个音频领域的专家级能力。",
+  "test_method": "向模型提供音频片段和相应的自然语言问题，评估模型的回答准确性。问题需要基于音频感知的复杂、深思熟虑的推理和知识检索能力。MMAU-Pro 相比原始 MMAU 提供更具挑战性的场景和更长的音频样本。",
   "example_scores": {
-    "Gemini 3 Pro": "~62% (估计, 基于2.0性能提升)",
-    "Gemini 2.0 Flash": "59.93% (MMAU论文)",
-    "GPT-4o": "~58% (MMAU论文)",
-    "Qwen2-Audio": "52.50% (MMAU论文, SOTA开源模型)",
-    "GLM-4-Voice": "~51% (MMAU论文)",
     "Fun-Audio-Chat-8B": "Top-tier performance (Fun-Audio-Chat技术报告)"
   },
-  "total_tasks": 27,
-  "total_audio_clips": 10000,
   "technical_features": [
-    "三大音频领域全覆盖",
     "专家级认知能力测试",
     "人工标注高质量数据",
-    "27个多样化任务",
-    "推理与信息提取并重"
+    "长音频理解能力评估（最长10分钟）",
+    "全面的音频领域覆盖",
+    "高难度推理任务"
   ],
   "key_challenges": [
     "需要领域特定专业知识",
     "复杂的多模态推理",
     "高级音频感知能力",
-    "知识检索与应用"
+    "知识检索与应用",
+    "长音频上下文理解"
   ],
-  "website": "https://mmaubench.github.io/",
-  "paper": "https://arxiv.org/abs/2410.19168",
-  "github": "https://github.com/Sakshi113/MMAU",
-  "notes": "MMAU强调高级感知和需要领域特定知识的推理，挑战模型处理类似专家面临的任务。即使是最先进的Gemini 2.0 Flash也仅达到59.93%的准确率，最好的开源模型Qwen2-Audio仅达到52.50%，表明MMAU对当前音频-语言模型提出了重大挑战。该基准独特地测试LALMs的高级认知能力，要求模型进行基于音频感知的复杂、深思熟虑的推理和知识检索。",
-  "research_doc": "agents-toolchain/doc-eval-system/mmau_research.md",
-  "last_reviewed": "2025-11-17"
+  "paper": "https://arxiv.org/abs/2508.13992",
+  "huggingface": "https://huggingface.co/datasets/gamma-lab-umd/MMAU-Pro",
+  "notes": "MMAU-Pro 是 MMAU 的增强版本，提供更具挑战性的评估场景。它包含5,305个专家注释的问题-答案对，支持长达10分钟的音频片段，对模型的音频理解和推理能力提出了更高要求。该基准特别强调专家级认知能力和长音频理解能力，是评估高级音频-语言模型的重要工具。",
+  "related_benchmarks": [
+    "mmau"
+  ],
+  "last_reviewed": "2024-12-24"
 }
