@@ -253,7 +253,8 @@
       "ai2d_test",
       "aime25",
       "swebench",
-      "codeforces"
+      "codeforces",
+      "mle_bench"
     ],
     "model_cards": [
       "https://platform.openai.com/docs/models#gpt-4o",
