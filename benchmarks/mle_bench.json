@@ -1,0 +1,43 @@
+{
+  "id": "benchmark.mle_bench",
+  "name": "MLE-bench",
+  "description": "Machine Learning Engineering benchmark evaluating AI agents on 75 real-world Kaggle competitions across diverse ML domains including image classification, tabular data, NLP, audio processing, and sequence-to-sequence tasks. Measures end-to-end ML engineering capabilities: dataset preparation, model training, experimentation, and submission.",
+  "source": "OpenAI (ICLR 2025)",
+  "datasets": [
+    {
+      "name": "MLE-bench Kaggle Competitions",
+      "link": "https://github.com/openai/mle-bench",
+      "license": "MIT"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "medal_rate",
+      "definition": "Percentage of competitions where the agent achieves at least a bronze medal (any medal) on Kaggle leaderboards",
+      "calculation": "competitions_with_medal / total_competitions * 100"
+    },
+    {
+      "name": "pass@k",
+      "definition": "Success rate with k attempts per competition, measuring robustness across multiple runs",
+      "calculation": "success_rate_across_k_attempts"
+    }
+  ],
+  "inference_environment": {
+    "description": "Standard evaluation environment for reproducible MLE-bench testing",
+    "fields": {
+      "hardware": "36 vCPUs, 440GB RAM, 1x A10 GPU (24GB VRAM)",
+      "framework": "AIDE (purpose-built Kaggle agent), OpenHands, MLAB (general-purpose frameworks)",
+      "batch_size": "N/A (agent-driven)",
+      "concurrency": "Single competition per run",
+      "measurement_script": "https://github.com/openai/mle-bench - includes dataset construction, evaluation logic, and agent scaffolding code"
+    }
+  },
+  "test_method": "Agent receives competition description and dataset. Must autonomously perform feature engineering, model selection/training, hyperparameter tuning, and generate valid submissions. Performance compared against Kaggle public leaderboards. Standard runtime: 24 hours per competition with 3+ seeds for statistical significance.",
+  "example_scores": {
+    "o1-preview (AIDE)": "16.9% pass@1, 34.1% pass@8 (OpenAI, 2024)",
+    "gpt-4o (AIDE)": "8.7% pass@1, ~17% pass@6 (OpenAI, 2024)",
+    "gpt-4o (OpenHands)": "4.4% pass@1 (OpenAI, 2024)",
+    "gpt-4o (MLAB)": "0.8% pass@1 (OpenAI, 2024)"
+  },
+  "notes": "MLE-bench consists of 75 competitions spanning multiple complexity tiers (Low/Lite: 22 competitions/158GB; Full: 75 competitions/3.3TB). Scores heavily depend on agent scaffolding quality - AIDE is purpose-built for Kaggle vs general frameworks. Human baseline established from Kaggle public leaderboards. Performance improves significantly with multiple attempts (pass@k). Paper published at ICLR 2025."
+}
