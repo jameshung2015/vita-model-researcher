@@ -20,7 +20,9 @@
   "test_method": "Deliver each question verbatim; evaluate on final numeric or algebraic answer as specified. Multi-part questions should be split into independent items for scoring.",
   "example_scores": {
     "Top competitor (2025)": "~70% (official stats)",
-    "Strong high-school contestant": "~40% (practice reports)"
+    "Strong high-school contestant": "~40% (practice reports)",
+    "Grok 4": "90.0%",
+    "Grok 4 Heavy": "96.7%"
   },
   "notes": "Some problems expect proofs; define whether short answers or full derivations are required. Document parsing heuristics for symbolic answers."
 }

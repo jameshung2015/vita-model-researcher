@@ -23,7 +23,9 @@
     "IMO medalist baseline": "12/15 (coaching benchmark)",
     "GLM-4.6": "93.9% (Zhipu AI, 2025)",
     "DeepSeek-V3.2": "93.1% (DeepSeek, 2025)",
-    "DeepSeek-V3.2-Speciale": "96.0% (DeepSeek, 2025)"
+    "DeepSeek-V3.2-Speciale": "96.0% (DeepSeek, 2025)",
+    "Grok 4": "91.7%",
+    "Grok 4 Heavy": "100%"
   },
   "notes": "Clarify whether calculators, external tools, or repeated attempts were allowed. Keep scratch reasoning but score only the final value."
 }
