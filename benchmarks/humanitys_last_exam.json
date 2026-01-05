@@ -32,6 +32,7 @@
     "Zoom AI": "48.1% (January 2025, state-of-the-art)",
     "Google Gemini-3-Pro (with tools)": "45.8% (December 2024)",
     "GLM-4.6 (with tools)": "30.4% (December 2025)",
+    "Grok 4 Heavy": "50.7% (text-only subset)",
     "Claude 4.5": "17.3% (2025)",
     "Typical frontier models": "<10% (without tool integration)"
   },

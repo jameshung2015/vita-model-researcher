@@ -1,0 +1,109 @@
+{
+  "model_name": "Grok",
+  "short_description": "Truth-seeking AI companion for unfiltered answers with advanced capabilities in reasoning, coding, and visual processing.",
+  "homepage": "https://x.ai/grok",
+  "license": "Proprietary",
+  "provenance": {
+    "provider": "xAI",
+    "release_date": "2025-07-09",
+    "notes": "Grok 4 launched July 2025."
+  },
+  "input_types": [
+    "text",
+    "image",
+    "audio",
+    "video"
+  ],
+  "output_types": [
+    "text",
+    "audio"
+  ],
+  "architecture_family": "multimodal transformer",
+  "architecture_details": "Proprietary architecture with scaled reinforcement learning.",
+  "size_params": {
+    "notable_variants": [
+      "grok-4",
+      "grok-4-heavy"
+    ],
+    "activated_params_note": "Parameter counts are undisclosed; API users access hosted inference endpoints."
+  },
+  "capabilities": {
+    "multimodal": true,
+    "function_calling": true,
+    "tool_use": true,
+    "reasoning": true,
+    "streaming": true,
+    "realtime": true
+  },
+  "tags": [
+    "closed-weight",
+    "api",
+    "multimodal",
+    "reasoning"
+  ],
+  "variants": [
+    {
+      "name": "grok-4",
+      "params": 0,
+      "context_windows": [
+        256000
+      ],
+      "default_seq_len": 256000,
+      "default_num_gpus": 0,
+      "release_date": "2025-07-09",
+      "hardware_recommendations": {
+        "notes": "Hosted via xAI API; no customer-managed hardware required."
+      },
+      "tags": [
+        "flagship",
+        "multimodal"
+      ]
+    },
+    {
+      "name": "grok-4-heavy",
+      "params": 0,
+      "context_windows": [
+        256000
+      ],
+      "default_seq_len": 256000,
+      "default_num_gpus": 0,
+      "release_date": "2025-07-09",
+      "hardware_recommendations": {
+        "notes": "Hosted via xAI API; most powerful version of Grok 4."
+      },
+      "tags": [
+        "premium",
+        "multimodal"
+      ]
+    }
+  ],
+  "evaluation": {
+    "papers": [
+      "https://x.ai/news/grok-4"
+    ],
+    "benchmarks": [
+      "gpqa",
+      "livecodebench",
+      "usamo25",
+      "aime25",
+      "arc_agi",
+      "humanitys_last_exam"
+    ],
+    "model_cards": [
+      "https://data.x.ai/2025-08-20-grok-4-model-card.pdf"
+    ]
+  },
+  "inference": {
+    "latency_ms": null,
+    "latency_level": "variable (API-managed)",
+    "throughput_rps": null,
+    "concurrency": null,
+    "memory_gb": null,
+    "quantization_friendly": false,
+    "supported_hardware": [
+      "xAI API"
+    ],
+    "notes": "Requests served from xAI-managed infrastructure."
+  },
+  "notes": "Grok 4 sets a new state-of-the-art for closed models on ARC-AGI V2 with 15.9%. Grok 4 Heavy is the first model to score 50% on Humanity's Last Exam."
+}

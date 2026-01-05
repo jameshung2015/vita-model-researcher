@@ -1,0 +1,24 @@
+{
+  "id": "benchmark.usamo25",
+  "name": "USAMO 2025",
+  "description": "The 2025 United States of America Mathematical Olympiad (USAMO) benchmark consists of six challenging mathematical problems requiring rigorous proof-based reasoning.",
+  "source": "LLM Stats",
+  "datasets": [
+    {
+      "name": "USAMO 2025",
+      "link": "https://llm-stats.com/benchmarks/usamo25"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "Proof-based reasoning accuracy",
+      "calculation": "correct / total"
+    }
+  ],
+  "test_method": "This benchmark evaluates models on mathematical problem-solving capabilities beyond simple numerical computation, focusing on formal mathematical reasoning and proof generation.",
+  "example_scores": {
+    "Grok 4 Heavy": "61.9%"
+  },
+  "notes": "USAMO is the most prestigious high school mathematics competition in the United States."
+}
