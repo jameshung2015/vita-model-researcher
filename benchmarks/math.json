@@ -45,6 +45,8 @@
   },
   "test_method": "Models solve competition-level math problems and provide step-by-step solutions in LaTeX and natural language. Final answer must be enclosed in LaTeX \\boxed{} tag for evaluation. Problems require advanced mathematical reasoning and multi-step problem solving.",
   "example_scores": {
+    "Gemini 3 Pro": "~68.9% (Google, 2025)",
+    "Grok 4.1": "~62.3%",
     "GPT-4": "~42.5% (reported in various evaluations)",
     "Minerva 540B": "~33.6% (Google DeepMind)",
     "Random baseline": "<5%"
