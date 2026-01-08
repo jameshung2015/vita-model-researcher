@@ -1,0 +1,97 @@
+{
+  "id": "benchmark.infinitybench",
+  "name": "InfinityBench",
+  "description": "InfinityBench 是第一个全面的长上下文基准测试，专门设计用于评估100k+上下文窗口的语言模型。涵盖多种任务类型包括检索、数学推理、代码调试、摘要等，支持中英文双语评估，上下文长度从5k到超过1M tokens。",
+  "source": "Zhang et al., UC Berkeley & Tsinghua University, 2024",
+  "provider": "UC Berkeley & Tsinghua University",
+  "category": "long_context",
+  "datasets": [
+    {
+      "name": "InfinityBench",
+      "description": "12个任务的综合长上下文评估集，覆盖5k-1M+ tokens",
+      "link": "https://github.com/OpenBMB/InfinityBench",
+      "license": "MIT"
+    }
+  ],
+  "data_structure": {
+    "total_tasks": "12个任务",
+    "task_categories": [
+      "检索 (Retrieval)",
+      "数学推理 (Math Reasoning)",
+      "代码调试 (Code Debug)",
+      "摘要 (Summarization)",
+      "多项选择 (Multiple Choice)",
+      "对话历史 (Dialogue History)",
+      "数据分析 (Data Analysis)"
+    ],
+    "context_lengths": "5k - 1M+ tokens",
+    "languages": ["中文", "English"],
+    "task_details": [
+      "En.Sum - 英文摘要",
+      "Zh.Sum - 中文摘要",
+      "En.QA - 英文QA",
+      "Zh.QA - 中文QA",
+      "En.MC - 英文多选",
+      "Zh.MC - 中文多选",
+      "En.Dia - 英文对话",
+      "Code.Debug - 代码调试",
+      "Code.Run - 代码运行",
+      "Math.Calc - 数学计算",
+      "Math.Find - 数学查找",
+      "Retrieve.PassKey - 密钥检索"
+    ]
+  },
+  "evaluation_dimensions": [
+    "极长上下文理解 (ultra-long context understanding)",
+    "信息检索能力 (information retrieval)",
+    "多文档推理 (multi-document reasoning)",
+    "代码理解与调试 (code understanding and debugging)",
+    "数学推理 (mathematical reasoning)",
+    "跨语言能力 (cross-lingual capability)",
+    "上下文鲁棒性 (context robustness)"
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "QA和多选题的准确率",
+      "calculation": "correct_answers / total_questions"
+    },
+    {
+      "name": "rouge_l",
+      "definition": "摘要任务的ROUGE-L F1分数",
+      "calculation": "ROUGE-L F1 score"
+    },
+    {
+      "name": "success_rate",
+      "definition": "检索任务的成功率",
+      "calculation": "successful_retrievals / total_attempts"
+    },
+    {
+      "name": "code_pass_rate",
+      "definition": "代码任务的通过率",
+      "calculation": "passed_cases / total_cases"
+    },
+    {
+      "name": "average_score",
+      "definition": "所有任务的平均得分",
+      "calculation": "sum(task_scores) / num_tasks"
+    }
+  ],
+  "test_method": "使用官方评估脚本和数据集，每个任务独立评估。需要支持超长上下文的推理框架（如vLLM、HuggingFace Transformers with FlashAttention）。建议使用多GPU并行推理以加速评估。记录内存使用、推理延迟和上下文长度。",
+  "key_features": [
+    "业界首个100k+上下文基准",
+    "12个多样化任务",
+    "双语支持（中英文）",
+    "可扩展至1M+ tokens",
+    "真实场景任务设计",
+    "全面的能力评估",
+    "开源数据集和评估工具"
+  ],
+  "example_scores": {
+    "GPT-4-Turbo-128k": "~72.4 (paper, average across tasks)",
+    "Claude-2.1-200k": "~68.9 (paper, average across tasks)",
+    "Mistral-7B-32k": "~45.2 (estimated)",
+    "Qwen-72B-32k": "~62.7 (estimated)"
+  },
+  "notes": "InfinityBench是评估超长上下文能力的黄金标准之一。评估时需要大量GPU内存（建议至少80GB VRAM per GPU）。推荐使用FlashAttention-2或其他内存优化技术。记录实际支持的最大上下文长度、注意力机制类型（full/sliding window/sparse）和位置编码方式（RoPE/ALiBi等）。某些任务（如1M tokens）可能需要多卡推理或gradient checkpointing。"
+}
