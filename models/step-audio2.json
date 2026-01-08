@@ -75,7 +75,7 @@
       "urobench_zh",
       "cvss",
       "mmau",
-      "covost2",
+      "covost2_avg",
       "asr_english_avg",
       "asr_chinese_avg"
     ],

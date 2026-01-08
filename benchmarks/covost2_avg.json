@@ -1,0 +1,27 @@
+{
+  "id": "benchmark.covost2_avg",
+  "name": "CoVoST 2 Average",
+  "description": "Average BLEU score across multiple language pairs in the CoVoST 2 speech translation benchmark, measuring multilingual speech-to-text translation performance.",
+  "source": "Wang et al., CoVoST 2",
+  "datasets": [
+    {
+      "name": "CoVoST 2",
+      "link": "https://github.com/facebookresearch/covost",
+      "license": "CC0"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "bleu",
+      "definition": "Average BLEU score across multiple translation directions",
+      "calculation": "Mean BLEU across language pairs (En→Zh, Zh→En, En→De, etc.)"
+    }
+  ],
+  "test_method": "Evaluate speech translation models on multiple language pairs from CoVoST 2 and compute the average BLEU score. Common pairs include English-Chinese, English-German, English-French, and others.",
+  "example_scores": {
+    "GPT-4o-audio": "29.61 (Step-Audio 2 Technical Report)",
+    "Qwen2.5-Omni": "35.40 (Step-Audio 2 Technical Report)",
+    "Step-Audio-2": "38.2 (Step-Audio 2 Technical Report)"
+  },
+  "notes": "This is an aggregate metric providing a comprehensive view of multilingual speech translation capabilities. The specific language pairs and their weights may vary across implementations."
+}

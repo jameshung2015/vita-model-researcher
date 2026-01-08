@@ -1,0 +1,27 @@
+{
+  "id": "benchmark.asr_english_avg",
+  "name": "English ASR Average",
+  "description": "Average Word Error Rate (WER) across multiple English automatic speech recognition datasets, providing a comprehensive measure of English ASR performance.",
+  "source": "Composite benchmark from multiple ASR datasets",
+  "datasets": [
+    {
+      "name": "Multiple English ASR datasets",
+      "link": "https://arxiv.org/html/2507.16632v1",
+      "license": "Various"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "wer",
+      "definition": "Average Word Error Rate across multiple English ASR test sets",
+      "calculation": "Mean WER across datasets (LibriSpeech, Common Voice, etc.)"
+    }
+  ],
+  "test_method": "Evaluate ASR models on multiple English datasets and compute the average WER. Datasets typically include LibriSpeech (test-clean, test-other), Common Voice, and other standard English ASR benchmarks.",
+  "example_scores": {
+    "GPT-4o-transcribe": "4.50% (Step-Audio 2 Technical Report)",
+    "Whisper-v3": "~5.2% (Step-Audio 2 Technical Report)",
+    "Step-Audio-2": "3.8% (Step-Audio 2 Technical Report)"
+  },
+  "notes": "This is an aggregate metric providing a more robust measure of English ASR performance than individual dataset scores. The specific datasets and their weights may vary across implementations."
+}
