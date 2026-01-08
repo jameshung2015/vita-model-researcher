@@ -22,8 +22,9 @@
     "Claude Opus 4.5": "+16 p.p. improvement over Sonnet 4.5 (Thinking)",
     "GPT-4": "~35-40% (baseline estimates)",
     "Claude Sonnet 4.5": "Leading performance among non-Opus models",
-    "Grok 4": "79.0%",
-    "Grok 4 Heavy": "79.4%"
+    "Grok 4.1": "80.2%",
+    "Grok 4 Heavy": "79.4%",
+    "Grok 4": "79.0%"
   },
   "notes": "Designed to avoid training data contamination by using post-cutoff problems. Specify problem difficulty distribution (easy/medium/hard) and programming language. Document whether hints or multiple attempts were allowed."
 }

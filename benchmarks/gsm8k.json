@@ -15,6 +15,8 @@
   ],
   "test_method": "常用方法是逐题提示模型并要求输出最终数值答案，或使用 chain-of-thought + 自检/过滤步骤。评测时需确定是否采用 few-shot 示例，以及如何抽取最终答案（末行数值、正则匹配等）。常用评测工具：Evals、HumanEval-style scripts、自建解析器。",
   "example_scores": {
+    "Gemini 3 Pro": "~94.1% pass@1 (Google, 2025, with CoT)",
+    "Grok 4.1": "~91.5% pass@1",
     "GPT-4": "~85-90 pass@1 (使用 CoT 与 verification)",
     "GPT-3.5-turbo": "~30-60 (取决于 prompt 与解析策略)"
   },

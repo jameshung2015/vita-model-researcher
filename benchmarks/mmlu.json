@@ -15,9 +15,11 @@
   ],
   "test_method": "标准做法：将题目按原始格式（多选）作为单次提示，记录模型选择的选项并与gold答案比对；常见实现包括 Evals、OpenAI evals 社区实现及自建脚本。需要注意 prompt engineering（few-shot/zero-shot）对结果影响较大，应记录prompt设置与上下文长度。",
   "example_scores": {
+    "Gemini 3 Pro": "~89.2% (Google, 2025)",
     "GPT-4": "~86.4 (论文/leaderboard, depends on prompt)",
+    "Gemini 1.5 Pro": "参见官方与第三方评测汇总（示例入口：https://ai.google.dev/gemini-api/docs/models/gemini）",
     "GPT-3.5-turbo": "~57-60 (varies by prompt)",
-    "Gemini 1.5 Pro": "参见官方与第三方评测汇总（示例入口：https://ai.google.dev/gemini-api/docs/models/gemini）"
+    "Grok 4.1": "87.8%"
   },
   "notes": "建议记录是否使用 chain-of-thought、是否使用 majority-vote over n samples，以及prompt示例和随机种子用于复现。"
 }

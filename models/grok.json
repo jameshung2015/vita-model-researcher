@@ -23,7 +23,8 @@
   "size_params": {
     "notable_variants": [
       "grok-4",
-      "grok-4-heavy"
+      "grok-4-heavy",
+      "grok-4.1"
     ],
     "activated_params_note": "Parameter counts are undisclosed; API users access hosted inference endpoints."
   },
@@ -75,6 +76,24 @@
         "premium",
         "multimodal"
       ]
+    },
+    {
+      "name": "grok-4.1",
+      "params": 0,
+      "context_windows": [
+        256000
+      ],
+      "default_seq_len": 256000,
+      "default_num_gpus": 0,
+      "release_date": "2025-12-01",
+      "hardware_recommendations": {
+        "notes": "Hosted via xAI API; improved version with enhanced reasoning capabilities."
+      },
+      "tags": [
+        "flagship",
+        "multimodal",
+        "enhanced-reasoning"
+      ]
     }
   ],
   "evaluation": {
@@ -105,5 +124,5 @@
     ],
     "notes": "Requests served from xAI-managed infrastructure."
   },
-  "notes": "Grok 4 sets a new state-of-the-art for closed models on ARC-AGI V2 with 15.9%. Grok 4 Heavy is the first model to score 50% on Humanity's Last Exam."
+  "notes": "Grok 4 sets a new state-of-the-art for closed models on ARC-AGI V2 with 15.9%. Grok 4 Heavy is the first model to score 50% on Humanity's Last Exam. Grok 4.1 released December 2025 with enhanced reasoning and performance improvements across multiple benchmarks."
 }

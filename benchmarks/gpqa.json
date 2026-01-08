@@ -37,6 +37,7 @@
     "Gemini 3 Deep Think (Diamond)": "93.8% (Google, 2025)",
     "GLM-4.6": "81.0% (Zhipu AI, 2025)",
     "Grok 4 Heavy": "88.9%",
+    "Grok 4.1": "89.5%",
     "Grok 4": "87.5%"
   },
   "notes": "GPQA Diamond is the highest-quality 198-question subset. Benchmark enables 'realistic scalable oversight experiments' for evaluating human supervision of superhuman AI systems. Report whether using full GPQA or GPQA Diamond subset."
