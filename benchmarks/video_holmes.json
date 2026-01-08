@@ -1,0 +1,120 @@
+{
+  "id": "benchmark.video_holmes",
+  "name": "Video-Holmes",
+  "description": "受福尔摩斯推理过程启发的视频理解基准，评估多模态语言模型的复杂视频推理能力。由 270 个手动标注的悬疑短片（时长 1-5 分钟）生成 1,837 个问题。强调主动寻找范式，要求模型主动定位和连接散布在不同视频片段中的多个相关视觉线索。",
+  "source": "Cheng et al., arXiv 2025",
+  "provider": "Tencent ARC Lab & City University of Hong Kong",
+  "category": "video_reasoning",
+  "datasets": [
+    {
+      "name": "Video-Holmes Test Set",
+      "description": "270 个悬疑短片，1,837 个问题，涵盖 7 个推理任务类型",
+      "link": "https://huggingface.co/datasets/TencentARC/Video-Holmes",
+      "license": "Apache-2.0（仅限学术用途）"
+    },
+    {
+      "name": "Video-Holmes Training Set",
+      "description": "233 个视频，1,551 个问题（发布于 2025 年 5 月 29 日）",
+      "link": "https://huggingface.co/datasets/TencentARC/Video-Holmes",
+      "license": "Apache-2.0（仅限学术用途）"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "overall_accuracy",
+      "definition": "总体准确率",
+      "calculation": "所有问题的正确率"
+    },
+    {
+      "name": "sr_score",
+      "definition": "场景识别 (Scene Recognition) 得分",
+      "calculation": "场景识别任务的准确率"
+    },
+    {
+      "name": "imc_score",
+      "definition": "隐含动机理解 (Implicit Motivation Comprehension) 得分",
+      "calculation": "隐含动机理解任务的准确率"
+    },
+    {
+      "name": "tci_score",
+      "definition": "时序因果推理 (Temporal Causal Inference) 得分",
+      "calculation": "时序因果推理任务的准确率"
+    },
+    {
+      "name": "ta_score",
+      "definition": "时间对齐 (Temporal Alignment) 得分",
+      "calculation": "时间对齐任务的准确率"
+    },
+    {
+      "name": "mhr_score",
+      "definition": "多跳推理 (Multi-hop Reasoning) 得分",
+      "calculation": "多跳推理任务的准确率"
+    },
+    {
+      "name": "par_score",
+      "definition": "情节预测与推理 (Plot Anticipation and Reasoning) 得分",
+      "calculation": "情节预测任务的准确率"
+    },
+    {
+      "name": "cti_score",
+      "definition": "因果-时序整合 (Causal-Temporal Integration) 得分",
+      "calculation": "因果-时序整合任务的准确率"
+    }
+  ],
+  "technical_features": [
+    "1,837 个测试问题，270 个悬疑短片",
+    "1,551 个训练问题，233 个视频",
+    "视频时长 1-5 分钟",
+    "7 个不同的推理任务类型",
+    "主动寻找线索范式（非显式提供）",
+    "需要跨视频片段定位和连接多个相关视觉线索",
+    "一键下载和评估功能",
+    "支持多种主流多模态模型"
+  ],
+  "test_method": "使用悬疑短片测试模型的视频推理能力。与传统基准不同，Video-Holmes 要求模型主动在视频中寻找分散的线索，而不是依赖显式提供的证据。模型需要识别场景、理解隐含动机、进行时序因果推理、对齐时间线索、执行多跳推理、预测情节发展，并整合因果和时序信息。评估通过 GitHub 提供的集成评估代码进行，支持 API 和本地部署模式。",
+  "example_scores": {
+    "Gemini-2.5-Pro": "45% (最佳性能, Video-Holmes GitHub)",
+    "Qwen2.5-VL-7B (Baseline)": "27.8%",
+    "Qwen2.5-VL-7B (GRPO-CARE)": "33.5%",
+    "Qwen2.5-VL-7B (GRPO-CARE*, trained on Video-Holmes)": "40.7%",
+    "Video-R1 (based on Qwen2.5-VL-7B)": "最高推理模型",
+    "说明": "尽管 MLLM 在视觉感知方面通常表现出色，但在整合信息方面遇到重大困难，经常错过关键线索。最佳模型 Gemini-2.5-Pro 的准确率仅为 45%。"
+  },
+  "evaluation_dimensions": [
+    "场景识别 (SR)",
+    "隐含动机理解 (IMC)",
+    "时序因果推理 (TCI)",
+    "时间对齐 (TA)",
+    "多跳推理 (MHR)",
+    "情节预测与推理 (PAR)",
+    "因果-时序整合 (CTI)"
+  ],
+  "application_value": [
+    "评估模型在复杂视频场景中的推理能力",
+    "识别模型在视频信息整合方面的弱点",
+    "为视频理解和分析应用提供基准",
+    "推动多模态模型在长视频推理上的进步",
+    "支持悬疑、侦探类视频内容的自动分析",
+    "为视频问答系统提供评估标准"
+  ],
+  "limitations": [
+    "仅限于悬疑短片类型",
+    "视频时长限制在 1-5 分钟",
+    "需要手动标注，成本较高",
+    "最佳模型准确率仅 45%，表明任务极具挑战性",
+    "视频版权归原始来源所有"
+  ],
+  "supported_models": [
+    "Qwen2.5-VL (7B, 32B)",
+    "InternVL (2.5-8B, 3-8B)",
+    "Gemini (2.0-flash, 2.0-pro-exp)",
+    "VideoChat-R1",
+    "Video-R1"
+  ],
+  "paper": "https://arxiv.org/abs/2505.21374",
+  "website": "https://video-holmes.github.io/Page.github.io/",
+  "github": "https://github.com/TencentARC/Video-Holmes",
+  "last_reviewed": "2025-01-08",
+  "authors": "Junhao Cheng, Yuying Ge, Teng Wang, Yixiao Ge, Jing Liao, Ying Shan",
+  "notes": "Video-Holmes 是首个以福尔摩斯推理过程为灵感的视频理解基准。与传统视频问答基准不同，它强调主动寻找线索的能力，要求模型像侦探一样主动在视频中搜索和连接分散的证据，而非依赖显式提供的信息。这种设计使 Video-Holmes 成为评估深度视频推理能力的理想工具。基准包含 7 个不同的推理维度，从基础的场景识别到复杂的因果-时序整合，全面评估模型的推理能力。实验表明，即使是最先进的模型（如 Gemini-2.5-Pro）也只能达到 45% 的准确率，显示出巨大的改进空间。训练集于 2025 年 5 月 29 日发布，支持研究者训练和微调模型。发布于 2025 年 5 月，arXiv:2505.21374，Apache-2.0 许可证（仅限学术用途）。"
+}
