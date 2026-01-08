@@ -1,0 +1,102 @@
+{
+  "model_name": "Step-Audio-2",
+  "short_description": "Advanced multimodal audio language model with state-of-the-art performance on speech recognition, understanding, and generation tasks.",
+  "homepage": "https://arxiv.org/html/2507.16632v1",
+  "model_card_link": "https://arxiv.org/html/2507.16632v1",
+  "license": "Research use",
+  "provenance": {
+    "provider": "Step-Audio Research Team",
+    "release_date": "2025-07-01",
+    "notes": "Step-Audio 2 is a large audio language model demonstrating strong performance across English and Chinese ASR, audio understanding, speech translation, and dialogue tasks. Published in Step-Audio 2 Technical Report."
+  },
+  "input_types": [
+    "audio",
+    "text"
+  ],
+  "output_types": [
+    "audio",
+    "text"
+  ],
+  "architecture_family": "multimodal transformer",
+  "architecture_details": "Large audio language model with end-to-end audio processing capabilities. Supports real-time audio understanding, speech recognition, translation, and generation.",
+  "size_params": {
+    "notable_variants": [
+      "Step-Audio-2-Base"
+    ],
+    "activated_params_note": "Exact parameter count not publicly disclosed. Designed for efficient audio processing with competitive performance."
+  },
+  "capabilities": {
+    "asr_english": "State-of-the-art English ASR with ~2.5% WER on LibriSpeech test-clean",
+    "asr_chinese": "Strong Chinese ASR performance",
+    "audio_understanding": "Advanced audio understanding on MMAU and other benchmarks",
+    "speech_translation": "Speech-to-speech and speech-to-text translation",
+    "dialogue": "Real-time audio dialogue with URO-Bench scores of 84.54 (EN) and 74.18 (ZH)",
+    "multilingual": "English and Chinese language support"
+  },
+  "tags": [
+    "audio_llm",
+    "multimodal",
+    "speech_recognition",
+    "speech_translation",
+    "audio_understanding",
+    "dialogue",
+    "multilingual"
+  ],
+  "variants": [
+    {
+      "name": "Step-Audio-2-Base",
+      "params": 8,
+      "context_windows": [
+        32768
+      ],
+      "default_seq_len": 32768,
+      "default_num_gpus": 1,
+      "model_card_link": "https://arxiv.org/html/2507.16632v1",
+      "release_date": "2025-07-01",
+      "hardware_recommendations": {
+        "fp16_gb_per_gpu": 24,
+        "int8_gb_per_gpu": 16,
+        "recommended_num_gpus": 1,
+        "notes": "Efficient audio model suitable for single GPU deployment. Optimized for real-time audio processing."
+      },
+      "tags": [
+        "audio_native"
+      ]
+    }
+  ],
+  "evaluation": {
+    "papers": [
+      "https://arxiv.org/html/2507.16632v1"
+    ],
+    "benchmarks": [
+      "librispeech_test_clean",
+      "librispeech_test_other",
+      "urobench_en",
+      "urobench_zh",
+      "cvss",
+      "mmau",
+      "covost2",
+      "asr_english_avg",
+      "asr_chinese_avg"
+    ],
+    "model_cards": [
+      "https://arxiv.org/html/2507.16632v1"
+    ]
+  },
+  "inference": {
+    "latency_ms": null,
+    "latency_level": "medium",
+    "throughput_rps": null,
+    "concurrency": null,
+    "memory_gb": 24,
+    "quantization_friendly": true,
+    "supported_hardware": [
+      "GPU",
+      "A100",
+      "H100"
+    ],
+    "distributed_support": false,
+    "notes": "Designed for efficient audio processing with competitive latency. Supports real-time dialogue and streaming audio tasks."
+  },
+  "notes": "Step-Audio 2 demonstrates strong performance across multiple audio tasks including English and Chinese ASR, audio understanding, speech translation, and real-time dialogue. The model achieves competitive or state-of-the-art results on benchmarks like LibriSpeech, URO-Bench, and MMAU."
+}

@@ -1,0 +1,27 @@
+{
+  "id": "benchmark.librispeech_test_clean",
+  "name": "LibriSpeech (test-clean)",
+  "description": "Clean split of LibriSpeech audiobook corpus featuring high-quality recordings with minimal background noise.",
+  "source": "Panayotov et al., 2015",
+  "datasets": [
+    {
+      "name": "LibriSpeech",
+      "link": "https://www.openslr.org/12",
+      "license": "Creative Commons Attribution 4.0"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "wer",
+      "definition": "Word Error Rate on the official test-clean split",
+      "calculation": "(S + D + I) / N where S=substitutions, D=deletions, I=insertions, N=total words"
+    }
+  ],
+  "test_method": "Use the official test-clean list with provided lexicon. Most setups rely on 16kHz sampling and cased text normalization.",
+  "example_scores": {
+    "Whisper-large-v3": "2.7 WER (OpenAI report)",
+    "GPT-4o-audio": "~2.5 WER (Step-Audio 2 Technical Report)",
+    "Qwen3-Omni-30B-A3B": "1.89 WER (Qwen3-Omni paper)"
+  },
+  "notes": "Report whether language model rescoring or additional text normalization was applied. Provide decoder settings. The test-clean split contains high-quality recordings while test-other contains more challenging conditions."
+}

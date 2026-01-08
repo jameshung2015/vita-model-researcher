@@ -1,0 +1,31 @@
+{
+  "id": "benchmark.cvss",
+  "name": "CVSS (Cascaded Voice Style Synthesis)",
+  "description": "Speech synthesis benchmark evaluating voice quality, naturalness, and style transfer capabilities for text-to-speech and voice conversion tasks.",
+  "source": "CVSS Benchmark",
+  "datasets": [
+    {
+      "name": "CVSS",
+      "link": "https://github.com/google-research-datasets/cvss",
+      "license": "CC BY-SA 4.0"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "mos",
+      "definition": "Mean Opinion Score for naturalness and quality",
+      "calculation": "Average human rating (1-5 scale) of speech naturalness"
+    },
+    {
+      "name": "similarity",
+      "definition": "Speaker similarity score",
+      "calculation": "Cosine similarity between target and generated speaker embeddings"
+    }
+  ],
+  "test_method": "Evaluate speech synthesis models on voice quality, naturalness, and style transfer. Models generate speech from text with specified voice characteristics and style parameters.",
+  "example_scores": {
+    "Step-Audio-2": "TBD",
+    "Reference models": "MOS 4.0+ for SOTA systems"
+  },
+  "notes": "CVSS evaluates cascaded voice style synthesis including prosody transfer, emotion expression, and speaker adaptation. Commonly used for TTS and voice conversion evaluation."
+}
