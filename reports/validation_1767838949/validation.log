@@ -1,0 +1,22 @@
+VALID: /home/user/vita-model-researcher/models/baai.json
+VALID: /home/user/vita-model-researcher/models/baichuan-omni.json
+VALID: /home/user/vita-model-researcher/models/claude-anthropic.json
+VALID: /home/user/vita-model-researcher/models/deepseek.json
+VALID: /home/user/vita-model-researcher/models/doubao-realtime.json
+VALID: /home/user/vita-model-researcher/models/doubao-seed.json
+VALID: /home/user/vita-model-researcher/models/dusbot.json
+VALID: /home/user/vita-model-researcher/models/elevenlabs-voice.json
+VALID: /home/user/vita-model-researcher/models/fun-audio-chat.json
+VALID: /home/user/vita-model-researcher/models/gemini.json
+VALID: /home/user/vita-model-researcher/models/glm.json
+VALID: /home/user/vita-model-researcher/models/gpt-oss.json
+VALID: /home/user/vita-model-researcher/models/grok.json
+VALID: /home/user/vita-model-researcher/models/iflytek-spark-voice.json
+VALID: /home/user/vita-model-researcher/models/longcat.json
+VALID: /home/user/vita-model-researcher/models/openai-gpt.json
+VALID: /home/user/vita-model-researcher/models/openai-realtime.json
+VALID: /home/user/vita-model-researcher/models/qwen3.json
+XREF ERROR: /home/user/vita-model-researcher/models/step-audio2.json references unknown benchmark 'covost2'. Did you mean: ['covost2_en_zh'] ?
+XREF ERROR: /home/user/vita-model-researcher/models/step-audio2.json references unknown benchmark 'asr_english_avg'.
+XREF ERROR: /home/user/vita-model-researcher/models/step-audio2.json references unknown benchmark 'asr_chinese_avg'. Did you mean: ['chinese_dialogue'] ?
+VALID: /home/user/vita-model-researcher/models/step-audio2.json
