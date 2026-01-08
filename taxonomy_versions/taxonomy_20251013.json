@@ -206,6 +206,30 @@
       "arch": "decoder-only",
       "size": null,
       "tags": ["api"]
+    },
+    {
+      "model_ref": "Doubao Seed 1.8",
+      "inputs": ["text", "image", "video"],
+      "outputs": ["text"],
+      "arch": "multimodal",
+      "size": null,
+      "tags": ["multimodal", "api", "closed-weight", "agent"]
+    },
+    {
+      "model_ref": "Fun-Audio-Chat",
+      "inputs": ["audio", "text"],
+      "outputs": ["audio", "text"],
+      "arch": "multimodal",
+      "size": null,
+      "tags": ["multimodal", "open_source", "audio_llm", "low_latency"]
+    },
+    {
+      "model_ref": "Grok",
+      "inputs": ["text", "image", "audio", "video"],
+      "outputs": ["text", "audio"],
+      "arch": "multimodal",
+      "size": null,
+      "tags": ["multimodal", "api", "closed-weight", "reasoning"]
     }
   ],
   "source": "models_index"
