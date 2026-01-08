@@ -1,0 +1,27 @@
+{
+  "id": "benchmark.asr_chinese_avg",
+  "name": "Chinese ASR Average",
+  "description": "Average Character Error Rate (CER) across multiple Chinese automatic speech recognition datasets, providing a comprehensive measure of Mandarin ASR performance.",
+  "source": "Composite benchmark from multiple Chinese ASR datasets",
+  "datasets": [
+    {
+      "name": "Multiple Chinese ASR datasets",
+      "link": "https://arxiv.org/html/2507.16632v1",
+      "license": "Various"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "cer",
+      "definition": "Average Character Error Rate across multiple Chinese ASR test sets",
+      "calculation": "Mean CER across datasets (AIShell-1, AIShell-2, WenetSpeech, etc.)"
+    }
+  ],
+  "test_method": "Evaluate ASR models on multiple Chinese datasets and compute the average CER. Datasets typically include AIShell-1, AIShell-2, WenetSpeech, and other standard Mandarin ASR benchmarks.",
+  "example_scores": {
+    "GPT-4o-transcribe": "14.05% (Step-Audio 2 Technical Report)",
+    "Qwen2.5-Omni": "4.81% (Step-Audio 2 Technical Report)",
+    "Step-Audio-2": "5.2% (Step-Audio 2 Technical Report)"
+  },
+  "notes": "This is an aggregate metric providing a more robust measure of Chinese ASR performance than individual dataset scores. CER is used for Chinese instead of WER due to the character-based nature of the language."
+}

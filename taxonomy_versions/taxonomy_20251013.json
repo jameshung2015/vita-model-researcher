@@ -230,6 +230,14 @@
       "arch": "multimodal",
       "size": null,
       "tags": ["multimodal", "api", "closed-weight", "reasoning"]
+    },
+    {
+      "model_ref": "Step-Audio-2",
+      "inputs": ["audio", "text"],
+      "outputs": ["audio", "text"],
+      "arch": "multimodal",
+      "size": null,
+      "tags": ["multimodal", "audio_llm"]
     }
   ],
   "source": "models_index"

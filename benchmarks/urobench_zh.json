@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.urobench_zh",
+  "name": "URO-Bench (Chinese)",
+  "description": "Chinese spoken dialogue evaluation benchmark testing understanding, reasoning, and generation capabilities in real-time audio conversations.",
+  "source": "Step-Audio 2 Technical Report",
+  "datasets": [
+    {
+      "name": "URO-Bench Chinese",
+      "link": "https://arxiv.org/html/2507.16632v1",
+      "license": "Research use"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "score",
+      "definition": "Overall URO-Bench score measuring audio understanding, reasoning, and output quality in Chinese",
+      "calculation": "Composite score across multiple Chinese audio task dimensions"
+    }
+  ],
+  "test_method": "Evaluate models on structured Chinese spoken dialogue tasks covering understanding, reasoning, and generation. Models process Mandarin audio input and generate appropriate responses.",
+  "example_scores": {
+    "GPT-4o-audio": "74.18 (Step-Audio 2 Technical Report)",
+    "Qwen-Omni": "62.08 (Step-Audio 2 Technical Report)"
+  },
+  "notes": "URO-Bench Chinese variant evaluates end-to-end audio dialogue capabilities in Mandarin. Scores reflect model performance on understanding spoken Chinese input, reasoning about content, and generating appropriate outputs."
+}
