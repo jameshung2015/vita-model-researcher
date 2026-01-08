@@ -1,0 +1,91 @@
+{
+  "id": "benchmark.worldsense",
+  "name": "WorldSense",
+  "description": "首个评估多模态大语言模型全方位理解视觉、音频和文本输入能力的基准。强调跨模态协同感知，而非独立处理各模态。通过真实场景中的视听同步视频，评估模型构建和理解全方位模态一致性上下文的能力。",
+  "source": "Hong et al., arXiv 2025",
+  "provider": "Xiaohongshu Inc. & Shanghai Jiao Tong University",
+  "category": "omnimodal_understanding",
+  "datasets": [
+    {
+      "name": "WorldSense",
+      "description": "包含 1,662 个视听同步视频，涵盖 8 个主要领域和 67 个细粒度子类别，共 3,172 个多选 QA 对，跨越 26 个不同任务",
+      "link": "https://huggingface.co/datasets/JaaackHongggg/WorldSense",
+      "license": "研究用途"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "多选题准确率",
+      "calculation": "正确答案数 / 总问题数"
+    },
+    {
+      "name": "domain_accuracy",
+      "definition": "按领域分组的准确率",
+      "calculation": "8 个主要领域各自的准确率分析"
+    },
+    {
+      "name": "task_accuracy",
+      "definition": "按任务类型分组的准确率",
+      "calculation": "26 个不同任务类型各自的准确率分析"
+    },
+    {
+      "name": "modality_ablation",
+      "definition": "模态消融研究",
+      "calculation": "分别移除视觉或音频模态后的性能变化，用于评估各模态的贡献"
+    }
+  ],
+  "technical_features": [
+    "1,662 个视听同步视频",
+    "8 个主要领域，67 个细粒度子类别",
+    "3,172 个多选 QA 对",
+    "26 个不同认知任务（从基础感知到高级推理）",
+    "80 位专家标注者，经过多轮校正",
+    "通过 VLMEvalKit 框架进行评估",
+    "模态消融研究功能，用于分析各模态独立贡献"
+  ],
+  "test_method": "使用 VLMEvalKit 框架评估模型在视听同步视频上的多选 QA 性能。每个问题都需要同时利用视觉和音频信息才能正确回答——移除任一模态都会导致无法回答，从而严格评估模型整合感官理解的能力。支持消融研究以量化各模态的贡献。",
+  "example_scores": {
+    "Gemini-2.5-Pro": "65.1% (WorldSense GitHub, 2025)",
+    "最佳准确率": "48% (所有评估模型的最佳平均准确率, arXiv 2502.04326)",
+    "说明": "实验结果表明，现有模型在理解真实场景方面面临重大挑战。模型需要同时理解视觉和音频模态，并在时间上对齐它们以构建一致的上下文。"
+  },
+  "evaluation_dimensions": [
+    "全方位模态协同（视觉+音频+文本）",
+    "跨 26 种认知任务的推理能力",
+    "真实场景理解能力",
+    "时间对齐能力",
+    "视觉信息贡献分析",
+    "音频信息贡献分析",
+    "视频帧数量对性能的影响",
+    "不同音频类型的处理能力"
+  ],
+  "application_value": [
+    "评估多模态 LLM 的全方位感知能力",
+    "识别模型在视听整合方面的弱点",
+    "为真实场景应用（如自动驾驶、视频理解、智能助手）提供基准",
+    "通过消融研究指导模态融合策略",
+    "推动多模态模型在真实场景理解上的进步"
+  ],
+  "limitations": [
+    "需要高质量的视听同步视频",
+    "依赖专家标注，成本较高",
+    "目前仅限于多选题格式",
+    "最佳模型准确率仅 48%，表明任务难度较高"
+  ],
+  "task_categories": [
+    "基础感知任务",
+    "跨模态理解任务",
+    "时间推理任务",
+    "因果推理任务",
+    "复杂场景理解任务",
+    "音频事件识别任务",
+    "视觉事件识别任务",
+    "视听关联任务"
+  ],
+  "paper": "https://arxiv.org/abs/2502.04326",
+  "website": "https://github.com/JaaackHongggg/WorldSense",
+  "last_reviewed": "2025-01-08",
+  "authors": "Jack Hong, Shilin Yan, Jiayin Cai, Xiaolong Jiang, Yao Hu (Xiaohongshu Inc.), Weidi Xie (Shanghai Jiao Tong University)",
+  "notes": "WorldSense 是首个专门评估多模态 LLM 全方位（视觉+音频+文本）理解能力的基准。与传统多模态基准不同，WorldSense 的每个问题都要求模型同时利用所有模态——移除任一模态都会导致无法回答。这种设计确保了对模型真正的跨模态整合能力的评估，而非简单的模态并列处理。基准包含真实生活场景的高质量视频，涵盖 8 个主要领域和 67 个细粒度子类别，由 80 位专家标注者精心标注。当前最佳模型（Gemini-2.5-Pro）仅达到 65.1% 的准确率，表明在全方位理解方面仍有很大提升空间。发布于 2025 年 2 月，arXiv:2502.04326。"
+}

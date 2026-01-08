@@ -1,0 +1,95 @@
+{
+  "id": "benchmark.daily_omni",
+  "name": "Daily-Omni",
+  "description": "评估视听推理与跨模态时间对齐能力的基准。包含 684 个日常生活场景视频和 1,197 个多选 QA 对，涵盖 6 个主要任务。强调音频-视觉整合能力，评估模型在日常场景中同步处理视觉和音频信息的能力。",
+  "source": "Zhou et al., arXiv 2025",
+  "provider": "未指定（研究团队）",
+  "category": "audio_visual_reasoning",
+  "datasets": [
+    {
+      "name": "Daily-Omni",
+      "description": "684 个日常生活场景视频，1,197 个多选 QA 对，跨越 6 个主要任务",
+      "link": "https://huggingface.co/datasets/liarliar/Daily-Omni",
+      "license": "GPL-3.0"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "多选题准确率",
+      "calculation": "正确答案数 / 总问题数"
+    },
+    {
+      "name": "task_accuracy",
+      "definition": "按任务类型分组的准确率",
+      "calculation": "6 个主要任务各自的准确率分析"
+    },
+    {
+      "name": "temporal_alignment_score",
+      "definition": "时间对齐得分",
+      "calculation": "评估模型同步处理音频和视觉时间信息的能力"
+    }
+  ],
+  "technical_features": [
+    "684 个日常生活场景视频",
+    "1,197 个多选 QA 对",
+    "6 个主要任务类型",
+    "QA 生成管道（QA Generation Pipeline）",
+    "Daily-Omni-Agent 基线（结合 Qwen2.5-VL 和 Qwen2-Audio）",
+    "支持 API 和本地部署评估",
+    "多进程并行处理支持",
+    "自动评估指标计算"
+  ],
+  "test_method": "使用日常生活场景视频评估模型的音频-视觉推理能力，重点关注跨模态时间对齐。支持两种评估模式：1) API 模式，适用于 Gemini、GPT-4o、Deepseek 等模型；2) 本地部署模式，适用于 Qwen2.5-Omni、Qwen2.5-VL、VideoLLaMA2、Unified-IO 2、Ola 等模型。还提供 Daily-Omni-Agent 基线，结合 Qwen2.5-VL（视频分析）和 Qwen2-Audio（音频处理）进行多模态代理测试。",
+  "example_scores": {
+    "说明": "当前 MLLM 在需要音频-视觉整合的任务上仍然面临重大挑战。具体模型得分请参考项目主页的 Leaderboard。"
+  },
+  "evaluation_dimensions": [
+    "音频-视觉推理能力",
+    "跨模态时间对齐能力",
+    "日常场景理解能力",
+    "音频信息处理能力",
+    "视觉信息处理能力",
+    "多模态信息整合能力"
+  ],
+  "application_value": [
+    "评估多模态 LLM 在日常场景中的推理能力",
+    "识别模型在音频-视觉整合方面的弱点",
+    "为日常生活助手应用提供基准",
+    "推动多模态模型在时间对齐方面的进步",
+    "支持视频理解和分析应用的开发",
+    "为智能家居、安防监控等应用提供评估标准"
+  ],
+  "limitations": [
+    "仅限于日常生活场景",
+    "依赖多选题格式",
+    "需要高质量的音频-视频同步",
+    "当前模型在音频-视觉整合任务上表现不佳"
+  ],
+  "supported_models": [
+    "Gemini (API)",
+    "GPT-4o (API)",
+    "Deepseek (API)",
+    "Qwen2.5-Omni (本地)",
+    "Qwen2.5-VL (本地)",
+    "VideoLLaMA2 (本地)",
+    "Unified-IO 2 (本地)",
+    "Ola (本地)",
+    "Daily-Omni-Agent (Qwen2.5-VL + Qwen2-Audio)"
+  ],
+  "task_categories": [
+    "任务 1（具体任务类型待补充）",
+    "任务 2（具体任务类型待补充）",
+    "任务 3（具体任务类型待补充）",
+    "任务 4（具体任务类型待补充）",
+    "任务 5（具体任务类型待补充）",
+    "任务 6（具体任务类型待补充）"
+  ],
+  "paper": "https://arxiv.org/abs/2505.17862",
+  "website": "https://lliar-liar.github.io/Daily-Omni/",
+  "github": "https://github.com/lliar-liar/daily-omni",
+  "leaderboard": "https://lliar-liar.github.io/Daily-Omni/#leaderboard",
+  "last_reviewed": "2025-01-08",
+  "authors": "Ziwei Zhou, Rui Wang, Zuxuan Wu",
+  "notes": "Daily-Omni 是一个专注于日常生活场景的音频-视觉推理基准，强调跨模态时间对齐能力。与其他多模态基准不同，Daily-Omni 特别关注模型在真实日常场景中同步处理和理解音频与视觉信息的能力。基准提供了完整的 QA 生成管道，支持研究者根据自己的视频数据生成问题。Daily-Omni-Agent 基线展示了如何结合专门的视频分析模型和音频处理模型来构建多模态代理。实验结果表明，当前多模态大语言模型在需要音频-视觉整合的任务上仍然存在显著挑战，为未来研究提供了明确的改进方向。发布于 2025 年 5 月，arXiv:2505.17862，GPL-3.0 许可证。项目提供了详细的评估脚本、Leaderboard 和项目主页。"
+}
