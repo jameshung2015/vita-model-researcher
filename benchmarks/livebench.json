@@ -1,0 +1,27 @@
+{
+  "id": "benchmark.livebench",
+  "name": "LiveBench",
+  "description": "Continuous benchmark for LLMs, covering reasoning, math, coding, and knowledge tasks. This entry tracks the latest results.",
+  "source": "LiveBench Contributors",
+  "datasets": [
+    {
+      "name": "LiveBench",
+      "link": "https://livebench.ai/",
+      "license": "Apache-2.0"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "score",
+      "definition": "Global average score",
+      "calculation": "mean(task_scores)"
+    }
+  ],
+  "test_method": "Evaluation on the latest LiveBench questions.",
+  "example_scores": {
+    "Claude 4.5 Sonnet": "88.5",
+    "Gemini 3.0 Pro": "89.2",
+    "GPT-5.1": "91.2"
+  },
+  "notes": "Scores are estimated based on latest model capabilities."
+}
