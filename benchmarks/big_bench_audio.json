@@ -1,0 +1,43 @@
+{
+  "id": "benchmark.big_bench_audio",
+  "name": "Big Bench Audio",
+  "description": "Benchmark for evaluating audio language models on complex multi-step logical reasoning (Speech-to-Text) and speech-to-speech capabilities.",
+  "source": "Artificial Analysis",
+  "datasets": [
+    {
+      "name": "Big Bench Audio",
+      "link": "https://huggingface.co/datasets/ArtificialAnalysis/big_bench_audio",
+      "license": "Unknown"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "Accuracy (S2T)",
+      "definition": "Average accuracy on speech-to-text reasoning tasks.",
+      "calculation": "Percentage"
+    },
+    {
+      "name": "Speech Reasoning Performance Score (S2S)",
+      "definition": "Accuracy of reasoning over spoken content in speech-to-speech mode.",
+      "calculation": "Percentage"
+    },
+    {
+      "name": "Latency",
+      "definition": "First-packet latency in speech-to-speech mode.",
+      "calculation": "Seconds"
+    }
+  ],
+  "test_method": "Evaluated in two modes: Speech-to-Text (S2T) for understanding/reasoning, and Speech-to-Speech (S2S) for real-time interaction capabilities.",
+  "example_scores": {
+    "Step-Audio-R1.1 (S2S)": "96.1% (Reasoning), 0.92s (Latency)",
+    "Step-Audio-R1 (S2T)": "83.6% (Accuracy)",
+    "Gemini 2.5 Flash Native Audio Dialog (S2S)": "92% (Reasoning), 0.63s (Latency)",
+    "Gemini 2.5 Flash Live (S2S)": "74% (Reasoning), 0.64s (Latency)",
+    "GPT-4o mini Realtime (S2S)": "69% (Reasoning), 0.81s (Latency)",
+    "GPT Realtime 0825 (S2S)": "83% (Reasoning), 0.98s (Latency)",
+    "Gemini 3 Pro (S2T)": "85.1% (Accuracy)",
+    "Gemini 2.5 Pro (S2T)": "81.5% (Accuracy)",
+    "Step-Audio 2 (S2T)": "68.3% (Accuracy)"
+  },
+  "notes": "Step-Audio-R1.1 is referred to as 'Step-Audio-R1 Realtime' in the technical report for S2S benchmarks."
+}

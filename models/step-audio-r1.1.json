@@ -1,0 +1,74 @@
+{
+  "model_name": "Step-Audio-R1.1",
+  "short_description": "Real-time audio reasoning model with multimodal capabilities, featuring 'Mind-Paced Speaking' and 'Acoustic-Grounded Reasoning'.",
+  "homepage": "https://github.com/stepfun-ai/Step-Audio-R1",
+  "model_card_link": "https://huggingface.co/stepfun-ai/Step-Audio-R1.1",
+  "license": "Apache-2.0",
+  "provenance": {
+    "provider": "StepFun",
+    "release_date": "2026-01-14",
+    "notes": "Step-Audio-R1.1 (Realtime) is a major upgrade to Step-Audio-R1. It employs a Dual-Brain Architecture (Formulation Brain + Articulation Brain) for low-latency chain-of-thought reasoning during speech."
+  },
+  "input_types": [
+    "audio",
+    "text"
+  ],
+  "output_types": [
+    "audio",
+    "text"
+  ],
+  "architecture_family": "multimodal transformer",
+  "architecture_details": "Audio encoder (Qwen2Audio) + Audio Adaptor + LLM Decoder (Qwen2.5 32B). Dual-Brain Architecture decouples reasoning and articulation.",
+  "size_params": {
+    "notable_variants": [
+      "Step-Audio-R1.1"
+    ],
+    "activated_params_note": "~33B parameters (32B LLM + Audio Encoder)."
+  },
+  "capabilities": {
+    "audio_reasoning": "State-of-the-art audio reasoning with test-time compute scaling (MGRD).",
+    "realtime_dialogue": "Supports thinking while speaking with sub-second latency.",
+    "speech_reasoning": "96.1% Speech Reasoning Performance Score on Big Bench Audio (Speech-to-Speech)."
+  },
+  "tags": [
+    "audio_llm",
+    "multimodal",
+    "reasoning",
+    "realtime",
+    "chain_of_thought"
+  ],
+  "variants": [
+    {
+      "name": "Step-Audio-R1.1",
+      "params": 33,
+      "model_card_link": "https://huggingface.co/stepfun-ai/Step-Audio-R1.1",
+      "release_date": "2026-01-14",
+      "tags": [
+        "audio_reasoning",
+        "realtime"
+      ]
+    }
+  ],
+  "evaluation": {
+    "papers": [
+      "https://arxiv.org/abs/2511.15848"
+    ],
+    "benchmarks": [
+      "big_bench_audio"
+    ],
+    "model_cards": [
+      "https://huggingface.co/stepfun-ai/Step-Audio-R1.1"
+    ]
+  },
+  "inference": {
+    "latency_ms": 920,
+    "latency_level": "low",
+    "supported_hardware": [
+      "GPU",
+      "L40S",
+      "H100"
+    ],
+    "notes": "First-packet latency of 0.92s."
+  },
+  "notes": "Step-Audio-R1.1 demonstrates top-ranking results on the Big Bench Audio (Speech-to-Speech) benchmark, surpassing Gemini 2.5 Flash and GPT-4o mini Realtime."
+}
