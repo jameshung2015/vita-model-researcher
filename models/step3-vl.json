@@ -1,0 +1,22 @@
+{
+  "model_name": "Step3-VL",
+  "short_description": "Vision-language model in the Step series.",
+  "input_types": [
+    "text",
+    "image"
+  ],
+  "output_types": [
+    "text"
+  ],
+  "architecture_family": "multimodal transformer",
+  "variants": [
+    {
+      "name": "Step3-VL",
+      "params": 0.0,
+      "tags": [
+        "vision_language"
+      ]
+    }
+  ],
+  "notes": "Parameter count and detailed release metadata are not publicly specified in this repository yet."
+}
