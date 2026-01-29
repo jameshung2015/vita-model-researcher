@@ -19,6 +19,7 @@
   ],
   "test_method": "Provide each problem statement and ask the model for a boxed three-digit answer. Parse the final integer (000-999). Optionally enable chain-of-thought with solution verification.",
   "example_scores": {
+    "Kimi K2.5": "96.1% (Kimi report)",
     "AoPS median human": "6/15 (historical median)",
     "IMO medalist baseline": "12/15 (coaching benchmark)",
     "GLM-4.6": "93.9% (Zhipu AI, 2025)",

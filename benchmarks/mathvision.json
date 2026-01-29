@@ -19,6 +19,7 @@
   ],
   "test_method": "Present diagram plus textual question. Evaluate using official answer key.",
   "example_scores": {
+    "Kimi K2.5": "84.2% (Kimi report)",
     "Qwen3-VL-235B-A22B": "66.5% (Qwen3-VL technical report)",
     "Gemini 1.5 Pro": "60.3% (MathVision benchmark)"
   },

@@ -1,0 +1,59 @@
+{
+  "model_name": "Kimi",
+  "short_description": "Native multimodal agentic model by Moonshot AI",
+  "homepage": "https://www.kimi.com/",
+  "model_card_link": "https://huggingface.co/moonshotai/Kimi-K2.5",
+  "license": "Modified MIT",
+  "provenance": {
+    "provider": "Moonshot AI",
+    "release_date": "2025-01-29",
+    "notes": "Native multimodal model pre-trained on 15T tokens."
+  },
+  "input_types": ["text", "image", "video"],
+  "output_types": ["text"],
+  "architecture_family": "MoE",
+  "architecture_details": "Mixture-of-Experts with 1T total parameters and 32B activated. Uses MoonViT vision encoder.",
+  "size_params": {
+    "notable_variants": ["Kimi K2.5"],
+    "activated_params_note": "32B activated parameters out of 1T total."
+  },
+  "variants": [
+    {
+      "name": "Kimi K2.5",
+      "params": 1000,
+      "context_windows": [256000],
+      "release_date": "2025-01-29",
+      "model_card_link": "https://huggingface.co/moonshotai/Kimi-K2.5",
+      "hardware_recommendations": {
+        "notes": "Recommended to run on vLLM, SGLang, or KTransformers."
+      },
+      "tags": ["vision", "video", "agentic", "moe"]
+    }
+  ],
+  "evaluation": {
+    "benchmarks": [
+      "benchmark.mmlu_pro",
+      "benchmark.mmmu_pro",
+      "benchmark.mathvision",
+      "benchmark.mathvista_mini",
+      "benchmark.zerobench",
+      "benchmark.ocrbench_en_zh",
+      "benchmark.omnidocbench",
+      "benchmark.infovqa_test",
+      "benchmark.simplyvqa",
+      "benchmark.videomme_w_o_sub",
+      "benchmark.swebench",
+      "benchmark.lcb_v6",
+      "benchmark.aime25",
+      "benchmark.hmmt25",
+      "benchmark.gpqa",
+      "benchmark.deepsearchqa",
+      "benchmark.charxiv"
+    ]
+  },
+  "inference": {
+    "quantization_friendly": true,
+    "supported_hardware": ["GPU"],
+    "notes": "Supports thinking mode and instant mode."
+  }
+}

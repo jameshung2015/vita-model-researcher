@@ -19,6 +19,7 @@
   ],
   "test_method": "Run OCR predictions for each sample; compute accuracy per language split using official normalizer.",
   "example_scores": {
+    "Kimi K2.5": "92.3% (Kimi report)",
     "Qwen3-VL-235B-A22B": "67.1% (EN) / 61.8% (ZH) (Qwen3-VL technical report)",
     "GPT-4V": "62.4% (EN) / 58.0% (ZH) (OpenCompass evaluation)"
   },

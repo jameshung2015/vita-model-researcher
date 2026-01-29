@@ -30,6 +30,7 @@
   ],
   "test_method": "Questions written by domain experts (PhDs/PhD candidates). Non-expert validators with unrestricted web access averaged 30+ minutes per question. Evaluates whether models can answer graduate-level questions that resist simple web search solutions.",
   "example_scores": {
+    "Kimi K2.5": "87.6% (Diamond) (Kimi report)",
     "GPT-4 (baseline)": "39%",
     "Domain experts": "65% (74% excluding identified errors)",
     "Skilled non-experts": "34%",

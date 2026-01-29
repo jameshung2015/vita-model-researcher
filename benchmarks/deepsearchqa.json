@@ -29,6 +29,7 @@
   ],
   "test_method": "通过 API 调用 AI 智能体执行多步骤网络搜索任务，智能体需要迭代规划调查、制定查询、阅读结果、识别知识缺口并再次搜索。评估系统衡量答案的全面性和准确性。",
   "example_scores": {
+    "Kimi K2.5": "77.1% (Kimi report)",
     "Gemini Deep Research": "66.1% (Google Blog, 2025-12-11)",
     "说明": "Gemini Deep Research 在 DeepSearchQA 上达到 66.1% 的准确率，并在 Humanity's Last Exam 上达到 46.4%，在 BrowseComp 上达到 59.2%"
   },
