@@ -1,0 +1,25 @@
+{
+  "model_name": "M3A",
+  "short_description": "Multimodal Autonomous Agent for Android",
+  "homepage": "https://google-research.github.io/android_world/",
+  "license": "Apache-2.0",
+  "provenance": {
+    "provider": "Google DeepMind",
+    "release_date": "2024-05-23"
+  },
+  "input_types": ["text", "image"],
+  "output_types": ["text", "action"],
+  "architecture_family": "agent",
+  "variants": [
+    {
+      "name": "M3A",
+      "params": 0,
+      "deploy_requirements": "Requires a base VLM/LLM (e.g. GPT-4, Gemini, Gemma) to function."
+    }
+  ],
+  "evaluation": {
+    "papers": ["https://arxiv.org/abs/2405.14573"],
+    "benchmarks": ["androidworld"]
+  },
+  "notes": "M3A is an agent architecture, so parameter count depends on the base model used."
+}

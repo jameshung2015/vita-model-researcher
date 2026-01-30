@@ -1,0 +1,47 @@
+{
+  "model_name": "Gemma 2",
+  "short_description": "A family of lightweight, state-of-the-art open models from Google.",
+  "homepage": "https://ai.google.dev/gemma",
+  "model_card_link": "https://www.kaggle.com/models/google/gemma-2",
+  "license": "Gemma Terms of Use",
+  "provenance": {
+    "provider": "Google DeepMind",
+    "release_date": "2024-06-27",
+    "notes": "Built from the same research and technology as Gemini models."
+  },
+  "input_types": ["text"],
+  "output_types": ["text"],
+  "architecture_family": "decoder-only",
+  "architecture_details": "Transformer decoder, trained on 6T tokens (27B) / 8T tokens (9B). Uses sliding window attention and logit soft-capping.",
+  "variants": [
+    {
+      "name": "gemma-2-2b",
+      "params": 2.6,
+      "context_windows": [8192],
+      "default_seq_len": 8192,
+      "default_num_gpus": 1,
+      "release_date": "2024-07-31",
+      "tags": ["mobile-friendly"]
+    },
+    {
+      "name": "gemma-2-9b",
+      "params": 9.2,
+      "context_windows": [8192],
+      "default_seq_len": 8192,
+      "default_num_gpus": 1,
+      "release_date": "2024-06-27"
+    },
+    {
+      "name": "gemma-2-27b",
+      "params": 27.2,
+      "context_windows": [8192],
+      "default_seq_len": 8192,
+      "default_num_gpus": 2,
+      "release_date": "2024-06-27"
+    }
+  ],
+  "evaluation": {
+    "papers": ["https://arxiv.org/abs/2406.05293"],
+    "benchmarks": ["mmlu", "gsm8k", "androidworld"]
+  }
+}
