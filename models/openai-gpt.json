@@ -34,7 +34,8 @@
       "o3-pro",
       "o4-mini",
       "gpt-5.1",
-      "gpt-5.3"
+      "gpt-5.3",
+      "gpt-codex-2.0"
     ],
     "activated_params_note": "Parameter counts are undisclosed; API users access hosted inference endpoints."
   },
@@ -275,6 +276,24 @@
         "multimodal",
         "reasoning"
       ]
+    },
+    {
+      "name": "gpt-codex-2.0",
+      "params": 1,
+      "context_windows": [
+        128000
+      ],
+      "default_seq_len": 128000,
+      "default_num_gpus": 0,
+      "model_card_link": "https://platform.openai.com/docs/models",
+      "release_date": "2025-10-01",
+      "hardware_recommendations": {
+        "notes": "Hosted via OpenAI API; specialized for code generation and debugging."
+      },
+      "tags": [
+        "coding",
+        "specialized"
+      ]
     }
   ],
   "evaluation": {
@@ -294,7 +313,8 @@
       "aime25",
       "swebench",
       "codeforces",
-      "mle_bench"
+      "mle_bench",
+      "humaneval"
     ],
     "model_cards": [
       "https://platform.openai.com/docs/models#gpt-4o",

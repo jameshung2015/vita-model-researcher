@@ -1,0 +1,31 @@
+{
+  "id": "benchmark.humaneval",
+  "name": "HumanEval",
+  "description": "Evaluates functional correctness of computer programs synthesized from docstrings. Contains 164 hand-written programming problems (Python).",
+  "source": "Chen et al., 2021 (OpenAI Codex paper)",
+  "datasets": [
+    {
+      "name": "HumanEval",
+      "link": "https://github.com/openai/human-eval",
+      "license": "MIT License"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "pass@1",
+      "definition": "Percentage of problems where the first generated solution passes all unit tests.",
+      "calculation": "correct_problems / total_problems"
+    }
+  ],
+  "test_method": "Models generate a function body based on a provided signature and docstring. The generated code is executed against a hidden test suite. Pass@1 is the standard metric, though Pass@10 and Pass@100 are also used.",
+  "example_scores": {
+    "GPT-4o": "90.2% (OpenAI, 2024)",
+    "GPT-4 Turbo": "87.1%",
+    "Claude 3.5 Sonnet": "92.0%",
+    "CodeLlama-34B": "48.8% (zero-shot)",
+    "GPT-3.5-turbo": "70-76%",
+    "Codex (code-davinci-002)": "65.4% (pass@1)",
+    "GPT-Codex-2.0": "95.5% (Estimated)"
+  },
+  "notes": "Standard for evaluating coding capabilities. Ensure sandbox execution for safety. Results can be sensitive to temperature and sampling parameters."
+}
