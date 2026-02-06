@@ -19,6 +19,7 @@
   ],
   "test_method": "Deliver each question verbatim; evaluate on final numeric or algebraic answer as specified. Multi-part questions should be split into independent items for scoring.",
   "example_scores": {
+    "Kimi K2.5": "95.4% (Kimi report)",
     "Top competitor (2025)": "~70% (official stats)",
     "Strong high-school contestant": "~40% (practice reports)",
     "Grok 4": "90.0%",

@@ -19,6 +19,7 @@
   ],
   "test_method": "Use official evaluation script; each question includes image(s) and a four-option answer set. Record reasoning style.",
   "example_scores": {
+    "Kimi K2.5": "78.5% (Kimi report)",
     "Qwen3-VL-235B-A22B": "68.1% (Qwen3-VL technical report)",
     "GPT-4V": "63.4% (MMMU leaderboard)"
   },

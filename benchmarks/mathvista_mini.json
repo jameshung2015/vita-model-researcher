@@ -19,6 +19,7 @@
   ],
   "test_method": "Follow MathVista evaluation pipeline with unified prompts. Provide final numeric answer tokens.",
   "example_scores": {
+    "Kimi K2.5": "90.1% (Kimi report)",
     "Qwen3-VL-235B-A22B": "84.9% (Qwen3-VL technical report)",
     "GPT-4V": "79.0% (MathVista paper)"
   },

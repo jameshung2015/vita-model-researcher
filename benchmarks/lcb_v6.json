@@ -24,6 +24,7 @@
   ],
   "test_method": "Follow official evaluator: run sandboxed execution to validate solutions. Report interpreter version, timeouts, and number of samples.",
   "example_scores": {
+    "Kimi K2.5": "85.0 pass@1 (Kimi report)",
     "GPT-4o": "74 pass@1 (LiveCodeBench v6 scoreboard)",
     "Qwen2.5-72B": "70 pass@1 (LiveCodeBench report)",
     "GLM-4.6": "82.8 pass@1 (Zhipu AI, 2025)"

@@ -20,6 +20,7 @@
   "test_method": "Use official JSON or CSV; prompt with question, choices, and require the model to select the gold option. Track prompt setup (zero-shot vs few-shot) and context length.",
   "example_scores": {
     "Claude Opus 4.6": "~92.5% (Estimated)",
+    "Kimi K2.5": "87.1 (Thinking)",
     "GPT-4o": "~80 (OpenCompass report, zero-shot CoT)",
     "Qwen2.5-72B": "~77 (OpenCompass report)"
   },

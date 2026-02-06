@@ -20,6 +20,7 @@
   "test_method": "Provide issue description and codebase context. Model generates a patch. Apply patch and run repository's test suite to verify resolution without breaking existing functionality.",
   "example_scores": {
     "Claude Opus 4.6": "82.5% (Estimated)",
+    "Kimi K2.5": "76.8% (Verified)",
     "Claude Sonnet 4.5": "77.2% (2025)",
     "Gemini 3 Pro": "76.2% (Google, 2025)",
     "Claude Haiku 4.5": "73.3% (2025)",

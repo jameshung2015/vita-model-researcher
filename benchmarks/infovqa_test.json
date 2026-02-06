@@ -19,6 +19,7 @@
   ],
   "test_method": "Use OCR extraction plus reasoning to answer open-ended questions. Evaluation accepts minor lexical variations via normalized matching.",
   "example_scores": {
+    "Kimi K2.5": "92.6% (val) (Kimi report)",
     "Qwen3-VL-235B-A22B": "97.1% (Qwen3-VL technical report)",
     "Kosmos-2": "86.4% (InfographicVQA benchmark)"
   },

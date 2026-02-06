@@ -24,6 +24,7 @@
   ],
   "test_method": "向模型提供从arXiv论文中提取的图表图像及相关问题，评估模型对图表内容、趋势、数值的理解能力。使用官方评估脚本进行评分。",
   "example_scores": {
+    "Kimi K2.5": "77.5% (RQ) (Kimi report)",
     "GPT-4V": "参考官方leaderboard或技术报告",
     "Gemini Pro Vision": "参考官方leaderboard或技术报告"
   },

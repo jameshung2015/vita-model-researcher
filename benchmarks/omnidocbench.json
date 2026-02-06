@@ -24,6 +24,7 @@
   ],
   "test_method": "使用多样化的文档类型和理解任务评估模型，包括信息提取、问答、摘要、结构理解等。使用官方评估框架进行测试。",
   "example_scores": {
+    "Kimi K2.5": "88.8% (Kimi report)",
     "GPT-4V": "参考官方leaderboard",
     "Qwen-VL": "参考官方leaderboard"
   },

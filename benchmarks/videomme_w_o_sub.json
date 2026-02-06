@@ -19,6 +19,7 @@
   ],
   "test_method": "Sample frames/clips from each video and present along with the question. Evaluate using official scoring scripts.",
   "example_scores": {
+    "Kimi K2.5": "87.4% (Kimi report)",
     "Qwen3-VL-235B-A22B": "79.2% (Qwen3-VL technical report)",
     "GPT-4V": "72.5% (VideoMME leaderboard)"
   },
