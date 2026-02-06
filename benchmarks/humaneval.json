@@ -25,7 +25,7 @@
     "CodeLlama-34B": "48.8% (zero-shot)",
     "GPT-3.5-turbo": "70-76%",
     "Codex (code-davinci-002)": "65.4% (pass@1)",
-    "GPT-Codex-2.0": "95.5% (Estimated)"
+    "GPT-5.3-Codex": "95.5% (Estimated)"
   },
   "notes": "Standard for evaluating coding capabilities. Ensure sandbox execution for safety. Results can be sensitive to temperature and sampling parameters."
 }

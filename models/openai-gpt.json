@@ -35,7 +35,7 @@
       "o4-mini",
       "gpt-5.1",
       "gpt-5.3",
-      "gpt-codex-2.0"
+      "gpt-5.3-codex"
     ],
     "activated_params_note": "Parameter counts are undisclosed; API users access hosted inference endpoints."
   },
@@ -278,21 +278,23 @@
       ]
     },
     {
-      "name": "gpt-codex-2.0",
+      "name": "gpt-5.3-codex",
       "params": 1,
       "context_windows": [
         128000
       ],
       "default_seq_len": 128000,
       "default_num_gpus": 0,
-      "model_card_link": "https://platform.openai.com/docs/models",
-      "release_date": "2025-10-01",
+      "model_card_link": "https://openai.com/index/introducing-gpt-5-3-codex/",
+      "release_date": "2026-02-05",
       "hardware_recommendations": {
-        "notes": "Hosted via OpenAI API; specialized for code generation and debugging."
+        "notes": "Co-designed for and served on NVIDIA GB200 NVL72 systems."
       },
       "tags": [
         "coding",
-        "specialized"
+        "agentic",
+        "cybersecurity",
+        "multimodal"
       ]
     }
   ],
@@ -312,9 +314,11 @@
       "ai2d_test",
       "aime25",
       "swebench",
+      "swebench_pro",
       "codeforces",
       "mle_bench",
-      "humaneval"
+      "humaneval",
+      "gdpval"
     ],
     "model_cards": [
       "https://platform.openai.com/docs/models#gpt-4o",

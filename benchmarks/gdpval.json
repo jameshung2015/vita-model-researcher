@@ -1,0 +1,26 @@
+{
+  "id": "benchmark.gdpval",
+  "name": "GDPval",
+  "description": "Evaluation measuring model performance on well-specified knowledge-work tasks across 44 occupations.",
+  "source": "OpenAI, 2025",
+  "datasets": [
+    {
+      "name": "GDPval",
+      "link": "https://openai.com/index/gdpval/",
+      "license": "Proprietary/TBD"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "win_tie_rate",
+      "definition": "Rate of wins or ties against human professional baseline or previous model.",
+      "calculation": "wins + ties / total"
+    }
+  ],
+  "test_method": "Tasks designed by experienced professionals reflecting real knowledge work (presentations, spreadsheets, etc.).",
+  "example_scores": {
+    "GPT-5.3-Codex": "70.9% (wins or ties)",
+    "GPT-5.2": "70.9% (high)"
+  },
+  "notes": "Matches GPT-5.2 in professional knowledge work."
+}
