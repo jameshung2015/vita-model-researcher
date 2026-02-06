@@ -33,7 +33,8 @@
       "o3-mini",
       "o3-pro",
       "o4-mini",
-      "gpt-5.1"
+      "gpt-5.1",
+      "gpt-5.3"
     ],
     "activated_params_note": "Parameter counts are undisclosed; API users access hosted inference endpoints."
   },
@@ -247,6 +248,25 @@
       "default_num_gpus": 0,
       "model_card_link": "https://platform.openai.com/docs/models",
       "release_date": "2025-11-15",
+      "hardware_recommendations": {
+        "notes": "Hosted via OpenAI API; advanced reasoning and multimodal capabilities."
+      },
+      "tags": [
+        "flagship",
+        "multimodal",
+        "reasoning"
+      ]
+    },
+    {
+      "name": "gpt-5.3",
+      "params": 1,
+      "context_windows": [
+        200000
+      ],
+      "default_seq_len": 200000,
+      "default_num_gpus": 0,
+      "model_card_link": "https://platform.openai.com/docs/models",
+      "release_date": "2026-06-01",
       "hardware_recommendations": {
         "notes": "Hosted via OpenAI API; advanced reasoning and multimodal capabilities."
       },
