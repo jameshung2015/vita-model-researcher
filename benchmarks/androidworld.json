@@ -20,7 +20,9 @@
   "test_method": "Run the AndroidWorld environment with the provided emulator. Supply screen captures and metadata to the model, then execute actions via accessibility APIs.",
   "example_scores": {
     "Qwen3-VL-235B-A22B": "63.7% (Qwen3-VL technical report)",
-    "GPT-4.1": "58.4% (AndroidWorld benchmark)"
+    "GPT-4.1": "58.4% (AndroidWorld benchmark)",
+    "M3A (GPT-4 Turbo)": "30.6% (AndroidWorld paper)",
+    "M3A (Gemma 2 27B)": "9.5% (AndroidWorld paper)"
   },
   "notes": "Report action budget and whether demonstrations or planner assistance were used. Logging UI hierarchies improves reproducibility."
 }

@@ -1,0 +1,584 @@
+{
+  "version": "20260130",
+  "categories": {
+    "inputs": [
+      "audio",
+      "image",
+      "text",
+      "video"
+    ],
+    "outputs": [
+      "action",
+      "audio",
+      "image",
+      "text"
+    ],
+    "architecture": [
+      "agent",
+      "decoder-only",
+      "domain-optimized speech dialogue system",
+      "end-to-end speech understanding and generation",
+      "mixture-of-experts",
+      "mixture-of-experts multimodal transformer",
+      "mixture-of-experts transformer",
+      "multimodal",
+      "multimodal decoder-only transformer",
+      "multimodal transformer",
+      "multimodal transformer with agent capabilities",
+      "multimodal transformer with dual-resolution speech processing",
+      "multimodal transformer with realtime audio processing",
+      "multimodal transformer with streaming audio",
+      "neural audio synthesis with conversational ai"
+    ],
+    "size": [
+      "{'notable_variants': ['claude-opus-4.5', 'claude-opus-4.1', 'claude-sonnet-4.5', 'claude-sonnet-4', 'claude-haiku-4.5', 'claude-haiku-4'], 'activated_params_note': 'parameter counts are undisclosed; api users access hosted inference endpoints.'}",
+      "{'notable_variants': ['deepseek-v3', 'deepseek-v3.2', 'deepseek-v3.2-speciale', 'deepseek-r1'], 'activated_params_note': 'deepseek-v3 activates ~37b params per token; trained on ~14.8t tokens (report). v3.2 introduces sparse attention for long-context optimization.'}",
+      "{'notable_variants': ['doubao-realtime-standard', 'doubao-realtime-pro'], 'activated_params_note': '参数规模未公开；通过火山引擎api提供托管服务。'}",
+      "{'notable_variants': ['dusbot-cloud', 'dusbot-edge', 'dusbot-auto'], 'activated_params_note': '云端模型参数规模未公开；边缘模型优化至<500mb，适配车机和iot设备。'}",
+      "{'notable_variants': ['elevenlabs turbo v2.5', 'elevenlabs multilingual v2', 'elevenlabs conversational ai'], 'activated_params_note': 'parameter counts undisclosed; optimized for high-fidelity voice generation and low-latency conversational scenarios.'}",
+      "{'notable_variants': ['emu3.5-34b (通用多模态预测)', 'emu3.5-image (专用于单图生成的优化版本)', 'emu3.5-visiontokenizer (视觉 token 化组件)'], 'activated_params_note': '主模型 34b 参数'}",
+      "{'notable_variants': ['fun-audio-chat-8b'], 'activated_params_note': 'dense 8b parameter architecture achieving first-rank performance among models of same size (8b and 30b-a3b) on openaudiobench, voicebench and ultraeval-audio.'}",
+      "{'notable_variants': ['gemini-1.5-pro', 'gemini-1.5-flash', 'gemini-2.0-flash', 'gemini-3.0-pro', 'gemini-3.0-flash'], 'activated_params_note': 'parameter counts not publicly disclosed; api-managed deployment.'}",
+      "{'notable_variants': ['glm-4.6', 'glm-4.6v'], 'activated_params_note': 'glm-4.6 activates ~32b params per forward pass out of 355b total; uses ~15% fewer tokens than glm-4.5 for equivalent coding tasks.'}",
+      "{'notable_variants': ['gpt-4o', 'gpt-4o-mini', 'gpt-4.1', 'gpt-4.5-preview', 'o1', 'o1-mini', 'o3', 'o3-mini', 'o3-pro', 'o4-mini', 'gpt-5.1'], 'activated_params_note': 'parameter counts are undisclosed; api users access hosted inference endpoints.'}",
+      "{'notable_variants': ['gpt-4o-realtime', 'gpt-4o-realtime-preview'], 'activated_params_note': 'parameter counts undisclosed; optimized for sub-second response latency in speech-to-speech scenarios.'}",
+      "{'notable_variants': ['gpt-oss-120b', 'gpt-oss-20b'], 'activated_params_note': 'readme states 120b has ~5.1b active params (117b total); 20b has ~3.6b active params (21b total).'}",
+      "{'notable_variants': ['grok-4', 'grok-4-heavy', 'grok-4.1'], 'activated_params_note': 'parameter counts are undisclosed; api users access hosted inference endpoints.'}",
+      "{'notable_variants': ['longcat-flash-omni (560b总参数，27b平均激活)'], 'activated_params_note': 'moe架构平均激活约27b参数（范围18.6b-31.3b，取决于上下文）'}",
+      "{'notable_variants': ['seed-1.8'], 'activated_params_note': '参数规模未公开披露；通过火山引擎api提供托管服务。'}",
+      "{'notable_variants': ['spark-voice-v3.5', 'spark-voice-v4.0'], 'activated_params_note': '模型参数规模未公开；通过讯飞开放平台api提供服务。'}",
+      "{'notable_variants': ['step-audio-2-base'], 'activated_params_note': 'exact parameter count not publicly disclosed. designed for efficient audio processing with competitive performance.'}",
+      "{'notable_variants': ['step-audio-r1.1'], 'activated_params_note': '~33b parameters (32b llm + audio encoder).'}"
+    ],
+    "tags": [
+      "agent",
+      "agentic",
+      "aispeech",
+      "apache-2.0",
+      "api",
+      "asr",
+      "audio_llm",
+      "audio_understanding",
+      "audio_visual",
+      "automotive",
+      "bytedance",
+      "chain_of_thought",
+      "chinese",
+      "closed-weight",
+      "coding",
+      "commercial",
+      "commercial-use",
+      "conversational-ai",
+      "cot",
+      "decoder-only",
+      "dialect",
+      "dialogue",
+      "edge-computing",
+      "embodied_ai",
+      "extended-context",
+      "fp8",
+      "function_calling",
+      "harmony-format",
+      "high-fidelity",
+      "iflytek",
+      "image_generation",
+      "instruction_following",
+      "iot",
+      "long-context",
+      "long_context",
+      "low-latency",
+      "low_latency",
+      "meituan",
+      "mixture_of_experts",
+      "mla",
+      "moe",
+      "multilingual",
+      "multimodal",
+      "offline-capable",
+      "omni_modal",
+      "open-source",
+      "open-weight",
+      "open_source",
+      "quantization:mxfp4",
+      "real_time",
+      "realtime",
+      "reasoning",
+      "reinforcement_learning",
+      "rl",
+      "speech_recognition",
+      "speech_to_speech",
+      "speech_translation",
+      "tool-calling",
+      "tool-use",
+      "tts",
+      "video-understanding",
+      "video_understanding",
+      "vision-language",
+      "voice",
+      "voice-cloning",
+      "voice_assistant",
+      "world_model"
+    ]
+  },
+  "mappings": [
+    {
+      "model_ref": "gpt-oss",
+      "inputs": [
+        "text"
+      ],
+      "outputs": [
+        "text"
+      ],
+      "arch": "decoder-only",
+      "size": "{'notable_variants': ['gpt-oss-120b', 'gpt-oss-20b'], 'activated_params_note': 'readme states 120b has ~5.1b active params (117b total); 20b has ~3.6b active params (21b total).'}",
+      "tags": [
+        "open-weight",
+        "moe",
+        "decoder-only",
+        "harmony-format",
+        "quantization:mxfp4"
+      ]
+    },
+    {
+      "model_ref": "Step-Audio-R1.1",
+      "inputs": [
+        "audio",
+        "text"
+      ],
+      "outputs": [
+        "audio",
+        "text"
+      ],
+      "arch": "multimodal transformer",
+      "size": "{'notable_variants': ['step-audio-r1.1'], 'activated_params_note': '~33b parameters (32b llm + audio encoder).'}",
+      "tags": [
+        "audio_llm",
+        "multimodal",
+        "reasoning",
+        "realtime",
+        "chain_of_thought"
+      ]
+    },
+    {
+      "model_ref": "LongCat-Flash-Omni",
+      "inputs": [
+        "text",
+        "image",
+        "audio",
+        "video"
+      ],
+      "outputs": [
+        "text",
+        "audio"
+      ],
+      "arch": "mixture-of-experts multimodal transformer",
+      "size": "{'notable_variants': ['longcat-flash-omni (560b总参数，27b平均激活)'], 'activated_params_note': 'moe架构平均激活约27b参数（范围18.6b-31.3b，取决于上下文）'}",
+      "tags": [
+        "open_source",
+        "omni_modal",
+        "real_time",
+        "mixture_of_experts",
+        "multimodal",
+        "audio_visual",
+        "long_context",
+        "meituan"
+      ]
+    },
+    {
+      "model_ref": "Doubao Realtime",
+      "inputs": [
+        "text",
+        "audio"
+      ],
+      "outputs": [
+        "text",
+        "audio"
+      ],
+      "arch": "multimodal transformer with streaming audio",
+      "size": "{'notable_variants': ['doubao-realtime-standard', 'doubao-realtime-pro'], 'activated_params_note': '参数规模未公开；通过火山引擎api提供托管服务。'}",
+      "tags": [
+        "closed-weight",
+        "api",
+        "realtime",
+        "voice",
+        "chinese",
+        "multimodal",
+        "bytedance",
+        "low-latency"
+      ]
+    },
+    {
+      "model_ref": "Gemma 2",
+      "inputs": [
+        "text"
+      ],
+      "outputs": [
+        "text"
+      ],
+      "arch": "decoder-only",
+      "size": null,
+      "tags": []
+    },
+    {
+      "model_ref": "Doubao Seed 1.8",
+      "inputs": [
+        "text",
+        "image",
+        "video"
+      ],
+      "outputs": [
+        "text"
+      ],
+      "arch": "multimodal transformer with agent capabilities",
+      "size": "{'notable_variants': ['seed-1.8'], 'activated_params_note': '参数规模未公开披露；通过火山引擎api提供托管服务。'}",
+      "tags": [
+        "closed-weight",
+        "api",
+        "multimodal",
+        "agent",
+        "vision-language",
+        "video-understanding",
+        "tool-calling",
+        "bytedance",
+        "chinese"
+      ]
+    },
+    {
+      "model_ref": "Qwen3",
+      "inputs": [
+        "text",
+        "image",
+        "audio",
+        "video"
+      ],
+      "outputs": [
+        "text",
+        "audio"
+      ],
+      "arch": "mixture-of-experts transformer",
+      "size": null,
+      "tags": []
+    },
+    {
+      "model_ref": "Emu3.5",
+      "inputs": [
+        "text",
+        "image"
+      ],
+      "outputs": [
+        "text",
+        "image"
+      ],
+      "arch": "multimodal decoder-only transformer",
+      "size": "{'notable_variants': ['emu3.5-34b (通用多模态预测)', 'emu3.5-image (专用于单图生成的优化版本)', 'emu3.5-visiontokenizer (视觉 token 化组件)'], 'activated_params_note': '主模型 34b 参数'}",
+      "tags": [
+        "open_source",
+        "multimodal",
+        "world_model",
+        "image_generation",
+        "video_understanding",
+        "embodied_ai",
+        "reinforcement_learning",
+        "instruction_following"
+      ]
+    },
+    {
+      "model_ref": "GPT Realtime",
+      "inputs": [
+        "text",
+        "audio"
+      ],
+      "outputs": [
+        "text",
+        "audio"
+      ],
+      "arch": "multimodal transformer with realtime audio processing",
+      "size": "{'notable_variants': ['gpt-4o-realtime', 'gpt-4o-realtime-preview'], 'activated_params_note': 'parameter counts undisclosed; optimized for sub-second response latency in speech-to-speech scenarios.'}",
+      "tags": [
+        "closed-weight",
+        "api",
+        "realtime",
+        "voice",
+        "multimodal",
+        "low-latency",
+        "conversational-ai"
+      ]
+    },
+    {
+      "model_ref": "DeepSeek",
+      "inputs": [
+        "text"
+      ],
+      "outputs": [
+        "text"
+      ],
+      "arch": "mixture-of-experts",
+      "size": "{'notable_variants': ['deepseek-v3', 'deepseek-v3.2', 'deepseek-v3.2-speciale', 'deepseek-r1'], 'activated_params_note': 'deepseek-v3 activates ~37b params per token; trained on ~14.8t tokens (report). v3.2 introduces sparse attention for long-context optimization.'}",
+      "tags": [
+        "moe",
+        "mla",
+        "fp8",
+        "rl",
+        "cot",
+        "open-weight",
+        "commercial-use"
+      ]
+    },
+    {
+      "model_ref": "Gemini",
+      "inputs": [
+        "text",
+        "image",
+        "audio",
+        "video"
+      ],
+      "outputs": [
+        "text"
+      ],
+      "arch": "multimodal",
+      "size": "{'notable_variants': ['gemini-1.5-pro', 'gemini-1.5-flash', 'gemini-2.0-flash', 'gemini-3.0-pro', 'gemini-3.0-flash'], 'activated_params_note': 'parameter counts not publicly disclosed; api-managed deployment.'}",
+      "tags": [
+        "multimodal",
+        "api",
+        "closed-weight",
+        "long-context"
+      ]
+    },
+    {
+      "model_ref": "ElevenLabs Voice",
+      "inputs": [
+        "text",
+        "audio"
+      ],
+      "outputs": [
+        "text",
+        "audio"
+      ],
+      "arch": "neural audio synthesis with conversational ai",
+      "size": "{'notable_variants': ['elevenlabs turbo v2.5', 'elevenlabs multilingual v2', 'elevenlabs conversational ai'], 'activated_params_note': 'parameter counts undisclosed; optimized for high-fidelity voice generation and low-latency conversational scenarios.'}",
+      "tags": [
+        "closed-weight",
+        "api",
+        "tts",
+        "voice-cloning",
+        "conversational-ai",
+        "multilingual",
+        "low-latency",
+        "high-fidelity"
+      ]
+    },
+    {
+      "model_ref": "Grok",
+      "inputs": [
+        "text",
+        "image",
+        "audio",
+        "video"
+      ],
+      "outputs": [
+        "text",
+        "audio"
+      ],
+      "arch": "multimodal transformer",
+      "size": "{'notable_variants': ['grok-4', 'grok-4-heavy', 'grok-4.1'], 'activated_params_note': 'parameter counts are undisclosed; api users access hosted inference endpoints.'}",
+      "tags": [
+        "closed-weight",
+        "api",
+        "multimodal",
+        "reasoning"
+      ]
+    },
+    {
+      "model_ref": "Baichuan-Omni",
+      "inputs": [
+        "text"
+      ],
+      "outputs": [
+        "text"
+      ],
+      "arch": "decoder-only",
+      "size": null,
+      "tags": []
+    },
+    {
+      "model_ref": "iFlyTek Spark Voice",
+      "inputs": [
+        "text",
+        "audio"
+      ],
+      "outputs": [
+        "text",
+        "audio"
+      ],
+      "arch": "end-to-end speech understanding and generation",
+      "size": "{'notable_variants': ['spark-voice-v3.5', 'spark-voice-v4.0'], 'activated_params_note': '模型参数规模未公开；通过讯飞开放平台api提供服务。'}",
+      "tags": [
+        "closed-weight",
+        "api",
+        "voice",
+        "chinese",
+        "multimodal",
+        "iflytek",
+        "dialect",
+        "low-latency",
+        "asr",
+        "tts"
+      ]
+    },
+    {
+      "model_ref": "M3A",
+      "inputs": [
+        "text",
+        "image"
+      ],
+      "outputs": [
+        "text",
+        "action"
+      ],
+      "arch": "agent",
+      "size": null,
+      "tags": []
+    },
+    {
+      "model_ref": "Step-Audio-2",
+      "inputs": [
+        "audio",
+        "text"
+      ],
+      "outputs": [
+        "audio",
+        "text"
+      ],
+      "arch": "multimodal transformer",
+      "size": "{'notable_variants': ['step-audio-2-base'], 'activated_params_note': 'exact parameter count not publicly disclosed. designed for efficient audio processing with competitive performance.'}",
+      "tags": [
+        "audio_llm",
+        "multimodal",
+        "speech_recognition",
+        "speech_translation",
+        "audio_understanding",
+        "dialogue",
+        "multilingual"
+      ]
+    },
+    {
+      "model_ref": "OpenAI GPT",
+      "inputs": [
+        "text",
+        "image",
+        "audio",
+        "video"
+      ],
+      "outputs": [
+        "text",
+        "audio"
+      ],
+      "arch": "multimodal transformer",
+      "size": "{'notable_variants': ['gpt-4o', 'gpt-4o-mini', 'gpt-4.1', 'gpt-4.5-preview', 'o1', 'o1-mini', 'o3', 'o3-mini', 'o3-pro', 'o4-mini', 'gpt-5.1'], 'activated_params_note': 'parameter counts are undisclosed; api users access hosted inference endpoints.'}",
+      "tags": [
+        "closed-weight",
+        "api",
+        "multimodal",
+        "reasoning"
+      ]
+    },
+    {
+      "model_ref": "GLM",
+      "inputs": [
+        "text"
+      ],
+      "outputs": [
+        "text"
+      ],
+      "arch": "mixture-of-experts",
+      "size": "{'notable_variants': ['glm-4.6', 'glm-4.6v'], 'activated_params_note': 'glm-4.6 activates ~32b params per forward pass out of 355b total; uses ~15% fewer tokens than glm-4.5 for equivalent coding tasks.'}",
+      "tags": [
+        "moe",
+        "open-source",
+        "apache-2.0",
+        "coding",
+        "reasoning",
+        "long-context",
+        "tool-use"
+      ]
+    },
+    {
+      "model_ref": "Claude (Anthropic)",
+      "inputs": [
+        "text",
+        "image"
+      ],
+      "outputs": [
+        "text"
+      ],
+      "arch": "multimodal transformer",
+      "size": "{'notable_variants': ['claude-opus-4.5', 'claude-opus-4.1', 'claude-sonnet-4.5', 'claude-sonnet-4', 'claude-haiku-4.5', 'claude-haiku-4'], 'activated_params_note': 'parameter counts are undisclosed; api users access hosted inference endpoints.'}",
+      "tags": [
+        "closed-weight",
+        "api",
+        "multimodal",
+        "agentic",
+        "extended-context"
+      ]
+    },
+    {
+      "model_ref": "DusBot",
+      "inputs": [
+        "text",
+        "audio"
+      ],
+      "outputs": [
+        "text",
+        "audio"
+      ],
+      "arch": "domain-optimized speech dialogue system",
+      "size": "{'notable_variants': ['dusbot-cloud', 'dusbot-edge', 'dusbot-auto'], 'activated_params_note': '云端模型参数规模未公开；边缘模型优化至<500mb，适配车机和iot设备。'}",
+      "tags": [
+        "commercial",
+        "voice",
+        "automotive",
+        "iot",
+        "chinese",
+        "edge-computing",
+        "offline-capable",
+        "aispeech"
+      ]
+    },
+    {
+      "model_ref": "Step3-VL",
+      "inputs": [
+        "text",
+        "image"
+      ],
+      "outputs": [
+        "text"
+      ],
+      "arch": "multimodal transformer",
+      "size": null,
+      "tags": []
+    },
+    {
+      "model_ref": "Fun-Audio-Chat",
+      "inputs": [
+        "audio",
+        "text"
+      ],
+      "outputs": [
+        "audio",
+        "text"
+      ],
+      "arch": "multimodal transformer with dual-resolution speech processing",
+      "size": "{'notable_variants': ['fun-audio-chat-8b'], 'activated_params_note': 'dense 8b parameter architecture achieving first-rank performance among models of same size (8b and 30b-a3b) on openaudiobench, voicebench and ultraeval-audio.'}",
+      "tags": [
+        "open_source",
+        "audio_llm",
+        "voice_assistant",
+        "low_latency",
+        "multimodal",
+        "speech_to_speech",
+        "function_calling"
+      ]
+    }
+  ],
+  "source": "models_index"
+}
