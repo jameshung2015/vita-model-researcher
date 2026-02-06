@@ -33,7 +33,9 @@
       "o3-mini",
       "o3-pro",
       "o4-mini",
-      "gpt-5.1"
+      "gpt-5.1",
+      "gpt-5.3",
+      "gpt-5.3-codex"
     ],
     "activated_params_note": "Parameter counts are undisclosed; API users access hosted inference endpoints."
   },
@@ -255,6 +257,45 @@
         "multimodal",
         "reasoning"
       ]
+    },
+    {
+      "name": "gpt-5.3",
+      "params": 1,
+      "context_windows": [
+        200000
+      ],
+      "default_seq_len": 200000,
+      "default_num_gpus": 0,
+      "model_card_link": "https://platform.openai.com/docs/models",
+      "release_date": "2026-06-01",
+      "hardware_recommendations": {
+        "notes": "Hosted via OpenAI API; advanced reasoning and multimodal capabilities."
+      },
+      "tags": [
+        "flagship",
+        "multimodal",
+        "reasoning"
+      ]
+    },
+    {
+      "name": "gpt-5.3-codex",
+      "params": 1,
+      "context_windows": [
+        128000
+      ],
+      "default_seq_len": 128000,
+      "default_num_gpus": 0,
+      "model_card_link": "https://openai.com/index/introducing-gpt-5-3-codex/",
+      "release_date": "2026-02-05",
+      "hardware_recommendations": {
+        "notes": "Co-designed for and served on NVIDIA GB200 NVL72 systems."
+      },
+      "tags": [
+        "coding",
+        "agentic",
+        "cybersecurity",
+        "multimodal"
+      ]
     }
   ],
   "evaluation": {
@@ -273,8 +314,11 @@
       "ai2d_test",
       "aime25",
       "swebench",
+      "swebench_pro",
       "codeforces",
-      "mle_bench"
+      "mle_bench",
+      "humaneval",
+      "gdpval"
     ],
     "model_cards": [
       "https://platform.openai.com/docs/models#gpt-4o",

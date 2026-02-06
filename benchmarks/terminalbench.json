@@ -21,7 +21,9 @@
   "example_scores": {
     "Claude Opus 4.6": "55.0% (Estimated)",
     "LongCat-Flash-Omni": "39.5",
-    "GPT-4": "~45-50 (estimated)"
+    "GPT-4": "~45-50 (estimated)",
+    "GPT-5.3-Codex": "77.3% (Terminal-Bench 2.0)",
+    "GPT-5.2-Codex": "64.0% (Terminal-Bench 2.0)"
   },
-  "notes": "评测时需要实际执行命令验证正确性。注意安全性，应在隔离环境中运行。记录操作系统版本和Shell类型。"
+  "notes": "评测时需要实际执行命令验证正确性。注意安全性，应在隔离环境中运行。记录操作系统版本和Shell类型。GPT-5.3-Codex scores refer to Terminal-Bench 2.0."
 }

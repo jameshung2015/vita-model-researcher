@@ -38,7 +38,7 @@
       "{'notable_variants': ['fun-audio-chat-8b'], 'activated_params_note': 'dense 8b parameter architecture achieving first-rank performance among models of same size (8b and 30b-a3b) on openaudiobench, voicebench and ultraeval-audio.'}",
       "{'notable_variants': ['gemini-1.5-pro', 'gemini-1.5-flash', 'gemini-2.0-flash', 'gemini-3.0-pro', 'gemini-3.0-flash'], 'activated_params_note': 'parameter counts not publicly disclosed; api-managed deployment.'}",
       "{'notable_variants': ['glm-4.6', 'glm-4.6v'], 'activated_params_note': 'glm-4.6 activates ~32b params per forward pass out of 355b total; uses ~15% fewer tokens than glm-4.5 for equivalent coding tasks.'}",
-      "{'notable_variants': ['gpt-4o', 'gpt-4o-mini', 'gpt-4.1', 'gpt-4.5-preview', 'o1', 'o1-mini', 'o3', 'o3-mini', 'o3-pro', 'o4-mini', 'gpt-5.1'], 'activated_params_note': 'parameter counts are undisclosed; api users access hosted inference endpoints.'}",
+      "{'notable_variants': ['gpt-4o', 'gpt-4o-mini', 'gpt-4.1', 'gpt-4.5-preview', 'o1', 'o1-mini', 'o3', 'o3-mini', 'o3-pro', 'o4-mini', 'gpt-5.1', 'gpt-5.3', 'gpt-5.3-codex'], 'activated_params_note': 'parameter counts are undisclosed; api users access hosted inference endpoints.'}",
       "{'notable_variants': ['gpt-4o-realtime', 'gpt-4o-realtime-preview'], 'activated_params_note': 'parameter counts undisclosed; optimized for sub-second response latency in speech-to-speech scenarios.'}",
       "{'notable_variants': ['gpt-oss-120b', 'gpt-oss-20b'], 'activated_params_note': 'readme states 120b has ~5.1b active params (117b total); 20b has ~3.6b active params (21b total).'}",
       "{'notable_variants': ['grok-4', 'grok-4-heavy', 'grok-4.1'], 'activated_params_note': 'parameter counts are undisclosed; api users access hosted inference endpoints.'}",
@@ -446,7 +446,11 @@
         "audio"
       ],
       "arch": "multimodal transformer",
+<<<<<<< HEAD
       "size": "{'notable_variants': ['gpt-4o', 'gpt-4o-mini', 'gpt-4.1', 'gpt-4.5-preview', 'o1', 'o1-mini', 'o3', 'o3-mini', 'o3-pro', 'o4-mini', 'gpt-5.1'], 'activated_params_note': 'parameter counts are undisclosed; api users access hosted inference endpoints.'}",
+=======
+      "size": "{'notable_variants': ['gpt-4o', 'gpt-4o-mini', 'gpt-4.1', 'gpt-4.5-preview', 'o1', 'o1-mini', 'o3', 'o3-mini', 'o3-pro', 'o4-mini', 'gpt-5.1', 'gpt-5.3', 'gpt-5.3-codex'], 'activated_params_note': 'parameter counts are undisclosed; api users access hosted inference endpoints.'}",
+>>>>>>> pr-27
       "tags": [
         "closed-weight",
         "api",

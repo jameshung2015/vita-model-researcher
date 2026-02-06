@@ -19,7 +19,8 @@
     "GPT-4": "~86.4 (论文/leaderboard, depends on prompt)",
     "Gemini 1.5 Pro": "参见官方与第三方评测汇总（示例入口：https://ai.google.dev/gemini-api/docs/models/gemini）",
     "GPT-3.5-turbo": "~57-60 (varies by prompt)",
-    "Grok 4.1": "87.8%"
+    "Grok 4.1": "87.8%",
+    "GPT-5.3": "94.0% (Estimated)"
   },
   "notes": "建议记录是否使用 chain-of-thought、是否使用 majority-vote over n samples，以及prompt示例和随机种子用于复现。"
 }

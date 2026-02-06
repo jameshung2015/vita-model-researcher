@@ -1,0 +1,27 @@
+{
+  "id": "benchmark.swebench_pro",
+  "name": "SWE-Bench Pro",
+  "description": "Rigorous evaluation of real-world software engineering spanning four languages. More contamination-resistant and industry-relevant than SWE-Bench Verified.",
+  "source": "OpenAI, 2026",
+  "datasets": [
+    {
+      "name": "SWE-Bench Pro",
+      "link": "https://openai.com/index/introducing-gpt-5-3-codex/",
+      "license": "Proprietary/TBD"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "resolve_rate",
+      "definition": "Percentage of issues resolved.",
+      "calculation": "resolved / total"
+    }
+  ],
+  "test_method": "Agentic coding evaluation spanning multiple languages (beyond Python).",
+  "example_scores": {
+    "GPT-5.3-Codex": "56.8% (OpenAI, 2026)",
+    "GPT-5.2-Codex": "56.4%",
+    "GPT-5.2": "55.6%"
+  },
+  "notes": "Introduced with GPT-5.3-Codex. Distinguishes from SWE-Bench Verified which is Python-only."
+}
