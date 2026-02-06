@@ -29,7 +29,7 @@
       "neural audio synthesis with conversational ai"
     ],
     "size": [
-      "{'notable_variants': ['claude-opus-4.5', 'claude-opus-4.1', 'claude-sonnet-4.5', 'claude-sonnet-4', 'claude-haiku-4.5', 'claude-haiku-4'], 'activated_params_note': 'parameter counts are undisclosed; api users access hosted inference endpoints.'}",
+      "{'notable_variants': ['claude-opus-4.6', 'claude-opus-4.5', 'claude-opus-4.1', 'claude-sonnet-4.5', 'claude-sonnet-4', 'claude-haiku-4.5', 'claude-haiku-4'], 'activated_params_note': 'parameter counts are undisclosed; api users access hosted inference endpoints.'}",
       "{'notable_variants': ['deepseek-v3', 'deepseek-v3.2', 'deepseek-v3.2-speciale', 'deepseek-r1'], 'activated_params_note': 'deepseek-v3 activates ~37b params per token; trained on ~14.8t tokens (report). v3.2 introduces sparse attention for long-context optimization.'}",
       "{'notable_variants': ['doubao-realtime-standard', 'doubao-realtime-pro'], 'activated_params_note': '参数规模未公开；通过火山引擎api提供托管服务。'}",
       "{'notable_variants': ['dusbot-cloud', 'dusbot-edge', 'dusbot-auto'], 'activated_params_note': '云端模型参数规模未公开；边缘模型优化至<500mb，适配车机和iot设备。'}",
@@ -484,7 +484,7 @@
         "text"
       ],
       "arch": "multimodal transformer",
-      "size": "{'notable_variants': ['claude-opus-4.5', 'claude-opus-4.1', 'claude-sonnet-4.5', 'claude-sonnet-4', 'claude-haiku-4.5', 'claude-haiku-4'], 'activated_params_note': 'parameter counts are undisclosed; api users access hosted inference endpoints.'}",
+      "size": "{'notable_variants': ['claude-opus-4.6', 'claude-opus-4.5', 'claude-opus-4.1', 'claude-sonnet-4.5', 'claude-sonnet-4', 'claude-haiku-4.5', 'claude-haiku-4'], 'activated_params_note': 'parameter counts are undisclosed; api users access hosted inference endpoints.'}",
       "tags": [
         "closed-weight",
         "api",

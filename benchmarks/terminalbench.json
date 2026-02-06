@@ -19,6 +19,7 @@
   ],
   "test_method": "提供终端环境和任务描述，评估模型生成的命令是否正确完成任务。包括命令生成、脚本编写、系统诊断等场景。",
   "example_scores": {
+    "Claude Opus 4.6": "55.0% (Estimated)",
     "LongCat-Flash-Omni": "39.5",
     "GPT-4": "~45-50 (estimated)",
     "GPT-5.3-Codex": "77.3% (Terminal-Bench 2.0)",

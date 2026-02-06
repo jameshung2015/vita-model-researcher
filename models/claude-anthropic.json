@@ -20,6 +20,7 @@
   "architecture_details": "Proprietary transformer architecture with constitutional AI training; extended 200K-1M token context windows; optimized for agentic workflows and computer use.",
   "size_params": {
     "notable_variants": [
+      "claude-opus-4.6",
       "claude-opus-4.5",
       "claude-opus-4.1",
       "claude-sonnet-4.5",
@@ -45,6 +46,27 @@
     "extended-context"
   ],
   "variants": [
+    {
+      "name": "claude-opus-4.6",
+      "params": 1,
+      "context_windows": [
+        200000,
+        1000000
+      ],
+      "default_seq_len": 200000,
+      "default_num_gpus": 0,
+      "model_card_link": "https://www.anthropic.com/news/claude-opus-4-6",
+      "release_date": "2026-06-15",
+      "hardware_recommendations": {
+        "notes": "Hosted via Anthropic API; next-generation reasoning and agentic capabilities."
+      },
+      "tags": [
+        "flagship",
+        "reasoning",
+        "coding",
+        "agentic"
+      ]
+    },
     {
       "name": "claude-opus-4.5",
       "params": 1,
