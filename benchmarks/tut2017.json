@@ -19,7 +19,7 @@
   ],
   "test_method": "Follow DCASE challenge protocol: 10-second segments, log-mel features, cross-validation over cities.",
   "example_scores": {
-    "Qwen3-Audio": "64.9% Accuracy (Qwen-Audio GitHub)",
+    "Qwen3-Audio": "64.9% accuracy (Qwen3 Audio report)",
     "CRNN baseline": "61.5% accuracy (DCASE 2017)"
   },
   "notes": "Indicate whether external data or augmentation was used; baseline forbids additional recordings."

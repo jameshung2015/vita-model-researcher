@@ -21,7 +21,8 @@
   "example_scores": {
     "Whisper-large-v3": "5.4 WER (OpenAI report)",
     "Qwen3-Omni-30B-A3B": "2.44 WER (Qwen3-Omni paper)",
-    "Qwen3-Audio": "4.2% WER (Qwen-Audio GitHub)"
+    "Qwen3-ASR-1.7B": "3.38 WER (Qwen3-ASR GitHub)",
+    "Qwen3-ASR-0.6B": "4.55 WER (Qwen3-ASR GitHub)"
   },
   "notes": "Report whether language model rescoring or additional text normalization was applied. Provide decoder settings."
 }

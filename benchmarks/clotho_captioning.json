@@ -19,7 +19,7 @@
   ],
   "test_method": "Generate five captions per clip, compute SPIDEr using the official evaluation script based on pycocoevalcap.",
   "example_scores": {
-    "Qwen3-Audio": "0.288 SPIDEr (Qwen-Audio GitHub)",
+    "Qwen3-Audio": "0.288 SPIDEr (Qwen3 Audio report)",
     "AudioCaps baseline": "0.256 SPIDEr (Clotho challenge 2020)"
   },
   "notes": "State language of generated captions and beam-search settings; dataset includes five human references per clip."

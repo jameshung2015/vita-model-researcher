@@ -180,15 +180,54 @@
       ]
     },
     {
-      "name": "Qwen3-Audio",
-      "params": 0.0,
-      "model_card_link": "https://github.com/QwenLM/Qwen-Audio",
+      "name": "Qwen3-ASR-1.7B",
+      "params": 1.7,
+      "context_windows": [
+        32768
+      ],
+      "default_seq_len": 32768,
+      "default_num_gpus": 1,
+      "model_card_link": "https://github.com/QwenLM/Qwen3-ASR",
+      "release_date": "2026-01-29",
       "hardware_recommendations": {
-        "notes": "Standalone audio-LM."
+        "notes": "State-of-the-art open-source ASR model; supports 52 languages."
       },
       "tags": [
-        "open_source"
+        "open_source",
+        "asr"
       ]
+    },
+    {
+      "name": "Qwen3-ASR-0.6B",
+      "params": 0.6,
+      "context_windows": [
+        32768
+      ],
+      "default_seq_len": 32768,
+      "default_num_gpus": 1,
+      "model_card_link": "https://github.com/QwenLM/Qwen3-ASR",
+      "release_date": "2026-01-29",
+      "hardware_recommendations": {
+        "notes": "Efficient ASR model; 2000x real-time throughput."
+      },
+      "tags": [
+        "open_source",
+        "asr",
+        "edge-computing"
+      ]
+    },
+    {
+      "name": "Qwen3-ForcedAligner-0.6B",
+      "params": 0.6,
+      "model_card_link": "https://github.com/QwenLM/Qwen3-ASR",
+      "release_date": "2026-01-29",
+      "tags": [
+        "open_source",
+        "asr"
+      ],
+      "hardware_recommendations": {
+        "notes": "Non-autoregressive forced alignment model."
+      }
     },
     {
       "name": "Qwen3-Omni-30B-A3B",
@@ -223,19 +262,10 @@
   ],
   "evaluation": {
     "benchmarks": [
+      "librispeech_test_clean",
       "librispeech_test_other",
-      "aishell_1_test",
       "aishell_2",
-      "covost2_en_zh",
-      "clotho_captioning",
-      "word_align_industrial",
-      "cochlscene",
-      "tut2017",
-      "meld",
-      "clothoaqa",
-      "vocalsound",
-      "nsynth_pitch",
-      "nsynth_instrument"
+      "wenetspeech_meeting"
     ]
   }
 }

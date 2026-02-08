@@ -20,7 +20,7 @@
   "test_method": "Use 16kHz mono audio; evaluate with official scoring script that normalizes punctuation and digits.",
   "example_scores": {
     "Paraformer-L": "1.9 CER (AIShell leaderboard)",
-    "Qwen3-Audio": "1.3% CER (Qwen-Audio GitHub)"
+    "Qwen3-Audio": "1.3 CER (Qwen3 Audio report)"
   },
   "notes": "Specify language model usage during decoding and any Mandarin-specific post-processing."
 }

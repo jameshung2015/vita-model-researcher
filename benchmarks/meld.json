@@ -19,7 +19,7 @@
   ],
   "test_method": "The dataset includes audio, text, and video; specify which modalities were used. Evaluate on the official test split.",
   "example_scores": {
-    "Qwen3-Audio": "55.7% Accuracy (Qwen-Audio GitHub)",
+    "Qwen3-Audio": "55.7% accuracy (Qwen3 Audio report)",
     "DialogueRNN baseline": "57.0% accuracy (MELD paper)"
   },
   "notes": "Emotion classes are imbalanced; report macro-F1 in addition to accuracy when possible."

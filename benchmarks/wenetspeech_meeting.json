@@ -20,7 +20,9 @@
   "test_method": "Decode meeting recordings with streaming or offline ASR, then compute WER with the official scoring script.",
   "example_scores": {
     "Qwen3-Omni-30B-A3B": "5.75 WER (Qwen3-Omni paper, 2025)",
-    "Paraformer-Large": "8.4 WER (WenetSpeech baseline)"
+    "Paraformer-Large": "8.4 WER (WenetSpeech baseline)",
+    "Qwen3-ASR-1.7B": "5.88 WER (Qwen3-ASR GitHub)",
+    "Qwen3-ASR-0.6B": "6.88 WER (Qwen3-ASR GitHub)"
   },
   "notes": "Meeting subset includes overlapping speech; specify diarization or VAD pipeline and language model usage."
 }

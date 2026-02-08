@@ -19,7 +19,7 @@
   ],
   "test_method": "Train or evaluate on 16kHz waveforms; compute MAP over pitch labels using provided evaluation scripts.",
   "example_scores": {
-    "Qwen3-Audio": "47.4% MAP (Qwen-Audio GitHub)",
+    "Qwen3-Audio": "47.4 MAP (Qwen3 Audio report)",
     "WaveNet baseline": "45.4 MAP (NSynth paper)"
   },
   "notes": "Specify train/validation/test split version (balanced vs unbalanced)."
