@@ -19,7 +19,7 @@
   ],
   "test_method": "Segment animal calls into fixed-length clips and evaluate using the provided taxonomy mapping.",
   "example_scores": {
-    "Qwen3-Audio": "92.9% accuracy (Qwen3 Audio report)",
+    "Qwen3-Audio": "92.9% Accuracy (Qwen-Audio GitHub)",
     "Audio-MAE baseline": "88.1% accuracy (dataset report)"
   },
   "notes": "Dataset aggregates recordings from multiple wildlife corpora; ensure label harmonization when fine-tuning."

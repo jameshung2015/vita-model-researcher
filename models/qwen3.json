@@ -182,11 +182,12 @@
     {
       "name": "Qwen3-Audio",
       "params": 0.0,
+      "model_card_link": "https://github.com/QwenLM/Qwen-Audio",
       "hardware_recommendations": {
-        "notes": "暂未公开 Standalone audio-LM not yet released (暂未公开); Qwen3's speech capabilities are provided via Qwen3-Omni:contentReference[oaicite:9]{index=9}."
+        "notes": "Standalone audio-LM."
       },
       "tags": [
-        "closed_source"
+        "open_source"
       ]
     },
     {
@@ -219,5 +220,22 @@
       ],
       "deploy_requirements": "Open-source agent framework (Apache-2.0) enabling Qwen3's tool use, planning, and function calling:contentReference[oaicite:12]{index=12}:contentReference[oaicite:13]{index=13} (not a standalone model)."
     }
-  ]
+  ],
+  "evaluation": {
+    "benchmarks": [
+      "librispeech_test_other",
+      "aishell_1_test",
+      "aishell_2",
+      "covost2_en_zh",
+      "clotho_captioning",
+      "word_align_industrial",
+      "cochlscene",
+      "tut2017",
+      "meld",
+      "clothoaqa",
+      "vocalsound",
+      "nsynth_pitch",
+      "nsynth_instrument"
+    ]
+  }
 }

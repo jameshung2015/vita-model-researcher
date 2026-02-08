@@ -19,7 +19,7 @@
   ],
   "test_method": "Use the official train/validation/test splits. Evaluate binary accuracy or F1 depending on question type.",
   "example_scores": {
-    "Qwen3-Audio": "74.9% accuracy (Qwen3 Audio report)",
+    "Qwen3-Audio": "74.9% Accuracy (binary) (Qwen-Audio GitHub)",
     "PANNs baseline": "66.4% accuracy (ClothoAQA baseline)"
   },
   "notes": "Report handling of open-ended questions and whether additional captioning outputs were leveraged."

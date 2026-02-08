@@ -19,7 +19,7 @@
   ],
   "test_method": "Use official splits and evaluate accuracy over 11 instrument families.",
   "example_scores": {
-    "Qwen3-Audio": "78.8% accuracy (Qwen3 Audio report)",
+    "Qwen3-Audio": "78.8% Accuracy (Qwen-Audio GitHub)",
     "WaveNet baseline": "73.0% accuracy (NSynth paper)"
   },
   "notes": "Report whether augmented data (pitch shifting) was used during fine-tuning."

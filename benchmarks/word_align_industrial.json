@@ -19,7 +19,7 @@
   ],
   "test_method": "Run a forced alignment model to obtain word timestamps, then compute absolute timing error against annotated references.",
   "example_scores": {
-    "Qwen3-Audio": "51.5 ms AAC (Qwen3 Audio report)",
+    "Qwen3-Audio": "51.5 AAC (ms) (Qwen-Audio GitHub)",
     "Commercial aligner baseline": "65.0 ms AAC (internal benchmark)"
   },
   "notes": "Dataset is not publicly released; only aggregate metrics are available. Document alignment algorithm and decoder configuration."

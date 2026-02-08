@@ -20,7 +20,7 @@
   "test_method": "Follow the official evaluation pipeline using SacreBLEU with signature 'case.lc+numrefs.1+smooth.exp+tok.zh+version.1.5.1'.",
   "example_scores": {
     "SeamlessM4T-Large": "42.0 BLEU (Meta AI report)",
-    "Qwen3-Audio": "41.5 BLEU (Qwen3 Audio report)"
+    "Qwen3-Audio": "41.5 BLEU (Qwen-Audio GitHub)"
   },
   "notes": "Provide beam search parameters and whether language identification or punctuation restoration were applied."
 }
