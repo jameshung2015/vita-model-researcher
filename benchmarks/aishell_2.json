@@ -19,8 +19,9 @@
   ],
   "test_method": "Train or fine-tune with multi-condition audio. Evaluate CER separately per channel then average.",
   "example_scores": {
-    "Qwen3-Audio": "3.3 CER (Qwen3 Audio report)",
-    "Paraformer-L": "4.1 CER (AIShell-2 baseline)"
+    "Paraformer-L": "4.1 CER (AIShell-2 baseline)",
+    "Qwen3-ASR-1.7B": "2.71 CER (Qwen3-ASR GitHub)",
+    "Qwen3-ASR-0.6B": "3.15 CER (Qwen3-ASR GitHub)"
   },
   "notes": "State whether channel-specific language models or normalization were used; dataset includes 1,000+ speakers."
 }
