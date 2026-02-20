@@ -3,7 +3,7 @@
   "name": "Gemini Public Evaluation References",
   "description": "References to public evaluation results and leaderboards involving Google Gemini models (1.5 Pro/Flash, 2.0 Flash).",
   "source": "Google AI for Developers; third-party leaderboards",
-  "models_referenced": ["gemini-1.5-pro", "gemini-1.5-flash", "gemini-2.0-flash"],
+  "models_referenced": ["gemini-1.5-pro", "gemini-1.5-flash", "gemini-2.0-flash", "gemini-3.0-pro", "gemini-3.0-flash", "gemini-3.1-pro"],
   "references": [
     {
       "benchmark": "Chatbot Arena / LM Arena",
