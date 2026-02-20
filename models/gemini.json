@@ -13,7 +13,7 @@
   "architecture_family": "multimodal",
   "architecture_details": "Proprietary multimodal transformer; long-context support in select variants (e.g., 1.5 Pro experimental 1M tokens per docs).",
   "size_params": {
-    "notable_variants": ["gemini-1.5-pro", "gemini-1.5-flash", "gemini-2.0-flash", "gemini-3.0-pro", "gemini-3.0-flash"],
+    "notable_variants": ["gemini-1.5-pro", "gemini-1.5-flash", "gemini-2.0-flash", "gemini-3.0-pro", "gemini-3.0-flash", "gemini-3.1-pro"],
     "activated_params_note": "Parameter counts not publicly disclosed; API-managed deployment."
   },
   "capabilities": {
@@ -79,6 +79,17 @@
       "release_date": "2025-11-18",
       "hardware_recommendations": {"notes": "Hosted via Gemini API; optimized for speed and cost-effectiveness while maintaining high performance. Supports 1M token input context with faster response times than Pro variant."},
       "tags": ["3.0","flash","cost-effective","long-context"]
+    },
+    {
+      "name": "gemini-3.1-pro",
+      "params": 1,
+      "context_windows": [1000000],
+      "default_seq_len": 1000000,
+      "default_num_gpus": 0,
+      "model_card_link": "https://ai.google.dev/gemini-api/docs/gemini-3",
+      "release_date": "2026-02-19",
+      "hardware_recommendations": {"notes": "Hosted via Gemini API; frontier reasoning model."},
+      "tags": ["3.1","pro","reasoning","long-context","preview"]
     }
   ],
   "evaluation": {
@@ -97,5 +108,5 @@
     "distributed_support": false,
     "notes": "Use Gemini API clients; see ai.google.dev for SDKs and model features."
   },
-  "notes": "Data derived from Google AI for Developers Gemini docs and public announcements. Parameter counts not disclosed; numeric placeholders used to satisfy schema. Gemini 3.0 Pro released Nov 2025 with enhanced reasoning, 1M context window, and Deep Think mode achieving 45.1% on ARC-AGI-2 and 93.8% on GPQA Diamond."
+  "notes": "Data derived from Google AI for Developers Gemini docs and public announcements. Parameter counts not disclosed; numeric placeholders used to satisfy schema. Gemini 3.0 Pro released Nov 2025 with enhanced reasoning, 1M context window, and Deep Think mode achieving 45.1% on ARC-AGI-2 and 93.8% on GPQA Diamond. Gemini 3.1 Pro released Feb 2026, achieving 77.1% on ARC-AGI-2."
 }

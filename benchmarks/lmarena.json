@@ -40,6 +40,7 @@
     "持续排名更新"
   ],
   "example_scores": {
+    "Gemini 3.1 Pro Preview": "1500 (2026-02)",
     "note": "请访问排行榜获取最新Elo与名次"
   },
   "leaderboard": "https://lmarena.ai/leaderboard",

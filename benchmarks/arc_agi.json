@@ -41,6 +41,7 @@
     "AI SOTA 2023": "30%",
     "AI baseline 2020": "21%",
     "Gemini 3 Deep Think (ARC-AGI-2 with code)": "45.1% (Google, 2025, ARC Prize Verified)",
+    "Gemini 3.1 Pro (ARC-AGI-2)": "77.1% (Google, 2026)",
     "Grok 4.1": "17.5% (ARC-AGI-2)",
     "Grok 4": "15.9% (ARC-AGI-2)"
   },
