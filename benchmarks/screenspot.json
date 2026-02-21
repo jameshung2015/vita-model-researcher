@@ -19,6 +19,8 @@
   ],
   "test_method": "Models receive text descriptions and must output bounding boxes or click coordinates. Evaluate using IoU or pixel-distance thresholds.",
   "example_scores": {
+    "UI-Venus-72B": "95.3% (UI-Venus Technical Report)",
+    "UI-Venus-7B": "94.1% (UI-Venus Technical Report)",
     "Qwen3-VL-235B-A22B": "74.7% (Qwen3-VL technical report)",
     "GPT-4V": "68.3% (ScreenSpot benchmark)"
   },
