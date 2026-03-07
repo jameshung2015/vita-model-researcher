@@ -19,8 +19,9 @@
   ],
   "test_method": "Tasks designed by experienced professionals reflecting real knowledge work (presentations, spreadsheets, etc.).",
   "example_scores": {
+    "GPT-5.4": "83% (wins or ties)",
     "GPT-5.3-Codex": "70.9% (wins or ties)",
     "GPT-5.2": "70.9% (high)"
   },
-  "notes": "Matches GPT-5.2 in professional knowledge work."
+  "notes": "Matches GPT-5.2 in professional knowledge work. GPT-5.4 achieved an 83% win or tie rate."
 }
