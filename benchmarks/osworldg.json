@@ -19,6 +19,7 @@
   ],
   "test_method": "Run the OSWorld simulator, feed screen captures to the model, and execute predicted actions on the virtual desktop.",
   "example_scores": {
+    "UI-Venus-72B": "69.8% (UI-Venus Technical Report)",
     "Qwen3-VL-235B-A22B": "62.0% (Qwen3-VL technical report)",
     "GPT-4.1": "55.8% (OSWorld benchmark)",
     "GPT-5.3-Codex": "64.7% (OSWorld-Verified)",

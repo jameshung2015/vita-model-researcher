@@ -19,6 +19,9 @@
   ],
   "test_method": "Run the AndroidWorld environment with the provided emulator. Supply screen captures and metadata to the model, then execute actions via accessibility APIs.",
   "example_scores": {
+    "UI-Venus-1.5": "77.6% (UI-Venus 1.5 Technical Report)",
+    "UI-Venus-72B": "65.9% (UI-Venus Technical Report)",
+    "UI-Venus-7B": "49.1% (UI-Venus Technical Report)",
     "Qwen3-VL-235B-A22B": "63.7% (Qwen3-VL technical report)",
     "GPT-4.1": "58.4% (AndroidWorld benchmark)",
     "M3A (GPT-4 Turbo)": "30.6% (AndroidWorld paper)",

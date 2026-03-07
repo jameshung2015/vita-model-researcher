@@ -19,6 +19,9 @@
   ],
   "test_method": "Execute step-by-step UI actions predicted by the model. Evaluate success if final state matches the goal.",
   "example_scores": {
+    "UI-Venus-1.5": "69.6% (UI-Venus 1.5 Technical Report)",
+    "UI-Venus-72B": "61.9% (UI-Venus Technical Report)",
+    "UI-Venus-7B": "50.8% (UI-Venus Technical Report)",
     "Qwen3-VL-235B-A22B": "95.4% (Qwen3-VL technical report)",
     "GPT-4.1": "88.7% (ScreenSpot Pro benchmark)"
   },

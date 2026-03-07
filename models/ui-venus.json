@@ -1,0 +1,170 @@
+{
+  "model_name": "UI-Venus",
+  "short_description": "Open-source native UI agent based on Qwen2.5-VL and Qwen3-VL, designed for precise GUI element grounding and navigation.",
+  "homepage": "https://github.com/inclusionAI/UI-Venus",
+  "model_card_link": "https://huggingface.co/inclusionAI/UI-Venus-Ground-7B",
+  "license": "Apache-2.0",
+  "provenance": {
+    "provider": "InclusionAI",
+    "release_date": "2025-08-14",
+    "notes": "UI-Venus v1.0 released August 2025; UI-Venus v1.5 released February 2026."
+  },
+  "input_types": [
+    "text",
+    "image"
+  ],
+  "output_types": [
+    "text",
+    "coordinates"
+  ],
+  "architecture_family": "multimodal transformer",
+  "architecture_details": "Based on Qwen2.5-VL (v1.0) and Qwen3-VL (v1.5) with Reinforcement Fine-Tuning (RFT) for UI tasks.",
+  "size_params": {
+    "notable_variants": [
+      "ui-venus-7b",
+      "ui-venus-72b",
+      "ui-venus-1.5-2b",
+      "ui-venus-1.5-8b",
+      "ui-venus-1.5-30b-moe"
+    ]
+  },
+  "capabilities": {
+    "multimodal": true,
+    "function_calling": false,
+    "tool_use": false,
+    "reasoning": "Specialized for UI navigation and grounding.",
+    "streaming": false,
+    "realtime": "Designed for real-time interaction with GUIs."
+  },
+  "tags": [
+    "open-source",
+    "ui-agent",
+    "multimodal",
+    "grounding",
+    "navigation"
+  ],
+  "variants": [
+    {
+      "name": "ui-venus-7b",
+      "params": 7,
+      "context_windows": [
+        32768
+      ],
+      "default_seq_len": 32768,
+      "default_num_gpus": 1,
+      "model_card_link": "https://huggingface.co/inclusionAI/UI-Venus-Ground-7B",
+      "release_date": "2025-08-14",
+      "hardware_recommendations": {
+        "notes": "Based on Qwen2.5-VL-7B. Runs on consumer GPUs."
+      },
+      "tags": [
+        "v1.0",
+        "grounding"
+      ]
+    },
+    {
+      "name": "ui-venus-72b",
+      "params": 72,
+      "context_windows": [
+        32768
+      ],
+      "default_seq_len": 32768,
+      "default_num_gpus": 4,
+      "model_card_link": "https://huggingface.co/inclusionAI/UI-Venus-Ground-72B",
+      "release_date": "2025-08-14",
+      "hardware_recommendations": {
+        "notes": "Based on Qwen2.5-VL-72B. Requires multi-GPU setup."
+      },
+      "tags": [
+        "v1.0",
+        "grounding",
+        "sota"
+      ]
+    },
+    {
+      "name": "ui-venus-1.5-2b",
+      "params": 2,
+      "context_windows": [
+        32768
+      ],
+      "default_seq_len": 32768,
+      "default_num_gpus": 1,
+      "model_card_link": "https://huggingface.co/inclusionAI/UI-Venus-1.5-2B",
+      "release_date": "2026-02-14",
+      "hardware_recommendations": {
+        "notes": "Based on Qwen3-VL series. Lightweight variant."
+      },
+      "tags": [
+        "v1.5",
+        "efficient"
+      ]
+    },
+    {
+      "name": "ui-venus-1.5-8b",
+      "params": 8,
+      "context_windows": [
+        32768
+      ],
+      "default_seq_len": 32768,
+      "default_num_gpus": 1,
+      "model_card_link": "https://huggingface.co/inclusionAI/UI-Venus-1.5-8B",
+      "release_date": "2026-02-14",
+      "hardware_recommendations": {
+        "notes": "Based on Qwen3-VL series. Balanced performance."
+      },
+      "tags": [
+        "v1.5"
+      ]
+    },
+    {
+      "name": "ui-venus-1.5-30b-moe",
+      "params": 30,
+      "context_windows": [
+        32768
+      ],
+      "default_seq_len": 32768,
+      "default_num_gpus": 2,
+      "model_card_link": "https://huggingface.co/inclusionAI/UI-Venus-1.5-30B-MoE",
+      "release_date": "2026-02-14",
+      "hardware_recommendations": {
+        "notes": "Based on Qwen3-VL series (MoE). Flagship performance."
+      },
+      "tags": [
+        "v1.5",
+        "moe",
+        "sota"
+      ]
+    }
+  ],
+  "evaluation": {
+    "papers": [
+      "https://arxiv.org/abs/2508.10833",
+      "https://arxiv.org/abs/2602.09082"
+    ],
+    "benchmarks": [
+      "screenspot",
+      "screenspot_pro",
+      "androidworld",
+      "osworldg"
+    ],
+    "model_cards": [
+      "https://huggingface.co/inclusionAI/UI-Venus-Ground-7B",
+      "https://huggingface.co/inclusionAI/UI-Venus-Ground-72B",
+      "https://huggingface.co/inclusionAI/UI-Venus-1.5-30B-MoE"
+    ]
+  },
+  "inference": {
+    "latency_ms": null,
+    "latency_level": "low",
+    "throughput_rps": null,
+    "concurrency": null,
+    "memory_gb": null,
+    "quantization_friendly": true,
+    "supported_hardware": [
+      "NVIDIA GPU"
+    ],
+    "distributed_support": true,
+    "notes": "Inference requires `transformers` and `qwen-vl-utils`. Supports bfloat16 and Flash Attention 2."
+  },
+  "notes": "UI-Venus is a specialized UI agent. v1.0 uses Qwen2.5-VL; v1.5 uses Qwen3-VL. Key benchmarks: UI-Venus-72B (v1.0) achieves 95.3% on ScreenSpot-v2, 61.9% on ScreenSpot-Pro, 65.9% on AndroidWorld. UI-Venus-1.5 achieves 69.6% on ScreenSpot-Pro, 77.6% on AndroidWorld."
+}
