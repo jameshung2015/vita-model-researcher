@@ -1,6 +1,6 @@
 {
   "model_name": "OpenAI GPT",
-  "short_description": "Closed-weight multimodal GPT API family (GPT-4o, GPT-4.1, GPT-4.5, o3/o4 reasoning models).",
+  "short_description": "Closed-weight multimodal GPT API family (GPT-4o, GPT-4.1, GPT-4.5, GPT-5.4, o3/o4 reasoning models).",
   "homepage": "https://openai.com/index/gpt-4o-mini-and-gpt-4-1-preview/",
   "model_card_link": "https://platform.openai.com/docs/models",
   "license": "OpenAI API Terms of Use",
@@ -35,7 +35,8 @@
       "o4-mini",
       "gpt-5.1",
       "gpt-5.3",
-      "gpt-5.3-codex"
+      "gpt-5.3-codex",
+      "gpt-5.4"
     ],
     "activated_params_note": "Parameter counts are undisclosed; API users access hosted inference endpoints."
   },
@@ -296,6 +297,24 @@
         "cybersecurity",
         "multimodal"
       ]
+    },
+    {
+      "name": "gpt-5.4",
+      "params": 1,
+      "context_windows": [
+        1050000
+      ],
+      "default_seq_len": 128000,
+      "default_num_gpus": 0,
+      "model_card_link": "https://platform.openai.com/docs/models",
+      "release_date": "2026-03-05",
+      "hardware_recommendations": {
+        "notes": "Hosted via OpenAI API"
+      },
+      "tags": [
+        "frontier",
+        "professional"
+      ]
     }
   ],
   "evaluation": {
@@ -340,5 +359,5 @@
     "distributed_support": false,
     "notes": "Requests served from OpenAI-managed infrastructure. Pricing (2024-09): gpt-4o $5/$15 per million input/output tokens; gpt-4o-mini $0.6/$2.4; o1 $15/$60; o1-mini $3/$12."
   },
-  "notes": "Consolidates OpenAI GPT API endpoints (text, multimodal, reasoning). Variant parameters are placeholders because OpenAI does not disclose parameter counts. Key benchmarks (2025): GPT-4.1 90.2% MMLU, 55% SWE-bench; o3 87.7% GPQA, 71.7% SWE-bench, 2727 Codeforces; o4-mini 93.4% AIME 2024, 92.7% AIME 2025; GPT-4.5 89.3% MMLU (deprecated July 2025)."
+  "notes": "Consolidates OpenAI GPT API endpoints (text, multimodal, reasoning). Variant parameters are placeholders because OpenAI does not disclose parameter counts. Key benchmarks (2025): GPT-4.1 90.2% MMLU, 55% SWE-bench; o3 87.7% GPQA, 71.7% SWE-bench, 2727 Codeforces; o4-mini 93.4% AIME 2024, 92.7% AIME 2025; GPT-4.5 89.3% MMLU (deprecated July 2025). GPT-5.4 achieved 83% on GDPval."
 }
