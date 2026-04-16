@@ -1,0 +1,33 @@
+{
+  "id": "benchmark.alphaeval",
+  "name": "AlphaEval",
+  "description": "AlphaEval: Evaluating Agents in Production is a production-grounded benchmark of 94 tasks sourced from seven companies deploying AI agents in their core business, spanning six O*NET domains. It evaluates complete agent products as commercial systems, capturing performance variations invisible to model-level evaluation.",
+  "source": "GAIR-NLP",
+  "datasets": [
+    {
+      "name": "AlphaEval Tasks",
+      "link": "https://github.com/GAIR-NLP/AlphaEval",
+      "license": "unknown"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "overall_score",
+      "definition": "综合得分",
+      "calculation": "基于多种评估范式（LLM-as-a-Judge, formal verification, rubric-based assessment 等）的加权"
+    }
+  ],
+  "inference_environment": {
+    "description": "代理（Agents）在 Docker 沙盒环境中通过 CLI 调用进行评测，并记录完整输出轨迹。",
+    "fields": {
+      "hardware": "视具体Agent产品而定",
+      "framework": "AlphaEval evaluation framework",
+      "batch_size": "N/A",
+      "concurrency": "N/A",
+      "measurement_script": "https://github.com/GAIR-NLP/AlphaEval/blob/main/run_eval.sh"
+    }
+  },
+  "test_method": "使用 AlphaEval 框架运行 `run_eval.sh` 脚本针对指定的代理（如 Claude Code, Codex 等）和任务运行评估，包含基于代码执行、LLM 评委、完全匹配、F1 匹配、混合评估和 UI 测试等模板。",
+  "example_scores": {},
+  "notes": "AlphaEval 强调真实商业环境和多维度的质量/能力评估，以需求到基准构建框架将生产需求转化为可执行评估任务。"
+}
