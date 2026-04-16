@@ -1,0 +1,22 @@
+{
+  "id": "benchmark.amc32",
+  "name": "AMC32",
+  "description": "MATH Dataset is a large-scale benchmark designed to rigorously evaluate and improve mathematical reasoning in machine learning models, comprising problems sourced primarily from major contests such as AMC 10, AMC 12.",
+  "source": "Emergent Mind",
+  "datasets": [
+    {
+      "name": "MATH Dataset Benchmark",
+      "link": "https://www.emergentmind.com/topics/math-dataset",
+      "license": "unknown"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "正确率",
+      "calculation": "correct / total"
+    }
+  ],
+  "test_method": "multi-step reasoning challenges",
+  "example_scores": {}
+}
