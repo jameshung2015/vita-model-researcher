@@ -1,0 +1,36 @@
+{
+  "id": "benchmark.skillsbench",
+  "name": "SkillsBench",
+  "description": "The first evaluation framework measuring how AI agent skills improve performance. Measures augmentation efficacy via paired evaluation across diverse tasks.",
+  "source": "SkillsBench Team",
+  "datasets": [
+    {
+      "name": "SkillsBench",
+      "link": "https://skillsbench.ai/",
+      "license": "Research use"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "pass_rate",
+      "definition": "Percentage of tasks successfully completed",
+      "calculation": "resolved_tasks / total_tasks"
+    },
+    {
+      "name": "normalized_gain",
+      "definition": "Proportional improvement toward perfect performance",
+      "calculation": "(pass_skill - pass_vanilla) / (1 - pass_vanilla)"
+    }
+  ],
+  "test_method": "Tasks are evaluated under three conditions: no Skills, curated Skills, and self-generated Skills. Each task adopts a containerized structure with deterministic verification.",
+  "example_scores": {
+    "Gemini 3 Flash (with Skills)": "48.7%",
+    "Claude Opus 4.5 (with Skills)": "45.3%",
+    "GPT-5.2-Codex (with Skills)": "44.7%",
+    "Claude Opus 4.6 (with Skills)": "44.5%",
+    "Gemini 3 Pro (with Skills)": "41.2%",
+    "Claude Sonnet 4.5 (with Skills)": "31.8%",
+    "Claude Haiku 4.5 (with Skills)": "27.7%"
+  },
+  "notes": "Evaluates 86 real-world tasks across 11 domains. Curated Skills raise average pass rate by 16.2 percentage points, while self-generated Skills provide negligible or negative benefit."
+}
