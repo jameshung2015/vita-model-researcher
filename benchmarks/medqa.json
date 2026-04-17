@@ -1,0 +1,22 @@
+{
+  "id": "benchmark.medqa",
+  "name": "MedQA",
+  "description": "Multiple choice question answering based on the United States Medical License Exams (USMLE).",
+  "source": "LangTest / John Snow Labs",
+  "datasets": [
+    {
+      "name": "MedQA",
+      "link": "https://langtest.org/docs/pages/benchmarks/medical/medqa/",
+      "license": "unknown"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "正确率",
+      "calculation": "correct / total"
+    }
+  ],
+  "test_method": "Multiple choice question answering",
+  "example_scores": {}
+}

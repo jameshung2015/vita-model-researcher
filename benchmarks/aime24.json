@@ -1,0 +1,22 @@
+{
+  "id": "benchmark.aime24",
+  "name": "AIME24",
+  "description": "The AIME 2024 benchmark is based on problems from the American Invitational Mathematics Examination.",
+  "source": "math-ai/aime24",
+  "datasets": [
+    {
+      "name": "AIME24",
+      "link": "https://huggingface.co/datasets/math-ai/aime24",
+      "license": "unknown"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "正确率",
+      "calculation": "correct / total"
+    }
+  ],
+  "test_method": "Generating step-by-step solutions and providing the correct final answer.",
+  "example_scores": {}
+}

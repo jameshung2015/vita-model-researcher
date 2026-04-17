@@ -1,0 +1,22 @@
+{
+  "id": "benchmark.olympiadbench",
+  "name": "OlympiadBench",
+  "description": "OlympiadBench is a large-scale bilingual dataset of expert-annotated Olympiad-level math and physics problems, featuring both text and visual data.",
+  "source": "ACL Anthology",
+  "datasets": [
+    {
+      "name": "OlympiadBench",
+      "link": "https://github.com/OpenBMB/OlympiadBench",
+      "license": "unknown"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "正确率",
+      "calculation": "correct / total"
+    }
+  ],
+  "test_method": "evaluating the reasoning abilities of LLMs and LMMs in mathematics and physics problems",
+  "example_scores": {}
+}

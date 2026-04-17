@@ -1,0 +1,22 @@
+{
+  "id": "benchmark.csqa",
+  "name": "CSQA",
+  "description": "CommonsenseQA is a multiple-choice question answering dataset that requires different types of commonsense knowledge to predict the correct answers.",
+  "source": "tau/commonsense_qa",
+  "datasets": [
+    {
+      "name": "CommonsenseQA",
+      "link": "https://huggingface.co/datasets/tau/commonsense_qa",
+      "license": "unknown"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "正确率",
+      "calculation": "correct / total"
+    }
+  ],
+  "test_method": "multiple-choice question answering",
+  "example_scores": {}
+}
