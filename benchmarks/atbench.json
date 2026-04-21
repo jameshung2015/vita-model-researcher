@@ -1,0 +1,22 @@
+{
+  "id": "benchmark.atbench",
+  "name": "ATBench",
+  "description": "A diverse and realistic agent trajectory benchmark for safety evaluation and diagnosis.",
+  "source": "ATBench：面向Agent安全评测",
+  "datasets": [
+    {
+      "name": "ATBench",
+      "link": "https://mp.weixin.qq.com/s/qWPU9sErPsVb0gr0TsflQw",
+      "license": "unknown"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "Safety Evaluation",
+      "definition": "Agent Trajectory Safety Evaluation",
+      "calculation": "unknown"
+    }
+  ],
+  "test_method": "unknown",
+  "example_scores": {}
+}
