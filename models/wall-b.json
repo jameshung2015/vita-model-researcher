@@ -1,0 +1,17 @@
+{
+  "model_name": "WALL-B",
+  "short_description": "The world's first embodied AI foundation model based on a World Unified Model (WUM) architecture by Zibian Robotics.",
+  "homepage": "https://pandaily.com/zibian-robotics-launches-wall-b-embodied-ai-model-for-home-deployment",
+  "input_types": ["text", "image", "motion"],
+  "output_types": ["action"],
+  "architecture_family": "multimodal",
+  "architecture_details": "World Unified Model (WUM) architecture natively fusing vision, language, motion, and physical prediction.",
+  "variants": [
+    {
+      "name": "WALL-B Base",
+      "params": 0,
+      "deploy_requirements": "Designed for real-world home deployment.",
+      "tags": ["embodied-ai", "vla", "robotics", "multimodal"]
+    }
+  ]
+}
