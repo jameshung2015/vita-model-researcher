@@ -8,6 +8,11 @@
       "name": "GDPval",
       "link": "https://openai.com/index/gdpval/",
       "license": "Proprietary/TBD"
+    },
+    {
+      "name": "GDPval-AA",
+      "link": "https://artificialanalysis.ai/evaluations/gdpval-aa",
+      "license": "unknown"
     }
   ],
   "metrics": [
@@ -23,5 +28,5 @@
     "GPT-5.3-Codex": "70.9% (wins or ties)",
     "GPT-5.2": "70.9% (high)"
   },
-  "notes": "Matches GPT-5.2 in professional knowledge work. GPT-5.4 achieved an 83% win or tie rate."
+  "notes": "Matches GPT-5.2 in professional knowledge work. GPT-5.4 achieved an 83% win or tie rate. Also includes the GDPval-AA leaderboard variant by Artificial Analysis."
 }

@@ -8,6 +8,11 @@
       "name": "TerminalBench",
       "link": "https://terminalbench.org",
       "license": "Research use"
+    },
+    {
+      "name": "TerminalBench 2.0",
+      "link": "https://www.emergentmind.com/topics/terminalbench-2-0",
+      "license": "unknown"
     }
   ],
   "metrics": [
@@ -25,5 +30,5 @@
     "GPT-5.3-Codex": "77.3% (Terminal-Bench 2.0)",
     "GPT-5.2-Codex": "64.0% (Terminal-Bench 2.0)"
   },
-  "notes": "评测时需要实际执行命令验证正确性。注意安全性，应在隔离环境中运行。记录操作系统版本和Shell类型。GPT-5.3-Codex scores refer to Terminal-Bench 2.0."
+  "notes": "评测时需要实际执行命令验证正确性。注意安全性，应在隔离环境中运行。记录操作系统版本和Shell类型。GPT-5.3-Codex scores refer to Terminal-Bench 2.0. Explicitly tracks TerminalBench 2.0 metrics."
 }
