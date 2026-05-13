@@ -1,0 +1,32 @@
+{
+  "id": "benchmark.medmarks",
+  "name": "Medmarks",
+  "description": "A Comprehensive Open-Source LLM Benchmark Suite for Medical Tasks",
+  "source": "MedARC-AI (arXiv:2605.01417v1)",
+  "datasets": [
+    {
+      "name": "Medmarks",
+      "link": "https://github.com/MedARC-AI/Medmarks",
+      "license": "MIT License"
+    },
+    {
+      "name": "Medmarks-T",
+      "link": "https://github.com/MedARC-AI/Medmarks",
+      "license": "MIT License"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "正确率",
+      "calculation": "correct / total"
+    },
+    {
+      "name": "llm_as_a_judge",
+      "definition": "unknown",
+      "calculation": "unknown"
+    }
+  ],
+  "test_method": "Multiple choice question answering and Evaluating Open-Ended Tasks via LLM-as-a-Judge",
+  "example_scores": {}
+}
