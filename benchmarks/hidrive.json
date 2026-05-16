@@ -1,0 +1,33 @@
+{
+  "id": "benchmark.hidrive",
+  "name": "HiDrive",
+  "description": "A closed-loop benchmark for high-level autonomous driving focusing on long-tail scenarios and high-level driving capabilities such as legal compliance, ethical reasoning, and emergency response.",
+  "source": "https://arxiv.org/abs/2605.09972",
+  "datasets": [
+    {
+      "name": "HiDrive Dataset",
+      "link": "https://github.com/VDIGPKU/HiDrive",
+      "license": "unknown"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "unknown",
+      "definition": "unknown",
+      "calculation": "unknown"
+    }
+  ],
+  "inference_environment": {
+    "description": "CARLA UE5-based simulation with higher-fidelity rendering and lighting.",
+    "fields": {
+      "hardware": "unknown",
+      "framework": "CARLA UE5",
+      "batch_size": "unknown",
+      "concurrency": "unknown",
+      "measurement_script": "unknown"
+    }
+  },
+  "test_method": "Closed-loop simulation evaluating 330 routes (about 150m each) covering 30 high-level ability categories.",
+  "example_scores": {},
+  "notes": "Provides 94 concrete scenario instantiations."
+}
