@@ -1,0 +1,43 @@
+{
+  "id": "benchmark.frontier_eng",
+  "name": "Frontier-Eng",
+  "description": "Benchmarking Self-Evolving Agents on Real-World Engineering Tasks with Generative Optimization, containing 47 tasks across 5 engineering categories.",
+  "source": "https://arxiv.org/abs/2604.12290",
+  "datasets": [
+    {
+      "name": "Frontier-Eng",
+      "link": "https://lab.einsia.ai/frontier-eng",
+      "license": "CC BY 4.0"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "average_rank",
+      "definition": "unknown",
+      "calculation": "unknown"
+    },
+    {
+      "name": "win_rate",
+      "definition": "unknown",
+      "calculation": "unknown"
+    }
+  ],
+  "inference_environment": {
+    "description": "unknown",
+    "fields": {
+      "hardware": "unknown",
+      "framework": "unknown",
+      "batch_size": "unknown",
+      "concurrency": "unknown",
+      "measurement_script": "unknown"
+    }
+  },
+  "test_method": "unknown",
+  "example_scores": {
+    "claude-opus-4.6": "3.18 Average Rank (OpenEvolve 100 iterations)",
+    "glm-5": "4.02 Average Rank (OpenEvolve 100 iterations)",
+    "deepseek-v3.2": "4.41 Average Rank (OpenEvolve 100 iterations)",
+    "gpt-oss-120b": "4.46 Average Rank (OpenEvolve 100 iterations)"
+  },
+  "notes": "unknown"
+}
