@@ -1,0 +1,34 @@
+{
+  "id": "benchmark.esi_bench",
+  "name": "ESI-Bench",
+  "description": "Towards Embodied Spatial Intelligence that Closes the Perception-Action Loop",
+  "source": "https://arxiv.org/html/2605.18746v1",
+  "datasets": [
+    {
+      "name": "ESI-Bench",
+      "link": "https://esi-bench.github.io/",
+      "license": "unknown"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "Overall Pass",
+      "definition": "Whether the final answer is correct",
+      "calculation": "unknown"
+    }
+  ],
+  "inference_environment": {
+    "description": "OmniGibson built on NVIDIA Isaac Sim and PhysX 5.",
+    "fields": {
+      "hardware": "GPU",
+      "framework": "OmniGibson"
+    }
+  },
+  "test_method": "unknown",
+  "example_scores": {
+    "GPT-5 Active": 51.6,
+    "Gemini 3.1 Active": 56.9,
+    "Human Active": 75.3
+  },
+  "notes": "Scores are from Table 8 for GPT-4o-Generated questions."
+}
