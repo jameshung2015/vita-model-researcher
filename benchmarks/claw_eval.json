@@ -1,0 +1,29 @@
+{
+  "id": "benchmark.claw_eval",
+  "name": "Claw-Eval",
+  "description": "Towards Trustworthy Evaluation of Autonomous Agents. 300 human-verified tasks, 24 categories, covering completion, safety, and robustness.",
+  "source": "arXiv:2604.06132",
+  "datasets": [
+    {"name": "Claw-Eval", "link": "https://huggingface.co/datasets/claw-eval/Claw-Eval", "license": "MIT"}
+  ],
+  "metrics": [
+    {"name": "Pass^3", "definition": "Successful task completion across 3 independent trials", "calculation": "Consistently pass a task across three independent trials (N=3) to earn a success credit."}
+  ],
+  "inference_environment": {
+    "description": "unknown",
+    "fields": {
+      "hardware": "unknown",
+      "framework": "unknown",
+      "batch_size": "unknown",
+      "concurrency": "unknown",
+      "measurement_script": "unknown"
+    }
+  },
+  "test_method": "unknown",
+  "example_scores": {
+    "gpt54_general": 60.2,
+    "gpt54_multimodal": 25.7,
+    "gpt54_multi_turn": 60.5
+  },
+  "notes": "unknown"
+}
