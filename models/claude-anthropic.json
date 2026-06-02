@@ -195,7 +195,8 @@
       "swebench",
       "terminalbench",
       "livecodebench",
-      "aime25"
+      "aime25",
+      "benchmark.claweval"
     ],
     "model_cards": [
       "https://docs.anthropic.com/en/docs/about-claude/models/overview",

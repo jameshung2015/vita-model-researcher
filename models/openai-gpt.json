@@ -337,7 +337,8 @@
       "codeforces",
       "mle_bench",
       "humaneval",
-      "gdpval"
+      "gdpval",
+      "benchmark.claweval"
     ],
     "model_cards": [
       "https://platform.openai.com/docs/models#gpt-4o",
