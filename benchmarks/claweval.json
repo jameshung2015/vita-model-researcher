@@ -1,0 +1,58 @@
+{
+  "id": "benchmark.claweval",
+  "name": "Claw-Eval",
+  "description": "An end-to-end evaluation suite addressing trajectory-opaque grading, underspecified safety/robustness, and narrow modality coverage. It comprises 300 human-verified tasks spanning general service orchestration, multimodal perception/generation, and multi-turn professional dialogue.",
+  "source": "Peking University and The University of Hong Kong (https://claw-eval.github.io, https://arxiv.org/html/2604.06132v1)",
+  "datasets": [
+    {
+      "name": "Claw-Eval",
+      "link": "https://claw-eval.github.io",
+      "license": "unknown"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "unknown",
+      "definition": "unknown",
+      "calculation": "unknown"
+    },
+    {
+      "name": "unknown",
+      "definition": "unknown",
+      "calculation": "unknown"
+    },
+    {
+      "name": "unknown",
+      "definition": "unknown",
+      "calculation": "unknown"
+    }
+  ],
+  "inference_environment": {
+    "description": "Trajectory-aware grading over independent evidence channels (execution traces, audit logs, and environment snapshots)",
+    "fields": {
+      "hardware": "unknown",
+      "framework": "unknown",
+      "batch_size": "unknown",
+      "concurrency": "unknown",
+      "measurement_script": "unknown"
+    }
+  },
+  "test_method": "Every agent action is recorded through three independent evidence channels. The scoring protocol evaluates Completion, Safety, and Robustness across three trials.",
+  "example_scores": {
+    "Claude Opus 4.6": 80.4,
+    "Claude Sonnet 4.6": 81.4,
+    "GPT 5.4": 78.4,
+    "Gemini 3.1 Pro": 77.3,
+    "MiMo V2 Pro": 77.0,
+    "Qwen 3.5 397A17B": 74.2,
+    "GLM 5 Turbo": 74.4,
+    "GLM 5V Turbo": 74.0,
+    "Gemini 3 Flash": 72.3,
+    "MiniMax M2.7": 72.6,
+    "MiMo V2 Omni": 72.4,
+    "DeepSeek V3.2": 67.5,
+    "Kimi K2.5": 68.3,
+    "Nemotron 3 Super": 44.4
+  },
+  "notes": "unknown"
+}

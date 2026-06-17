@@ -47,7 +47,7 @@
         "fp16_gb_per_gpu": 20,
         "int8_gb_per_gpu": 12,
         "recommended_num_gpus": 1,
-        "notes": "Runs on a single 24–48GB GPU depending on context/batch Dense 8B model with 128K-token long context support; Apache-2.0 open release:contentReference[oaicite:2]{index=2}."
+        "notes": "Runs on a single 24\u201348GB GPU depending on context/batch Dense 8B model with 128K-token long context support; Apache-2.0 open release:contentReference[oaicite:2]{index=2}."
       },
       "tags": [
         "open_source"
@@ -173,7 +173,7 @@
         "fp16_gb_per_gpu": 80,
         "int8_gb_per_gpu": 40,
         "recommended_num_gpus": 8,
-        "notes": "Huge MoE VLM (~471GB FP16 weights) requiring 8×80GB GPUs:contentReference[oaicite:6]{index=6} Vision-Language 235B model (22B activated) for text+image/video inputs, achieving state-of-art multimodal results:contentReference[oaicite:7]{index=7}:contentReference[oaicite:8]{index=8}."
+        "notes": "Huge MoE VLM (~471GB FP16 weights) requiring 8\u00d780GB GPUs:contentReference[oaicite:6]{index=6} Vision-Language 235B model (22B activated) for text+image/video inputs, achieving state-of-art multimodal results:contentReference[oaicite:7]{index=7}:contentReference[oaicite:8]{index=8}."
       },
       "tags": [
         "open_source"
@@ -265,7 +265,8 @@
       "librispeech_test_clean",
       "librispeech_test_other",
       "aishell_2",
-      "wenetspeech_meeting"
+      "wenetspeech_meeting",
+      "benchmark.claweval"
     ]
   }
 }
