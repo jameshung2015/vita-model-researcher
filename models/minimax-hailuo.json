@@ -1,0 +1,30 @@
+{
+  "model_name": "MiniMax Hailuo",
+  "short_description": "AI Video Generator with Native 4K 60FPS",
+  "homepage": "https://www.dzine.ai/tools/hailuo-3-0/",
+  "provenance": {
+    "provider": "MiniMax",
+    "notes": "Native 4K resolution at 60FPS, native audio synchronization, director mode."
+  },
+  "input_types": [
+    "text",
+    "image"
+  ],
+  "output_types": [
+    "video",
+    "audio"
+  ],
+  "architecture_family": "multimodal",
+  "capabilities": {
+    "native_4k": true,
+    "60fps": true,
+    "director_mode": true,
+    "audio_sync": true
+  },
+  "variants": [
+    {
+      "name": "Hailuo 3.0",
+      "params": 0
+    }
+  ]
+}
