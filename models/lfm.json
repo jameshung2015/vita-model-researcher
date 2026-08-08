@@ -1,0 +1,52 @@
+{
+  "model_name": "LFM 2.5",
+  "short_description": "Liquid Foundation Models (LFM) by Liquid AI.",
+  "homepage": "https://www.liquid.ai/",
+  "model_card_link": "unknown",
+  "license": "unknown",
+  "provenance": {
+    "provider": "Liquid AI",
+    "release_date": "unknown",
+    "notes": "LFM2.5 family includes LFM2.5-Embedding-350M, LFM2.5-ColBERT-350M."
+  },
+  "input_types": ["text"],
+  "output_types": ["text"],
+  "architecture_family": "Liquid Foundation Model",
+  "size_params": {
+    "notable_variants": ["LFM2.5-Embedding-350M", "LFM2.5-ColBERT-350M"]
+  },
+  "capabilities": {
+    "retrieval": true
+  },
+  "variants": [
+    {
+      "name": "LFM2.5-Embedding-350M",
+      "params": 0.35,
+      "context_windows": [0],
+      "default_seq_len": 0,
+      "default_num_gpus": 1,
+      "model_card_link": "https://www.liquid.ai/blog/lfm2-5-retrievers",
+      "release_date": "unknown",
+      "hardware_recommendations": {
+        "notes": "Bi-directional LFM for dense embedding search. Uses CLS-style pooling."
+      },
+      "tags": ["embedding", "retrieval"]
+    },
+    {
+      "name": "LFM2.5-ColBERT-350M",
+      "params": 0.35,
+      "context_windows": [0],
+      "default_seq_len": 0,
+      "default_num_gpus": 1,
+      "model_card_link": "https://www.liquid.ai/blog/lfm2-5-retrievers",
+      "release_date": "unknown",
+      "hardware_recommendations": {
+        "notes": "Bi-directional LFM keeping compact per-token embeddings for MaxSim late interaction."
+      },
+      "tags": ["retrieval", "colbert"]
+    }
+  ],
+  "evaluation": {
+    "benchmarks": []
+  }
+}
