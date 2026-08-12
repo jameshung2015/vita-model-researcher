@@ -20,6 +20,9 @@
   "architecture_details": "Proprietary transformer architecture with constitutional AI training; extended 200K-1M token context windows; optimized for agentic workflows and computer use.",
   "size_params": {
     "notable_variants": [
+      "claude-fable-5",
+      "claude-fable-5",
+      "claude-fable-5",
       "claude-opus-4.6",
       "claude-opus-4.5",
       "claude-opus-4.1",
@@ -46,6 +49,66 @@
     "extended-context"
   ],
   "variants": [
+    {
+      "name": "claude-fable-5",
+      "params": 1,
+      "context_windows": [
+        0
+      ],
+      "default_seq_len": 0,
+      "default_num_gpus": 0,
+      "model_card_link": "https://platform.claude.com/docs/en/about-claude/models/introducing-claude-fable-5-and-claude-mythos-5",
+      "release_date": "unknown",
+      "hardware_recommendations": {
+        "notes": "Hosted via Anthropic API, AWS. Supports long-running asynchronous execution and advanced vision capabilities."
+      },
+      "tags": [
+        "coding",
+        "agentic"
+      ]
+    },
+    {
+      "name": "claude-fable-5",
+      "params": 1,
+      "context_windows": [
+        200000,
+        1000000
+      ],
+      "default_seq_len": 200000,
+      "default_num_gpus": 0,
+      "model_card_link": "https://platform.claude.com/docs/en/about-claude/models/introducing-claude-fable-5-and-claude-mythos-5",
+      "release_date": "2025-06-01",
+      "hardware_recommendations": {
+        "notes": "Hosted via Anthropic API, AWS Bedrock. Supports long-running asynchronous execution and advanced vision capabilities."
+      },
+      "tags": [
+        "flagship",
+        "reasoning",
+        "coding",
+        "agentic"
+      ]
+    },
+    {
+      "name": "claude-fable-5",
+      "params": 1,
+      "context_windows": [
+        200000,
+        1000000
+      ],
+      "default_seq_len": 200000,
+      "default_num_gpus": 0,
+      "model_card_link": "https://platform.claude.com/docs/en/about-claude/models/introducing-claude-fable-5-and-claude-mythos-5",
+      "release_date": "2025-06-01",
+      "hardware_recommendations": {
+        "notes": "Hosted via Anthropic API, AWS Bedrock. Supports long-running asynchronous execution and advanced vision capabilities."
+      },
+      "tags": [
+        "flagship",
+        "reasoning",
+        "coding",
+        "agentic"
+      ]
+    },
     {
       "name": "claude-opus-4.6",
       "params": 1,

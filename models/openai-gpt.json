@@ -27,6 +27,9 @@
       "gpt-4o-mini",
       "gpt-4.1",
       "gpt-4.5-preview",
+      "gpt-4.6",
+      "gpt-4.6",
+      "gpt-4.6",
       "o1",
       "o1-mini",
       "o3",
@@ -160,6 +163,59 @@
       },
       "tags": [
         "preview",
+        "multimodal"
+      ]
+    },
+    {
+      "name": "gpt-4.6",
+      "params": 1,
+      "context_windows": [
+        0
+      ],
+      "default_seq_len": 0,
+      "default_num_gpus": 0,
+      "model_card_link": "unknown",
+      "release_date": "unknown",
+      "hardware_recommendations": {
+        "notes": "unknown"
+      },
+      "tags": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "gpt-4.6",
+      "params": 1,
+      "context_windows": [
+        128000
+      ],
+      "default_seq_len": 128000,
+      "default_num_gpus": 0,
+      "model_card_link": "https://platform.openai.com/docs/models",
+      "release_date": "2025-05-01",
+      "hardware_recommendations": {
+        "notes": "Hosted via OpenAI API."
+      },
+      "tags": [
+        "flagship",
+        "multimodal"
+      ]
+    },
+    {
+      "name": "gpt-4.6",
+      "params": 1,
+      "context_windows": [
+        128000
+      ],
+      "default_seq_len": 128000,
+      "default_num_gpus": 0,
+      "model_card_link": "https://platform.openai.com/docs/models",
+      "release_date": "2025-05-01",
+      "hardware_recommendations": {
+        "notes": "Hosted via OpenAI API."
+      },
+      "tags": [
+        "flagship",
         "multimodal"
       ]
     },
