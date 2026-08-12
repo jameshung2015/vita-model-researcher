@@ -1,0 +1,33 @@
+{
+  "id": "benchmark.mls_bench",
+  "name": "MLS-Bench",
+  "description": "MLS-Bench evaluates whether AI systems can invent generalizable and scalable ML methods. It spans 140 tasks across 12 domains.",
+  "source": "https://mls-bench.com/",
+  "datasets": [
+    {
+      "name": "unknown",
+      "link": "unknown",
+      "license": "unknown"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "unknown",
+      "definition": "unknown",
+      "calculation": "unknown"
+    }
+  ],
+  "inference_environment": {
+    "description": "unknown",
+    "fields": {
+      "hardware": "unknown",
+      "framework": "unknown",
+      "batch_size": "unknown",
+      "concurrency": "unknown",
+      "measurement_script": "unknown"
+    }
+  },
+  "test_method": "unknown",
+  "example_scores": {},
+  "notes": "unknown"
+}
