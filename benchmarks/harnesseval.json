@@ -1,0 +1,33 @@
+{
+  "id": "benchmark.harnesseval",
+  "name": "HarnessEval",
+  "description": "HarnessEval is an agentified evaluation pipeline that brings the harness paradigm from the LLM ecosystem to world model benchmarking. Rather than applying a fixed rubric, HarnessEval interprets the context of each evaluation case, decomposes the evaluation question into measurable sub-questions, and spawns specialized sub-agents, each equipped with tailored context and diagnostic tools to reason over its own sub-question.",
+  "source": "https://github.com/mirros-lab/harnesseval-w",
+  "datasets": [
+    {
+      "name": "HarnessEval",
+      "link": "https://github.com/mirros-lab/harnesseval-w",
+      "license": "unknown"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "score",
+      "definition": "unknown",
+      "calculation": "unknown"
+    }
+  ],
+  "inference_environment": {
+    "description": "unknown",
+    "fields": {
+      "hardware": "unknown",
+      "framework": "unknown",
+      "batch_size": "unknown",
+      "concurrency": "unknown",
+      "measurement_script": "unknown"
+    }
+  },
+  "test_method": "unknown",
+  "example_scores": {},
+  "notes": "unknown"
+}
