@@ -1,0 +1,27 @@
+{
+  "id": "vladrivebench",
+  "name": "VLADriveBench",
+  "description": "Evaluating CoT-Action Relationship in VLA for Autonomous Driving",
+  "source": "https://arxiv.org/abs/2606.12706",
+  "datasets": [
+    {
+      "name": "VLADriveBench",
+      "link": "https://arxiv.org/abs/2606.12706",
+      "license": "unknown"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "unknown",
+      "definition": "unknown",
+      "calculation": "unknown"
+    }
+  ],
+  "inference_environment": {
+    "description": "unknown",
+    "fields": {}
+  },
+  "test_method": "unknown",
+  "example_scores": {},
+  "notes": "unknown"
+}
