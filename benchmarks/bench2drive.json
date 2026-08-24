@@ -1,0 +1,37 @@
+{
+  "id": "bench2drive",
+  "name": "Bench2Drive",
+  "description": "Multi-Ability Benchmarking of Closed-Loop End-To-End Autonomous Driving",
+  "source": "https://arxiv.org/abs/2406.03877",
+  "datasets": [
+    {
+      "name": "Bench2Drive",
+      "link": "https://github.com/Thinklab-SJTU/Bench2Drive",
+      "license": "unknown"
+    },
+    {
+      "name": "Bench2Drive-Robust",
+      "link": "https://arxiv.org/abs/2605.18059",
+      "license": "unknown"
+    },
+    {
+      "name": "Bench2Drive-VL",
+      "link": "https://github.com/Thinklab-SJTU/Bench2Drive-VL",
+      "license": "unknown"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "unknown",
+      "definition": "unknown",
+      "calculation": "unknown"
+    }
+  ],
+  "inference_environment": {
+    "description": "unknown",
+    "fields": {}
+  },
+  "test_method": "unknown",
+  "example_scores": {},
+  "notes": "unknown"
+}
