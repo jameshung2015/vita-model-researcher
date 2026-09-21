@@ -1,0 +1,36 @@
+{
+  "id": "benchmark.healthbench_professional",
+  "name": "HealthBench Professional",
+  "description": "HealthBench Professional evaluating medical and healthcare domain AI capabilities.",
+  "source": "unknown",
+  "datasets": [
+    {
+      "name": "HealthBench Professional",
+      "link": "unknown",
+      "license": "unknown"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "Professional health question answering accuracy",
+      "calculation": "unknown"
+    }
+  ],
+  "inference_environment": {
+    "description": "unknown",
+    "fields": {
+      "hardware": "unknown",
+      "framework": "unknown",
+      "batch_size": "unknown",
+      "concurrency": "unknown",
+      "measurement_script": "unknown"
+    }
+  },
+  "test_method": "unknown",
+  "example_scores": {
+    "Grok 4.7": 56.7,
+    "Grok 4.6": 48.5
+  },
+  "notes": "unknown"
+}

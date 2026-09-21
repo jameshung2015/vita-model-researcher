@@ -1,0 +1,36 @@
+{
+  "id": "benchmark.deepswe_v1_1",
+  "name": "DeepSWE v1.1",
+  "description": "DeepSWE v1.1 software engineering task evaluation benchmark.",
+  "source": "unknown",
+  "datasets": [
+    {
+      "name": "DeepSWE v1.1",
+      "link": "unknown",
+      "license": "unknown"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "resolve_rate",
+      "definition": "DeepSWE v1.1 task resolution rate",
+      "calculation": "unknown"
+    }
+  ],
+  "inference_environment": {
+    "description": "unknown",
+    "fields": {
+      "hardware": "unknown",
+      "framework": "unknown",
+      "batch_size": "unknown",
+      "concurrency": "unknown",
+      "measurement_script": "unknown"
+    }
+  },
+  "test_method": "unknown",
+  "example_scores": {
+    "Grok 4.7": 71.0,
+    "Grok 4.6": 65.2
+  },
+  "notes": "unknown"
+}

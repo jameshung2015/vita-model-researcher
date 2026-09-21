@@ -1,0 +1,36 @@
+{
+  "id": "benchmark.aa_briefcase_v1_1",
+  "name": "AA Briefcase v1.1",
+  "description": "AA Briefcase v1.1 benchmark evaluating AI performance across professional tasks.",
+  "source": "unknown",
+  "datasets": [
+    {
+      "name": "AA Briefcase v1.1",
+      "link": "unknown",
+      "license": "unknown"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "score",
+      "definition": "AA Briefcase v1.1 score",
+      "calculation": "unknown"
+    }
+  ],
+  "inference_environment": {
+    "description": "unknown",
+    "fields": {
+      "hardware": "unknown",
+      "framework": "unknown",
+      "batch_size": "unknown",
+      "concurrency": "unknown",
+      "measurement_script": "unknown"
+    }
+  },
+  "test_method": "unknown",
+  "example_scores": {
+    "Grok 4.7": 1657.0,
+    "Grok 4.6": 1546.0
+  },
+  "notes": "unknown"
+}

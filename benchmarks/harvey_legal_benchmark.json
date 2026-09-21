@@ -1,0 +1,36 @@
+{
+  "id": "benchmark.harvey_legal_benchmark",
+  "name": "Harvey Legal Benchmark",
+  "description": "Harvey Legal Benchmark evaluating AI models on legal reasoning and domain-specific tasks.",
+  "source": "unknown",
+  "datasets": [
+    {
+      "name": "Harvey Legal Benchmark",
+      "link": "unknown",
+      "license": "unknown"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "Legal reasoning task accuracy",
+      "calculation": "unknown"
+    }
+  ],
+  "inference_environment": {
+    "description": "unknown",
+    "fields": {
+      "hardware": "unknown",
+      "framework": "unknown",
+      "batch_size": "unknown",
+      "concurrency": "unknown",
+      "measurement_script": "unknown"
+    }
+  },
+  "test_method": "unknown",
+  "example_scores": {
+    "Grok 4.7": 19.6,
+    "Grok 4.6": 15.8
+  },
+  "notes": "unknown"
+}

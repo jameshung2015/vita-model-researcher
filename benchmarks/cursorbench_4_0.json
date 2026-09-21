@@ -1,0 +1,36 @@
+{
+  "id": "benchmark.cursorbench_4_0",
+  "name": "CursorBench 4.0",
+  "description": "CursorBench 4.0 benchmark evaluating AI agent code generation and editing capabilities.",
+  "source": "unknown",
+  "datasets": [
+    {
+      "name": "CursorBench 4.0",
+      "link": "unknown",
+      "license": "unknown"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "CursorBench 4.0 accuracy score",
+      "calculation": "unknown"
+    }
+  ],
+  "inference_environment": {
+    "description": "unknown",
+    "fields": {
+      "hardware": "unknown",
+      "framework": "unknown",
+      "batch_size": "unknown",
+      "concurrency": "unknown",
+      "measurement_script": "unknown"
+    }
+  },
+  "test_method": "unknown",
+  "example_scores": {
+    "Grok 4.7": 46.3,
+    "Grok 4.6": 40.4
+  },
+  "notes": "unknown"
+}
