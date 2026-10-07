@@ -1,0 +1,36 @@
+{
+  "id": "benchmark.eebench",
+  "name": "EEBench",
+  "description": "EEBench evaluating Electrical Engineering domain task solving capabilities.",
+  "source": "unknown",
+  "datasets": [
+    {
+      "name": "EEBench",
+      "link": "unknown",
+      "license": "unknown"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "accuracy",
+      "definition": "Electrical Engineering problem solving accuracy",
+      "calculation": "unknown"
+    }
+  ],
+  "inference_environment": {
+    "description": "unknown",
+    "fields": {
+      "hardware": "unknown",
+      "framework": "unknown",
+      "batch_size": "unknown",
+      "concurrency": "unknown",
+      "measurement_script": "unknown"
+    }
+  },
+  "test_method": "unknown",
+  "example_scores": {
+    "Grok 4.7": 64.0,
+    "Grok 4.6": 53.0
+  },
+  "notes": "unknown"
+}
