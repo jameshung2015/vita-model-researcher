@@ -1,0 +1,30 @@
+{
+  "id": "robodojo",
+  "name": "RoboDojo",
+  "description": "A Unified Sim-and-Real Benchmark for Comprehensive Evaluation of Generalist Robot Manipulation Policies",
+  "source": "https://arxiv.org/abs/2607.04434",
+  "datasets": [
+    {
+      "name": "RoboDojo",
+      "link": "https://github.com/RoboDojo-Benchmark/RoboDojo",
+      "license": "unknown"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "unknown",
+      "definition": "unknown",
+      "calculation": "unknown"
+    }
+  ],
+  "inference_environment": {
+    "description": "Heterogeneous parallel simulation in Isaac Sim and RoboDojo-RealEval real-world evaluation system",
+    "fields": {
+      "hardware": "Isaac Sim / Standardized hardware",
+      "framework": "XPolicyLab"
+    }
+  },
+  "test_method": "Policies integrated via XPolicyLab evaluated across 42 simulation tasks and 18 real-world tasks.",
+  "example_scores": {},
+  "notes": "Website: https://robodojo-benchmark.com/"
+}
