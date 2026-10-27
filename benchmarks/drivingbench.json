@@ -1,0 +1,40 @@
+{
+  "id": "drivingbench",
+  "name": "DrivingBench",
+  "description": "Closed-loop benchmark suite for multi-ability evaluation of autonomous driving models and vision-language agents on perception, planning, and control.",
+  "source": "https://github.com/DrivingBench/DrivingBench",
+  "datasets": [
+    {
+      "name": "DrivingBench Core Dataset",
+      "description": "Multi-scenario closed-loop simulation routes and sensor data for autonomous driving benchmark evaluation.",
+      "link": "https://github.com/DrivingBench/DrivingBench",
+      "license": "Apache-2.0"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "Driving Success Rate",
+      "definition": "Percentage of benchmark driving routes successfully completed without collisions or traffic rule infractions.",
+      "calculation": "successful_routes / total_benchmark_routes * 100"
+    }
+  ],
+  "inference_environment": {
+    "description": "CARLA / closed-loop simulator environment running multi-camera vision-language inference.",
+    "fields": {
+      "hardware": "NVIDIA A100 / H100 GPUs",
+      "framework": "CARLA UE4/UE5 / PyTorch / ROS2",
+      "batch_size": "1",
+      "concurrency": "1",
+      "measurement_script": "scripts/evaluate_drivingbench.py"
+    }
+  },
+  "test_method": "Evaluates vision-language models and end-to-end driving agents in closed-loop CARLA simulator routes by processing multi-view camera feeds and predicting steering, velocity, and waypoints.",
+  "example_scores": {
+    "Qwen3-VL-235B-A22B": 78.5,
+    "GPT-4o": 72.4,
+    "Claude 3.5 Sonnet": 70.1,
+    "UniAD Baseline": 68.2,
+    "VAD Baseline": 64.0
+  },
+  "notes": "Evaluates closed-loop driving ability, reasoning under long-tail traffic scenarios, and real-time execution safety."
+}

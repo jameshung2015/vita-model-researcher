@@ -259,7 +259,8 @@
       "terminalbench",
       "livecodebench",
       "aime25",
-      "benchmark.claweval"
+      "benchmark.claweval",
+      "drivingbench"
     ],
     "model_cards": [
       "https://docs.anthropic.com/en/docs/about-claude/models/overview",

@@ -377,7 +377,8 @@
       "librispeech_test_other",
       "aishell_2",
       "wenetspeech_meeting",
-      "benchmark.claweval"
+      "benchmark.claweval",
+      "drivingbench"
     ]
   }
 }
