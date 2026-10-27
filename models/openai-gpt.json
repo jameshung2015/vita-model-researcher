@@ -394,7 +394,8 @@
       "mle_bench",
       "humaneval",
       "gdpval",
-      "benchmark.claweval"
+      "benchmark.claweval",
+      "drivingbench"
     ],
     "model_cards": [
       "https://platform.openai.com/docs/models#gpt-4o",

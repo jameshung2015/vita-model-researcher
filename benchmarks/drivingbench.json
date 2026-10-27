@@ -1,38 +1,40 @@
 {
   "id": "drivingbench",
   "name": "DrivingBench",
-  "description": "A benchmark where general-purpose vision-language models must drive a real car (Toyota Corolla) around a parking lot cone course at low speeds using three control tools (camera frames, steering, velocity) under real-time latency constraints.",
-  "source": "https://arxiv.org/abs/2609.38948",
+  "description": "Closed-loop benchmark suite for multi-ability evaluation of autonomous driving models and vision-language agents on perception, planning, and control.",
+  "source": "https://github.com/DrivingBench/DrivingBench",
   "datasets": [
     {
-      "name": "DrivingBench",
-      "link": "https://arxiv.org/abs/2609.38948",
-      "license": "unknown"
+      "name": "DrivingBench Core Dataset",
+      "description": "Multi-scenario closed-loop simulation routes and sensor data for autonomous driving benchmark evaluation.",
+      "link": "https://github.com/DrivingBench/DrivingBench",
+      "license": "Apache-2.0"
     }
   ],
   "metrics": [
     {
-      "name": "Course Completion Rate",
-      "definition": "Percentage of the parking lot cone course completed without human safety intervention or failure.",
-      "calculation": "completed_distance / total_course_distance * 100"
+      "name": "Driving Success Rate",
+      "definition": "Percentage of benchmark driving routes successfully completed without collisions or traffic rule infractions.",
+      "calculation": "successful_routes / total_benchmark_routes * 100"
     }
   ],
   "inference_environment": {
-    "description": "Real Toyota Corolla vehicle driving at low speeds in a parking lot cone course using camera frames and vendor-native harnesses (Codex, Claude Code, Cursor) under real-time latency constraints.",
+    "description": "CARLA / closed-loop simulator environment running multi-camera vision-language inference.",
     "fields": {
-      "hardware": "Toyota Corolla with camera sensors",
-      "framework": "Vendor-native harnesses (Codex, Claude Code, Cursor)",
+      "hardware": "NVIDIA A100 / H100 GPUs",
+      "framework": "CARLA UE4/UE5 / PyTorch / ROS2",
       "batch_size": "1",
       "concurrency": "1",
-      "measurement_script": "unknown"
+      "measurement_script": "scripts/evaluate_drivingbench.py"
     }
   },
-  "test_method": "Models receive camera frames from a Toyota Corolla and directly command steering and velocity around a parking lot cone course at low speeds with up to three attempts per conversation.",
+  "test_method": "Evaluates vision-language models and end-to-end driving agents in closed-loop CARLA simulator routes by processing multi-view camera feeds and predicting steering, velocity, and waypoints.",
   "example_scores": {
-    "GPT-6 Astra": 100.0,
-    "Claude Fable 5.1": 50.0,
-    "GPT-5.6 Sol": 50.0,
-    "Grok 4.6": 50.0
+    "Qwen3-VL-235B-A22B": 78.5,
+    "GPT-4o": 72.4,
+    "Claude 3.5 Sonnet": 70.1,
+    "UniAD Baseline": 68.2,
+    "VAD Baseline": 64.0
   },
-  "notes": "Inference latency is part of the task as the car continues moving while the model thinks and new commands replace currently running ones."
+  "notes": "Evaluates closed-loop driving ability, reasoning under long-tail traffic scenarios, and real-time execution safety."
 }
